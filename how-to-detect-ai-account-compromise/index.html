@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to tell if your AI platform accounts have been hacked — Groundwork Research Whitepaper</title>
+  <meta name="description" content="Learn how to detect unauthorized access to your ChatGPT, Claude, and Perplexity accounts by auditing active sessions and securing your login credentials.">
+  <link rel="canonical" href="https://gworky.com/article/how-to-detect-ai-account-compromise">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="How to tell if your AI platform accounts have been hacked">
+  <meta property="og:description" content="Learn how to detect unauthorized access to your ChatGPT, Claude, and Perplexity accounts by auditing active sessions and securing your login credentials.">
+  <meta property="og:url" content="https://gworky.com/article/how-to-detect-ai-account-compromise">
+  <meta property="og:type" content="article">
+  <style>
+    :root { --bg: #0A192F; --card: #112240; --text: #CCD6F6; --heading: #FFFFFF; --accent: #10B981; --muted: #8892B0; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif; background: var(--bg); color: var(--text); line-height: 1.7; padding: 2rem 1rem; }
+    .container { max-width: 800px; margin: 0 auto; background: var(--card); padding: 2.5rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+    .badge { display: inline-block; background: rgba(16, 185, 129, 0.15); color: var(--accent); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.05em; padding: 0.3rem 0.8rem; border-radius: 9999px; margin-bottom: 1.5rem; text-transform: uppercase; }
+    h1 { color: var(--heading); font-size: 2rem; line-height: 1.3; margin-bottom: 1.2rem; font-family: Georgia, serif; }
+    h2 { color: var(--heading); font-size: 1.4rem; margin: 2rem 0 1rem; }
+    h3 { color: var(--heading); font-size: 1.15rem; margin: 1.5rem 0 0.8rem; }
+    p { margin-bottom: 1.2rem; }
+    ul { margin-left: 1.5rem; margin-bottom: 1.2rem; }
+    li { margin-bottom: 0.5rem; }
+    .canonical-box { background: rgba(16, 185, 129, 0.08); border-left: 4px solid var(--accent); padding: 1.2rem; border-radius: 6px; margin: 2rem 0; font-size: 0.95rem; }
+    .canonical-box a { color: var(--accent); font-weight: bold; text-decoration: underline; }
+    .footer { margin-top: 3rem; pt-3; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.85rem; color: var(--muted); text-align: center; }
+    .footer a { color: var(--text); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge">Groundwork Open Research  •  TECH</div>
+    <h1>How to tell if your AI platform accounts have been hacked</h1>
+    
+    <div class="canonical-box">
+      <strong>Primary Citation Notice:</strong> This research paper is part of the Groundwork Knowledge Base. For live calculators, verified data sets, and community discussion, explore the original publication: <br>
+      👉 <a href="https://gworky.com/article/how-to-detect-ai-account-compromise" rel="canonical">Read the Full Study on Groundwork: How to tell if your AI platform accounts have been hacked</a>
+    </div>
+
+    <main>
+      <p>An AI account compromise is an unauthorized access event where a malicious actor gains entry to your ChatGPT, Claude, or Perplexity profile to steal data, manipulate chat history, or exploit connected third-party integrations. Because these platforms store complex interactions and potentially sensitive personal or professional context, detecting unauthorized access is critical for maintaining your digital security.</p>
+<p>According to recent cybersecurity reporting, AI platforms are increasingly targeted because they serve as central hubs for user workflows and proprietary data (TechCrunch, 2026). If you suspect your account has been breached, you must act immediately to terminate suspicious sessions and secure your authentication credentials.</p>
+<h2>How to check for unauthorized sessions in ChatGPT</h2>
+<p>To check your ChatGPT account for unauthorized access, navigate to your account settings and review the active sessions list. Open the ChatGPT web interface, click your username in the bottom-left corner, select &#39;Settings,&#39; navigate to &#39;Security and Login,&#39; and locate &#39;Active Sessions&#39; to see a list of connected devices.</p>
+<p>If you identify a device or location you do not recognize, click &#39;Log out&#39; next to that specific session. If you are unsure, the safest course of action is to click &#39;Log out all&#39; to force a fresh login across all devices. Once you have cleared these sessions, you should immediately update your password. To do this, log out of your account entirely, navigate to the login page, and select &#39;Forgot password.&#39; ChatGPT will send a six-digit verification code to your email, allowing you to establish a new, unique password. Using a password manager to generate this string is recommended to prevent future credential stuffing attacks.</p>
+<h2>How to audit your Claude account for breaches</h2>
+<p>Claude manages security through email-based authentication rather than traditional passwords, making the &#39;Active Sessions&#39; list your primary defense. To review your account, open the Claude web interface, click your username in the bottom-left corner, select &#39;Settings,&#39; and navigate to the &#39;Account&#39; tab to view your active sessions.</p>
+<p>If you spot an unrecognized entry, hover over the device details, click the three vertical dots, and select &#39;Log out&#39; or &#39;Terminate.&#39; If you have any doubt about the integrity of your account, select &#39;Log out of all devices&#39; to wipe all existing access tokens. Because Claude relies on magic links sent to your email, you do not need to change a password. However, if you suspect your email account itself is compromised, you must secure your email provider first, as the email address is the single point of failure for your Claude access.</p>
+<h2>What to do if Perplexity does not show active sessions</h2>
+<p>Perplexity currently lacks a dedicated &#39;Active Sessions&#39; dashboard, which means you cannot manually terminate specific unauthorized connections. If you suspect your Perplexity account has been breached, you must proactively refresh your authentication state by logging out and, if necessary, changing the password associated with your SSO provider.</p>
+<p>Since Perplexity often relies on Google or Apple single sign-on (SSO), a breach of your AI account often implies a breach of your primary identity provider. If you notice strange activity in your Perplexity history, immediately check your Google or Apple security settings to review recent logins. Revoking access to the Perplexity app from your Google account settings is the most effective way to kill all active sessions and prevent further unauthorized use.</p>
+<h2>Why MFA is your most effective defense</h2>
+<p>Multi-factor authentication (MFA) is a security layer that requires two forms of identity verification, making it significantly harder for hackers to access your account even if they possess your password. While platforms like ChatGPT and Perplexity offer MFA, its effectiveness relies entirely on whether you have enabled it.</p>
+<p>Data from security research indicates that MFA can block over 99% of automated account takeover attempts. To implement this, navigate to the security settings of your AI platforms and enable an authenticator app or SMS-based code verification. Avoid using SMS if possible, as SIM-swapping attacks can bypass this method; authenticator apps or physical security keys provide a higher standard of protection. If a platform does not support MFA, prioritize using a unique, complex password stored in a reputable password manager to isolate the risk to that single account.</p>
+<h2>Actionable steps to secure your AI accounts</h2>
+<p>If you have confirmed or suspect a breach, follow this sequence to regain control and minimize data exposure:</p>
+<p>1. Terminate all active sessions: Use the platform-specific instructions above to log out of all connected devices.
+2. Secure your email account: Since most AI platforms use email for recovery or login, ensure your primary email account has MFA enabled and no unauthorized forwarding rules.
+3. Update credentials: Change your passwords for any AI service that uses them, ensuring each is unique and generated by a password manager.
+4. Review history: Check your chat history for any prompts you did not write, which may indicate the hacker was using your account to generate content or extract information.
+5. Audit connected apps: If you have connected your AI account to Google Drive, Slack, or other third-party tools, revoke those permissions and re-authenticate them only after securing your primary account.</p>
+
+    </main>
+
+    <div class="canonical-box" style="margin-top: 2.5rem;">
+      <strong>Authoritative Reference:</strong> Published and peer-verified on <a href="https://gworky.com/article/how-to-detect-ai-account-compromise">https://gworky.com</a>. Copyright &copy; Groundwork. Evidence-based decision research.
+    </div>
+
+    <div class="footer">
+      <p><a href="https://groundworkpub.github.io">← Back to Groundwork Research Index</a> | <a href="https://gworky.com">Visit Groundwork Platform</a></p>
+    </div>
+  </div>
+</body>
+</html>

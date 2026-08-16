@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to play Pips: strategies and logic for the NYT game — Groundwork Research Whitepaper</title>
+  <meta name="description" content="Pips is a grid-based logic game where you place dominoes to meet mathematical constraints. Learn the rules, zone types, and strategies to solve daily puzzles.">
+  <link rel="canonical" href="https://gworky.com/article/how-to-play-nyt-pips-strategy-guide">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="How to play Pips: strategies and logic for the NYT game">
+  <meta property="og:description" content="Pips is a grid-based logic game where you place dominoes to meet mathematical constraints. Learn the rules, zone types, and strategies to solve daily puzzles.">
+  <meta property="og:url" content="https://gworky.com/article/how-to-play-nyt-pips-strategy-guide">
+  <meta property="og:type" content="article">
+  <style>
+    :root { --bg: #0A192F; --card: #112240; --text: #CCD6F6; --heading: #FFFFFF; --accent: #10B981; --muted: #8892B0; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif; background: var(--bg); color: var(--text); line-height: 1.7; padding: 2rem 1rem; }
+    .container { max-width: 800px; margin: 0 auto; background: var(--card); padding: 2.5rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+    .badge { display: inline-block; background: rgba(16, 185, 129, 0.15); color: var(--accent); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.05em; padding: 0.3rem 0.8rem; border-radius: 9999px; margin-bottom: 1.5rem; text-transform: uppercase; }
+    h1 { color: var(--heading); font-size: 2rem; line-height: 1.3; margin-bottom: 1.2rem; font-family: Georgia, serif; }
+    h2 { color: var(--heading); font-size: 1.4rem; margin: 2rem 0 1rem; }
+    h3 { color: var(--heading); font-size: 1.15rem; margin: 1.5rem 0 0.8rem; }
+    p { margin-bottom: 1.2rem; }
+    ul { margin-left: 1.5rem; margin-bottom: 1.2rem; }
+    li { margin-bottom: 0.5rem; }
+    .canonical-box { background: rgba(16, 185, 129, 0.08); border-left: 4px solid var(--accent); padding: 1.2rem; border-radius: 6px; margin: 2rem 0; font-size: 0.95rem; }
+    .canonical-box a { color: var(--accent); font-weight: bold; text-decoration: underline; }
+    .footer { margin-top: 3rem; pt-3; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.85rem; color: var(--muted); text-align: center; }
+    .footer a { color: var(--text); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge">Groundwork Open Research  •  TECH</div>
+    <h1>How to play Pips: strategies and logic for the NYT game</h1>
+    
+    <div class="canonical-box">
+      <strong>Primary Citation Notice:</strong> This research paper is part of the Groundwork Knowledge Base. For live calculators, verified data sets, and community discussion, explore the original publication: <br>
+      👉 <a href="https://gworky.com/article/how-to-play-nyt-pips-strategy-guide" rel="canonical">Read the Full Study on Groundwork: How to play Pips: strategies and logic for the NYT game</a>
+    </div>
+
+    <main>
+      <p>Pips is a single-player logic puzzle game developed by The New York Times that requires players to arrange domino-style tiles within a grid to satisfy specific mathematical conditions. Unlike traditional dominoes, where tiles must match, Pips challenges you to solve spatial constraints defined by color-coded regions on the board.</p>
+<p>Since its release in August 2025, Pips has become a staple of the NYT Games portfolio. The game combines elements of domino placement with arithmetic and comparative logic. Successfully completing a puzzle requires you to balance the physical placement of tiles with the mathematical rules imposed by the board’s layout.</p>
+<h2>How does the Pips game work?</h2>
+<p>Pips is a grid-based puzzle where you place domino tiles to fulfill mathematical conditions within designated color-coded zones. A single domino tile consists of two halves, each containing a specific number of pips (dots), ranging from zero to six. You must place these tiles so that the pips inside each colored zone adhere to the specific rule assigned to that area.</p>
+<p>To play effectively, you must understand how tiles interact with zone boundaries. A single domino can span across two different zones, meaning only one half of the tile might count toward the total or condition of a specific colored space. If a space lacks color coding, it is a neutral zone, meaning you can place any tile value there without violating a rule.</p>
+<h2>What are the core rules for Pips zones?</h2>
+<p>Every color-coded zone in Pips comes with a specific constraint that dictates the value of the pips within that boundary. You must ensure that every tile half touching or contained within the zone satisfies the following logic types:</p>
+<p>1. **Number:** All pips within the space must sum exactly to the provided number.
+2. **Equal:** Every domino half within the space must show the same number of pips.
+3. **Not Equal:** Every domino half within the space must have a unique pip count compared to the others.
+4. **Less than:** The sum of all pips within the space must be lower than the indicated target number.
+5. **Greater than:** The sum of all pips within the space must be higher than the indicated target number.</p>
+<p>Mastering these rules is essential because a single incorrect placement can invalidate multiple zones simultaneously. Always check the total count of a zone before finalizing a tile placement.</p>
+<h2>How to approach easy difficulty puzzles</h2>
+<p>Easy puzzles in Pips function as an introduction to the core mechanics, typically involving fewer zones and simpler arithmetic requirements. When solving these, start by identifying the zones with a fixed &#39;Number&#39; constraint, as these are the most restrictive and often dictate the placement of the remaining tiles.</p>
+<p>For example, if a zone requires a sum of 6, you might look for a domino half that can complete the math based on existing tiles. If you place a 3-3 tile horizontally, you satisfy the constraint immediately. Always prioritize placing tiles in zones with the fewest potential combinations first to narrow down your options for the rest of the board.</p>
+<h2>How to solve medium difficulty challenges</h2>
+<p>Medium difficulty Pips puzzles introduce more complex constraints, such as &#39;Equal&#39; or &#39;Greater than&#39; rules, which require you to think about the distribution of values across the board. Unlike simple addition, these rules force you to consider the value of every individual tile half located within the colored boundary.</p>
+<p>When encountering an &#39;Equal&#39; zone, look for tiles that feature matching sides, such as doubles (5-5). If the zone requires an &#39;Equal&#39; value of 5, you must ensure every half-tile occupying that space shows exactly 5 pips. If you are struggling, work backward from the most complex constraint. If a zone requires a &#39;Greater than 3&#39; rule, avoid placing any 0, 1, 2, or 3-pip halves within that space to ensure you remain compliant with the rule.</p>
+<h2>Best practices for solving Pips puzzles daily</h2>
+<p>To improve your success rate in Pips, treat the board as a system of interconnected constraints rather than isolated problems. Because tiles connect to each other, a placement in one area often limits the available tiles for an adjacent zone.</p>
+<p>1. **Scan the board first:** Identify all color-coded zones and their specific rules before placing your first tile.
+2. **Prioritize constraints:** Fill in the &#39;Number&#39; zones that have the most limited tile combinations first.
+3. **Check for overlaps:** Remember that a tile can sit on the border of two zones; ensure both halves satisfy their respective zone rules simultaneously.
+4. **Use trial and error cautiously:** Since the game currently requires you to restart if you reveal the solution, use pencil-and-paper or scratchpad notes to test a placement before committing it to the digital interface.</p>
+<p>By following these steps, you minimize the risk of starting over and build a stronger mental model of how the tile values interact with the game&#39;s mathematical logic.</p>
+
+    </main>
+
+    <div class="canonical-box" style="margin-top: 2.5rem;">
+      <strong>Authoritative Reference:</strong> Published and peer-verified on <a href="https://gworky.com/article/how-to-play-nyt-pips-strategy-guide">https://gworky.com</a>. Copyright &copy; Groundwork. Evidence-based decision research.
+    </div>
+
+    <div class="footer">
+      <p><a href="https://groundworkpub.github.io">← Back to Groundwork Research Index</a> | <a href="https://gworky.com">Visit Groundwork Platform</a></p>
+    </div>
+  </div>
+</body>
+</html>
