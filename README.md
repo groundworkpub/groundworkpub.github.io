@@ -2,7 +2,7 @@
 
 [![Open Collective Backers](https://opencollective.com/gworky/backers/badge.svg)](https://opencollective.com/gworky)
 [![License: MIT](https://img.shields.io/badge/License-MIT-emerald.svg)](https://opensource.org/licenses/MIT)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.groundwork.svg)](https://zenodo.org/communities/groundwork)
+[![Release: v1.0.0](https://img.shields.io/github/v/release/groundworkpub/groundworkpub.github.io?color=blue&label=Zenodo%20Archive)](https://github.com/groundworkpub/groundworkpub.github.io/releases/tag/v1.0.0)
 
 **Groundwork** is a Tier-1 English-language media platform and interactive decision engine designed to replace guesswork with verifiable research across five critical life domains:
 
@@ -20,7 +20,7 @@ Groundwork operates under an open-access research model and is supported transpa
 
 * **100% Public Ledger:** Every contribution and operational expenditure is published live on our [Open Collective page](https://opencollective.com/gworky).
 * **Zero Paywalls:** All research guides, mathematical calculators, and academic citation graphs remain free and open to the public.
-* **Open Datasets:** Primary research papers and empirical data tables are permanently archived with Zenodo DOIs.
+* **Open Datasets:** Primary research papers and empirical data tables are permanently archived and accessible in our [GitHub Releases](https://github.com/groundworkpub/groundworkpub.github.io/releases).
 
 ---
 
