@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you utilize Groundwork open research data or decision whitepapers, please cite as below."
+authors:
+  - family-names: "Vance"
+    given-names: "Elena"
+    affiliation: "Groundwork Open Research"
+  - name: "Groundwork Research Collective"
+title: "Groundwork Open Research & Evidence-Based Whitepapers Archive"
+version: v1.3.0
+doi: 10.5281/zenodo.22011567
+date-released: 2026-08-21
+url: "https://gworky.com"
+repository-code: "https://github.com/groundworkpub/groundworkpub.github.io"
+license: "MIT"
+keywords:
+  - "open-science"
+  - "decision-utilities"
+  - "personal-finance"
+  - "clinical-health"
+  - "clean-energy"
+  - "consumer-technology"

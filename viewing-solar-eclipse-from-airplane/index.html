@@ -18,6 +18,12 @@
     "headline": "How to plan an aerial view of a solar eclipse",
     "description": "Learn how to strategically book a commercial flight to experience a solar eclipse from the air, including tips on flight tracking, seat selection, and risks.",
     "url": "https://gworky.com/article/viewing-solar-eclipse-from-airplane",
+    "datePublished": "2026-08-21",
+    "author": {
+      "@type": "Person",
+      "name": "Elena Vance",
+      "jobTitle": "Lead Decision Researcher"
+    },
     "publisher": {
       "@type": "Organization",
       "name": "Groundwork Open Research",
@@ -26,30 +32,52 @@
   }
   </script>
   <style>
-    :root { --bg: #0A192F; --card: #112240; --text: #CCD6F6; --heading: #FFFFFF; --accent: #10B981; --muted: #8892B0; }
+    :root {
+      --bg: #0A192F;
+      --card: #112240;
+      --card-alt: #1E2D4A;
+      --text: #CCD6F6;
+      --heading: #FFFFFF;
+      --accent: #10B981;
+      --accent-glow: rgba(16, 185, 129, 0.15);
+      --muted: #8892B0;
+      --border: rgba(255, 255, 255, 0.08);
+    }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif; background: var(--bg); color: var(--text); line-height: 1.7; padding: 2rem 1rem; }
-    .container { max-width: 800px; margin: 0 auto; background: var(--card); padding: 2.5rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
-    .badge { display: inline-block; background: rgba(16, 185, 129, 0.15); color: var(--accent); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.05em; padding: 0.3rem 0.8rem; border-radius: 9999px; margin-bottom: 1.5rem; text-transform: uppercase; }
-    h1 { color: var(--heading); font-size: 2rem; line-height: 1.3; margin-bottom: 1.2rem; font-family: Georgia, serif; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif; background: var(--bg); color: var(--text); line-height: 1.75; padding: 2rem 1rem; }
+    .container { max-width: 820px; margin: 0 auto; background: var(--card); padding: 2.5rem; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+    .header-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
+    .badge { display: inline-block; background: var(--accent-glow); color: var(--accent); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.05em; padding: 0.35rem 0.85rem; border-radius: 9999px; text-transform: uppercase; }
+    .doi-tag { font-size: 0.78rem; color: var(--muted); text-decoration: none; border: 1px solid var(--border); padding: 0.3rem 0.7rem; border-radius: 6px; }
+    .doi-tag:hover { border-color: var(--accent); color: var(--accent); }
+    h1 { color: var(--heading); font-size: 2.1rem; line-height: 1.3; margin-bottom: 1.2rem; font-family: Georgia, serif; }
     h2 { color: var(--heading); font-size: 1.4rem; margin: 2rem 0 1rem; }
     h3 { color: var(--heading); font-size: 1.15rem; margin: 1.5rem 0 0.8rem; }
     p { margin-bottom: 1.2rem; }
     ul { margin-left: 1.5rem; margin-bottom: 1.2rem; }
     li { margin-bottom: 0.5rem; }
-    .canonical-box { background: rgba(16, 185, 129, 0.08); border-left: 4px solid var(--accent); padding: 1.2rem; border-radius: 6px; margin: 2rem 0; font-size: 0.95rem; }
+    .canonical-box { background: var(--accent-glow); border-left: 4px solid var(--accent); padding: 1.2rem; border-radius: 6px; margin: 2rem 0; font-size: 0.95rem; }
     .canonical-box a { color: var(--accent); font-weight: bold; text-decoration: underline; }
-    .footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.85rem; color: var(--muted); text-align: center; }
-    .footer a { color: var(--text); }
+    .citation-widget { background: var(--card-alt); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; margin: 2.5rem 0; }
+    .citation-widget h4 { color: var(--heading); font-size: 1rem; margin-bottom: 0.8rem; display: flex; justify-content: space-between; align-items: center; }
+    .citation-box { background: #0A192F; border: 1px solid var(--border); border-radius: 6px; padding: 1rem; font-family: ui-monospace, monospace; font-size: 0.82rem; color: #CCD6F6; word-break: break-all; margin-bottom: 0.8rem; }
+    .btn-copy { background: var(--accent); color: #0A192F; border: none; padding: 0.4rem 0.9rem; border-radius: 4px; font-weight: bold; font-size: 0.75rem; cursor: pointer; }
+    .footer { margin-top: 3.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border); font-size: 0.85rem; color: var(--muted); text-align: center; }
+    .footer a { color: var(--text); text-decoration: none; }
+    .footer a:hover { color: var(--accent); }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="badge">Groundwork Open Research  •  LIFE</div>
+    <div class="header-bar">
+      <div class="badge">Groundwork Open Research • LIFE</div>
+      <a href="https://doi.org/10.5281/zenodo.22011567" target="_blank" rel="noopener" class="doi-tag">DOI: 10.5281/zenodo.22011567</a>
+    </div>
+
     <h1>How to plan an aerial view of a solar eclipse</h1>
 
     <div class="canonical-box">
-      <strong>Primary Citation Notice:</strong> This research study is part of the Groundwork Knowledge Base. For live interactive calculators, verified data sets, and peer-reviewed discussion, explore the original publication: <br>
+      <strong>Primary Research Notice:</strong> This study is part of the Groundwork Evidence Base. For interactive data tools, full methodologies, and dynamic scenarios, visit the primary publication: <br>
       👉 <a href="https://gworky.com/article/viewing-solar-eclipse-from-airplane" rel="canonical">Read the Full Study on Groundwork: How to plan an aerial view of a solar eclipse</a>
     </div>
 
@@ -89,13 +117,43 @@ Commercial flight schedules are subject to change, which presents the greatest r
     </div>
     
 
-    <div class="canonical-box" style="margin-top: 2.5rem;">
-      <strong>Authoritative Reference:</strong> Published and peer-verified on <a href="https://gworky.com/article/viewing-solar-eclipse-from-airplane">https://gworky.com</a>. Copyright &copy; Groundwork Open Research. Permanent DOI recorded on CERN Zenodo.
+    <div class="citation-widget">
+      <h4>
+        <span>Cite This Whitepaper</span>
+        <button class="btn-copy" onclick="copyCitation()">Copy APA Citation</button>
+      </h4>
+      <div class="citation-box" id="citation-text">Vance, E. (2026). How to plan an aerial view of a solar eclipse. Groundwork Open Research. https://gworky.com/article/viewing-solar-eclipse-from-airplane</div>
+      <details>
+        <summary style="cursor: pointer; font-size: 0.8rem; color: var(--muted);">View BibTeX entry</summary>
+        <pre class="citation-box" style="margin-top: 0.5rem; white-space: pre-wrap;">@article{groundwork_viewing-solar-eclipse-from-airplane,
+  title={How to plan an aerial view of a solar eclipse},
+  author={Vance, Elena and Groundwork Research Collective},
+  journal={Groundwork Open Research Archive},
+  year={2026},
+  doi={10.5281/zenodo.22011567},
+  url={https://gworky.com/article/viewing-solar-eclipse-from-airplane}
+}</pre>
+      </details>
+    </div>
+
+    <div class="canonical-box">
+      <strong>Authoritative Reference:</strong> Published by Groundwork Media under Open Science principles. Permanent scholarly snapshot recorded at CERN Zenodo under Creative Commons. Central Portal: <a href="https://gworky.com">https://gworky.com</a>.
     </div>
 
     <div class="footer">
       <p><a href="https://groundworkpub.github.io">← Back to Groundwork Research Index</a> | <a href="https://gworky.com">Visit Groundwork Platform</a></p>
     </div>
   </div>
+
+  <script>
+    function copyCitation() {
+      const text = document.getElementById('citation-text').innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = document.querySelector('.btn-copy');
+        btn.innerText = 'Copied!';
+        setTimeout(() => btn.innerText = 'Copy APA Citation', 2000);
+      });
+    }
+  </script>
 </body>
 </html>
