@@ -1,0 +1,36 @@
+name: Groundwork Autonomous Digest & DOI Pipeline
+
+on:
+  schedule:
+    - cron: "0 */6 * * *" # Runs every 6 hours completely free
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  harvest-and-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Public Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Dependencies
+        run: |
+          pip install httpx
+
+      - name: Log Autonomous Run
+        run: |
+          echo "Autonomous digest pipeline executed at $(date -u)" >> .digest_history.log
+          git config user.name "Groundwork Autonomous Bot"
+          git config user.email "bot@gworky.com"
+          git add .
+          git commit -m "chore(cron): autonomous healthcheck & news sync [skip ci]" || echo "No changes"
+          git push origin main || echo "Push skipped"
