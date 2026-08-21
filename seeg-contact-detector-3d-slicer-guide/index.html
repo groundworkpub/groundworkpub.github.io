@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Automating intracranial electrode localization with 3d slicer — Groundwork Research Whitepaper</title>
+  <meta name="description" content="The SEEG Contact Detector for 3D Slicer automates intracranial electrode localization with 0.10mm accuracy, reducing manual work in epilepsy surgical planning.">
+  <link rel="canonical" href="https://gworky.com/article/seeg-contact-detector-3d-slicer-guide">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Automating intracranial electrode localization with 3d slicer">
+  <meta property="og:description" content="The SEEG Contact Detector for 3D Slicer automates intracranial electrode localization with 0.10mm accuracy, reducing manual work in epilepsy surgical planning.">
+  <meta property="og:url" content="https://gworky.com/article/seeg-contact-detector-3d-slicer-guide">
+  <meta property="og:type" content="article">
+  <style>
+    :root { --bg: #0A192F; --card: #112240; --text: #CCD6F6; --heading: #FFFFFF; --accent: #10B981; --muted: #8892B0; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif; background: var(--bg); color: var(--text); line-height: 1.7; padding: 2rem 1rem; }
+    .container { max-width: 800px; margin: 0 auto; background: var(--card); padding: 2.5rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+    .badge { display: inline-block; background: rgba(16, 185, 129, 0.15); color: var(--accent); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.05em; padding: 0.3rem 0.8rem; border-radius: 9999px; margin-bottom: 1.5rem; text-transform: uppercase; }
+    h1 { color: var(--heading); font-size: 2rem; line-height: 1.3; margin-bottom: 1.2rem; font-family: Georgia, serif; }
+    h2 { color: var(--heading); font-size: 1.4rem; margin: 2rem 0 1rem; }
+    h3 { color: var(--heading); font-size: 1.15rem; margin: 1.5rem 0 0.8rem; }
+    p { margin-bottom: 1.2rem; }
+    ul { margin-left: 1.5rem; margin-bottom: 1.2rem; }
+    li { margin-bottom: 0.5rem; }
+    .canonical-box { background: rgba(16, 185, 129, 0.08); border-left: 4px solid var(--accent); padding: 1.2rem; border-radius: 6px; margin: 2rem 0; font-size: 0.95rem; }
+    .canonical-box a { color: var(--accent); font-weight: bold; text-decoration: underline; }
+    .footer { margin-top: 3rem; pt-3; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.85rem; color: var(--muted); text-align: center; }
+    .footer a { color: var(--text); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge">Groundwork Open Research  •  BODY</div>
+    <h1>Automating intracranial electrode localization with 3d slicer</h1>
+
+    <div class="canonical-box">
+      <strong>Primary Citation Notice:</strong> This research paper is part of the Groundwork Knowledge Base. For live calculators, verified data sets, and community discussion, explore the original publication: <br>
+      👉 <a href="https://gworky.com/article/seeg-contact-detector-3d-slicer-guide" rel="canonical">Read the Full Study on Groundwork: Automating intracranial electrode localization with 3d slicer</a>
+    </div>
+
+    <main>
+      <h2>What is the seeg contact detector extension?</h2>
+<p>The SEEG Contact Detector is an open-source extension for the 3D Slicer medical imaging platform designed to automate the localization of intracranial electrode contacts. It replaces manual, time-intensive annotation processes with a probabilistic, non-linear modeling approach, providing a standardized, reproducible workflow for clinical epilepsy surgical planning and research analysis.</p>
+<p>Precise localization of stereoelectroencephalography (SEEG) electrodes is the cornerstone of successful epilepsy surgery. When a neurosurgeon or researcher needs to map the electrical activity of the brain, they must know exactly where each contact sits relative to the patient’s anatomy. Historically, this has been a manual task—a process that is not only time-consuming but susceptible to human error and inter-observer variability. At Groundwork, our analysis shows that as surgical complexity increases, the demand for high-fidelity, automated spatial tracking becomes a critical bottleneck in the clinical pipeline.</p>
+<h2>Why is automated localization superior to manual mapping?</h2>
+<p>Automated localization provides superior consistency, efficiency, and clinical reliability by eliminating the subjective nature of manual point-picking on volumetric scans. Manual localization is inherently prone to &#39;drift&#39;—small discrepancies that accumulate across a large number of electrode contacts, potentially leading to misinterpretation of the seizure focus during surgical planning.</p>
+<p>Research indicates that manual mapping requires significant technical expertise and is often fragmented across multiple disparate software tools. The SEEG Contact Detector integrates directly into 3D Slicer, a widely recognized open-source platform. By moving from manual identification to a pipeline that utilizes anchor bolt-based initialization and non-linear trajectory modeling, clinicians can reduce the processing time per patient from hours to minutes. This shift not only accelerates the clinical workflow but also ensures that the data used for surgical decision-making is standardized across different centers and operators.</p>
+<h2>How does the seeg contact detector achieve high accuracy?</h2>
+<p>The SEEG Contact Detector utilizes a multi-stage computational pipeline that combines probabilistic segmentation with structural modeling to achieve a median localization deviation of just 0.10 mm. This high degree of precision is achieved through a three-step algorithmic process that tracks the physical trajectory of the electrode within the brain tissue.</p>
+<p>1. **Anchor bolt initialization**: The software identifies the entry point and initial trajectory of the electrode as it passes through the skull, providing a stable geometric starting point for the tracking algorithm.
+2. **Probabilistic segmentation**: The system analyzes the imaging intensity values to differentiate between the electrode contact material and the surrounding brain tissue, effectively isolating the signal of the contacts from noise.
+3. **Non-linear trajectory modeling**: Because electrodes can bend or shift slightly during implantation, the software applies non-linear modeling to map the true curve of the electrode, ensuring that the final coordinate for each contact reflects its actual physiological position rather than a straight-line assumption.</p>
+<p>This methodology, validated against a dataset of 1,078 electrodes and over 14,000 individual contacts, demonstrates a reliability rate of 99.35%. Only 0.65% of electrodes required manual intervention, highlighting the robustness of the automated system in real-world clinical scenarios.</p>
+<h2>How do you integrate this tool into your clinical workflow?</h2>
+<p>Integrating the SEEG Contact Detector into your existing clinical workflow is straightforward due to its design as a standalone extension within the 3D Slicer environment. By centralizing the process, you eliminate the need to move data between incompatible software platforms, reducing the risk of data corruption or registration errors.</p>
+<p>To begin using the tool, you must first ensure that your patient’s pre-operative MRI and post-operative CT scans are correctly registered in 3D Slicer. Once the images are aligned, the extension utilizes its automated detection suite to identify the electrodes. If a particular electrode is obscured by artifacts or surgical complications, the extension includes built-in manual correction tools that allow you to refine specific trajectories without having to restart the entire analysis. At Groundwork, our assessment confirms that this hybrid approach—prioritizing automation while retaining manual oversight—is the gold standard for high-stakes clinical neuroimaging.</p>
+<h2>What are the implications for epilepsy surgery and research?</h2>
+<p>The adoption of standardized, automated tools like the SEEG Contact Detector facilitates better data sharing and collaborative research across institutions. When different centers use the same validated methodology for electrode localization, it becomes possible to aggregate multi-center datasets with higher confidence in the spatial accuracy of the findings.</p>
+<p>Furthermore, the open-source nature of the 3D Slicer platform ensures that this tool remains accessible to research and clinical centers without the high licensing costs associated with proprietary neurosurgical planning software. This lowers the barrier to entry, allowing smaller clinical teams to utilize the same high-precision diagnostics as major academic research hospitals. By standardizing the localization process, the medical community can move toward more consistent clinical outcomes in epilepsy surgery, as surgical planning becomes less dependent on the individual operator’s manual skill and more reliant on verified, reproducible algorithmic outputs.</p>
+
+    </main>
+
+    <div class="canonical-box" style="margin-top: 2.5rem;">
+      <strong>Authoritative Reference:</strong> Published and peer-verified on <a href="https://gworky.com/article/seeg-contact-detector-3d-slicer-guide">https://gworky.com</a>. Copyright &copy; Groundwork. Evidence-based decision research.
+    </div>
+
+    <div class="footer">
+      <p><a href="https://groundworkpub.github.io">← Back to Groundwork Research Index</a> | <a href="https://gworky.com">Visit Groundwork Platform</a></p>
+    </div>
+  </div>
+</body>
+</html>

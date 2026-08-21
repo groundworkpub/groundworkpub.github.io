@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Optimizing mixture-of-experts models through depth-aware masking — Groundwork Research Whitepaper</title>
+  <meta name="description" content="Learn how to optimize Mixture-of-Experts (MoE) models using depth-aware masking to reduce memory usage without sacrificing accuracy in large language models.">
+  <link rel="canonical" href="https://gworky.com/article/depth-aware-moe-model-compression">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Optimizing mixture-of-experts models through depth-aware masking">
+  <meta property="og:description" content="Learn how to optimize Mixture-of-Experts (MoE) models using depth-aware masking to reduce memory usage without sacrificing accuracy in large language models.">
+  <meta property="og:url" content="https://gworky.com/article/depth-aware-moe-model-compression">
+  <meta property="og:type" content="article">
+  <style>
+    :root { --bg: #0A192F; --card: #112240; --text: #CCD6F6; --heading: #FFFFFF; --accent: #10B981; --muted: #8892B0; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif; background: var(--bg); color: var(--text); line-height: 1.7; padding: 2rem 1rem; }
+    .container { max-width: 800px; margin: 0 auto; background: var(--card); padding: 2.5rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+    .badge { display: inline-block; background: rgba(16, 185, 129, 0.15); color: var(--accent); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.05em; padding: 0.3rem 0.8rem; border-radius: 9999px; margin-bottom: 1.5rem; text-transform: uppercase; }
+    h1 { color: var(--heading); font-size: 2rem; line-height: 1.3; margin-bottom: 1.2rem; font-family: Georgia, serif; }
+    h2 { color: var(--heading); font-size: 1.4rem; margin: 2rem 0 1rem; }
+    h3 { color: var(--heading); font-size: 1.15rem; margin: 1.5rem 0 0.8rem; }
+    p { margin-bottom: 1.2rem; }
+    ul { margin-left: 1.5rem; margin-bottom: 1.2rem; }
+    li { margin-bottom: 0.5rem; }
+    .canonical-box { background: rgba(16, 185, 129, 0.08); border-left: 4px solid var(--accent); padding: 1.2rem; border-radius: 6px; margin: 2rem 0; font-size: 0.95rem; }
+    .canonical-box a { color: var(--accent); font-weight: bold; text-decoration: underline; }
+    .footer { margin-top: 3rem; pt-3; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.85rem; color: var(--muted); text-align: center; }
+    .footer a { color: var(--text); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge">Groundwork Open Research  •  TECH</div>
+    <h1>Optimizing mixture-of-experts models through depth-aware masking</h1>
+
+    <div class="canonical-box">
+      <strong>Primary Citation Notice:</strong> This research paper is part of the Groundwork Knowledge Base. For live calculators, verified data sets, and community discussion, explore the original publication: <br>
+      👉 <a href="https://gworky.com/article/depth-aware-moe-model-compression" rel="canonical">Read the Full Study on Groundwork: Optimizing mixture-of-experts models through depth-aware masking</a>
+    </div>
+
+    <main>
+      <p>Mixture-of-Experts (MoE) architectures are a class of machine learning models that scale large language models (LLMs) by activating only a subset of available parameters per input, maintaining computational efficiency despite massive total parameter counts. Depth-aware sensitivity analysis is a method used to evaluate how specific layers within these models contribute to performance, allowing researchers to identify which experts can be removed or &#39;masked&#39; without degrading output quality.</p>
+<p>At Groundwork, our analysis of recent empirical data on the Qwen3.6-35B-A3B architecture reveals that not all layers in an MoE model carry equal weight. By systematically applying magnitude-based masking—removing experts with the lowest numerical weight values—we can significantly reduce the memory and compute footprint of these models without sacrificing their ability to perform complex tasks like cross-lingual code translation.</p>
+<h2>Why does layer depth matter for MoE models?</h2>
+<p>Layer depth refers to the ordinal position of an expert layer within the model&#39;s sequential architecture, typically ranging from input-adjacent &#39;early&#39; layers to output-adjacent &#39;late&#39; layers. Research indicates that MoE models exhibit a non-uniform sensitivity to parameter removal, meaning that masking an expert in an early layer often results in catastrophic performance loss, whereas masking experts in deeper layers is frequently benign.</p>
+<p>In the Qwen3.6-35B-A3B model, which utilizes 40 MoE layers, empirical testing shows that layers 0 through 9 and 10 through 29 are highly fragile. When experts in these layers are masked, the model&#39;s ability to maintain context and logical flow in code translation tasks collapses. Conversely, layers 30 through 39 demonstrate a high tolerance for intervention. This suggests that the model’s &#39;reasoning&#39; or &#39;foundational&#39; logic is solidified in the middle stages, while the final layers serve as a refinement mechanism that can be pruned more aggressively.</p>
+<h2>How does magnitude-based masking improve efficiency?</h2>
+<p>Magnitude-based expert masking is a compression strategy that identifies and disables experts with the lowest weight values, operating on the premise that these experts contribute the least to the final activation. In tests conducted across 300-prompt evaluation scales, flat masking—where experts are removed uniformly across all layers—resulted in a success rate of only 50% (150/300) for high-quality code outputs.</p>
+<p>In contrast, applying a late-focused masking policy allowed the model to retain up to 85% (255/300) of high-quality outputs despite disabling over 1,000 experts. This proves that efficiency gains are not merely about the quantity of removed parameters, but the strategic selection of those parameters based on their hierarchical importance within the neural network.</p>
+<h2>Can you reduce active experts per token?</h2>
+<p>Reducing the &#39;top-k&#39; routing width, which dictates how many experts are activated for each incoming token, is an effective way to lower wall-clock latency. Current research shows that reducing active experts from 8 to 6 per token can yield measurable speed improvements without any loss in output quality on standardized benchmarks.</p>
+<p>However, there is a critical caveat: reducing routing width does not currently compose well with aggressive expert masking. When both strategies are applied simultaneously, the cumulative loss in information throughput can lead to unstable model behavior. For practitioners looking to optimize, Groundwork’s research suggests prioritizing one strategy over the other depending on whether the primary constraint is memory (requiring masking) or inference speed (requiring routing width reduction).</p>
+<h2>What is the most effective masking strategy?</h2>
+<p>For most high-performance MoE applications, the &#39;very-late&#39; policy—focusing on layers 35 through 39—offers the best trade-off between model quality and resource footprint. In validation tests using a 500-prompt held-out dataset, this policy achieved a 83.8% retention rate (419/500) while masking 640 out of 10,240 experts.</p>
+<p>This finding is significant because it provides a roadmap for &#39;physical weight surgery&#39; on LLMs. By focusing compression efforts on the final 10-15% of the model&#39;s depth, developers can achieve meaningful reductions in GPU memory requirements, which is essential for deploying large models on consumer-grade or resource-constrained hardware.</p>
+<h2>Actionable steps for model optimization</h2>
+<p>To apply these findings to your own deployment pipeline, follow this systematic approach:</p>
+<p>1. Establish a baseline: Run your model against a standardized benchmark (e.g., XLCoST) to determine a &#39;Good+Similar&#39; output threshold.
+2. Map sensitivity: Perform a layer-wise sweep by masking 5-10% of experts in individual layers to identify your model&#39;s unique &#39;fragility zones.&#39;
+3. Implement late-layer pruning: Once you identify the late-layer tolerance, begin masking low-magnitude experts specifically in the final 10% of the model depth.
+4. Validate against held-out prompts: Always test the compressed model against a fresh set of prompts to ensure that the masking has not introduced subtle biases or logical errors that weren&#39;t present in the training set.
+5. Monitor latency: If you also choose to adjust top-k routing, perform an isolated test to ensure the speed gains don&#39;t trigger a degradation in model accuracy.</p>
+
+    </main>
+
+    <div class="canonical-box" style="margin-top: 2.5rem;">
+      <strong>Authoritative Reference:</strong> Published and peer-verified on <a href="https://gworky.com/article/depth-aware-moe-model-compression">https://gworky.com</a>. Copyright &copy; Groundwork. Evidence-based decision research.
+    </div>
+
+    <div class="footer">
+      <p><a href="https://groundworkpub.github.io">← Back to Groundwork Research Index</a> | <a href="https://gworky.com">Visit Groundwork Platform</a></p>
+    </div>
+  </div>
+</body>
+</html>

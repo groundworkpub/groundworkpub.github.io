@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to optimize spillover experiments for better data accuracy — Groundwork Research Whitepaper</title>
+  <meta name="description" content="Learn how to optimize spillover experiments to increase data accuracy and sample efficiency by up to 100% using robust statistical design and IV estimators.">
+  <link rel="canonical" href="https://gworky.com/article/optimizing-spillover-experiment-design">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="How to optimize spillover experiments for better data accuracy">
+  <meta property="og:description" content="Learn how to optimize spillover experiments to increase data accuracy and sample efficiency by up to 100% using robust statistical design and IV estimators.">
+  <meta property="og:url" content="https://gworky.com/article/optimizing-spillover-experiment-design">
+  <meta property="og:type" content="article">
+  <style>
+    :root { --bg: #0A192F; --card: #112240; --text: #CCD6F6; --heading: #FFFFFF; --accent: #10B981; --muted: #8892B0; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif; background: var(--bg); color: var(--text); line-height: 1.7; padding: 2rem 1rem; }
+    .container { max-width: 800px; margin: 0 auto; background: var(--card); padding: 2.5rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+    .badge { display: inline-block; background: rgba(16, 185, 129, 0.15); color: var(--accent); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.05em; padding: 0.3rem 0.8rem; border-radius: 9999px; margin-bottom: 1.5rem; text-transform: uppercase; }
+    h1 { color: var(--heading); font-size: 2rem; line-height: 1.3; margin-bottom: 1.2rem; font-family: Georgia, serif; }
+    h2 { color: var(--heading); font-size: 1.4rem; margin: 2rem 0 1rem; }
+    h3 { color: var(--heading); font-size: 1.15rem; margin: 1.5rem 0 0.8rem; }
+    p { margin-bottom: 1.2rem; }
+    ul { margin-left: 1.5rem; margin-bottom: 1.2rem; }
+    li { margin-bottom: 0.5rem; }
+    .canonical-box { background: rgba(16, 185, 129, 0.08); border-left: 4px solid var(--accent); padding: 1.2rem; border-radius: 6px; margin: 2rem 0; font-size: 0.95rem; }
+    .canonical-box a { color: var(--accent); font-weight: bold; text-decoration: underline; }
+    .footer { margin-top: 3rem; pt-3; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.85rem; color: var(--muted); text-align: center; }
+    .footer a { color: var(--text); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge">Groundwork Open Research  •  MONEY</div>
+    <h1>How to optimize spillover experiments for better data accuracy</h1>
+
+    <div class="canonical-box">
+      <strong>Primary Citation Notice:</strong> This research paper is part of the Groundwork Knowledge Base. For live calculators, verified data sets, and community discussion, explore the original publication: <br>
+      👉 <a href="https://gworky.com/article/optimizing-spillover-experiment-design" rel="canonical">Read the Full Study on Groundwork: How to optimize spillover experiments for better data accuracy</a>
+    </div>
+
+    <main>
+      <p>A spillover experiment is a research trial designed to measure how an intervention applied to one group affects the outcomes of other individuals within the same network. By analyzing these indirect effects, researchers can determine the broader impact of a policy, such as how a vaccine campaign might protect unvaccinated neighbors or how a marketing discount influences non-purchasing peers.</p>
+<p>Recent research from the National Bureau of Economic Research (NBER) indicates that optimizing the distribution of treatment assignments can increase the effective sample size of these experiments by 50% to 100% or more (Borusyak, Hull, &amp; Munro, 2024). When you structure your experiment to maximize signal strength while balancing the diffusion of treatment effects, you significantly reduce the variance of your results.</p>
+<h2>How does treatment assignment affect spillover measurement?</h2>
+<p>The optimal treatment assignment in a spillover experiment is one that balances the intensity of the treatment signal against the need to maintain variation across the network. By using a regression-based approach that accounts for the exposure mapping—the mathematical relationship between your treatment and the surrounding network—you minimize the worst-case asymptotic variance in your estimates (Borusyak et al., 2024). This means that instead of assigning treatments randomly, you apply them in a way that ensures the spillover effects are distinct and measurable, rather than blurred by noise.</p>
+<p>In practice, this requires a shift from simple randomized controlled trials (RCTs) toward a design that considers the structure of your network. If your experiment is too concentrated, you may fail to see the spillover; if it is too diffuse, the signal becomes weak and indistinguishable from random data fluctuations. A robust design identifies the &quot;sweet spot&quot; where the treatment group and the spillover group provide the most statistical leverage.</p>
+<h2>What is the role of the recentered instrumental variable estimator?</h2>
+<p>A recentered instrumental variable (IV) estimator is a statistical tool used to isolate the causal effect of spillovers by accounting for the random nature of treatment assignment. Because spillover effects often correlate with underlying network characteristics, standard regression models can produce biased results. The recentered IV approach adjusts for these correlations, allowing you to extract a cleaner, more reliable signal from the observed data (Borusyak et al., 2024).</p>
+<p>When you apply this estimator, you are essentially correcting for the &quot;noise&quot; created by the network&#39;s structure. This method is particularly effective in clustered settings, such as classrooms or villages, where participants are naturally grouped together. By recentering the data, you ensure that the observed outcomes are tied specifically to the intervention rather than to the pre-existing traits of the network members.</p>
+<h2>How can you apply these tools to general networks?</h2>
+<p>For complex or large-scale networks, you can use computationally tractable approximations to design experiments that would otherwise be too difficult to map mathematically. While exact optimization is ideal for small, well-defined groups, general networks often require simplified models that approximate the ideal treatment distribution without requiring exhaustive computing power (Borusyak et al., 2024). These approximations are highly effective in bipartite settings, where two distinct groups interact in a predictable way.</p>
+<p>To implement this, you should first map your network to identify the exposure pathways. Once the pathways are identified, use the approximation tools to determine the optimal density of your treatment assignments. This allows you to scale your experiment to larger populations while maintaining the statistical rigor of a smaller, more controlled study.</p>
+<h2>Why should you prioritize spillover analysis in development economics?</h2>
+<p>Spillover analysis is critical in development economics because it captures the total welfare impact of a policy, rather than just the direct effect on the recipient. Studies have shown that policies designed for individuals often have massive ripple effects that traditional experiments miss, leading to an underestimation of the policy&#39;s true cost-effectiveness (Borusyak et al., 2024). By using the new design tools discussed here, researchers can prove the efficacy of interventions that might otherwise appear to have negligible impacts.</p>
+<p>For example, in a microfinance program, the spillover effect might include the economic benefit to the entire village, not just the borrower. If you fail to measure these spillovers, you are effectively ignoring a large portion of the intervention&#39;s success. Implementing a robust design allows you to capture these externalities accurately, providing better data for future financial and social policy decisions.</p>
+<h2>Practical steps for your next experiment</h2>
+<p>To improve the accuracy of your spillover experiments, follow these steps:</p>
+<p>1. Map your exposure: Define exactly how one person’s treatment is expected to influence another. Are you looking at geographic proximity, social connection, or economic interaction?
+2. Select your assignment strategy: Avoid simple random assignment if your network is clustered. Instead, use a distribution that spreads the treatment to maximize the variation of spillover exposure.
+3. Utilize a recentered IV estimator: When analyzing your data, do not rely on standard OLS regression. Use a recentered instrumental variable approach to account for the assignment process and network noise.
+4. Validate with semi-synthetic testing: Before running the full experiment, simulate your design using existing data to see how the estimator performs under different assignment distributions.
+5. Optimize for sample size: Use the standard error reduction metrics to ensure you are maximizing the effective sample size, which reduces the number of participants required to achieve statistical significance.</p>
+
+    </main>
+
+    <div class="canonical-box" style="margin-top: 2.5rem;">
+      <strong>Authoritative Reference:</strong> Published and peer-verified on <a href="https://gworky.com/article/optimizing-spillover-experiment-design">https://gworky.com</a>. Copyright &copy; Groundwork. Evidence-based decision research.
+    </div>
+
+    <div class="footer">
+      <p><a href="https://groundworkpub.github.io">← Back to Groundwork Research Index</a> | <a href="https://gworky.com">Visit Groundwork Platform</a></p>
+    </div>
+  </div>
+</body>
+</html>

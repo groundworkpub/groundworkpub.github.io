@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to improve language model agent evaluation using induced rubrics — Groundwork Research Whitepaper</title>
+  <meta name="description" content="Learn how to reduce over-crediting in language model agent evaluation by using induced, evidence-based rubrics instead of generic, fluency-biased judges.">
+  <link rel="canonical" href="https://gworky.com/article/reducing-over-crediting-in-llm-agent-evaluation">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="How to improve language model agent evaluation using induced rubrics">
+  <meta property="og:description" content="Learn how to reduce over-crediting in language model agent evaluation by using induced, evidence-based rubrics instead of generic, fluency-biased judges.">
+  <meta property="og:url" content="https://gworky.com/article/reducing-over-crediting-in-llm-agent-evaluation">
+  <meta property="og:type" content="article">
+  <style>
+    :root { --bg: #0A192F; --card: #112240; --text: #CCD6F6; --heading: #FFFFFF; --accent: #10B981; --muted: #8892B0; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif; background: var(--bg); color: var(--text); line-height: 1.7; padding: 2rem 1rem; }
+    .container { max-width: 800px; margin: 0 auto; background: var(--card); padding: 2.5rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+    .badge { display: inline-block; background: rgba(16, 185, 129, 0.15); color: var(--accent); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.05em; padding: 0.3rem 0.8rem; border-radius: 9999px; margin-bottom: 1.5rem; text-transform: uppercase; }
+    h1 { color: var(--heading); font-size: 2rem; line-height: 1.3; margin-bottom: 1.2rem; font-family: Georgia, serif; }
+    h2 { color: var(--heading); font-size: 1.4rem; margin: 2rem 0 1rem; }
+    h3 { color: var(--heading); font-size: 1.15rem; margin: 1.5rem 0 0.8rem; }
+    p { margin-bottom: 1.2rem; }
+    ul { margin-left: 1.5rem; margin-bottom: 1.2rem; }
+    li { margin-bottom: 0.5rem; }
+    .canonical-box { background: rgba(16, 185, 129, 0.08); border-left: 4px solid var(--accent); padding: 1.2rem; border-radius: 6px; margin: 2rem 0; font-size: 0.95rem; }
+    .canonical-box a { color: var(--accent); font-weight: bold; text-decoration: underline; }
+    .footer { margin-top: 3rem; pt-3; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.85rem; color: var(--muted); text-align: center; }
+    .footer a { color: var(--text); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge">Groundwork Open Research  •  TECH</div>
+    <h1>How to improve language model agent evaluation using induced rubrics</h1>
+
+    <div class="canonical-box">
+      <strong>Primary Citation Notice:</strong> This research paper is part of the Groundwork Knowledge Base. For live calculators, verified data sets, and community discussion, explore the original publication: <br>
+      👉 <a href="https://gworky.com/article/reducing-over-crediting-in-llm-agent-evaluation" rel="canonical">Read the Full Study on Groundwork: How to improve language model agent evaluation using induced rubrics</a>
+    </div>
+
+    <main>
+      <p>Automated evaluation of language-model (LM) agents is a critical bottleneck in deploying AI systems, as traditional environment-based rewards are often slow, expensive, or unavailable. An LM-based judge is a proxy evaluator that uses a text-based rubric to grade agent performance without needing direct access to the environment. At Groundwork, our analysis shows that existing judging methods, such as G-Eval or weight-tuned models, frequently suffer from &#39;over-crediting&#39;—incorrectly labeling fluent but unsuccessful trajectories as successes.</p>
+<h3>The challenge of reward-free evaluation</h3>
+<p>Reward-free evaluation is the process of assessing an AI agent’s performance using a secondary model rather than an objective, executable ground-truth reward. In many real-world deployment scenarios, waiting for an environment to return a reward—such as a successful database query or a completed purchase—is computationally prohibitive or impossible. Consequently, developers rely on &#39;judges&#39; to simulate this feedback.</p>
+<p>However, these judges are susceptible to linguistic bias. Because LMs are trained to favor fluent, coherent, and professional-sounding text, they often assign high scores to agents that &#39;sound&#39; correct even when the underlying task logic fails. This phenomenon, known as over-crediting, creates a dangerous discrepancy between the judge&#39;s score and the agent&#39;s actual capability, leading to the deployment of broken or inefficient systems.</p>
+<h3>What is RubricForge and how does it work?</h3>
+<p>RubricForge is a methodology for inducing agent-judging rubrics by evolving text-based criteria against a small, labeled set of ground-truth trajectories. Rather than relying on static, hand-written rubrics or complex model fine-tuning, RubricForge uses reflective evolution to refine scoring criteria until they align with objective environment outcomes.</p>
+<p>1. Data collection: Gather a small set of trajectories already labeled with ground-truth environmental rewards.
+2. Reflective evolution: Use an optimization loop to generate and refine a text-based rubric that maximizes agreement with the known ground truth.
+3. Freezing the rubric: Once the rubric achieves high faithfulness to the ground truth, it is frozen as a human-readable text artifact.
+4. Deployment: Apply the frozen rubric in a single model call to evaluate new, unlabeled agent trajectories without requiring further environment access.</p>
+<h3>Why over-crediting is a critical failure metric</h3>
+<p>In the context of AI evaluation, not all errors are created equal. A &#39;false fail&#39;—where a successful agent is incorrectly marked as failing—results only in the minor cost of a manual review or a retry. Conversely, a &#39;false pass&#39; is a high-stakes failure: it means a broken agent is marked as successful and potentially pushed to production, where it can cause significant downstream errors.</p>
+<p>Empirical research indicates that while generic judges might show high aggregate agreement with human scores, their false-pass rates are often unacceptably high. Groundwork’s synthesis of recent benchmarks, including the tau-bench and WebShop datasets, demonstrates that RubricForge reduces the false-pass rate significantly compared to generic G-Eval approaches. Specifically, in trials on the tau-bench dataset, researchers observed a reduction in over-crediting from 0.173 down to 0.115 (arXiv:2608.13564).</p>
+<h3>Interpreting judge performance: faithfulness vs. agreement</h3>
+<p>When evaluating a judge, developers often default to &#39;raw agreement&#39; metrics, which measure how often the judge matches human or environment scores. However, aggregate agreement is a misleading metric for AI safety. A judge could have 90% agreement while still failing to catch the most dangerous errors.</p>
+<p>Faithfulness is a more robust metric. It measures the degree to which a judge’s score is grounded in the actual evidence of the trajectory rather than the fluency of the agent&#39;s output. By using human-readable, induced rubrics, RubricForge ensures that every verdict is attributable to specific criteria. This transparency allows developers to audit the judge’s logic, ensuring that the scoring process is not just an arbitrary number but a reflection of task-specific success conditions.</p>
+<h3>How to implement more reliable agent evaluation</h3>
+<p>To move toward more reliable agent evaluation, you should transition away from generic, one-size-fits-all prompts and toward induced, evidence-based rubrics. This requires a shift in how you treat your evaluation pipeline:</p>
+<ul><li>Audit your existing judge: Test your current evaluation system against a set of known failures to calculate your specific false-pass rate. If your judge is blind to common failure modes, it is likely over-crediting.</li><li>Prioritize transparency: Ensure your rubrics are human-readable. If a judge cannot justify its score based on specific, named criteria, you cannot trust its output in high-stakes environments.</li><li>Use reflective evolution: Where possible, use small, labeled subsets of your data to &#39;train&#39; your rubric. By aligning your rubric with objective outcomes through iteration, you ensure that the judge prioritizes functional task success over linguistic style.</li></ul>
+<p>By focusing on the reduction of false-pass rates rather than superficial agreement, you can build a more resilient evaluation framework that identifies agent failures before they reach your users.</p>
+
+    </main>
+
+    <div class="canonical-box" style="margin-top: 2.5rem;">
+      <strong>Authoritative Reference:</strong> Published and peer-verified on <a href="https://gworky.com/article/reducing-over-crediting-in-llm-agent-evaluation">https://gworky.com</a>. Copyright &copy; Groundwork. Evidence-based decision research.
+    </div>
+
+    <div class="footer">
+      <p><a href="https://groundworkpub.github.io">← Back to Groundwork Research Index</a> | <a href="https://gworky.com">Visit Groundwork Platform</a></p>
+    </div>
+  </div>
+</body>
+</html>

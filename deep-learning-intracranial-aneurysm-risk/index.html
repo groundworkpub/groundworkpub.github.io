@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Using deep learning to identify unstable intracranial aneurysms — Groundwork Research Whitepaper</title>
+  <meta name="description" content="Learn how new deep learning technology is improving the identification of unstable intracranial aneurysms using high-resolution vessel wall imaging.">
+  <link rel="canonical" href="https://gworky.com/article/deep-learning-intracranial-aneurysm-risk">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Using deep learning to identify unstable intracranial aneurysms">
+  <meta property="og:description" content="Learn how new deep learning technology is improving the identification of unstable intracranial aneurysms using high-resolution vessel wall imaging.">
+  <meta property="og:url" content="https://gworky.com/article/deep-learning-intracranial-aneurysm-risk">
+  <meta property="og:type" content="article">
+  <style>
+    :root { --bg: #0A192F; --card: #112240; --text: #CCD6F6; --heading: #FFFFFF; --accent: #10B981; --muted: #8892B0; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif; background: var(--bg); color: var(--text); line-height: 1.7; padding: 2rem 1rem; }
+    .container { max-width: 800px; margin: 0 auto; background: var(--card); padding: 2.5rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+    .badge { display: inline-block; background: rgba(16, 185, 129, 0.15); color: var(--accent); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.05em; padding: 0.3rem 0.8rem; border-radius: 9999px; margin-bottom: 1.5rem; text-transform: uppercase; }
+    h1 { color: var(--heading); font-size: 2rem; line-height: 1.3; margin-bottom: 1.2rem; font-family: Georgia, serif; }
+    h2 { color: var(--heading); font-size: 1.4rem; margin: 2rem 0 1rem; }
+    h3 { color: var(--heading); font-size: 1.15rem; margin: 1.5rem 0 0.8rem; }
+    p { margin-bottom: 1.2rem; }
+    ul { margin-left: 1.5rem; margin-bottom: 1.2rem; }
+    li { margin-bottom: 0.5rem; }
+    .canonical-box { background: rgba(16, 185, 129, 0.08); border-left: 4px solid var(--accent); padding: 1.2rem; border-radius: 6px; margin: 2rem 0; font-size: 0.95rem; }
+    .canonical-box a { color: var(--accent); font-weight: bold; text-decoration: underline; }
+    .footer { margin-top: 3rem; pt-3; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.85rem; color: var(--muted); text-align: center; }
+    .footer a { color: var(--text); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge">Groundwork Open Research  •  BODY</div>
+    <h1>Using deep learning to identify unstable intracranial aneurysms</h1>
+
+    <div class="canonical-box">
+      <strong>Primary Citation Notice:</strong> This research paper is part of the Groundwork Knowledge Base. For live calculators, verified data sets, and community discussion, explore the original publication: <br>
+      👉 <a href="https://gworky.com/article/deep-learning-intracranial-aneurysm-risk" rel="canonical">Read the Full Study on Groundwork: Using deep learning to identify unstable intracranial aneurysms</a>
+    </div>
+
+    <main>
+      <p>A dual-phase vessel wall MRI deep learning framework is a computational tool that uses high-resolution imaging data to predict which intracranial aneurysms are at a higher risk of rupture. By analyzing both non-contrast and contrast-enhanced images, this technology helps clinicians identify &#39;unstable&#39; phenotypes that may require more aggressive clinical monitoring or intervention.</p>
+<p>Recent research published in a multicenter study demonstrates that this artificial intelligence approach, specifically the Wall-Constrained Encoding Network (WCE-Net), achieves high diagnostic accuracy in identifying aneurysm stability across different hospital environments. The study suggests that combining local wall data with broader spatial context provides a more comprehensive assessment than traditional visual inspection alone.</p>
+<h2>What are unstable intracranial aneurysm phenotypes?</h2>
+<p>An unstable intracranial aneurysm phenotype is a specific set of biological and structural characteristics that indicate a high likelihood of growth, symptomatic presentation, or rupture. These phenotypes are often identified by irregularities in the vessel wall, such as focal wall thickening, thinning, or abnormal enhancement patterns observed during high-resolution vessel wall imaging (HR-VWI).</p>
+<p>According to research data, identifying these unstable features is critical because not all aneurysms behave the same way. While many aneurysms remain asymptomatic and stable throughout a patient&#39;s life, unstable ones pose a significant risk of subarachnoid hemorrhage. The use of deep learning models allows for the automated detection of these subtle wall abnormalities that might be overlooked during manual clinical review. In the multicenter study, the model successfully identified these high-risk features with an area under the receiver operating characteristic curve (AUC) of up to 0.908, indicating high diagnostic performance.</p>
+<h2>How does the deep learning framework analyze aneurysm walls?</h2>
+<p>The deep learning framework functions by fusing two distinct types of data: localized wall-specific features and broader spatial context. This dual-phase approach is necessary because an aneurysm&#39;s risk is not just determined by the wall itself, but also by how the aneurysm interacts with the surrounding vascular structure.</p>
+<p>1. Data collection: The process begins with non-contrast and contrast-enhanced high-resolution vessel wall imaging (HR-VWI).
+2. Feature extraction: The Wall-Constrained Encoding Network (WCE-Net) isolates the specific signal intensity and structural properties of the aneurysm wall.
+3. Spatial context analysis: A transfer-learning U-Net with Nested Transformers (UNesT) branch assesses the larger anatomical environment surrounding the aneurysm.
+4. Fusion: The model uses logit-level stacking to combine these two branches into a final prediction of stability.</p>
+<p>By integrating these layers, the model creates a more nuanced picture of the aneurysm, accounting for both the immediate wall integrity and the hemodynamics implied by the local geometry.</p>
+<h2>Can this technology be used in clinical practice?</h2>
+<p>While the technology shows significant promise, its current application remains within the realm of research and clinical validation. The multicenter nature of the study, which included 629 patients and 773 aneurysms across three different centers, serves as a vital step in proving that the model is robust enough to perform consistently regardless of the specific MRI scanner or imaging protocols used at a given facility.</p>
+<p>One of the most important aspects of this framework is its &#39;explainability.&#39; The study employed three-dimensional gradient-weighted class activation mapping (Grad-CAM) to project the model’s &#39;attention&#39; onto a 3D reconstruction of the aneurysm. This allows radiologists to see exactly which parts of the wall the AI identified as high-risk, providing a visual confirmation that aligns with known high-signal regions on HR-VWI. This transparency is essential for building clinician trust in automated diagnostic tools.</p>
+<h2>What are the limitations and future steps?</h2>
+<p>Despite the high performance metrics reported in recent studies, deep learning models for aneurysm assessment face several hurdles before widespread clinical adoption. These include the requirement for high-resolution imaging, which may not be available in all clinical settings, and the need for standardized data formatting across different hospital systems.</p>
+<p>Furthermore, the model’s performance—while strong—still showed slight variations between the development cohort (AUC 0.908) and the external validation cohorts (AUC 0.855 to 0.857). This suggests that while the model is highly effective, ongoing calibration is necessary to ensure it maintains accuracy when faced with diverse patient populations and varying imaging hardware. Future steps include prospective trials to determine if the use of this AI model directly improves patient outcomes, such as reduced rupture rates or more timely surgical intervention.</p>
+<h2>How should patients approach this information?</h2>
+<p>If you have been diagnosed with an intracranial aneurysm, your primary point of contact remains your neurosurgeon or neurologist. You should ask your care team about the specific imaging protocols they use, such as whether high-resolution vessel wall imaging is part of your monitoring routine. While AI-assisted diagnostics are not yet standard in every clinic, they represent the future of personalized risk assessment. Understanding that your medical team is looking at both the size and the biological stability of the aneurysm wall is a good starting point for your next consultation.</p>
+
+    </main>
+
+    <div class="canonical-box" style="margin-top: 2.5rem;">
+      <strong>Authoritative Reference:</strong> Published and peer-verified on <a href="https://gworky.com/article/deep-learning-intracranial-aneurysm-risk">https://gworky.com</a>. Copyright &copy; Groundwork. Evidence-based decision research.
+    </div>
+
+    <div class="footer">
+      <p><a href="https://groundworkpub.github.io">← Back to Groundwork Research Index</a> | <a href="https://gworky.com">Visit Groundwork Platform</a></p>
+    </div>
+  </div>
+</body>
+</html>

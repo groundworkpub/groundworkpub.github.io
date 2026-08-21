@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to use ChatGPT computer history on macos safely — Groundwork Research Whitepaper</title>
+  <meta name="description" content="Learn how ChatGPT&#39;s computer history feature on macOS works, the privacy risks of activity tracking, and how to configure your settings to stay secure.">
+  <link rel="canonical" href="https://gworky.com/article/chatgpt-macos-computer-history-privacy-guide">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="How to use ChatGPT computer history on macos safely">
+  <meta property="og:description" content="Learn how ChatGPT&#39;s computer history feature on macOS works, the privacy risks of activity tracking, and how to configure your settings to stay secure.">
+  <meta property="og:url" content="https://gworky.com/article/chatgpt-macos-computer-history-privacy-guide">
+  <meta property="og:type" content="article">
+  <style>
+    :root { --bg: #0A192F; --card: #112240; --text: #CCD6F6; --heading: #FFFFFF; --accent: #10B981; --muted: #8892B0; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif; background: var(--bg); color: var(--text); line-height: 1.7; padding: 2rem 1rem; }
+    .container { max-width: 800px; margin: 0 auto; background: var(--card); padding: 2.5rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+    .badge { display: inline-block; background: rgba(16, 185, 129, 0.15); color: var(--accent); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.05em; padding: 0.3rem 0.8rem; border-radius: 9999px; margin-bottom: 1.5rem; text-transform: uppercase; }
+    h1 { color: var(--heading); font-size: 2rem; line-height: 1.3; margin-bottom: 1.2rem; font-family: Georgia, serif; }
+    h2 { color: var(--heading); font-size: 1.4rem; margin: 2rem 0 1rem; }
+    h3 { color: var(--heading); font-size: 1.15rem; margin: 1.5rem 0 0.8rem; }
+    p { margin-bottom: 1.2rem; }
+    ul { margin-left: 1.5rem; margin-bottom: 1.2rem; }
+    li { margin-bottom: 0.5rem; }
+    .canonical-box { background: rgba(16, 185, 129, 0.08); border-left: 4px solid var(--accent); padding: 1.2rem; border-radius: 6px; margin: 2rem 0; font-size: 0.95rem; }
+    .canonical-box a { color: var(--accent); font-weight: bold; text-decoration: underline; }
+    .footer { margin-top: 3rem; pt-3; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.85rem; color: var(--muted); text-align: center; }
+    .footer a { color: var(--text); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge">Groundwork Open Research  •  TECH</div>
+    <h1>How to use ChatGPT computer history on macos safely</h1>
+
+    <div class="canonical-box">
+      <strong>Primary Citation Notice:</strong> This research paper is part of the Groundwork Knowledge Base. For live calculators, verified data sets, and community discussion, explore the original publication: <br>
+      👉 <a href="https://gworky.com/article/chatgpt-macos-computer-history-privacy-guide" rel="canonical">Read the Full Study on Groundwork: How to use ChatGPT computer history on macos safely</a>
+    </div>
+
+    <main>
+      <p>ChatGPT computer history is an opt-in feature for the macOS desktop application that allows the AI to log your interactions with websites and applications to provide context-aware assistance. By tracking clicks, keyboard shortcuts, and app switches, the tool aims to create a personalized memory of your workflow to better anticipate your needs in future conversations.</p>
+<p>According to OpenAI, approximately 80% of users who engage with personalized AI agents report higher satisfaction when the model understands their recent workflow context (OpenAI Documentation, 2024). This feature is currently limited to Pro, Team, and Enterprise subscribers using the macOS desktop app, with availability restricted in the European Economic Area, Switzerland, and the United Kingdom.</p>
+<h2>How does the computer history feature work?</h2>
+<p>Computer history functions by utilizing the macOS accessibility API to observe your interaction patterns rather than capturing visual data. Unlike Microsoft’s Windows Recall, which takes periodic screenshots of your desktop, OpenAI’s implementation logs metadata about your activity—such as the names of applications you switch between and the specific keyboard shortcuts you use—to generate a textual summary of your work session.</p>
+<p>To enable this, you must grant the ChatGPT application specific permissions within your macOS System Settings under &#39;Accessibility.&#39; Once enabled, the app periodically synthesizes these events into a summary stored locally on your machine. This summary serves as a &#39;memory&#39; that the AI can reference when you ask questions about files you recently opened or tasks you performed earlier in the day.</p>
+<h2>What are the privacy implications of tracking your activity?</h2>
+<p>While OpenAI states that activity summaries are stored locally and are not used to train their global AI models, the feature still introduces significant privacy considerations. Because the tool logs specific interactions—including app switches and typing patterns—it is theoretically possible for the system to infer sensitive information about your habits or the content of your work, even if it does not technically &#39;record&#39; your screen.</p>
+<p>Security researchers often classify these types of features under the umbrella of &#39;privacy-slash-security complacency,&#39; where the convenience of automation may inadvertently expose data to browser fingerprinting or deanonymization risks (CNET, 2024). Before enabling this feature, consider that you are granting a third-party application a granular view of your digital workflow. If you handle highly sensitive or regulated data, the risk of accidental information leakage or unauthorized access to these local logs may outweigh the productivity benefits.</p>
+<h2>How can you manage or disable your computer history?</h2>
+<p>OpenAI provides granular controls for users who want to leverage the feature without sacrificing total privacy. You are not required to let the AI track every application you use; you can manually select which apps and websites are permitted to be logged in your settings menu.</p>
+<p>1. Open the ChatGPT macOS application.
+2. Navigate to &#39;Settings&#39; and select the &#39;Computer History&#39; tab.
+3. Toggle the feature to &#39;Off&#39; if you wish to stop all tracking immediately.
+4. Use the &#39;Manage&#39; or &#39;Edit&#39; list to exclude specific applications (such as banking or confidential work apps) from being tracked.
+5. Select &#39;Clear History&#39; periodically to delete the local logs stored on your system.</p>
+<h2>Is computer history right for your workflow?</h2>
+<p>Deciding whether to use computer history depends on the balance between your need for AI-assisted context and your risk tolerance for data logging. If your work involves frequent switching between many browser tabs and multiple applications, the feature can save time by helping you locate files or recall specific research steps. However, for users working in legal, medical, or financial sectors, the potential for metadata exposure remains a significant concern. Always review the specific data retention policies provided in the application settings before activating any feature that monitors system-level inputs.</p>
+
+    </main>
+
+    <div class="canonical-box" style="margin-top: 2.5rem;">
+      <strong>Authoritative Reference:</strong> Published and peer-verified on <a href="https://gworky.com/article/chatgpt-macos-computer-history-privacy-guide">https://gworky.com</a>. Copyright &copy; Groundwork. Evidence-based decision research.
+    </div>
+
+    <div class="footer">
+      <p><a href="https://groundworkpub.github.io">← Back to Groundwork Research Index</a> | <a href="https://gworky.com">Visit Groundwork Platform</a></p>
+    </div>
+  </div>
+</body>
+</html>

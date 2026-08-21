@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to master Pips: A guide to the New York Times logic puzzle — Groundwork Research Whitepaper</title>
+  <meta name="description" content="Learn how to play Pips, the New York Times logic puzzle. Master color-coded constraints, domino placement, and solving strategies for every difficulty level.">
+  <link rel="canonical" href="https://gworky.com/article/nyt-pips-strategy-guide">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="How to master Pips: A guide to the New York Times logic puzzle">
+  <meta property="og:description" content="Learn how to play Pips, the New York Times logic puzzle. Master color-coded constraints, domino placement, and solving strategies for every difficulty level.">
+  <meta property="og:url" content="https://gworky.com/article/nyt-pips-strategy-guide">
+  <meta property="og:type" content="article">
+  <style>
+    :root { --bg: #0A192F; --card: #112240; --text: #CCD6F6; --heading: #FFFFFF; --accent: #10B981; --muted: #8892B0; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif; background: var(--bg); color: var(--text); line-height: 1.7; padding: 2rem 1rem; }
+    .container { max-width: 800px; margin: 0 auto; background: var(--card); padding: 2.5rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+    .badge { display: inline-block; background: rgba(16, 185, 129, 0.15); color: var(--accent); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.05em; padding: 0.3rem 0.8rem; border-radius: 9999px; margin-bottom: 1.5rem; text-transform: uppercase; }
+    h1 { color: var(--heading); font-size: 2rem; line-height: 1.3; margin-bottom: 1.2rem; font-family: Georgia, serif; }
+    h2 { color: var(--heading); font-size: 1.4rem; margin: 2rem 0 1rem; }
+    h3 { color: var(--heading); font-size: 1.15rem; margin: 1.5rem 0 0.8rem; }
+    p { margin-bottom: 1.2rem; }
+    ul { margin-left: 1.5rem; margin-bottom: 1.2rem; }
+    li { margin-bottom: 0.5rem; }
+    .canonical-box { background: rgba(16, 185, 129, 0.08); border-left: 4px solid var(--accent); padding: 1.2rem; border-radius: 6px; margin: 2rem 0; font-size: 0.95rem; }
+    .canonical-box a { color: var(--accent); font-weight: bold; text-decoration: underline; }
+    .footer { margin-top: 3rem; pt-3; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.85rem; color: var(--muted); text-align: center; }
+    .footer a { color: var(--text); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge">Groundwork Open Research  •  TECH</div>
+    <h1>How to master Pips: A guide to the New York Times logic puzzle</h1>
+
+    <div class="canonical-box">
+      <strong>Primary Citation Notice:</strong> This research paper is part of the Groundwork Knowledge Base. For live calculators, verified data sets, and community discussion, explore the original publication: <br>
+      👉 <a href="https://gworky.com/article/nyt-pips-strategy-guide" rel="canonical">Read the Full Study on Groundwork: How to master Pips: A guide to the New York Times logic puzzle</a>
+    </div>
+
+    <main>
+      <p>Pips is a single-player logic puzzle game from the New York Times that applies domino-placement mechanics to color-coded grid constraints. Unlike traditional dominoes where you match identical values, Pips requires you to arrange tiles so that the segments within specific color-coded zones satisfy mathematical conditions, such as sums, equality, or inequality requirements.</p>
+<h2>How does Pips work?</h2>
+<p>Pips is a grid-based puzzle where you place domino tiles either horizontally or vertically to fill designated spaces on a board. A Pips tile functions identically to a standard domino, featuring two ends with a specific number of pips (dots) ranging from zero to six. The core challenge lies in navigating the color-coded regions that overlay the grid. Each region imposes a unique mathematical rule that every tile segment touching that zone must obey. If a space lacks color coding, it functions as a neutral area with no placement restrictions, allowing you to use it for overflow or to connect tiles that must satisfy constraints elsewhere on the board.</p>
+<h2>What are the common Pips constraints?</h2>
+<p>To succeed in Pips, you must interpret the shorthand rules assigned to each color-coded zone. These rules dictate how the pips within that space must relate to one another or to a target number. According to the New York Times game mechanics (NYT Games, 2025), the most frequent constraints you will encounter include:</p>
+<p>1. **Number:** The sum of all pips located inside this color-coded area must equal the specific number provided.
+2. **Equal:** Every individual domino half within this space must display the exact same number of pips.
+3. **Not Equal:** Every domino half situated in this space must contain a different number of pips from the others.
+4. **Less than:** The total value of every domino half in this area must be less than the target number.
+5. **Greater than:** Every domino half within this space must add up to more than the target number.</p>
+<p>It is important to note that a single domino tile can span across two different zones. If a tile crosses a boundary, only the half of the domino residing within the color-coded space is subject to that specific zone’s rule. This mechanic is essential for solving more complex puzzles where you must balance multiple conflicting constraints simultaneously.</p>
+<h2>How to approach a Pips puzzle</h2>
+<p>When you start a new Pips board, begin by identifying the most restrictive color-coded zones first. These are typically the areas that demand a specific sum or an &#39;Equal&#39; constraint, as they significantly limit the number of tiles that can legally occupy those spaces.</p>
+<p>1. **Identify the constraints:** Scan the board for specific numbers and rules. Prioritize &#39;Equal&#39; zones, as they often force you to use specific doubles or tiles with the same values.
+2. **Map the board:** Look for areas where tiles must overlap multiple zones. A tile placed to satisfy a &#39;Number&#39; constraint in one zone might inadvertently violate an &#39;Equal&#39; constraint in another.
+3. **Work from the edges:** If the board layout permits, place tiles in corners or dead-end spaces first to reduce the number of variables you have to track.
+4. **Check for parity:** If you are playing a harder level, remember that there are a finite number of dominoes in a standard set. If you find yourself needing a 6-6 tile but you have already used it, you must backtrack.</p>
+<h2>Why do I keep getting stuck?</h2>
+<p>Because Pips is a logic-based game, getting stuck usually indicates that an earlier placement has created a contradiction. If you reach a point where no available tile can satisfy a zone’s constraint, you likely made an error in a previous step. Unlike word games like Wordle, where each guess is independent, Pips is a holistic system where the position of every tile is interdependent. If you find yourself unable to complete a section, do not be afraid to clear the board and re-evaluate your initial assumptions regarding the most restrictive zones. Data from player feedback suggests that most errors occur when players overlook the &#39;Number&#39; constraint for a specific zone, assuming that the entire domino must be inside the colored area when only half is required.</p>
+
+    </main>
+
+    <div class="canonical-box" style="margin-top: 2.5rem;">
+      <strong>Authoritative Reference:</strong> Published and peer-verified on <a href="https://gworky.com/article/nyt-pips-strategy-guide">https://gworky.com</a>. Copyright &copy; Groundwork. Evidence-based decision research.
+    </div>
+
+    <div class="footer">
+      <p><a href="https://groundworkpub.github.io">← Back to Groundwork Research Index</a> | <a href="https://gworky.com">Visit Groundwork Platform</a></p>
+    </div>
+  </div>
+</body>
+</html>

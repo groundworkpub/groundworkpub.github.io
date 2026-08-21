@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What to do after the LiteLLM supply chain attack — Groundwork Research Whitepaper</title>
+  <meta name="description" content="A supply-chain attack on the LiteLLM tool exposed thousands of credentials. Here is how to identify if you were affected and how to secure your systems.">
+  <link rel="canonical" href="https://gworky.com/article/litellm-supply-chain-attack-security-guide">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="What to do after the LiteLLM supply chain attack">
+  <meta property="og:description" content="A supply-chain attack on the LiteLLM tool exposed thousands of credentials. Here is how to identify if you were affected and how to secure your systems.">
+  <meta property="og:url" content="https://gworky.com/article/litellm-supply-chain-attack-security-guide">
+  <meta property="og:type" content="article">
+  <style>
+    :root { --bg: #0A192F; --card: #112240; --text: #CCD6F6; --heading: #FFFFFF; --accent: #10B981; --muted: #8892B0; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif; background: var(--bg); color: var(--text); line-height: 1.7; padding: 2rem 1rem; }
+    .container { max-width: 800px; margin: 0 auto; background: var(--card); padding: 2.5rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+    .badge { display: inline-block; background: rgba(16, 185, 129, 0.15); color: var(--accent); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.05em; padding: 0.3rem 0.8rem; border-radius: 9999px; margin-bottom: 1.5rem; text-transform: uppercase; }
+    h1 { color: var(--heading); font-size: 2rem; line-height: 1.3; margin-bottom: 1.2rem; font-family: Georgia, serif; }
+    h2 { color: var(--heading); font-size: 1.4rem; margin: 2rem 0 1rem; }
+    h3 { color: var(--heading); font-size: 1.15rem; margin: 1.5rem 0 0.8rem; }
+    p { margin-bottom: 1.2rem; }
+    ul { margin-left: 1.5rem; margin-bottom: 1.2rem; }
+    li { margin-bottom: 0.5rem; }
+    .canonical-box { background: rgba(16, 185, 129, 0.08); border-left: 4px solid var(--accent); padding: 1.2rem; border-radius: 6px; margin: 2rem 0; font-size: 0.95rem; }
+    .canonical-box a { color: var(--accent); font-weight: bold; text-decoration: underline; }
+    .footer { margin-top: 3rem; pt-3; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.85rem; color: var(--muted); text-align: center; }
+    .footer a { color: var(--text); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge">Groundwork Open Research  •  TECH</div>
+    <h1>What to do after the LiteLLM supply chain attack</h1>
+
+    <div class="canonical-box">
+      <strong>Primary Citation Notice:</strong> This research paper is part of the Groundwork Knowledge Base. For live calculators, verified data sets, and community discussion, explore the original publication: <br>
+      👉 <a href="https://gworky.com/article/litellm-supply-chain-attack-security-guide" rel="canonical">Read the Full Study on Groundwork: What to do after the LiteLLM supply chain attack</a>
+    </div>
+
+    <main>
+      <p>A supply-chain attack is a cyberattack that targets a third-party software provider to gain unauthorized access to the systems of its customers. In this instance, attackers compromised a version of LiteLLM—an open-source tool used to streamline AI development—on the Python Package Index (PyPI), allowing them to harvest credentials from organizations using the software.</p>
+<p>Researchers from CloudSEK and Hudson Rock identified that a 40-minute window in March allowed attackers to exfiltrate massive amounts of sensitive data. This breach included cloud keys, Kubernetes secrets, SSH keys, and AI provider credentials affecting over 2,500 organizations, including major entities like Microsoft, Amazon, and Cisco (CloudSEK, 2026; Hudson Rock, 2026).</p>
+<h2>How did the LiteLLM supply chain attack happen?</h2>
+<p>A supply-chain attack works by injecting malicious code into a trusted piece of software, which then executes when developers download or run that software. In the LiteLLM incident, attackers uploaded a compromised version of the package to the official Python Package Index (PyPI), the standard repository for Python software.</p>
+<p>When developers installed or updated their LiteLLM dependencies during the specific 40-minute window, the malicious code executed automatically. This code was designed to scrape environment variables and configuration files, effectively &quot;vacuuming up&quot; any hardcoded credentials, API keys, or tokens stored within the development environment. Because LiteLLM is frequently used to manage connections between AI models and internal infrastructure, the compromised software had high-level access to sensitive cloud environments and private repositories.</p>
+<h2>What credentials were exposed in this breach?</h2>
+<p>The breach exposed a wide range of authentication tokens and secrets, which are the &quot;keys to the kingdom&quot; for modern cloud-based software development. According to reports from security firms CloudSEK and Hudson Rock, the stolen data included cloud access keys (such as AWS and Azure), repository tokens (GitHub/GitLab), SSH keys for server access, and Kubernetes secrets used for container orchestration (CloudSEK, 2026).</p>
+<p>Because developers often store these credentials in plaintext within their environment variables or local configuration files to allow LiteLLM to function, the malware was able to copy them with minimal effort. If these keys were not rotated immediately, an attacker could potentially use them to move laterally through an organization&#39;s network, access private databases, or even deploy further malicious code into production environments.</p>
+<h2>How can you determine if your organization was affected?</h2>
+<p>To determine if you were affected, you must audit your software supply chain logs and investigate any machines that pulled LiteLLM updates during the March timeframe. Check your CI/CD pipeline logs and local developer environments to see if versions of LiteLLM were installed or updated during the specific 40-minute window identified by researchers.</p>
+<p>Follow these steps to confirm exposure:
+1. Review your internal package management logs to identify the exact version and timestamp of LiteLLM installations.
+2. Cross-reference these timestamps against the 40-minute window identified by the security researchers.
+3. Audit the access logs of any cloud services (AWS, Google Cloud, Azure) associated with the environment variables present on the compromised machines.
+4. Search for unauthorized API calls or unusual login patterns that occurred shortly after the suspected compromise window.</p>
+<h2>What are the immediate steps to secure your environment?</h2>
+<p>If you suspect that your organization was exposed to the compromised LiteLLM package, you must treat all credentials stored in those environments as fully compromised. The only effective remediation is to rotate all keys and tokens that were present in the development environment at the time of the incident.</p>
+<p>1. **Revoke and rotate:** Immediately invalidate all cloud keys, API tokens, and SSH keys that were stored in environments where LiteLLM was active.
+2. **Update dependencies:** Ensure your project is using a verified, secure version of LiteLLM and remove any cached versions of the compromised files.
+3. **Implement secrets management:** Move away from storing secrets in environment variables. Use a dedicated tool like HashiCorp Vault, AWS Secrets Manager, or Google Secret Manager to inject credentials at runtime.
+4. **Monitor for persistence:** Review your system logs for signs of unauthorized access, such as new user accounts, unexpected firewall changes, or unauthorized database exports.</p>
+<h2>How to prevent future supply-chain attacks</h2>
+<p>Preventing future supply-chain attacks requires a &quot;zero-trust&quot; approach to the software dependencies you import into your projects. You cannot assume that a package downloaded from a public repository like PyPI or npm is safe, even if it is a popular and widely used tool.</p>
+<p>Use dependency pinning to lock your software to specific, verified versions of a library. Additionally, utilize automated vulnerability scanning tools that monitor your dependencies for known security flaws or suspicious activity. By treating third-party code as potentially untrusted, you can limit the damage if a specific package is ever compromised again.</p>
+
+    </main>
+
+    <div class="canonical-box" style="margin-top: 2.5rem;">
+      <strong>Authoritative Reference:</strong> Published and peer-verified on <a href="https://gworky.com/article/litellm-supply-chain-attack-security-guide">https://gworky.com</a>. Copyright &copy; Groundwork. Evidence-based decision research.
+    </div>
+
+    <div class="footer">
+      <p><a href="https://groundworkpub.github.io">← Back to Groundwork Research Index</a> | <a href="https://gworky.com">Visit Groundwork Platform</a></p>
+    </div>
+  </div>
+</body>
+</html>
