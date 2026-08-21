@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Groundwork Digest Research Studies & Models</title>
-  <meta name="description" content="Open scientific and evidentiary research repository, real-time research digests, and interactive decision models for money, health, home, and modern tech.">
+  <title>Research Digests Research — Groundwork Open Research</title>
+  <meta name="description" content="Independent evidence-based guides, decision calculators, and research analyses for personal finance, health, home infrastructure, and technology.">
   <link rel="canonical" href="https://gworky.com/digest">
   <link rel="alternate" type="application/rss+xml" title="Groundwork RSS Feed" href="https://groundworkpub.github.io/feed.xml" />
   <meta name="robots" content="index, follow, max-image-preview:large">
   
-  <meta property="og:title" content="Groundwork Digest Research Studies & Models">
-  <meta property="og:description" content="Open scientific repository and real-time decision intelligence archives.">
+  <meta property="og:title" content="Research Digests Research — Groundwork">
+  <meta property="og:description" content="Independent evidence-based research guides and decision utilities.">
   <meta property="og:image" content="https://groundworkpub.github.io/og.svg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -19,63 +19,55 @@
     :root {
       --bg: #0A192F;
       --card: #112240;
-      --card-alt: #1E2D4A;
+      --card-alt: #162B4D;
       --text: #CCD6F6;
       --heading: #FFFFFF;
       --accent: #10B981;
-      --accent-glow: rgba(16, 185, 129, 0.15);
       --muted: #8892B0;
       --border: rgba(255, 255, 255, 0.08);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif; background: var(--bg); color: var(--text); line-height: 1.6; padding-top: 70px; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif; background: var(--bg); color: var(--text); line-height: 1.7; padding-top: 64px; }
     
-    .site-header { position: fixed; top: 0; left: 0; right: 0; background: rgba(10, 25, 47, 0.88); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); z-index: 1000; }
-    .header-inner { max-width: 1080px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 1.5rem; }
-    .header-brand { display: flex; align-items: center; gap: 12px; }
-    .brand-logo { color: #FFFFFF; text-decoration: none; font-size: 1.1rem; display: flex; align-items: center; gap: 6px; }
-    .logo-dot { color: #10B981; }
-    .brand-sub { color: #8892B0; font-size: 0.78rem; font-weight: normal; margin-left: 4px; }
-    .live-status-pill { display: inline-flex; align-items: center; gap: 6px; background: rgba(16, 185, 129, 0.12); color: #10B981; font-size: 0.72rem; font-weight: bold; padding: 2px 8px; border-radius: 9999px; border: 1px solid rgba(16, 185, 129, 0.25); }
-    .pulse-dot { width: 6px; height: 6px; background: #10B981; border-radius: 50%; display: inline-block; animation: pulse 2s infinite; }
-    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+    .site-header { position: fixed; top: 0; left: 0; right: 0; background: rgba(10, 25, 47, 0.92); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); z-index: 1000; }
+    .header-inner { max-width: 1040px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 1.25rem; }
+    .brand-logo { color: #FFFFFF; text-decoration: none; font-size: 1.05rem; display: flex; align-items: center; gap: 6px; }
+    .logo-mark { color: var(--accent); }
+    .brand-sub { color: var(--muted); font-size: 0.8rem; font-weight: normal; margin-left: 4px; }
     
-    .header-nav { display: flex; gap: 12px; align-items: center; }
-    .nav-link { color: var(--muted); text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 4px 8px; border-radius: 6px; transition: all 0.2s; }
+    .header-nav { display: flex; gap: 8px; align-items: center; }
+    .nav-link { color: var(--muted); text-decoration: none; font-size: 0.85rem; font-weight: 500; padding: 4px 10px; border-radius: 6px; transition: all 0.2s; }
     .nav-link:hover, .nav-link.active { color: #FFFFFF; background: rgba(255, 255, 255, 0.06); }
-    .gworky-link { color: #10B981 !important; border: 1px solid rgba(16, 185, 129, 0.3); }
+    .gworky-link { color: var(--accent) !important; border: 1px solid rgba(16, 185, 129, 0.25); }
     
-    .container { max-width: 980px; margin: 2rem auto; padding: 0 1rem; }
-    .top-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 2rem; }
-    h1 { color: var(--heading); font-size: 2.3rem; margin-bottom: 0.4rem; font-family: Georgia, serif; }
-    .lead { color: var(--muted); font-size: 1.05rem; max-width: 650px; }
-    .badges-row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
-    .doi-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--accent-glow); color: var(--accent); padding: 5px 14px; border-radius: 9999px; font-size: 0.82rem; font-weight: bold; text-decoration: none; border: 1px solid rgba(16,185,129,0.3); }
-    .oc-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(59, 130, 246, 0.15); color: #60A5FA; padding: 5px 14px; border-radius: 9999px; font-size: 0.82rem; font-weight: bold; text-decoration: none; border: 1px solid rgba(59, 130, 246, 0.3); }
-    .rss-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(245, 158, 11, 0.15); color: #FBBF24; padding: 5px 14px; border-radius: 9999px; font-size: 0.82rem; font-weight: bold; text-decoration: none; border: 1px solid rgba(245, 158, 11, 0.3); }
+    .container { max-width: 960px; margin: 2rem auto; padding: 0 1.25rem; }
+    .top-header { margin-bottom: 2rem; }
+    h1 { color: var(--heading); font-size: 2.2rem; margin-bottom: 0.5rem; font-family: Georgia, serif; font-weight: normal; }
+    .lead { color: var(--muted); font-size: 1.05rem; max-width: 680px; line-height: 1.6; margin-bottom: 1rem; }
+    .meta-links { display: flex; gap: 14px; font-size: 0.82rem; color: var(--muted); align-items: center; flex-wrap: wrap; }
+    .meta-links a { color: var(--muted); text-decoration: none; }
+    .meta-links a:hover { color: var(--accent); }
     
     /* Control Toolbar */
-    .toolbar { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; margin-bottom: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
-    .search-input { width: 100%; background: #0A192F; border: 1px solid var(--border); border-radius: 8px; padding: 0.75rem 1rem; color: #FFFFFF; font-size: 0.95rem; outline: none; margin-bottom: 1rem; transition: border-color 0.2s; }
+    .toolbar { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 1.2rem; margin-bottom: 2rem; }
+    .search-input { width: 100%; background: #0A192F; border: 1px solid var(--border); border-radius: 6px; padding: 0.75rem 1rem; color: #FFFFFF; font-size: 0.95rem; outline: none; margin-bottom: 0.8rem; transition: border-color 0.2s; }
     .search-input:focus { border-color: var(--accent); }
     .filter-pills { display: flex; gap: 8px; flex-wrap: wrap; }
-    .filter-pill { background: #0A192F; color: var(--muted); border: 1px solid var(--border); border-radius: 6px; padding: 0.4rem 0.9rem; font-size: 0.82rem; font-weight: bold; cursor: pointer; transition: all 0.2s; text-decoration: none; display: inline-block; }
+    .filter-pill { background: #0A192F; color: var(--muted); border: 1px solid var(--border); border-radius: 6px; padding: 0.35rem 0.85rem; font-size: 0.82rem; font-weight: 500; cursor: pointer; transition: all 0.2s; text-decoration: none; }
     .filter-pill:hover { color: var(--heading); border-color: var(--accent); }
     .filter-pill.active { background: var(--accent); color: #0A192F; border-color: var(--accent); }
     
-    /* Cards Grid */
-    .study-card { background: var(--card); padding: 1.25rem 1.5rem; border-radius: 10px; margin-bottom: 1rem; border: 1px solid var(--border); transition: transform 0.15s, border-color 0.15s; }
-    .study-card:hover { border-color: rgba(16, 185, 129, 0.4); transform: translateY(-2px); }
-    .card-pill { font-size: 0.72rem; font-weight: bold; letter-spacing: 0.05em; padding: 2px 8px; border-radius: 4px; display: inline-block; }
-    .pill-study { background: rgba(255, 255, 255, 0.08); color: var(--accent); }
-    .pill-digest { background: var(--accent-glow); color: var(--accent); border: 1px solid rgba(16, 185, 129, 0.3); }
+    /* Cards */
+    .study-card { background: var(--card); padding: 1.25rem 1.5rem; border-radius: 8px; margin-bottom: 1rem; border: 1px solid var(--border); transition: border-color 0.2s; }
+    .study-card:hover { border-color: rgba(16, 185, 129, 0.35); }
+    .card-pill { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.05em; padding: 2px 6px; border-radius: 4px; display: inline-block; }
+    .pill-study { background: rgba(255, 255, 255, 0.06); color: var(--accent); }
+    .pill-digest { background: rgba(16, 185, 129, 0.1); color: var(--accent); }
     
-    .stats-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; font-size: 0.85rem; color: var(--muted); }
     footer { margin-top: 4rem; padding: 2rem 0; border-top: 1px solid var(--border); text-align: center; color: var(--muted); font-size: 0.85rem; }
     footer a { color: var(--accent); text-decoration: none; }
 
     @media (max-width: 640px) {
-      body { padding-top: 60px; }
       .header-nav { display: none; }
     }
   </style>
@@ -86,16 +78,15 @@
     <div class="header-inner">
       <div class="header-brand">
         <a href="../" class="brand-logo">
-          <span class="logo-dot">✦</span>
+          <span class="logo-mark">✦</span>
           <strong>Groundwork</strong>
           <span class="brand-sub">Open Research</span>
         </a>
-        <span class="live-status-pill"><span class="pulse-dot"></span> 751 Studies Live</span>
       </div>
       <nav class="header-nav" aria-label="Main Navigation">
         <a href="../" class="nav-link ">All</a>
         <a href="../money/" class="nav-link">Money</a>
-<a href="../body/" class="nav-link">Body</a>
+<a href="../body/" class="nav-link">Health</a>
 <a href="../home/" class="nav-link">Home</a>
 <a href="../tech/" class="nav-link">Tech</a>
 <a href="../life/" class="nav-link">Life</a>
@@ -109,369 +100,343 @@
 
   <div class="container">
     <header class="top-header">
-      <div>
-        <h1>Groundwork Digest Research Studies & Models</h1>
-        <p class="lead">Peer-verified decision whitepapers and real-time open intelligence digests. Connected to <a href="https://gworky.com" style="color: var(--accent); font-weight: bold;">Groundwork Media</a>.</p>
-      </div>
-      <div class="badges-row">
-        <a href="https://doi.org/10.5281/zenodo.22011567" target="_blank" rel="noopener" class="doi-badge">DOI: 10.5281/zenodo.22011567</a>
-        <a href="https://opencollective.com/gworkycom" target="_blank" rel="noopener" class="oc-badge">Open Collective</a>
-        <a href="https://groundworkpub.github.io/feed.xml" target="_blank" class="rss-badge">RSS Feed</a>
+      <h1>Research Digests Research</h1>
+      <p class="lead">Clear, evidence-backed guides and decision utilities for personal finance, clinical health, home infrastructure, and technology.</p>
+      <div class="meta-links">
+        <span>Permanent Record: <a href="https://doi.org/10.5281/zenodo.22011567" target="_blank" rel="noopener">DOI: 10.5281/zenodo.22011567</a></span>
+        <span>•</span>
+        <a href="https://groundworkpub.github.io/feed.xml">RSS Feed</a>
+        <span>•</span>
+        <a href="https://gworky.com">gworky.com</a>
       </div>
     </header>
 
     
 
     <div class="toolbar">
-      <input type="text" id="search-box" class="search-input" placeholder="Search 32 whitepapers, decision models, or intelligence digests... (Press '/' to focus)" oninput="filterCards()">
+      <input type="text" id="search-box" class="search-input" placeholder="Search research guides, health analyses, and financial models... (Press '/' to focus)" oninput="filterCards()">
       <div class="filter-pills">
-        <button class="filter-pill " onclick="setFilter('all', this)">All (751)</button>
+        <button class="filter-pill " onclick="setFilter('all', this)">All</button>
         <button class="filter-pill " onclick="setFilter('money', this)">Money</button>
-        <button class="filter-pill " onclick="setFilter('body', this)">Body</button>
+        <button class="filter-pill " onclick="setFilter('body', this)">Health</button>
         <button class="filter-pill " onclick="setFilter('home', this)">Home</button>
         <button class="filter-pill " onclick="setFilter('tech', this)">Tech</button>
-        <button class="filter-pill active" onclick="setFilter('digest', this)">News Digests (32)</button>
+        <button class="filter-pill active" onclick="setFilter('digest', this)">Digests</button>
       </div>
-    </div>
-
-    <div class="stats-bar">
-      <span id="results-count">Displaying 32 open research studies and digests</span>
-      <span>CERN Zenodo Verified • <a href="../sitemap.html" style="color: #8892B0; text-decoration: underline;">HTML Sitemap</a></span>
     </div>
 
     <div id="cards-container">
       
-        <article class="study-card" data-pillar="money" data-type="digest" data-search="what is scott bessent doing with the $32tn treasury market — and will it work? what is scott bessent doing with the $32tn treasury market — and will it work?&amp;nbsp;&amp;nbsp;financial timesu.s. bond intervention is like &#39;paying your mortgage with your credit card,&#39; jpmorgan&#39;s sullivan says&amp;nbsp;&amp;nbsp;cnbcscott bessent takes on bond vigilantes in $32tn treasury market&amp;nbsp;&amp;nbsp;financial timesan alarmed bond market gets the trump administration to act again&amp;nbsp;&amp;nbsp;ap newsbessent flags bigger debt buyback potential, coming fiscal plan&amp;nbsp;&amp;nbsp;bloomberg.com money">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
-            <span class="card-pill pill-digest">MONEY DIGEST</span>
-            <span style="color: #8892B0; font-size: 0.75rem;">Source: Financial Times</span>
+        <article class="study-card" data-pillar="money" data-type="digest" data-search="walmart stock drops 9% as sales growth slows, customers make &#39;trade-offs&#39; amid high fuel costs walmart stock drops 9% as sales growth slows, customers make &#39;trade-offs&#39; amid high fuel costs&amp;nbsp;&amp;nbsp;yahoo financewalmart stock tumbles 9% after outlook disappoints wall street&amp;nbsp;&amp;nbsp;cnbcwalmart promises price cuts after $2.9 billion tariff refund&amp;nbsp;&amp;nbsp;cnnwalmart posts slowest sales growth in years as americans tighten wallets&amp;nbsp;&amp;nbsp;the new york timeswalmart shares slump on weakest sales growth in over six years&amp;nbsp;&amp;nbsp;wsj money">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.3rem;">
+            <span class="card-pill pill-digest">DIGEST • MONEY</span>
+            <span style="color: #8892B0; font-size: 0.78rem;">Yahoo Finance</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../digest/what-is-scott-bessent-doing-with-the-32tn-treasury-market-and-will-it-work/" style="color: #FFFFFF; text-decoration: none;">What is Scott Bessent doing with the $32tn Treasury market — and will it work?</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">What is Scott Bessent doing with the $32tn Treasury market — and will it work?&amp;nbsp;&amp;nbsp;Financial TimesU.S. bond intervention is like &#39;paying your mortgage with your credit card,&#39; JPMorgan&#39;s Sullivan says&amp;nbsp;&amp;nbsp;CNBCScott Bessent takes on bond vigilantes in $32tn Treasury market&amp;nbsp;&amp;nbsp;Financial TimesAn alarmed bond market gets the Trump administration to act again&amp;nbsp;&amp;nbsp;AP NewsBessent Flags Bigger Debt Buyback Potential, Coming Fiscal Plan&amp;nbsp;&amp;nbsp;Bloomberg.com</p>
-          <a href="../digest/what-is-scott-bessent-doing-with-the-32tn-treasury-market-and-will-it-work/" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">Read Open Intelligence Digest &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../digest/walmart-stock-drops-9-as-sales-growth-slows-customers-make-trade-offs-amid-high/" style="color: #FFFFFF; text-decoration: none;">Walmart stock drops 9% as sales growth slows, customers make &#39;trade-offs&#39; amid high fuel costs</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Walmart stock drops 9% as sales growth slows, customers make &#39;trade-offs&#39; amid high fuel costs&amp;nbsp;&amp;nbsp;Yahoo FinanceWalmart stock tumbles 9% after outlook disappoints Wall Street&amp;nbsp;&amp;nbsp;CNBCWalmart promises price cuts after $2.9 billion tariff refund&amp;nbsp;&amp;nbsp;CNNWalmart Posts Slowest Sales Growth in Years as Americans Tighten Wallets&amp;nbsp;&amp;nbsp;The New York TimesWalmart Shares Slump on Weakest Sales Growth in Over Six Years&amp;nbsp;&amp;nbsp;WSJ</p>
+          <a href="../digest/walmart-stock-drops-9-as-sales-growth-slows-customers-make-trade-offs-amid-high/" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Digest &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="money" data-type="digest" data-search="what is scott bessent doing with the $32tn treasury market — and will it work? what is scott bessent doing with the $32tn treasury market — and will it work?&amp;nbsp;&amp;nbsp;financial timesu.s. bond intervention is like &#39;paying your mortgage with your credit card,&#39; jpmorgan&#39;s sullivan says&amp;nbsp;&amp;nbsp;cnbcscott bessent takes on bond vigilantes in $32tn treasury market&amp;nbsp;&amp;nbsp;financial timesan alarmed bond market gets the trump administration to act again&amp;nbsp;&amp;nbsp;ap news‘rearranging deckchairs on the titanic’: bonds erase the impact of treasury’s intervention&amp;nbsp;&amp;nbsp;nbc news money">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.3rem;">
+            <span class="card-pill pill-digest">DIGEST • MONEY</span>
+            <span style="color: #8892B0; font-size: 0.78rem;">Financial Times</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../digest/what-is-scott-bessent-doing-with-the-32tn-treasury-market-and-will-it-work/" style="color: #FFFFFF; text-decoration: none;">What is Scott Bessent doing with the $32tn Treasury market — and will it work?</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">What is Scott Bessent doing with the $32tn Treasury market — and will it work?&amp;nbsp;&amp;nbsp;Financial TimesU.S. bond intervention is like &#39;paying your mortgage with your credit card,&#39; JPMorgan&#39;s Sullivan says&amp;nbsp;&amp;nbsp;CNBCScott Bessent takes on bond vigilantes in $32tn Treasury market&amp;nbsp;&amp;nbsp;Financial TimesAn alarmed bond market gets the Trump administration to act again&amp;nbsp;&amp;nbsp;AP News‘Rearranging deckchairs on the Titanic’: Bonds erase the impact of Treasury’s intervention&amp;nbsp;&amp;nbsp;NBC News</p>
+          <a href="../digest/what-is-scott-bessent-doing-with-the-32tn-treasury-market-and-will-it-work/" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Digest &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="digest" data-search="here&#39;s how america&#39;s $40 trillion debt can hit your wallet here&#39;s how america&#39;s $40 trillion debt can hit your wallet&amp;nbsp;&amp;nbsp;axios3 things to know about the $40 trillion federal debt&amp;nbsp;&amp;nbsp;nprvance: bessent has ‘very discreet plan’ to shrink $40 trillion national debt&amp;nbsp;&amp;nbsp;the hillus debt crosses $40 trillion threshold after doubling under trump and biden&amp;nbsp;&amp;nbsp;reutersu.s. debt hits $40 trillion faster than forecasters expected&amp;nbsp;&amp;nbsp;the washington post money">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
-            <span class="card-pill pill-digest">MONEY DIGEST</span>
-            <span style="color: #8892B0; font-size: 0.75rem;">Source: Axios</span>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.3rem;">
+            <span class="card-pill pill-digest">DIGEST • MONEY</span>
+            <span style="color: #8892B0; font-size: 0.78rem;">Axios</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../digest/heres-how-americas-40-trillion-debt-can-hit-your-wallet/" style="color: #FFFFFF; text-decoration: none;">Here&#39;s how America&#39;s $40 trillion debt can hit your wallet</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Here&#39;s how America&#39;s $40 trillion debt can hit your wallet&amp;nbsp;&amp;nbsp;Axios3 things to know about the $40 trillion federal debt&amp;nbsp;&amp;nbsp;NPRVance: Bessent has ‘very discreet plan’ to shrink $40 trillion national debt&amp;nbsp;&amp;nbsp;The HillUS debt crosses $40 trillion threshold after doubling under Trump and Biden&amp;nbsp;&amp;nbsp;ReutersU.S. debt hits $40 trillion faster than forecasters expected&amp;nbsp;&amp;nbsp;The Washington Post</p>
-          <a href="../digest/heres-how-americas-40-trillion-debt-can-hit-your-wallet/" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">Read Open Intelligence Digest &rarr;</a>
-        </article>
-        
-        <article class="study-card" data-pillar="money" data-type="digest" data-search="walmart stock drops 9% as sales growth slows, customers make &#39;trade-offs&#39; amid high fuel costs walmart stock drops 9% as sales growth slows, customers make &#39;trade-offs&#39; amid high fuel costs&amp;nbsp;&amp;nbsp;yahoo financewalmart stock tumbles 9% after outlook disappoints wall street&amp;nbsp;&amp;nbsp;cnbcwalmart promises price cuts after $2.9 billion tariff refund&amp;nbsp;&amp;nbsp;cnnwalmart posts slowest sales growth in years as americans tighten wallets&amp;nbsp;&amp;nbsp;the new york timeswalmart shares slump on weakest sales growth in over six years&amp;nbsp;&amp;nbsp;wsj money">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
-            <span class="card-pill pill-digest">MONEY DIGEST</span>
-            <span style="color: #8892B0; font-size: 0.75rem;">Source: Yahoo Finance</span>
-          </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../digest/walmart-stock-drops-9-as-sales-growth-slows-customers-make-trade-offs-amid-high/" style="color: #FFFFFF; text-decoration: none;">Walmart stock drops 9% as sales growth slows, customers make &#39;trade-offs&#39; amid high fuel costs</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Walmart stock drops 9% as sales growth slows, customers make &#39;trade-offs&#39; amid high fuel costs&amp;nbsp;&amp;nbsp;Yahoo FinanceWalmart stock tumbles 9% after outlook disappoints Wall Street&amp;nbsp;&amp;nbsp;CNBCWalmart promises price cuts after $2.9 billion tariff refund&amp;nbsp;&amp;nbsp;CNNWalmart Posts Slowest Sales Growth in Years as Americans Tighten Wallets&amp;nbsp;&amp;nbsp;The New York TimesWalmart Shares Slump on Weakest Sales Growth in Over Six Years&amp;nbsp;&amp;nbsp;WSJ</p>
-          <a href="../digest/walmart-stock-drops-9-as-sales-growth-slows-customers-make-trade-offs-amid-high/" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">Read Open Intelligence Digest &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../digest/heres-how-americas-40-trillion-debt-can-hit-your-wallet/" style="color: #FFFFFF; text-decoration: none;">Here&#39;s how America&#39;s $40 trillion debt can hit your wallet</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Here&#39;s how America&#39;s $40 trillion debt can hit your wallet&amp;nbsp;&amp;nbsp;Axios3 things to know about the $40 trillion federal debt&amp;nbsp;&amp;nbsp;NPRVance: Bessent has ‘very discreet plan’ to shrink $40 trillion national debt&amp;nbsp;&amp;nbsp;The HillUS debt crosses $40 trillion threshold after doubling under Trump and Biden&amp;nbsp;&amp;nbsp;ReutersU.S. debt hits $40 trillion faster than forecasters expected&amp;nbsp;&amp;nbsp;The Washington Post</p>
+          <a href="../digest/heres-how-americas-40-trillion-debt-can-hit-your-wallet/" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Digest &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="digest" data-search="why is moderna stock down today? why is moderna stock down today?&amp;nbsp;&amp;nbsp;forbescancer vaccine from moderna, merck shows promise in late-stage trial; both stocks soar&amp;nbsp;&amp;nbsp;cnbcmoderna’s 177% surge burns shorts in ‘painful’ $5.5 billion loss&amp;nbsp;&amp;nbsp;bloomberg.commoderna’s shift to cancer company lifts stock up 177%&amp;nbsp;&amp;nbsp;the new york timeswhy did mrna, mrk, tgt stocks jump to 52-week highs today?&amp;nbsp;&amp;nbsp;yahoo finance money">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
-            <span class="card-pill pill-digest">MONEY DIGEST</span>
-            <span style="color: #8892B0; font-size: 0.75rem;">Source: Forbes</span>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.3rem;">
+            <span class="card-pill pill-digest">DIGEST • MONEY</span>
+            <span style="color: #8892B0; font-size: 0.78rem;">Forbes</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../digest/why-is-moderna-stock-down-today/" style="color: #FFFFFF; text-decoration: none;">Why Is Moderna Stock Down Today?</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Why Is Moderna Stock Down Today?&amp;nbsp;&amp;nbsp;ForbesCancer vaccine from Moderna, Merck shows promise in late-stage trial; both stocks soar&amp;nbsp;&amp;nbsp;CNBCModerna’s 177% Surge Burns Shorts in ‘Painful’ $5.5 Billion Loss&amp;nbsp;&amp;nbsp;Bloomberg.comModerna’s Shift to Cancer Company Lifts Stock Up 177%&amp;nbsp;&amp;nbsp;The New York TimesWhy Did MRNA, MRK, TGT Stocks Jump To 52-Week Highs Today?&amp;nbsp;&amp;nbsp;Yahoo Finance</p>
-          <a href="../digest/why-is-moderna-stock-down-today/" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">Read Open Intelligence Digest &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../digest/why-is-moderna-stock-down-today/" style="color: #FFFFFF; text-decoration: none;">Why Is Moderna Stock Down Today?</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Why Is Moderna Stock Down Today?&amp;nbsp;&amp;nbsp;ForbesCancer vaccine from Moderna, Merck shows promise in late-stage trial; both stocks soar&amp;nbsp;&amp;nbsp;CNBCModerna’s 177% Surge Burns Shorts in ‘Painful’ $5.5 Billion Loss&amp;nbsp;&amp;nbsp;Bloomberg.comModerna’s Shift to Cancer Company Lifts Stock Up 177%&amp;nbsp;&amp;nbsp;The New York TimesWhy Did MRNA, MRK, TGT Stocks Jump To 52-Week Highs Today?&amp;nbsp;&amp;nbsp;Yahoo Finance</p>
+          <a href="../digest/why-is-moderna-stock-down-today/" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Digest &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="digest" data-search="bond yields are climbing. here’s what that means for mortgages and other consumer borrowing bond yields are climbing. here’s what that means for mortgages and other consumer borrowing&amp;nbsp;&amp;nbsp;cnbc money">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
-            <span class="card-pill pill-digest">MONEY DIGEST</span>
-            <span style="color: #8892B0; font-size: 0.75rem;">Source: CNBC</span>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.3rem;">
+            <span class="card-pill pill-digest">DIGEST • MONEY</span>
+            <span style="color: #8892B0; font-size: 0.78rem;">CNBC</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../digest/bond-yields-are-climbing-heres-what-that-means-for-mortgages-and-other-consumer/" style="color: #FFFFFF; text-decoration: none;">Bond yields are climbing. Here’s what that means for mortgages and other consumer borrowing</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Bond yields are climbing. Here’s what that means for mortgages and other consumer borrowing&amp;nbsp;&amp;nbsp;CNBC</p>
-          <a href="../digest/bond-yields-are-climbing-heres-what-that-means-for-mortgages-and-other-consumer/" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">Read Open Intelligence Digest &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../digest/bond-yields-are-climbing-heres-what-that-means-for-mortgages-and-other-consumer/" style="color: #FFFFFF; text-decoration: none;">Bond yields are climbing. Here’s what that means for mortgages and other consumer borrowing</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Bond yields are climbing. Here’s what that means for mortgages and other consumer borrowing&amp;nbsp;&amp;nbsp;CNBC</p>
+          <a href="../digest/bond-yields-are-climbing-heres-what-that-means-for-mortgages-and-other-consumer/" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Digest &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="digest" data-search="mortgage rates dropped last week despite heightened bond market volatility: mortgage and refinance interest rates today, thursday, august 20, 2026 mortgage rates dropped last week despite heightened bond market volatility: mortgage and refinance interest rates today, thursday, august 20, 2026&amp;nbsp;&amp;nbsp;yahoo finance money">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
-            <span class="card-pill pill-digest">MONEY DIGEST</span>
-            <span style="color: #8892B0; font-size: 0.75rem;">Source: Yahoo Finance</span>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.3rem;">
+            <span class="card-pill pill-digest">DIGEST • MONEY</span>
+            <span style="color: #8892B0; font-size: 0.78rem;">Yahoo Finance</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../digest/mortgage-rates-dropped-last-week-despite-heightened-bond-market-volatility-mortg/" style="color: #FFFFFF; text-decoration: none;">Mortgage rates dropped last week despite heightened bond market volatility: Mortgage and refinance interest rates today, Thursday, August 20, 2026</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Mortgage rates dropped last week despite heightened bond market volatility: Mortgage and refinance interest rates today, Thursday, August 20, 2026&amp;nbsp;&amp;nbsp;Yahoo Finance</p>
-          <a href="../digest/mortgage-rates-dropped-last-week-despite-heightened-bond-market-volatility-mortg/" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">Read Open Intelligence Digest &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../digest/mortgage-rates-dropped-last-week-despite-heightened-bond-market-volatility-mortg/" style="color: #FFFFFF; text-decoration: none;">Mortgage rates dropped last week despite heightened bond market volatility: Mortgage and refinance interest rates today, Thursday, August 20, 2026</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Mortgage rates dropped last week despite heightened bond market volatility: Mortgage and refinance interest rates today, Thursday, August 20, 2026&amp;nbsp;&amp;nbsp;Yahoo Finance</p>
+          <a href="../digest/mortgage-rates-dropped-last-week-despite-heightened-bond-market-volatility-mortg/" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Digest &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="digest" data-search="index funds are the best inflation hedge, and you already have them index funds are the best inflation hedge, and you already have them&amp;nbsp;&amp;nbsp;bloomberg.com money">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
-            <span class="card-pill pill-digest">MONEY DIGEST</span>
-            <span style="color: #8892B0; font-size: 0.75rem;">Source: Bloomberg.com</span>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.3rem;">
+            <span class="card-pill pill-digest">DIGEST • MONEY</span>
+            <span style="color: #8892B0; font-size: 0.78rem;">Bloomberg.com</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../digest/index-funds-are-the-best-inflation-hedge-and-you-already-have-them/" style="color: #FFFFFF; text-decoration: none;">Index Funds Are the Best Inflation Hedge, and You Already Have Them</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Index Funds Are the Best Inflation Hedge, and You Already Have Them&amp;nbsp;&amp;nbsp;Bloomberg.com</p>
-          <a href="../digest/index-funds-are-the-best-inflation-hedge-and-you-already-have-them/" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">Read Open Intelligence Digest &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../digest/index-funds-are-the-best-inflation-hedge-and-you-already-have-them/" style="color: #FFFFFF; text-decoration: none;">Index Funds Are the Best Inflation Hedge, and You Already Have Them</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Index Funds Are the Best Inflation Hedge, and You Already Have Them&amp;nbsp;&amp;nbsp;Bloomberg.com</p>
+          <a href="../digest/index-funds-are-the-best-inflation-hedge-and-you-already-have-them/" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Digest &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="digest" data-search="the best index funds and how to start investing the best index funds and how to start investing&amp;nbsp;&amp;nbsp;nerdwallet money">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
-            <span class="card-pill pill-digest">MONEY DIGEST</span>
-            <span style="color: #8892B0; font-size: 0.75rem;">Source: NerdWallet</span>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.3rem;">
+            <span class="card-pill pill-digest">DIGEST • MONEY</span>
+            <span style="color: #8892B0; font-size: 0.78rem;">NerdWallet</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../digest/the-best-index-funds-and-how-to-start-investing/" style="color: #FFFFFF; text-decoration: none;">The Best Index Funds and How to Start Investing</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">The Best Index Funds and How to Start Investing&amp;nbsp;&amp;nbsp;NerdWallet</p>
-          <a href="../digest/the-best-index-funds-and-how-to-start-investing/" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">Read Open Intelligence Digest &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../digest/the-best-index-funds-and-how-to-start-investing/" style="color: #FFFFFF; text-decoration: none;">The Best Index Funds and How to Start Investing</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">The Best Index Funds and How to Start Investing&amp;nbsp;&amp;nbsp;NerdWallet</p>
+          <a href="../digest/the-best-index-funds-and-how-to-start-investing/" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Digest &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="body" data-type="digest" data-search="pa. measles outbreak has reached allegheny county pa. measles outbreak has reached allegheny county&amp;nbsp;&amp;nbsp;pittsburgh post-gazettepatient diagnosed with measles at upmc children&#39;s hospital of pittsburgh&amp;nbsp;&amp;nbsp;wtae1 measles case confirmed at upmc children’s hospital&amp;nbsp;&amp;nbsp;triblive.compotential measles exposure at millersville university and whole foods market&amp;nbsp;&amp;nbsp;lancasteronlinemeasles cases double in indiana county in past three days&amp;nbsp;&amp;nbsp;indiana gazette online body">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
-            <span class="card-pill pill-digest">BODY DIGEST</span>
-            <span style="color: #8892B0; font-size: 0.75rem;">Source: Pittsburgh Post-Gazette</span>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.3rem;">
+            <span class="card-pill pill-digest">DIGEST • BODY</span>
+            <span style="color: #8892B0; font-size: 0.78rem;">Pittsburgh Post-Gazette</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../digest/pa-measles-outbreak-has-reached-allegheny-county/" style="color: #FFFFFF; text-decoration: none;">Pa. measles outbreak has reached Allegheny County</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Pa. measles outbreak has reached Allegheny County&amp;nbsp;&amp;nbsp;Pittsburgh Post-GazettePatient diagnosed with measles at UPMC Children&#39;s Hospital of Pittsburgh&amp;nbsp;&amp;nbsp;WTAE1 measles case confirmed at UPMC Children’s Hospital&amp;nbsp;&amp;nbsp;TribLIVE.comPotential measles exposure at Millersville University and Whole Foods Market&amp;nbsp;&amp;nbsp;LancasterOnlineMeasles cases double in Indiana County in past three days&amp;nbsp;&amp;nbsp;Indiana Gazette Online</p>
-          <a href="../digest/pa-measles-outbreak-has-reached-allegheny-county/" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">Read Open Intelligence Digest &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../digest/pa-measles-outbreak-has-reached-allegheny-county/" style="color: #FFFFFF; text-decoration: none;">Pa. measles outbreak has reached Allegheny County</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Pa. measles outbreak has reached Allegheny County&amp;nbsp;&amp;nbsp;Pittsburgh Post-GazettePatient diagnosed with measles at UPMC Children&#39;s Hospital of Pittsburgh&amp;nbsp;&amp;nbsp;WTAE1 measles case confirmed at UPMC Children’s Hospital&amp;nbsp;&amp;nbsp;TribLIVE.comPotential measles exposure at Millersville University and Whole Foods Market&amp;nbsp;&amp;nbsp;LancasterOnlineMeasles cases double in Indiana County in past three days&amp;nbsp;&amp;nbsp;Indiana Gazette Online</p>
+          <a href="../digest/pa-measles-outbreak-has-reached-allegheny-county/" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Digest &rarr;</a>
         </article>
         
-        <article class="study-card" data-pillar="body" data-type="digest" data-search="ebola outbreak out of control in democratic republic of the congo, who says: ‘it is spreading faster than our ability to contain it’ ebola outbreak out of control in democratic republic of the congo, who says: ‘it is spreading faster than our ability to contain it’&amp;nbsp;&amp;nbsp;el país englishcongo&#39;s m23 rebels introduce new movement restrictions over ebola concerns&amp;nbsp;&amp;nbsp;reutersthe guardian view on the ebola outbreak in the drc: a case study in why international aid matters | editorial&amp;nbsp;&amp;nbsp;the guardianwhat to know about the outbreak of a rare kind of ebola&amp;nbsp;&amp;nbsp;pbscongo&#39;s ebola outbreak reaches 5,000 cases as it outpaces response efforts&amp;nbsp;&amp;nbsp;npr body">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
-            <span class="card-pill pill-digest">BODY DIGEST</span>
-            <span style="color: #8892B0; font-size: 0.75rem;">Source: EL PAÍS English</span>
+        <article class="study-card" data-pillar="body" data-type="digest" data-search="ebola outbreak out of control in democratic republic of the congo, who says: ‘it is spreading faster than our ability to contain it’ ebola outbreak out of control in democratic republic of the congo, who says: ‘it is spreading faster than our ability to contain it’&amp;nbsp;&amp;nbsp;el país englishcongo&#39;s m23 rebels introduce new movement restrictions over ebola concerns&amp;nbsp;&amp;nbsp;reutersthe guardian view on the ebola outbreak in the drc: a case study in why international aid matters | editorial&amp;nbsp;&amp;nbsp;the guardianwhat to know about the outbreak of a rare kind of ebola&amp;nbsp;&amp;nbsp;pbsmobile gold miners in eastern congo complicate health workers’ efforts to contain ebola&amp;nbsp;&amp;nbsp;ap news body">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.3rem;">
+            <span class="card-pill pill-digest">DIGEST • BODY</span>
+            <span style="color: #8892B0; font-size: 0.78rem;">EL PAÍS English</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../digest/ebola-outbreak-out-of-control-in-democratic-republic-of-the-congo-who-says-it-is/" style="color: #FFFFFF; text-decoration: none;">Ebola outbreak out of control in Democratic Republic of the Congo, WHO says: ‘It is spreading faster than our ability to contain it’</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Ebola outbreak out of control in Democratic Republic of the Congo, WHO says: ‘It is spreading faster than our ability to contain it’&amp;nbsp;&amp;nbsp;EL PAÍS EnglishCongo&#39;s M23 rebels introduce new movement restrictions over Ebola concerns&amp;nbsp;&amp;nbsp;ReutersThe Guardian view on the Ebola outbreak in the DRC: a case study in why international aid matters | Editorial&amp;nbsp;&amp;nbsp;The GuardianWhat to know about the outbreak of a rare kind of Ebola&amp;nbsp;&amp;nbsp;PBSCongo&#39;s Ebola outbreak reaches 5,000 cases as it outpaces response efforts&amp;nbsp;&amp;nbsp;NPR</p>
-          <a href="../digest/ebola-outbreak-out-of-control-in-democratic-republic-of-the-congo-who-says-it-is/" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">Read Open Intelligence Digest &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../digest/ebola-outbreak-out-of-control-in-democratic-republic-of-the-congo-who-says-it-is/" style="color: #FFFFFF; text-decoration: none;">Ebola outbreak out of control in Democratic Republic of the Congo, WHO says: ‘It is spreading faster than our ability to contain it’</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Ebola outbreak out of control in Democratic Republic of the Congo, WHO says: ‘It is spreading faster than our ability to contain it’&amp;nbsp;&amp;nbsp;EL PAÍS EnglishCongo&#39;s M23 rebels introduce new movement restrictions over Ebola concerns&amp;nbsp;&amp;nbsp;ReutersThe Guardian view on the Ebola outbreak in the DRC: a case study in why international aid matters | Editorial&amp;nbsp;&amp;nbsp;The GuardianWhat to know about the outbreak of a rare kind of Ebola&amp;nbsp;&amp;nbsp;PBSMobile gold miners in eastern Congo complicate health workers’ efforts to contain Ebola&amp;nbsp;&amp;nbsp;AP News</p>
+          <a href="../digest/ebola-outbreak-out-of-control-in-democratic-republic-of-the-congo-who-says-it-is/" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Digest &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="body" data-type="digest" data-search="the traditional respiratory virus season hasn’t started, but covid is already climbing the traditional respiratory virus season hasn’t started, but covid is already climbing&amp;nbsp;&amp;nbsp;cnncovid is ‘growing’ in nearly every state, cdc reports. here’s where levels are highest&amp;nbsp;&amp;nbsp;the hillis there a summer covid-19 surge this year? yep, it’s ramping up again&amp;nbsp;&amp;nbsp;nprlate summer ‘surge’ of covid-19 cases expected for sacramento county&amp;nbsp;&amp;nbsp;sacramento beeask dr. nandi: is there a covid-19 summer surge? here&#39;s what to watch for&amp;nbsp;&amp;nbsp;wxyz channel 7 body">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
-            <span class="card-pill pill-digest">BODY DIGEST</span>
-            <span style="color: #8892B0; font-size: 0.75rem;">Source: CNN</span>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.3rem;">
+            <span class="card-pill pill-digest">DIGEST • BODY</span>
+            <span style="color: #8892B0; font-size: 0.78rem;">CNN</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../digest/the-traditional-respiratory-virus-season-hasnt-started-but-covid-is-already-clim/" style="color: #FFFFFF; text-decoration: none;">The traditional respiratory virus season hasn’t started, but Covid is already climbing</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">The traditional respiratory virus season hasn’t started, but Covid is already climbing&amp;nbsp;&amp;nbsp;CNNCOVID is ‘growing’ in nearly every state, CDC reports. Here’s where levels are highest&amp;nbsp;&amp;nbsp;The HillIs there a summer COVID-19 surge this year? Yep, it’s ramping up again&amp;nbsp;&amp;nbsp;NPRLate summer ‘surge’ of COVID-19 cases expected for Sacramento County&amp;nbsp;&amp;nbsp;Sacramento BeeAsk Dr. Nandi: Is there a COVID-19 summer surge? Here&#39;s what to watch for&amp;nbsp;&amp;nbsp;WXYZ Channel 7</p>
-          <a href="../digest/the-traditional-respiratory-virus-season-hasnt-started-but-covid-is-already-clim/" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">Read Open Intelligence Digest &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../digest/the-traditional-respiratory-virus-season-hasnt-started-but-covid-is-already-clim/" style="color: #FFFFFF; text-decoration: none;">The traditional respiratory virus season hasn’t started, but Covid is already climbing</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">The traditional respiratory virus season hasn’t started, but Covid is already climbing&amp;nbsp;&amp;nbsp;CNNCOVID is ‘growing’ in nearly every state, CDC reports. Here’s where levels are highest&amp;nbsp;&amp;nbsp;The HillIs there a summer COVID-19 surge this year? Yep, it’s ramping up again&amp;nbsp;&amp;nbsp;NPRLate summer ‘surge’ of COVID-19 cases expected for Sacramento County&amp;nbsp;&amp;nbsp;Sacramento BeeAsk Dr. Nandi: Is there a COVID-19 summer surge? Here&#39;s what to watch for&amp;nbsp;&amp;nbsp;WXYZ Channel 7</p>
+          <a href="../digest/the-traditional-respiratory-virus-season-hasnt-started-but-covid-is-already-clim/" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Digest &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="body" data-type="digest" data-search="michigan holds line on vaccines for kids despite trump executive order michigan holds line on vaccines for kids despite trump executive order&amp;nbsp;&amp;nbsp;detroit free pressopinion | i helped develop the rotavirus vaccine. trump’s overhaul makes me sick.&amp;nbsp;&amp;nbsp;the washington postthe guardian view on trump’s mmr executive order: endangering the children he claims to care about | editorial&amp;nbsp;&amp;nbsp;the guardiandrugmakers uninterested in trump’s order to split up mmr vaccine&amp;nbsp;&amp;nbsp;the hilldoctor reacts to executive order calling for revamp to childhood vaccine rec­om­men­da­tions&amp;nbsp;&amp;nbsp;spectrum news ny1 body">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
-            <span class="card-pill pill-digest">BODY DIGEST</span>
-            <span style="color: #8892B0; font-size: 0.75rem;">Source: Detroit Free Press</span>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.3rem;">
+            <span class="card-pill pill-digest">DIGEST • BODY</span>
+            <span style="color: #8892B0; font-size: 0.78rem;">Detroit Free Press</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../digest/michigan-holds-line-on-vaccines-for-kids-despite-trump-executive-order/" style="color: #FFFFFF; text-decoration: none;">Michigan holds line on vaccines for kids despite Trump executive order</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Michigan holds line on vaccines for kids despite Trump executive order&amp;nbsp;&amp;nbsp;Detroit Free PressOpinion | I helped develop the rotavirus vaccine. Trump’s overhaul makes me sick.&amp;nbsp;&amp;nbsp;The Washington PostThe Guardian view on Trump’s MMR executive order: endangering the children he claims to care about | Editorial&amp;nbsp;&amp;nbsp;The GuardianDrugmakers uninterested in Trump’s order to split up MMR vaccine&amp;nbsp;&amp;nbsp;The HillDoctor reacts to executive order calling for revamp to childhood vaccine rec­om­men­da­tions&amp;nbsp;&amp;nbsp;Spectrum News NY1</p>
-          <a href="../digest/michigan-holds-line-on-vaccines-for-kids-despite-trump-executive-order/" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">Read Open Intelligence Digest &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../digest/michigan-holds-line-on-vaccines-for-kids-despite-trump-executive-order/" style="color: #FFFFFF; text-decoration: none;">Michigan holds line on vaccines for kids despite Trump executive order</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Michigan holds line on vaccines for kids despite Trump executive order&amp;nbsp;&amp;nbsp;Detroit Free PressOpinion | I helped develop the rotavirus vaccine. Trump’s overhaul makes me sick.&amp;nbsp;&amp;nbsp;The Washington PostThe Guardian view on Trump’s MMR executive order: endangering the children he claims to care about | Editorial&amp;nbsp;&amp;nbsp;The GuardianDrugmakers uninterested in Trump’s order to split up MMR vaccine&amp;nbsp;&amp;nbsp;The HillDoctor reacts to executive order calling for revamp to childhood vaccine rec­om­men­da­tions&amp;nbsp;&amp;nbsp;Spectrum News NY1</p>
+          <a href="../digest/michigan-holds-line-on-vaccines-for-kids-despite-trump-executive-order/" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Digest &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="body" data-type="digest" data-search="study: nearly 8 out of 10 young adults have cardiovascular-kidney-metabolic syndrome study: nearly 8 out of 10 young adults have cardiovascular-kidney-metabolic syndrome&amp;nbsp;&amp;nbsp;news-medical body">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
-            <span class="card-pill pill-digest">BODY DIGEST</span>
-            <span style="color: #8892B0; font-size: 0.75rem;">Source: News-Medical</span>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.3rem;">
+            <span class="card-pill pill-digest">DIGEST • BODY</span>
+            <span style="color: #8892B0; font-size: 0.78rem;">News-Medical</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../digest/study-nearly-8-out-of-10-young-adults-have-cardiovascular-kidney-metabolic-syndr/" style="color: #FFFFFF; text-decoration: none;">Study: Nearly 8 out of 10 young adults have cardiovascular-kidney-metabolic syndrome</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Study: Nearly 8 out of 10 young adults have cardiovascular-kidney-metabolic syndrome&amp;nbsp;&amp;nbsp;News-Medical</p>
-          <a href="../digest/study-nearly-8-out-of-10-young-adults-have-cardiovascular-kidney-metabolic-syndr/" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">Read Open Intelligence Digest &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../digest/study-nearly-8-out-of-10-young-adults-have-cardiovascular-kidney-metabolic-syndr/" style="color: #FFFFFF; text-decoration: none;">Study: Nearly 8 out of 10 young adults have cardiovascular-kidney-metabolic syndrome</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Study: Nearly 8 out of 10 young adults have cardiovascular-kidney-metabolic syndrome&amp;nbsp;&amp;nbsp;News-Medical</p>
+          <a href="../digest/study-nearly-8-out-of-10-young-adults-have-cardiovascular-kidney-metabolic-syndr/" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Digest &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="body" data-type="digest" data-search="study found artery damage in adults in their 20s, highlighting need for early cardiovascular risk assessment study found artery damage in adults in their 20s, highlighting need for early cardiovascular risk assessment&amp;nbsp;&amp;nbsp;www.heart.org body">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
-            <span class="card-pill pill-digest">BODY DIGEST</span>
-            <span style="color: #8892B0; font-size: 0.75rem;">Source: www.heart.org</span>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.3rem;">
+            <span class="card-pill pill-digest">DIGEST • BODY</span>
+            <span style="color: #8892B0; font-size: 0.78rem;">www.heart.org</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../digest/study-found-artery-damage-in-adults-in-their-20s-highlighting-need-for-early-car/" style="color: #FFFFFF; text-decoration: none;">Study found artery damage in adults in their 20s, highlighting need for early cardiovascular risk assessment</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Study found artery damage in adults in their 20s, highlighting need for early cardiovascular risk assessment&amp;nbsp;&amp;nbsp;www.heart.org</p>
-          <a href="../digest/study-found-artery-damage-in-adults-in-their-20s-highlighting-need-for-early-car/" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">Read Open Intelligence Digest &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../digest/study-found-artery-damage-in-adults-in-their-20s-highlighting-need-for-early-car/" style="color: #FFFFFF; text-decoration: none;">Study found artery damage in adults in their 20s, highlighting need for early cardiovascular risk assessment</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Study found artery damage in adults in their 20s, highlighting need for early cardiovascular risk assessment&amp;nbsp;&amp;nbsp;www.heart.org</p>
+          <a href="../digest/study-found-artery-damage-in-adults-in-their-20s-highlighting-need-for-early-car/" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Digest &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="body" data-type="digest" data-search="get the facts: added sugars | nutrition get the facts: added sugars | nutrition&amp;nbsp;&amp;nbsp;centers for disease control and prevention | cdc (.gov) body">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
-            <span class="card-pill pill-digest">BODY DIGEST</span>
-            <span style="color: #8892B0; font-size: 0.75rem;">Source: Centers for Disease Control and Prevention | CDC (.gov)</span>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.3rem;">
+            <span class="card-pill pill-digest">DIGEST • BODY</span>
+            <span style="color: #8892B0; font-size: 0.78rem;">Centers for Disease Control and Prevention | CDC (.gov)</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../digest/get-the-facts-added-sugars-nutrition/" style="color: #FFFFFF; text-decoration: none;">Get the Facts: Added Sugars | Nutrition</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Get the Facts: Added Sugars | Nutrition&amp;nbsp;&amp;nbsp;Centers for Disease Control and Prevention | CDC (.gov)</p>
-          <a href="../digest/get-the-facts-added-sugars-nutrition/" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">Read Open Intelligence Digest &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../digest/get-the-facts-added-sugars-nutrition/" style="color: #FFFFFF; text-decoration: none;">Get the Facts: Added Sugars | Nutrition</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Get the Facts: Added Sugars | Nutrition&amp;nbsp;&amp;nbsp;Centers for Disease Control and Prevention | CDC (.gov)</p>
+          <a href="../digest/get-the-facts-added-sugars-nutrition/" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Digest &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="body" data-type="digest" data-search="ohio state students research links between nutrition, disease prevention ohio state students research links between nutrition, disease prevention&amp;nbsp;&amp;nbsp;ohio state news body">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
-            <span class="card-pill pill-digest">BODY DIGEST</span>
-            <span style="color: #8892B0; font-size: 0.75rem;">Source: Ohio State News</span>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.3rem;">
+            <span class="card-pill pill-digest">DIGEST • BODY</span>
+            <span style="color: #8892B0; font-size: 0.78rem;">Ohio State News</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../digest/ohio-state-students-research-links-between-nutrition-disease-prevention/" style="color: #FFFFFF; text-decoration: none;">Ohio State students research links between nutrition, disease prevention</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Ohio State students research links between nutrition, disease prevention&amp;nbsp;&amp;nbsp;Ohio State News</p>
-          <a href="../digest/ohio-state-students-research-links-between-nutrition-disease-prevention/" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">Read Open Intelligence Digest &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../digest/ohio-state-students-research-links-between-nutrition-disease-prevention/" style="color: #FFFFFF; text-decoration: none;">Ohio State students research links between nutrition, disease prevention</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Ohio State students research links between nutrition, disease prevention&amp;nbsp;&amp;nbsp;Ohio State News</p>
+          <a href="../digest/ohio-state-students-research-links-between-nutrition-disease-prevention/" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Digest &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="tech" data-type="digest" data-search="hacker targets ‘grand theft auto vi’ in apparent leak hacker targets ‘grand theft auto vi’ in apparent leak&amp;nbsp;&amp;nbsp;nbc news[update] gta 6 suffers third day of leaks, latest video suggests leakers have access to a build of the game&amp;nbsp;&amp;nbsp;igngta 6 leaks: map and gameplay potentially revealed&amp;nbsp;&amp;nbsp;mashablecatastrophic gta vi leak is a full working build — notorious hacker cyberleek taunts rockstar games by spraying the word &#39;leek&#39; onto a wall in-game with bullets&amp;nbsp;&amp;nbsp;tom&#39;s hardwaregta 6 leaker &quot;will not stop&quot; until take-two apologize and &quot;do better&quot;&amp;nbsp;&amp;nbsp;80 level tech">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
-            <span class="card-pill pill-digest">TECH DIGEST</span>
-            <span style="color: #8892B0; font-size: 0.75rem;">Source: NBC News</span>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.3rem;">
+            <span class="card-pill pill-digest">DIGEST • TECH</span>
+            <span style="color: #8892B0; font-size: 0.78rem;">NBC News</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../digest/hacker-targets-grand-theft-auto-vi-in-apparent-leak/" style="color: #FFFFFF; text-decoration: none;">Hacker targets ‘Grand Theft Auto VI’ in apparent leak</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Hacker targets ‘Grand Theft Auto VI’ in apparent leak&amp;nbsp;&amp;nbsp;NBC News[UPDATE] GTA 6 Suffers Third Day of Leaks, Latest Video Suggests Leakers Have Access to a Build of the Game&amp;nbsp;&amp;nbsp;IGNGTA 6 leaks: Map and gameplay potentially revealed&amp;nbsp;&amp;nbsp;MashableCatastrophic GTA VI leak is a full working build — notorious hacker CyberLeek taunts Rockstar Games by spraying the word &#39;leek&#39; onto a wall in-game with bullets&amp;nbsp;&amp;nbsp;Tom&#39;s HardwareGTA 6 Leaker &quot;Will Not Stop&quot; Until Take-Two Apologize and &quot;Do Better&quot;&amp;nbsp;&amp;nbsp;80 Level</p>
-          <a href="../digest/hacker-targets-grand-theft-auto-vi-in-apparent-leak/" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">Read Open Intelligence Digest &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../digest/hacker-targets-grand-theft-auto-vi-in-apparent-leak/" style="color: #FFFFFF; text-decoration: none;">Hacker targets ‘Grand Theft Auto VI’ in apparent leak</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Hacker targets ‘Grand Theft Auto VI’ in apparent leak&amp;nbsp;&amp;nbsp;NBC News[UPDATE] GTA 6 Suffers Third Day of Leaks, Latest Video Suggests Leakers Have Access to a Build of the Game&amp;nbsp;&amp;nbsp;IGNGTA 6 leaks: Map and gameplay potentially revealed&amp;nbsp;&amp;nbsp;MashableCatastrophic GTA VI leak is a full working build — notorious hacker CyberLeek taunts Rockstar Games by spraying the word &#39;leek&#39; onto a wall in-game with bullets&amp;nbsp;&amp;nbsp;Tom&#39;s HardwareGTA 6 Leaker &quot;Will Not Stop&quot; Until Take-Two Apologize and &quot;Do Better&quot;&amp;nbsp;&amp;nbsp;80 Level</p>
+          <a href="../digest/hacker-targets-grand-theft-auto-vi-in-apparent-leak/" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Digest &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="tech" data-type="digest" data-search="google releases pixel 11 series factory images google releases pixel 11 series factory images&amp;nbsp;&amp;nbsp;9to5googlegoogle’s pixel 11 comes with plenty of a.i. does anyone want that?&amp;nbsp;&amp;nbsp;the new york timesgoogle pixel 11 series review: is the magic fading?&amp;nbsp;&amp;nbsp;ars technicapixel 11 pro vs iphone 17 pro: what $1,099 gets you&amp;nbsp;&amp;nbsp;techrepublicthe pixel 11 pro is a great phone, no thanks to its flashiest new features&amp;nbsp;&amp;nbsp;the verge tech">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
-            <span class="card-pill pill-digest">TECH DIGEST</span>
-            <span style="color: #8892B0; font-size: 0.75rem;">Source: 9to5Google</span>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.3rem;">
+            <span class="card-pill pill-digest">DIGEST • TECH</span>
+            <span style="color: #8892B0; font-size: 0.78rem;">9to5Google</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../digest/google-releases-pixel-11-series-factory-images/" style="color: #FFFFFF; text-decoration: none;">Google releases Pixel 11 series factory images</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Google releases Pixel 11 series factory images&amp;nbsp;&amp;nbsp;9to5GoogleGoogle’s Pixel 11 Comes With Plenty of A.I. Does Anyone Want That?&amp;nbsp;&amp;nbsp;The New York TimesGoogle Pixel 11 series review: Is the magic fading?&amp;nbsp;&amp;nbsp;Ars TechnicaPixel 11 Pro vs iPhone 17 Pro: What $1,099 Gets You&amp;nbsp;&amp;nbsp;TechRepublicThe Pixel 11 Pro is a great phone, no thanks to its flashiest new features&amp;nbsp;&amp;nbsp;The Verge</p>
-          <a href="../digest/google-releases-pixel-11-series-factory-images/" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">Read Open Intelligence Digest &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../digest/google-releases-pixel-11-series-factory-images/" style="color: #FFFFFF; text-decoration: none;">Google releases Pixel 11 series factory images</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Google releases Pixel 11 series factory images&amp;nbsp;&amp;nbsp;9to5GoogleGoogle’s Pixel 11 Comes With Plenty of A.I. Does Anyone Want That?&amp;nbsp;&amp;nbsp;The New York TimesGoogle Pixel 11 series review: Is the magic fading?&amp;nbsp;&amp;nbsp;Ars TechnicaPixel 11 Pro vs iPhone 17 Pro: What $1,099 Gets You&amp;nbsp;&amp;nbsp;TechRepublicThe Pixel 11 Pro is a great phone, no thanks to its flashiest new features&amp;nbsp;&amp;nbsp;The Verge</p>
+          <a href="../digest/google-releases-pixel-11-series-factory-images/" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Digest &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="tech" data-type="digest" data-search="chatgpt can now send texts for you with new apple messages plug-in chatgpt can now send texts for you with new apple messages plug-in&amp;nbsp;&amp;nbsp;techcrunchchatgpt can now control imessage, potentially raising apple privacy concerns&amp;nbsp;&amp;nbsp;yahoo financechatgpt can now read and send imessages on mac&amp;nbsp;&amp;nbsp;macrumorsopenai connects chatgpt to apple messages for automated chat management&amp;nbsp;&amp;nbsp;межа. новини україни.openai rolls out deeper integration with apple’s macs: chatgpt can now read, draft and send imessages&amp;nbsp;&amp;nbsp;stocktwits tech">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
-            <span class="card-pill pill-digest">TECH DIGEST</span>
-            <span style="color: #8892B0; font-size: 0.75rem;">Source: TechCrunch</span>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.3rem;">
+            <span class="card-pill pill-digest">DIGEST • TECH</span>
+            <span style="color: #8892B0; font-size: 0.78rem;">TechCrunch</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../digest/chatgpt-can-now-send-texts-for-you-with-new-apple-messages-plug-in/" style="color: #FFFFFF; text-decoration: none;">ChatGPT can now send texts for you with new Apple Messages plug-in</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">ChatGPT can now send texts for you with new Apple Messages plug-in&amp;nbsp;&amp;nbsp;TechCrunchChatGPT Can Now Control iMessage, Potentially Raising Apple Privacy Concerns&amp;nbsp;&amp;nbsp;Yahoo FinanceChatGPT Can Now Read and Send iMessages on Mac&amp;nbsp;&amp;nbsp;MacRumorsOpenAI Connects ChatGPT to Apple Messages for Automated Chat Management&amp;nbsp;&amp;nbsp;Межа. Новини України.OpenAI Rolls Out Deeper Integration With Apple’s Macs: ChatGPT Can Now Read, Draft And Send IMessages&amp;nbsp;&amp;nbsp;Stocktwits</p>
-          <a href="../digest/chatgpt-can-now-send-texts-for-you-with-new-apple-messages-plug-in/" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">Read Open Intelligence Digest &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../digest/chatgpt-can-now-send-texts-for-you-with-new-apple-messages-plug-in/" style="color: #FFFFFF; text-decoration: none;">ChatGPT can now send texts for you with new Apple Messages plug-in</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">ChatGPT can now send texts for you with new Apple Messages plug-in&amp;nbsp;&amp;nbsp;TechCrunchChatGPT Can Now Control iMessage, Potentially Raising Apple Privacy Concerns&amp;nbsp;&amp;nbsp;Yahoo FinanceChatGPT Can Now Read and Send iMessages on Mac&amp;nbsp;&amp;nbsp;MacRumorsOpenAI Connects ChatGPT to Apple Messages for Automated Chat Management&amp;nbsp;&amp;nbsp;Межа. Новини України.OpenAI Rolls Out Deeper Integration With Apple’s Macs: ChatGPT Can Now Read, Draft And Send IMessages&amp;nbsp;&amp;nbsp;Stocktwits</p>
+          <a href="../digest/chatgpt-can-now-send-texts-for-you-with-new-apple-messages-plug-in/" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Digest &rarr;</a>
         </article>
         
-        <article class="study-card" data-pillar="tech" data-type="digest" data-search="fortnite admin panel lobby hack codes list fortnite admin panel lobby hack codes list&amp;nbsp;&amp;nbsp;nintendo lifefortnite servers down: game goes offline and servers stop working for major update&amp;nbsp;&amp;nbsp;yahoo finance ukall admin panel lobby hack codes for free rewards&amp;nbsp;&amp;nbsp;ignsonic the hedgehog to headline fortnite’s ‘override’ season (gaming news roundup)&amp;nbsp;&amp;nbsp;varietyfortnite&#39;s upcoming season includes crossovers with iconic games&amp;nbsp;&amp;nbsp;game informer tech">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
-            <span class="card-pill pill-digest">TECH DIGEST</span>
-            <span style="color: #8892B0; font-size: 0.75rem;">Source: Nintendo Life</span>
+        <article class="study-card" data-pillar="tech" data-type="digest" data-search="all lobby hack codes for free rewards (admin panel codes) all lobby hack codes for free rewards (admin panel codes)&amp;nbsp;&amp;nbsp;ignfortnite servers down: game goes offline and servers stop working for major update&amp;nbsp;&amp;nbsp;yahoo finance ukall admin panel lobby hack codes for free rewards&amp;nbsp;&amp;nbsp;ignsonic the hedgehog to headline fortnite’s ‘override’ season (gaming news roundup)&amp;nbsp;&amp;nbsp;varietyfortnite&#39;s upcoming season includes crossovers with iconic games&amp;nbsp;&amp;nbsp;game informer tech">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.3rem;">
+            <span class="card-pill pill-digest">DIGEST • TECH</span>
+            <span style="color: #8892B0; font-size: 0.78rem;">IGN</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../digest/fortnite-admin-panel-lobby-hack-codes-list/" style="color: #FFFFFF; text-decoration: none;">Fortnite Admin Panel Lobby Hack Codes List</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Fortnite Admin Panel Lobby Hack Codes List&amp;nbsp;&amp;nbsp;Nintendo LifeFortnite servers down: Game goes offline and servers stop working for major update&amp;nbsp;&amp;nbsp;Yahoo Finance UKAll Admin Panel Lobby Hack Codes For Free Rewards&amp;nbsp;&amp;nbsp;IGNSonic the Hedgehog to Headline Fortnite’s ‘Override’ Season (Gaming News Roundup)&amp;nbsp;&amp;nbsp;VarietyFortnite&#39;s Upcoming Season Includes Crossovers With Iconic Games&amp;nbsp;&amp;nbsp;Game Informer</p>
-          <a href="../digest/fortnite-admin-panel-lobby-hack-codes-list/" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">Read Open Intelligence Digest &rarr;</a>
-        </article>
-        
-        <article class="study-card" data-pillar="tech" data-type="digest" data-search="asu launches new scholarship pipeline to ai-powered cybersecurity careers asu launches new scholarship pipeline to ai-powered cybersecurity careers&amp;nbsp;&amp;nbsp;asu news tech">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
-            <span class="card-pill pill-digest">TECH DIGEST</span>
-            <span style="color: #8892B0; font-size: 0.75rem;">Source: ASU News</span>
-          </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../digest/asu-launches-new-scholarship-pipeline-to-ai-powered-cybersecurity-careers/" style="color: #FFFFFF; text-decoration: none;">ASU launches new scholarship pipeline to AI-powered cybersecurity careers</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">ASU launches new scholarship pipeline to AI-powered cybersecurity careers&amp;nbsp;&amp;nbsp;ASU News</p>
-          <a href="../digest/asu-launches-new-scholarship-pipeline-to-ai-powered-cybersecurity-careers/" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">Read Open Intelligence Digest &rarr;</a>
-        </article>
-        
-        <article class="study-card" data-pillar="tech" data-type="digest" data-search="today’s podcast release: the “confidence advantage”: why privacy, cybersecurity and ai governance are becoming business imperatives today’s podcast release: the “confidence advantage”: why privacy, cybersecurity and ai governance are becoming business imperatives&amp;nbsp;&amp;nbsp;consumer finance monitor tech">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
-            <span class="card-pill pill-digest">TECH DIGEST</span>
-            <span style="color: #8892B0; font-size: 0.75rem;">Source: Consumer Finance Monitor</span>
-          </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../digest/todays-podcast-release-the-confidence-advantage-why-privacy-cybersecurity-and-ai/" style="color: #FFFFFF; text-decoration: none;">Today’s Podcast Release: The “Confidence Advantage”: Why Privacy, Cybersecurity and AI Governance Are Becoming Business Imperatives</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Today’s Podcast Release: The “Confidence Advantage”: Why Privacy, Cybersecurity and AI Governance Are Becoming Business Imperatives&amp;nbsp;&amp;nbsp;Consumer Finance Monitor</p>
-          <a href="../digest/todays-podcast-release-the-confidence-advantage-why-privacy-cybersecurity-and-ai/" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">Read Open Intelligence Digest &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../digest/all-lobby-hack-codes-for-free-rewards-admin-panel-codes/" style="color: #FFFFFF; text-decoration: none;">All Lobby Hack Codes For Free Rewards (Admin Panel Codes)</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">All Lobby Hack Codes For Free Rewards (Admin Panel Codes)&amp;nbsp;&amp;nbsp;IGNFortnite servers down: Game goes offline and servers stop working for major update&amp;nbsp;&amp;nbsp;Yahoo Finance UKAll Admin Panel Lobby Hack Codes For Free Rewards&amp;nbsp;&amp;nbsp;IGNSonic the Hedgehog to Headline Fortnite’s ‘Override’ Season (Gaming News Roundup)&amp;nbsp;&amp;nbsp;VarietyFortnite&#39;s Upcoming Season Includes Crossovers With Iconic Games&amp;nbsp;&amp;nbsp;Game Informer</p>
+          <a href="../digest/all-lobby-hack-codes-for-free-rewards-admin-panel-codes/" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Digest &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="tech" data-type="digest" data-search="new interface simplifies management of matter-powered smart homes new interface simplifies management of matter-powered smart homes&amp;nbsp;&amp;nbsp;business wire tech">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
-            <span class="card-pill pill-digest">TECH DIGEST</span>
-            <span style="color: #8892B0; font-size: 0.75rem;">Source: Business Wire</span>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.3rem;">
+            <span class="card-pill pill-digest">DIGEST • TECH</span>
+            <span style="color: #8892B0; font-size: 0.78rem;">Business Wire</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../digest/new-interface-simplifies-management-of-matter-powered-smart-homes/" style="color: #FFFFFF; text-decoration: none;">New Interface Simplifies Management of Matter-Powered Smart Homes</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">New Interface Simplifies Management of Matter-Powered Smart Homes&amp;nbsp;&amp;nbsp;Business Wire</p>
-          <a href="../digest/new-interface-simplifies-management-of-matter-powered-smart-homes/" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">Read Open Intelligence Digest &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../digest/new-interface-simplifies-management-of-matter-powered-smart-homes/" style="color: #FFFFFF; text-decoration: none;">New Interface Simplifies Management of Matter-Powered Smart Homes</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">New Interface Simplifies Management of Matter-Powered Smart Homes&amp;nbsp;&amp;nbsp;Business Wire</p>
+          <a href="../digest/new-interface-simplifies-management-of-matter-powered-smart-homes/" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Digest &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="tech" data-type="digest" data-search="broadband forum’s matter service api wants to simplify your smart home broadband forum’s matter service api wants to simplify your smart home&amp;nbsp;&amp;nbsp;forbes tech">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
-            <span class="card-pill pill-digest">TECH DIGEST</span>
-            <span style="color: #8892B0; font-size: 0.75rem;">Source: Forbes</span>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.3rem;">
+            <span class="card-pill pill-digest">DIGEST • TECH</span>
+            <span style="color: #8892B0; font-size: 0.78rem;">Forbes</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../digest/broadband-forums-matter-service-api-wants-to-simplify-your-smart-home/" style="color: #FFFFFF; text-decoration: none;">Broadband Forum’s Matter Service API Wants To Simplify Your Smart Home</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Broadband Forum’s Matter Service API Wants To Simplify Your Smart Home&amp;nbsp;&amp;nbsp;Forbes</p>
-          <a href="../digest/broadband-forums-matter-service-api-wants-to-simplify-your-smart-home/" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">Read Open Intelligence Digest &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../digest/broadband-forums-matter-service-api-wants-to-simplify-your-smart-home/" style="color: #FFFFFF; text-decoration: none;">Broadband Forum’s Matter Service API Wants To Simplify Your Smart Home</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Broadband Forum’s Matter Service API Wants To Simplify Your Smart Home&amp;nbsp;&amp;nbsp;Forbes</p>
+          <a href="../digest/broadband-forums-matter-service-api-wants-to-simplify-your-smart-home/" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Digest &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="home" data-type="digest" data-search="earth is missing a billion years of history. we finally know why earth is missing a billion years of history. we finally know why&amp;nbsp;&amp;nbsp;zme sciencelost &#39;mega-escarpment&#39; across ancient usa may explain grand canyon&#39;s missing billion years&amp;nbsp;&amp;nbsp;phys.orggrand canyon timeline rewritten by uranium dating&amp;nbsp;&amp;nbsp;earth.comscientists may have found the missing piece behind the grand canyon&#39;s billion year gap&amp;nbsp;&amp;nbsp;studyfindsnorth america had a continent-spanning “mega-escarpment” a kilometer high and it might explain the grand canyon’s great mystery&amp;nbsp;&amp;nbsp;iflscience home">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
-            <span class="card-pill pill-digest">HOME DIGEST</span>
-            <span style="color: #8892B0; font-size: 0.75rem;">Source: ZME Science</span>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.3rem;">
+            <span class="card-pill pill-digest">DIGEST • HOME</span>
+            <span style="color: #8892B0; font-size: 0.78rem;">ZME Science</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../digest/earth-is-missing-a-billion-years-of-history-we-finally-know-why/" style="color: #FFFFFF; text-decoration: none;">Earth Is Missing a Billion Years of History. We Finally Know Why</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Earth Is Missing a Billion Years of History. We Finally Know Why&amp;nbsp;&amp;nbsp;ZME ScienceLost &#39;mega-escarpment&#39; across ancient USA may explain Grand Canyon&#39;s missing billion years&amp;nbsp;&amp;nbsp;Phys.orgGrand Canyon timeline rewritten by uranium dating&amp;nbsp;&amp;nbsp;Earth.comScientists May Have Found The Missing Piece Behind The Grand Canyon&#39;s Billion Year Gap&amp;nbsp;&amp;nbsp;StudyFindsNorth America Had A Continent-Spanning “Mega-Escarpment” A Kilometer High And It Might Explain The Grand Canyon’s Great Mystery&amp;nbsp;&amp;nbsp;IFLScience</p>
-          <a href="../digest/earth-is-missing-a-billion-years-of-history-we-finally-know-why/" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">Read Open Intelligence Digest &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../digest/earth-is-missing-a-billion-years-of-history-we-finally-know-why/" style="color: #FFFFFF; text-decoration: none;">Earth Is Missing a Billion Years of History. We Finally Know Why</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Earth Is Missing a Billion Years of History. We Finally Know Why&amp;nbsp;&amp;nbsp;ZME ScienceLost &#39;mega-escarpment&#39; across ancient USA may explain Grand Canyon&#39;s missing billion years&amp;nbsp;&amp;nbsp;Phys.orgGrand Canyon timeline rewritten by uranium dating&amp;nbsp;&amp;nbsp;Earth.comScientists May Have Found The Missing Piece Behind The Grand Canyon&#39;s Billion Year Gap&amp;nbsp;&amp;nbsp;StudyFindsNorth America Had A Continent-Spanning “Mega-Escarpment” A Kilometer High And It Might Explain The Grand Canyon’s Great Mystery&amp;nbsp;&amp;nbsp;IFLScience</p>
+          <a href="../digest/earth-is-missing-a-billion-years-of-history-we-finally-know-why/" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Digest &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="home" data-type="digest" data-search="rescue mission is called off for nasa&#39;s aging swift space telescope rescue mission is called off for nasa&#39;s aging swift space telescope&amp;nbsp;&amp;nbsp;phys.orgrescue mission can’t prevent nasa observatory from falling to earth&amp;nbsp;&amp;nbsp;cnnnasa’s attempt to save its falling telescope has failed&amp;nbsp;&amp;nbsp;the new york timesnasa mission to save its sinking space telescope fails&amp;nbsp;&amp;nbsp;nbc newsnasa&#39;s swift telescope will plunge toward earth after rescue mission called off&amp;nbsp;&amp;nbsp;cbs news home">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
-            <span class="card-pill pill-digest">HOME DIGEST</span>
-            <span style="color: #8892B0; font-size: 0.75rem;">Source: Phys.org</span>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.3rem;">
+            <span class="card-pill pill-digest">DIGEST • HOME</span>
+            <span style="color: #8892B0; font-size: 0.78rem;">Phys.org</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../digest/rescue-mission-is-called-off-for-nasas-aging-swift-space-telescope/" style="color: #FFFFFF; text-decoration: none;">Rescue mission is called off for NASA&#39;s aging Swift space telescope</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Rescue mission is called off for NASA&#39;s aging Swift space telescope&amp;nbsp;&amp;nbsp;Phys.orgRescue mission can’t prevent NASA observatory from falling to Earth&amp;nbsp;&amp;nbsp;CNNNASA’s Attempt to Save Its Falling Telescope Has Failed&amp;nbsp;&amp;nbsp;The New York TimesNASA mission to save its sinking space telescope fails&amp;nbsp;&amp;nbsp;NBC NewsNASA&#39;s Swift telescope will plunge toward Earth after rescue mission called off&amp;nbsp;&amp;nbsp;CBS News</p>
-          <a href="../digest/rescue-mission-is-called-off-for-nasas-aging-swift-space-telescope/" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">Read Open Intelligence Digest &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../digest/rescue-mission-is-called-off-for-nasas-aging-swift-space-telescope/" style="color: #FFFFFF; text-decoration: none;">Rescue mission is called off for NASA&#39;s aging Swift space telescope</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Rescue mission is called off for NASA&#39;s aging Swift space telescope&amp;nbsp;&amp;nbsp;Phys.orgRescue mission can’t prevent NASA observatory from falling to Earth&amp;nbsp;&amp;nbsp;CNNNASA’s Attempt to Save Its Falling Telescope Has Failed&amp;nbsp;&amp;nbsp;The New York TimesNASA mission to save its sinking space telescope fails&amp;nbsp;&amp;nbsp;NBC NewsNASA&#39;s Swift telescope will plunge toward Earth after rescue mission called off&amp;nbsp;&amp;nbsp;CBS News</p>
+          <a href="../digest/rescue-mission-is-called-off-for-nasas-aging-swift-space-telescope/" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Digest &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="home" data-type="digest" data-search="nasa reveals before-and-after images of moon crater left by spacex rocket nasa reveals before-and-after images of moon crater left by spacex rocket&amp;nbsp;&amp;nbsp;al.comnasa’s lro images falcon 9 crater on moon, learns new details&amp;nbsp;&amp;nbsp;nasa science (.gov)new images reveal what happened when a spacex rocket slammed into the moon&amp;nbsp;&amp;nbsp;cnnbefore-and-after images show where spacex rocket crashed into the moon&amp;nbsp;&amp;nbsp;the washington postthey&#39;ve done it. nasa&#39;s lunar probe has photographed the crater caused by a spacex rocket smashing into the moon&amp;nbsp;&amp;nbsp;bbc sky at night magazine home">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
-            <span class="card-pill pill-digest">HOME DIGEST</span>
-            <span style="color: #8892B0; font-size: 0.75rem;">Source: AL.com</span>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.3rem;">
+            <span class="card-pill pill-digest">DIGEST • HOME</span>
+            <span style="color: #8892B0; font-size: 0.78rem;">AL.com</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../digest/nasa-reveals-before-and-after-images-of-moon-crater-left-by-spacex-rocket/" style="color: #FFFFFF; text-decoration: none;">NASA reveals before-and-after images of moon crater left by SpaceX rocket</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">NASA reveals before-and-after images of moon crater left by SpaceX rocket&amp;nbsp;&amp;nbsp;AL.comNASA’s LRO Images Falcon 9 Crater on Moon, Learns New Details&amp;nbsp;&amp;nbsp;NASA Science (.gov)New images reveal what happened when a SpaceX rocket slammed into the moon&amp;nbsp;&amp;nbsp;CNNBefore-and-after images show where SpaceX rocket crashed into the moon&amp;nbsp;&amp;nbsp;The Washington PostThey&#39;ve done it. NASA&#39;s lunar probe has photographed the crater caused by a SpaceX rocket smashing into the Moon&amp;nbsp;&amp;nbsp;BBC Sky at Night Magazine</p>
-          <a href="../digest/nasa-reveals-before-and-after-images-of-moon-crater-left-by-spacex-rocket/" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">Read Open Intelligence Digest &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../digest/nasa-reveals-before-and-after-images-of-moon-crater-left-by-spacex-rocket/" style="color: #FFFFFF; text-decoration: none;">NASA reveals before-and-after images of moon crater left by SpaceX rocket</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">NASA reveals before-and-after images of moon crater left by SpaceX rocket&amp;nbsp;&amp;nbsp;AL.comNASA’s LRO Images Falcon 9 Crater on Moon, Learns New Details&amp;nbsp;&amp;nbsp;NASA Science (.gov)New images reveal what happened when a SpaceX rocket slammed into the moon&amp;nbsp;&amp;nbsp;CNNBefore-and-after images show where SpaceX rocket crashed into the moon&amp;nbsp;&amp;nbsp;The Washington PostThey&#39;ve done it. NASA&#39;s lunar probe has photographed the crater caused by a SpaceX rocket smashing into the Moon&amp;nbsp;&amp;nbsp;BBC Sky at Night Magazine</p>
+          <a href="../digest/nasa-reveals-before-and-after-images-of-moon-crater-left-by-spacex-rocket/" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Digest &rarr;</a>
         </article>
         
-        <article class="study-card" data-pillar="home" data-type="digest" data-search="san andreas fault: new san jose state university research finds fault is slipping faster than previously thought san andreas fault: new san jose state university research finds fault is slipping faster than previously thought&amp;nbsp;&amp;nbsp;abc7 los angelessan andreas fault just south of bay area is slipping faster than previously thought, geologist says&amp;nbsp;&amp;nbsp;san francisco chroniclesan andreas fault could shake northern california sooner than scientists thought&amp;nbsp;&amp;nbsp;the inertiathe ‘big one’ is coming: is california ready for the next major earthquake?&amp;nbsp;&amp;nbsp;daily signaldynamic activation: how seismic waves can trigger movements in the san andreas fault from afar&amp;nbsp;&amp;nbsp;noticias ambientales home">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
-            <span class="card-pill pill-digest">HOME DIGEST</span>
-            <span style="color: #8892B0; font-size: 0.75rem;">Source: ABC7 Los Angeles</span>
+        <article class="study-card" data-pillar="home" data-type="digest" data-search="san andreas fault: new san jose state university research finds fault is slipping faster than previously thought san andreas fault: new san jose state university research finds fault is slipping faster than previously thought&amp;nbsp;&amp;nbsp;abc7 los angelessee more headlines &amp; perspectives on google news home">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.3rem;">
+            <span class="card-pill pill-digest">DIGEST • HOME</span>
+            <span style="color: #8892B0; font-size: 0.78rem;">ABC7 Los Angeles</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../digest/san-andreas-fault-new-san-jose-state-university-research-finds-fault-is-slipping/" style="color: #FFFFFF; text-decoration: none;">San Andreas Fault: New San Jose State University research finds fault is slipping faster than previously thought</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">San Andreas Fault: New San Jose State University research finds fault is slipping faster than previously thought&amp;nbsp;&amp;nbsp;ABC7 Los AngelesSan Andreas Fault just south of Bay Area is slipping faster than previously thought, geologist says&amp;nbsp;&amp;nbsp;San Francisco ChronicleSan Andreas Fault Could Shake Northern California Sooner Than Scientists Thought&amp;nbsp;&amp;nbsp;The InertiaThe ‘Big One’ Is Coming: Is California Ready for the Next Major Earthquake?&amp;nbsp;&amp;nbsp;Daily SignalDynamic activation: how seismic waves can trigger movements in the San Andreas Fault from afar&amp;nbsp;&amp;nbsp;Noticias Ambientales</p>
-          <a href="../digest/san-andreas-fault-new-san-jose-state-university-research-finds-fault-is-slipping/" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">Read Open Intelligence Digest &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../digest/san-andreas-fault-new-san-jose-state-university-research-finds-fault-is-slipping/" style="color: #FFFFFF; text-decoration: none;">San Andreas Fault: New San Jose State University research finds fault is slipping faster than previously thought</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">San Andreas Fault: New San Jose State University research finds fault is slipping faster than previously thought&amp;nbsp;&amp;nbsp;ABC7 Los AngelesSee more headlines &amp; perspectives on Google News</p>
+          <a href="../digest/san-andreas-fault-new-san-jose-state-university-research-finds-fault-is-slipping/" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Digest &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="home" data-type="digest" data-search="tax credits, incentives, and technical assistance for geothermal heat pumps tax credits, incentives, and technical assistance for geothermal heat pumps&amp;nbsp;&amp;nbsp;department of energy (.gov) home">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
-            <span class="card-pill pill-digest">HOME DIGEST</span>
-            <span style="color: #8892B0; font-size: 0.75rem;">Source: Department of Energy (.gov)</span>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.3rem;">
+            <span class="card-pill pill-digest">DIGEST • HOME</span>
+            <span style="color: #8892B0; font-size: 0.78rem;">Department of Energy (.gov)</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../digest/tax-credits-incentives-and-technical-assistance-for-geothermal-heat-pumps/" style="color: #FFFFFF; text-decoration: none;">Tax Credits, Incentives, and Technical Assistance for Geothermal Heat Pumps</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Tax Credits, Incentives, and Technical Assistance for Geothermal Heat Pumps&amp;nbsp;&amp;nbsp;Department of Energy (.gov)</p>
-          <a href="../digest/tax-credits-incentives-and-technical-assistance-for-geothermal-heat-pumps/" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">Read Open Intelligence Digest &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../digest/tax-credits-incentives-and-technical-assistance-for-geothermal-heat-pumps/" style="color: #FFFFFF; text-decoration: none;">Tax Credits, Incentives, and Technical Assistance for Geothermal Heat Pumps</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Tax Credits, Incentives, and Technical Assistance for Geothermal Heat Pumps&amp;nbsp;&amp;nbsp;Department of Energy (.gov)</p>
+          <a href="../digest/tax-credits-incentives-and-technical-assistance-for-geothermal-heat-pumps/" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Digest &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="home" data-type="digest" data-search="will u.s. households still buy heat pumps without a tax credit? will u.s. households still buy heat pumps without a tax credit?&amp;nbsp;&amp;nbsp;energy institute blog home">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
-            <span class="card-pill pill-digest">HOME DIGEST</span>
-            <span style="color: #8892B0; font-size: 0.75rem;">Source: Energy Institute Blog</span>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.3rem;">
+            <span class="card-pill pill-digest">DIGEST • HOME</span>
+            <span style="color: #8892B0; font-size: 0.78rem;">Energy Institute Blog</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../digest/will-us-households-still-buy-heat-pumps-without-a-tax-credit/" style="color: #FFFFFF; text-decoration: none;">Will U.S. Households Still Buy Heat Pumps Without a Tax Credit?</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Will U.S. Households Still Buy Heat Pumps Without a Tax Credit?&amp;nbsp;&amp;nbsp;Energy Institute Blog</p>
-          <a href="../digest/will-us-households-still-buy-heat-pumps-without-a-tax-credit/" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">Read Open Intelligence Digest &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../digest/will-us-households-still-buy-heat-pumps-without-a-tax-credit/" style="color: #FFFFFF; text-decoration: none;">Will U.S. Households Still Buy Heat Pumps Without a Tax Credit?</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Will U.S. Households Still Buy Heat Pumps Without a Tax Credit?&amp;nbsp;&amp;nbsp;Energy Institute Blog</p>
+          <a href="../digest/will-us-households-still-buy-heat-pumps-without-a-tax-credit/" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Digest &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="home" data-type="digest" data-search="2024-2025 energy tax credit: which home improvements qualify? 2024-2025 energy tax credit: which home improvements qualify?&amp;nbsp;&amp;nbsp;turbotax home">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
-            <span class="card-pill pill-digest">HOME DIGEST</span>
-            <span style="color: #8892B0; font-size: 0.75rem;">Source: TurboTax</span>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.3rem;">
+            <span class="card-pill pill-digest">DIGEST • HOME</span>
+            <span style="color: #8892B0; font-size: 0.78rem;">TurboTax</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../digest/2024-2025-energy-tax-credit-which-home-improvements-qualify/" style="color: #FFFFFF; text-decoration: none;">2024-2025 Energy Tax Credit: Which Home Improvements Qualify?</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">2024-2025 Energy Tax Credit: Which Home Improvements Qualify?&amp;nbsp;&amp;nbsp;TurboTax</p>
-          <a href="../digest/2024-2025-energy-tax-credit-which-home-improvements-qualify/" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">Read Open Intelligence Digest &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../digest/2024-2025-energy-tax-credit-which-home-improvements-qualify/" style="color: #FFFFFF; text-decoration: none;">2024-2025 Energy Tax Credit: Which Home Improvements Qualify?</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">2024-2025 Energy Tax Credit: Which Home Improvements Qualify?&amp;nbsp;&amp;nbsp;TurboTax</p>
+          <a href="../digest/2024-2025-energy-tax-credit-which-home-improvements-qualify/" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Digest &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="home" data-type="digest" data-search="building energy-efficient homes across alaska: an investment in our future building energy-efficient homes across alaska: an investment in our future&amp;nbsp;&amp;nbsp;alaska housing finance corporation home">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
-            <span class="card-pill pill-digest">HOME DIGEST</span>
-            <span style="color: #8892B0; font-size: 0.75rem;">Source: Alaska Housing Finance Corporation</span>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.3rem;">
+            <span class="card-pill pill-digest">DIGEST • HOME</span>
+            <span style="color: #8892B0; font-size: 0.78rem;">Alaska Housing Finance Corporation</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../digest/building-energy-efficient-homes-across-alaska-an-investment-in-our-future/" style="color: #FFFFFF; text-decoration: none;">Building Energy-Efficient Homes Across Alaska: An Investment in Our Future</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Building Energy-Efficient Homes Across Alaska: An Investment in Our Future&amp;nbsp;&amp;nbsp;Alaska Housing Finance Corporation</p>
-          <a href="../digest/building-energy-efficient-homes-across-alaska-an-investment-in-our-future/" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">Read Open Intelligence Digest &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../digest/building-energy-efficient-homes-across-alaska-an-investment-in-our-future/" style="color: #FFFFFF; text-decoration: none;">Building Energy-Efficient Homes Across Alaska: An Investment in Our Future</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Building Energy-Efficient Homes Across Alaska: An Investment in Our Future&amp;nbsp;&amp;nbsp;Alaska Housing Finance Corporation</p>
+          <a href="../digest/building-energy-efficient-homes-across-alaska-an-investment-in-our-future/" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Digest &rarr;</a>
         </article>
         
     </div>
 
     <footer>
-      <p>Groundwork Open Research Repository • Published under Creative Commons & Open Science Framework • <a href="https://gworky.com">gworky.com</a> | <a href="../sitemap.html">Complete HTML Index</a> | <a href="../llms.txt">LLM Manifest</a></p>
+      <p>Groundwork Open Research Archive • Published under Open Science standards • <a href="https://gworky.com">gworky.com</a> | <a href="../sitemap.html">Directory Index</a></p>
     </footer>
   </div>
 
   <script>
     let currentPillar = 'digest';
 
-    // Keyboard shortcut for search
     document.addEventListener('keydown', (e) => {
       if (e.key === '/' && document.activeElement !== document.getElementById('search-box')) {
         e.preventDefault();
@@ -489,7 +454,6 @@
     function filterCards() {
       const query = document.getElementById('search-box').value.toLowerCase().trim();
       const cards = document.querySelectorAll('.study-card');
-      let visible = 0;
 
       cards.forEach(card => {
         const searchData = card.getAttribute('data-search') || '';
@@ -503,13 +467,10 @@
 
         if (matchesQuery && matchesPillar) {
           card.style.display = 'block';
-          visible++;
         } else {
           card.style.display = 'none';
         }
       });
-
-      document.getElementById('results-count').innerText = `Displaying ${visible} open research studies and digests`;
     }
   </script>
 </body>

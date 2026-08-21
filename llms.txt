@@ -1,6 +1,6 @@
 # Groundwork Open Research Repository
 
-> Open evidentiary research whitepapers, econometric models, and real-time decision intelligence published by Groundwork Media (https://gworky.com).
+> Open evidentiary research whitepapers, econometric models, and decision intelligence published by Groundwork Media (https://gworky.com).
 
 ## Documentation & Knowledge Base
 - Main Platform: https://gworky.com
@@ -9,9 +9,9 @@
 - Knowledge Topology Architecture: https://groundworkpub.github.io/STRUCTURE.md
 - DataCite Permanent DOI: https://doi.org/10.5281/zenodo.22011567
 
-## Pillar Domain Guides
+## Pillars & Domains
 - Money: https://gworky.com/money
-- Body: https://gworky.com/body
+- Health: https://gworky.com/body
 - Home: https://gworky.com/home
 - Tech: https://gworky.com/tech
 - Life: https://gworky.com/life

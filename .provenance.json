@@ -1,18 +1,11 @@
 {
-  "version": "v1.7.0",
+  "version": "v1.8.0",
   "doi": "10.5281/zenodo.22011567",
-  "timestamp": "2026-08-21T04:38:27.505353+00:00",
-  "pipeline": "Groundwork Autonomous Agentic Ingestion Engine",
+  "timestamp": "2026-08-21T04:48:16.202300+00:00",
+  "pipeline": "Groundwork Open Research Sync Engine",
   "stats": {
     "total_articles": 719,
-    "total_digests": 32,
-    "total_pages": 751,
-    "tier_level": "tier1",
-    "authority_domain": "gworky.com"
-  },
-  "security": {
-    "zero_secret_leakage_verified": true,
-    "schema_parity_verified": true,
-    "wcag_aaa_verified": true
+    "total_digests": 30,
+    "total_pages": 749
   }
 }

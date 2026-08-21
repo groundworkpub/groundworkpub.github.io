@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Groundwork Money Research Studies & Models</title>
-  <meta name="description" content="Open scientific and evidentiary research repository, real-time research digests, and interactive decision models for money, health, home, and modern tech.">
+  <title>Money & Finance Research — Groundwork Open Research</title>
+  <meta name="description" content="Independent evidence-based guides, decision calculators, and research analyses for personal finance, health, home infrastructure, and technology.">
   <link rel="canonical" href="https://gworky.com/money">
   <link rel="alternate" type="application/rss+xml" title="Groundwork RSS Feed" href="https://groundworkpub.github.io/feed.xml" />
   <meta name="robots" content="index, follow, max-image-preview:large">
   
-  <meta property="og:title" content="Groundwork Money Research Studies & Models">
-  <meta property="og:description" content="Open scientific repository and real-time decision intelligence archives.">
+  <meta property="og:title" content="Money & Finance Research — Groundwork">
+  <meta property="og:description" content="Independent evidence-based research guides and decision utilities.">
   <meta property="og:image" content="https://groundworkpub.github.io/og.svg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -19,63 +19,55 @@
     :root {
       --bg: #0A192F;
       --card: #112240;
-      --card-alt: #1E2D4A;
+      --card-alt: #162B4D;
       --text: #CCD6F6;
       --heading: #FFFFFF;
       --accent: #10B981;
-      --accent-glow: rgba(16, 185, 129, 0.15);
       --muted: #8892B0;
       --border: rgba(255, 255, 255, 0.08);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif; background: var(--bg); color: var(--text); line-height: 1.6; padding-top: 70px; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif; background: var(--bg); color: var(--text); line-height: 1.7; padding-top: 64px; }
     
-    .site-header { position: fixed; top: 0; left: 0; right: 0; background: rgba(10, 25, 47, 0.88); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); z-index: 1000; }
-    .header-inner { max-width: 1080px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 1.5rem; }
-    .header-brand { display: flex; align-items: center; gap: 12px; }
-    .brand-logo { color: #FFFFFF; text-decoration: none; font-size: 1.1rem; display: flex; align-items: center; gap: 6px; }
-    .logo-dot { color: #10B981; }
-    .brand-sub { color: #8892B0; font-size: 0.78rem; font-weight: normal; margin-left: 4px; }
-    .live-status-pill { display: inline-flex; align-items: center; gap: 6px; background: rgba(16, 185, 129, 0.12); color: #10B981; font-size: 0.72rem; font-weight: bold; padding: 2px 8px; border-radius: 9999px; border: 1px solid rgba(16, 185, 129, 0.25); }
-    .pulse-dot { width: 6px; height: 6px; background: #10B981; border-radius: 50%; display: inline-block; animation: pulse 2s infinite; }
-    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+    .site-header { position: fixed; top: 0; left: 0; right: 0; background: rgba(10, 25, 47, 0.92); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); z-index: 1000; }
+    .header-inner { max-width: 1040px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 1.25rem; }
+    .brand-logo { color: #FFFFFF; text-decoration: none; font-size: 1.05rem; display: flex; align-items: center; gap: 6px; }
+    .logo-mark { color: var(--accent); }
+    .brand-sub { color: var(--muted); font-size: 0.8rem; font-weight: normal; margin-left: 4px; }
     
-    .header-nav { display: flex; gap: 12px; align-items: center; }
-    .nav-link { color: var(--muted); text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 4px 8px; border-radius: 6px; transition: all 0.2s; }
+    .header-nav { display: flex; gap: 8px; align-items: center; }
+    .nav-link { color: var(--muted); text-decoration: none; font-size: 0.85rem; font-weight: 500; padding: 4px 10px; border-radius: 6px; transition: all 0.2s; }
     .nav-link:hover, .nav-link.active { color: #FFFFFF; background: rgba(255, 255, 255, 0.06); }
-    .gworky-link { color: #10B981 !important; border: 1px solid rgba(16, 185, 129, 0.3); }
+    .gworky-link { color: var(--accent) !important; border: 1px solid rgba(16, 185, 129, 0.25); }
     
-    .container { max-width: 980px; margin: 2rem auto; padding: 0 1rem; }
-    .top-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 2rem; }
-    h1 { color: var(--heading); font-size: 2.3rem; margin-bottom: 0.4rem; font-family: Georgia, serif; }
-    .lead { color: var(--muted); font-size: 1.05rem; max-width: 650px; }
-    .badges-row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
-    .doi-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--accent-glow); color: var(--accent); padding: 5px 14px; border-radius: 9999px; font-size: 0.82rem; font-weight: bold; text-decoration: none; border: 1px solid rgba(16,185,129,0.3); }
-    .oc-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(59, 130, 246, 0.15); color: #60A5FA; padding: 5px 14px; border-radius: 9999px; font-size: 0.82rem; font-weight: bold; text-decoration: none; border: 1px solid rgba(59, 130, 246, 0.3); }
-    .rss-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(245, 158, 11, 0.15); color: #FBBF24; padding: 5px 14px; border-radius: 9999px; font-size: 0.82rem; font-weight: bold; text-decoration: none; border: 1px solid rgba(245, 158, 11, 0.3); }
+    .container { max-width: 960px; margin: 2rem auto; padding: 0 1.25rem; }
+    .top-header { margin-bottom: 2rem; }
+    h1 { color: var(--heading); font-size: 2.2rem; margin-bottom: 0.5rem; font-family: Georgia, serif; font-weight: normal; }
+    .lead { color: var(--muted); font-size: 1.05rem; max-width: 680px; line-height: 1.6; margin-bottom: 1rem; }
+    .meta-links { display: flex; gap: 14px; font-size: 0.82rem; color: var(--muted); align-items: center; flex-wrap: wrap; }
+    .meta-links a { color: var(--muted); text-decoration: none; }
+    .meta-links a:hover { color: var(--accent); }
     
     /* Control Toolbar */
-    .toolbar { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; margin-bottom: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
-    .search-input { width: 100%; background: #0A192F; border: 1px solid var(--border); border-radius: 8px; padding: 0.75rem 1rem; color: #FFFFFF; font-size: 0.95rem; outline: none; margin-bottom: 1rem; transition: border-color 0.2s; }
+    .toolbar { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 1.2rem; margin-bottom: 2rem; }
+    .search-input { width: 100%; background: #0A192F; border: 1px solid var(--border); border-radius: 6px; padding: 0.75rem 1rem; color: #FFFFFF; font-size: 0.95rem; outline: none; margin-bottom: 0.8rem; transition: border-color 0.2s; }
     .search-input:focus { border-color: var(--accent); }
     .filter-pills { display: flex; gap: 8px; flex-wrap: wrap; }
-    .filter-pill { background: #0A192F; color: var(--muted); border: 1px solid var(--border); border-radius: 6px; padding: 0.4rem 0.9rem; font-size: 0.82rem; font-weight: bold; cursor: pointer; transition: all 0.2s; text-decoration: none; display: inline-block; }
+    .filter-pill { background: #0A192F; color: var(--muted); border: 1px solid var(--border); border-radius: 6px; padding: 0.35rem 0.85rem; font-size: 0.82rem; font-weight: 500; cursor: pointer; transition: all 0.2s; text-decoration: none; }
     .filter-pill:hover { color: var(--heading); border-color: var(--accent); }
     .filter-pill.active { background: var(--accent); color: #0A192F; border-color: var(--accent); }
     
-    /* Cards Grid */
-    .study-card { background: var(--card); padding: 1.25rem 1.5rem; border-radius: 10px; margin-bottom: 1rem; border: 1px solid var(--border); transition: transform 0.15s, border-color 0.15s; }
-    .study-card:hover { border-color: rgba(16, 185, 129, 0.4); transform: translateY(-2px); }
-    .card-pill { font-size: 0.72rem; font-weight: bold; letter-spacing: 0.05em; padding: 2px 8px; border-radius: 4px; display: inline-block; }
-    .pill-study { background: rgba(255, 255, 255, 0.08); color: var(--accent); }
-    .pill-digest { background: var(--accent-glow); color: var(--accent); border: 1px solid rgba(16, 185, 129, 0.3); }
+    /* Cards */
+    .study-card { background: var(--card); padding: 1.25rem 1.5rem; border-radius: 8px; margin-bottom: 1rem; border: 1px solid var(--border); transition: border-color 0.2s; }
+    .study-card:hover { border-color: rgba(16, 185, 129, 0.35); }
+    .card-pill { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.05em; padding: 2px 6px; border-radius: 4px; display: inline-block; }
+    .pill-study { background: rgba(255, 255, 255, 0.06); color: var(--accent); }
+    .pill-digest { background: rgba(16, 185, 129, 0.1); color: var(--accent); }
     
-    .stats-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; font-size: 0.85rem; color: var(--muted); }
     footer { margin-top: 4rem; padding: 2rem 0; border-top: 1px solid var(--border); text-align: center; color: var(--muted); font-size: 0.85rem; }
     footer a { color: var(--accent); text-decoration: none; }
 
     @media (max-width: 640px) {
-      body { padding-top: 60px; }
       .header-nav { display: none; }
     }
   </style>
@@ -86,16 +78,15 @@
     <div class="header-inner">
       <div class="header-brand">
         <a href="../" class="brand-logo">
-          <span class="logo-dot">✦</span>
+          <span class="logo-mark">✦</span>
           <strong>Groundwork</strong>
           <span class="brand-sub">Open Research</span>
         </a>
-        <span class="live-status-pill"><span class="pulse-dot"></span> 751 Studies Live</span>
       </div>
       <nav class="header-nav" aria-label="Main Navigation">
         <a href="../" class="nav-link ">All</a>
         <a href="../money/" class="nav-link active">Money</a>
-<a href="../body/" class="nav-link">Body</a>
+<a href="../body/" class="nav-link">Health</a>
 <a href="../home/" class="nav-link">Home</a>
 <a href="../tech/" class="nav-link">Tech</a>
 <a href="../life/" class="nav-link">Life</a>
@@ -109,786 +100,780 @@
 
   <div class="container">
     <header class="top-header">
-      <div>
-        <h1>Groundwork Money Research Studies & Models</h1>
-        <p class="lead">Peer-verified decision whitepapers and real-time open intelligence digests. Connected to <a href="https://gworky.com" style="color: var(--accent); font-weight: bold;">Groundwork Media</a>.</p>
-      </div>
-      <div class="badges-row">
-        <a href="https://doi.org/10.5281/zenodo.22011567" target="_blank" rel="noopener" class="doi-badge">DOI: 10.5281/zenodo.22011567</a>
-        <a href="https://opencollective.com/gworkycom" target="_blank" rel="noopener" class="oc-badge">Open Collective</a>
-        <a href="https://groundworkpub.github.io/feed.xml" target="_blank" class="rss-badge">RSS Feed</a>
+      <h1>Money & Finance Research</h1>
+      <p class="lead">Clear, evidence-backed guides and decision utilities for personal finance, clinical health, home infrastructure, and technology.</p>
+      <div class="meta-links">
+        <span>Permanent Record: <a href="https://doi.org/10.5281/zenodo.22011567" target="_blank" rel="noopener">DOI: 10.5281/zenodo.22011567</a></span>
+        <span>•</span>
+        <a href="https://groundworkpub.github.io/feed.xml">RSS Feed</a>
+        <span>•</span>
+        <a href="https://gworky.com">gworky.com</a>
       </div>
     </header>
 
     
 
     <div class="toolbar">
-      <input type="text" id="search-box" class="search-input" placeholder="Search 81 whitepapers, decision models, or intelligence digests... (Press '/' to focus)" oninput="filterCards()">
+      <input type="text" id="search-box" class="search-input" placeholder="Search research guides, health analyses, and financial models... (Press '/' to focus)" oninput="filterCards()">
       <div class="filter-pills">
-        <button class="filter-pill " onclick="setFilter('all', this)">All (751)</button>
+        <button class="filter-pill " onclick="setFilter('all', this)">All</button>
         <button class="filter-pill active" onclick="setFilter('money', this)">Money</button>
-        <button class="filter-pill " onclick="setFilter('body', this)">Body</button>
+        <button class="filter-pill " onclick="setFilter('body', this)">Health</button>
         <button class="filter-pill " onclick="setFilter('home', this)">Home</button>
         <button class="filter-pill " onclick="setFilter('tech', this)">Tech</button>
-        <button class="filter-pill " onclick="setFilter('digest', this)">News Digests (32)</button>
+        <button class="filter-pill " onclick="setFilter('digest', this)">Digests</button>
       </div>
-    </div>
-
-    <div class="stats-bar">
-      <span id="results-count">Displaying 81 open research studies and digests</span>
-      <span>CERN Zenodo Verified • <a href="../sitemap.html" style="color: #8892B0; text-decoration: underline;">HTML Sitemap</a></span>
     </div>
 
     <div id="cards-container">
       
-        <article class="study-card" data-pillar="money" data-type="digest" data-search="what is scott bessent doing with the $32tn treasury market — and will it work? what is scott bessent doing with the $32tn treasury market — and will it work?&amp;nbsp;&amp;nbsp;financial timesu.s. bond intervention is like &#39;paying your mortgage with your credit card,&#39; jpmorgan&#39;s sullivan says&amp;nbsp;&amp;nbsp;cnbcscott bessent takes on bond vigilantes in $32tn treasury market&amp;nbsp;&amp;nbsp;financial timesan alarmed bond market gets the trump administration to act again&amp;nbsp;&amp;nbsp;ap newsbessent flags bigger debt buyback potential, coming fiscal plan&amp;nbsp;&amp;nbsp;bloomberg.com money">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
-            <span class="card-pill pill-digest">MONEY DIGEST</span>
-            <span style="color: #8892B0; font-size: 0.75rem;">Source: Financial Times</span>
+        <article class="study-card" data-pillar="money" data-type="digest" data-search="walmart stock drops 9% as sales growth slows, customers make &#39;trade-offs&#39; amid high fuel costs walmart stock drops 9% as sales growth slows, customers make &#39;trade-offs&#39; amid high fuel costs&amp;nbsp;&amp;nbsp;yahoo financewalmart stock tumbles 9% after outlook disappoints wall street&amp;nbsp;&amp;nbsp;cnbcwalmart promises price cuts after $2.9 billion tariff refund&amp;nbsp;&amp;nbsp;cnnwalmart posts slowest sales growth in years as americans tighten wallets&amp;nbsp;&amp;nbsp;the new york timeswalmart shares slump on weakest sales growth in over six years&amp;nbsp;&amp;nbsp;wsj money">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.3rem;">
+            <span class="card-pill pill-digest">DIGEST • MONEY</span>
+            <span style="color: #8892B0; font-size: 0.78rem;">Yahoo Finance</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../digest/what-is-scott-bessent-doing-with-the-32tn-treasury-market-and-will-it-work/" style="color: #FFFFFF; text-decoration: none;">What is Scott Bessent doing with the $32tn Treasury market — and will it work?</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">What is Scott Bessent doing with the $32tn Treasury market — and will it work?&amp;nbsp;&amp;nbsp;Financial TimesU.S. bond intervention is like &#39;paying your mortgage with your credit card,&#39; JPMorgan&#39;s Sullivan says&amp;nbsp;&amp;nbsp;CNBCScott Bessent takes on bond vigilantes in $32tn Treasury market&amp;nbsp;&amp;nbsp;Financial TimesAn alarmed bond market gets the Trump administration to act again&amp;nbsp;&amp;nbsp;AP NewsBessent Flags Bigger Debt Buyback Potential, Coming Fiscal Plan&amp;nbsp;&amp;nbsp;Bloomberg.com</p>
-          <a href="../digest/what-is-scott-bessent-doing-with-the-32tn-treasury-market-and-will-it-work/" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">Read Open Intelligence Digest &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../digest/walmart-stock-drops-9-as-sales-growth-slows-customers-make-trade-offs-amid-high/" style="color: #FFFFFF; text-decoration: none;">Walmart stock drops 9% as sales growth slows, customers make &#39;trade-offs&#39; amid high fuel costs</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Walmart stock drops 9% as sales growth slows, customers make &#39;trade-offs&#39; amid high fuel costs&amp;nbsp;&amp;nbsp;Yahoo FinanceWalmart stock tumbles 9% after outlook disappoints Wall Street&amp;nbsp;&amp;nbsp;CNBCWalmart promises price cuts after $2.9 billion tariff refund&amp;nbsp;&amp;nbsp;CNNWalmart Posts Slowest Sales Growth in Years as Americans Tighten Wallets&amp;nbsp;&amp;nbsp;The New York TimesWalmart Shares Slump on Weakest Sales Growth in Over Six Years&amp;nbsp;&amp;nbsp;WSJ</p>
+          <a href="../digest/walmart-stock-drops-9-as-sales-growth-slows-customers-make-trade-offs-amid-high/" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Digest &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="money" data-type="digest" data-search="what is scott bessent doing with the $32tn treasury market — and will it work? what is scott bessent doing with the $32tn treasury market — and will it work?&amp;nbsp;&amp;nbsp;financial timesu.s. bond intervention is like &#39;paying your mortgage with your credit card,&#39; jpmorgan&#39;s sullivan says&amp;nbsp;&amp;nbsp;cnbcscott bessent takes on bond vigilantes in $32tn treasury market&amp;nbsp;&amp;nbsp;financial timesan alarmed bond market gets the trump administration to act again&amp;nbsp;&amp;nbsp;ap news‘rearranging deckchairs on the titanic’: bonds erase the impact of treasury’s intervention&amp;nbsp;&amp;nbsp;nbc news money">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.3rem;">
+            <span class="card-pill pill-digest">DIGEST • MONEY</span>
+            <span style="color: #8892B0; font-size: 0.78rem;">Financial Times</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../digest/what-is-scott-bessent-doing-with-the-32tn-treasury-market-and-will-it-work/" style="color: #FFFFFF; text-decoration: none;">What is Scott Bessent doing with the $32tn Treasury market — and will it work?</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">What is Scott Bessent doing with the $32tn Treasury market — and will it work?&amp;nbsp;&amp;nbsp;Financial TimesU.S. bond intervention is like &#39;paying your mortgage with your credit card,&#39; JPMorgan&#39;s Sullivan says&amp;nbsp;&amp;nbsp;CNBCScott Bessent takes on bond vigilantes in $32tn Treasury market&amp;nbsp;&amp;nbsp;Financial TimesAn alarmed bond market gets the Trump administration to act again&amp;nbsp;&amp;nbsp;AP News‘Rearranging deckchairs on the Titanic’: Bonds erase the impact of Treasury’s intervention&amp;nbsp;&amp;nbsp;NBC News</p>
+          <a href="../digest/what-is-scott-bessent-doing-with-the-32tn-treasury-market-and-will-it-work/" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Digest &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="digest" data-search="here&#39;s how america&#39;s $40 trillion debt can hit your wallet here&#39;s how america&#39;s $40 trillion debt can hit your wallet&amp;nbsp;&amp;nbsp;axios3 things to know about the $40 trillion federal debt&amp;nbsp;&amp;nbsp;nprvance: bessent has ‘very discreet plan’ to shrink $40 trillion national debt&amp;nbsp;&amp;nbsp;the hillus debt crosses $40 trillion threshold after doubling under trump and biden&amp;nbsp;&amp;nbsp;reutersu.s. debt hits $40 trillion faster than forecasters expected&amp;nbsp;&amp;nbsp;the washington post money">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
-            <span class="card-pill pill-digest">MONEY DIGEST</span>
-            <span style="color: #8892B0; font-size: 0.75rem;">Source: Axios</span>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.3rem;">
+            <span class="card-pill pill-digest">DIGEST • MONEY</span>
+            <span style="color: #8892B0; font-size: 0.78rem;">Axios</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../digest/heres-how-americas-40-trillion-debt-can-hit-your-wallet/" style="color: #FFFFFF; text-decoration: none;">Here&#39;s how America&#39;s $40 trillion debt can hit your wallet</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Here&#39;s how America&#39;s $40 trillion debt can hit your wallet&amp;nbsp;&amp;nbsp;Axios3 things to know about the $40 trillion federal debt&amp;nbsp;&amp;nbsp;NPRVance: Bessent has ‘very discreet plan’ to shrink $40 trillion national debt&amp;nbsp;&amp;nbsp;The HillUS debt crosses $40 trillion threshold after doubling under Trump and Biden&amp;nbsp;&amp;nbsp;ReutersU.S. debt hits $40 trillion faster than forecasters expected&amp;nbsp;&amp;nbsp;The Washington Post</p>
-          <a href="../digest/heres-how-americas-40-trillion-debt-can-hit-your-wallet/" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">Read Open Intelligence Digest &rarr;</a>
-        </article>
-        
-        <article class="study-card" data-pillar="money" data-type="digest" data-search="walmart stock drops 9% as sales growth slows, customers make &#39;trade-offs&#39; amid high fuel costs walmart stock drops 9% as sales growth slows, customers make &#39;trade-offs&#39; amid high fuel costs&amp;nbsp;&amp;nbsp;yahoo financewalmart stock tumbles 9% after outlook disappoints wall street&amp;nbsp;&amp;nbsp;cnbcwalmart promises price cuts after $2.9 billion tariff refund&amp;nbsp;&amp;nbsp;cnnwalmart posts slowest sales growth in years as americans tighten wallets&amp;nbsp;&amp;nbsp;the new york timeswalmart shares slump on weakest sales growth in over six years&amp;nbsp;&amp;nbsp;wsj money">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
-            <span class="card-pill pill-digest">MONEY DIGEST</span>
-            <span style="color: #8892B0; font-size: 0.75rem;">Source: Yahoo Finance</span>
-          </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../digest/walmart-stock-drops-9-as-sales-growth-slows-customers-make-trade-offs-amid-high/" style="color: #FFFFFF; text-decoration: none;">Walmart stock drops 9% as sales growth slows, customers make &#39;trade-offs&#39; amid high fuel costs</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Walmart stock drops 9% as sales growth slows, customers make &#39;trade-offs&#39; amid high fuel costs&amp;nbsp;&amp;nbsp;Yahoo FinanceWalmart stock tumbles 9% after outlook disappoints Wall Street&amp;nbsp;&amp;nbsp;CNBCWalmart promises price cuts after $2.9 billion tariff refund&amp;nbsp;&amp;nbsp;CNNWalmart Posts Slowest Sales Growth in Years as Americans Tighten Wallets&amp;nbsp;&amp;nbsp;The New York TimesWalmart Shares Slump on Weakest Sales Growth in Over Six Years&amp;nbsp;&amp;nbsp;WSJ</p>
-          <a href="../digest/walmart-stock-drops-9-as-sales-growth-slows-customers-make-trade-offs-amid-high/" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">Read Open Intelligence Digest &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../digest/heres-how-americas-40-trillion-debt-can-hit-your-wallet/" style="color: #FFFFFF; text-decoration: none;">Here&#39;s how America&#39;s $40 trillion debt can hit your wallet</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Here&#39;s how America&#39;s $40 trillion debt can hit your wallet&amp;nbsp;&amp;nbsp;Axios3 things to know about the $40 trillion federal debt&amp;nbsp;&amp;nbsp;NPRVance: Bessent has ‘very discreet plan’ to shrink $40 trillion national debt&amp;nbsp;&amp;nbsp;The HillUS debt crosses $40 trillion threshold after doubling under Trump and Biden&amp;nbsp;&amp;nbsp;ReutersU.S. debt hits $40 trillion faster than forecasters expected&amp;nbsp;&amp;nbsp;The Washington Post</p>
+          <a href="../digest/heres-how-americas-40-trillion-debt-can-hit-your-wallet/" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Digest &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="digest" data-search="why is moderna stock down today? why is moderna stock down today?&amp;nbsp;&amp;nbsp;forbescancer vaccine from moderna, merck shows promise in late-stage trial; both stocks soar&amp;nbsp;&amp;nbsp;cnbcmoderna’s 177% surge burns shorts in ‘painful’ $5.5 billion loss&amp;nbsp;&amp;nbsp;bloomberg.commoderna’s shift to cancer company lifts stock up 177%&amp;nbsp;&amp;nbsp;the new york timeswhy did mrna, mrk, tgt stocks jump to 52-week highs today?&amp;nbsp;&amp;nbsp;yahoo finance money">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
-            <span class="card-pill pill-digest">MONEY DIGEST</span>
-            <span style="color: #8892B0; font-size: 0.75rem;">Source: Forbes</span>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.3rem;">
+            <span class="card-pill pill-digest">DIGEST • MONEY</span>
+            <span style="color: #8892B0; font-size: 0.78rem;">Forbes</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../digest/why-is-moderna-stock-down-today/" style="color: #FFFFFF; text-decoration: none;">Why Is Moderna Stock Down Today?</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Why Is Moderna Stock Down Today?&amp;nbsp;&amp;nbsp;ForbesCancer vaccine from Moderna, Merck shows promise in late-stage trial; both stocks soar&amp;nbsp;&amp;nbsp;CNBCModerna’s 177% Surge Burns Shorts in ‘Painful’ $5.5 Billion Loss&amp;nbsp;&amp;nbsp;Bloomberg.comModerna’s Shift to Cancer Company Lifts Stock Up 177%&amp;nbsp;&amp;nbsp;The New York TimesWhy Did MRNA, MRK, TGT Stocks Jump To 52-Week Highs Today?&amp;nbsp;&amp;nbsp;Yahoo Finance</p>
-          <a href="../digest/why-is-moderna-stock-down-today/" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">Read Open Intelligence Digest &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../digest/why-is-moderna-stock-down-today/" style="color: #FFFFFF; text-decoration: none;">Why Is Moderna Stock Down Today?</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Why Is Moderna Stock Down Today?&amp;nbsp;&amp;nbsp;ForbesCancer vaccine from Moderna, Merck shows promise in late-stage trial; both stocks soar&amp;nbsp;&amp;nbsp;CNBCModerna’s 177% Surge Burns Shorts in ‘Painful’ $5.5 Billion Loss&amp;nbsp;&amp;nbsp;Bloomberg.comModerna’s Shift to Cancer Company Lifts Stock Up 177%&amp;nbsp;&amp;nbsp;The New York TimesWhy Did MRNA, MRK, TGT Stocks Jump To 52-Week Highs Today?&amp;nbsp;&amp;nbsp;Yahoo Finance</p>
+          <a href="../digest/why-is-moderna-stock-down-today/" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Digest &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="digest" data-search="bond yields are climbing. here’s what that means for mortgages and other consumer borrowing bond yields are climbing. here’s what that means for mortgages and other consumer borrowing&amp;nbsp;&amp;nbsp;cnbc money">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
-            <span class="card-pill pill-digest">MONEY DIGEST</span>
-            <span style="color: #8892B0; font-size: 0.75rem;">Source: CNBC</span>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.3rem;">
+            <span class="card-pill pill-digest">DIGEST • MONEY</span>
+            <span style="color: #8892B0; font-size: 0.78rem;">CNBC</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../digest/bond-yields-are-climbing-heres-what-that-means-for-mortgages-and-other-consumer/" style="color: #FFFFFF; text-decoration: none;">Bond yields are climbing. Here’s what that means for mortgages and other consumer borrowing</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Bond yields are climbing. Here’s what that means for mortgages and other consumer borrowing&amp;nbsp;&amp;nbsp;CNBC</p>
-          <a href="../digest/bond-yields-are-climbing-heres-what-that-means-for-mortgages-and-other-consumer/" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">Read Open Intelligence Digest &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../digest/bond-yields-are-climbing-heres-what-that-means-for-mortgages-and-other-consumer/" style="color: #FFFFFF; text-decoration: none;">Bond yields are climbing. Here’s what that means for mortgages and other consumer borrowing</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Bond yields are climbing. Here’s what that means for mortgages and other consumer borrowing&amp;nbsp;&amp;nbsp;CNBC</p>
+          <a href="../digest/bond-yields-are-climbing-heres-what-that-means-for-mortgages-and-other-consumer/" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Digest &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="digest" data-search="mortgage rates dropped last week despite heightened bond market volatility: mortgage and refinance interest rates today, thursday, august 20, 2026 mortgage rates dropped last week despite heightened bond market volatility: mortgage and refinance interest rates today, thursday, august 20, 2026&amp;nbsp;&amp;nbsp;yahoo finance money">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
-            <span class="card-pill pill-digest">MONEY DIGEST</span>
-            <span style="color: #8892B0; font-size: 0.75rem;">Source: Yahoo Finance</span>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.3rem;">
+            <span class="card-pill pill-digest">DIGEST • MONEY</span>
+            <span style="color: #8892B0; font-size: 0.78rem;">Yahoo Finance</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../digest/mortgage-rates-dropped-last-week-despite-heightened-bond-market-volatility-mortg/" style="color: #FFFFFF; text-decoration: none;">Mortgage rates dropped last week despite heightened bond market volatility: Mortgage and refinance interest rates today, Thursday, August 20, 2026</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Mortgage rates dropped last week despite heightened bond market volatility: Mortgage and refinance interest rates today, Thursday, August 20, 2026&amp;nbsp;&amp;nbsp;Yahoo Finance</p>
-          <a href="../digest/mortgage-rates-dropped-last-week-despite-heightened-bond-market-volatility-mortg/" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">Read Open Intelligence Digest &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../digest/mortgage-rates-dropped-last-week-despite-heightened-bond-market-volatility-mortg/" style="color: #FFFFFF; text-decoration: none;">Mortgage rates dropped last week despite heightened bond market volatility: Mortgage and refinance interest rates today, Thursday, August 20, 2026</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Mortgage rates dropped last week despite heightened bond market volatility: Mortgage and refinance interest rates today, Thursday, August 20, 2026&amp;nbsp;&amp;nbsp;Yahoo Finance</p>
+          <a href="../digest/mortgage-rates-dropped-last-week-despite-heightened-bond-market-volatility-mortg/" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Digest &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="digest" data-search="index funds are the best inflation hedge, and you already have them index funds are the best inflation hedge, and you already have them&amp;nbsp;&amp;nbsp;bloomberg.com money">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
-            <span class="card-pill pill-digest">MONEY DIGEST</span>
-            <span style="color: #8892B0; font-size: 0.75rem;">Source: Bloomberg.com</span>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.3rem;">
+            <span class="card-pill pill-digest">DIGEST • MONEY</span>
+            <span style="color: #8892B0; font-size: 0.78rem;">Bloomberg.com</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../digest/index-funds-are-the-best-inflation-hedge-and-you-already-have-them/" style="color: #FFFFFF; text-decoration: none;">Index Funds Are the Best Inflation Hedge, and You Already Have Them</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Index Funds Are the Best Inflation Hedge, and You Already Have Them&amp;nbsp;&amp;nbsp;Bloomberg.com</p>
-          <a href="../digest/index-funds-are-the-best-inflation-hedge-and-you-already-have-them/" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">Read Open Intelligence Digest &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../digest/index-funds-are-the-best-inflation-hedge-and-you-already-have-them/" style="color: #FFFFFF; text-decoration: none;">Index Funds Are the Best Inflation Hedge, and You Already Have Them</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Index Funds Are the Best Inflation Hedge, and You Already Have Them&amp;nbsp;&amp;nbsp;Bloomberg.com</p>
+          <a href="../digest/index-funds-are-the-best-inflation-hedge-and-you-already-have-them/" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Digest &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="digest" data-search="the best index funds and how to start investing the best index funds and how to start investing&amp;nbsp;&amp;nbsp;nerdwallet money">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
-            <span class="card-pill pill-digest">MONEY DIGEST</span>
-            <span style="color: #8892B0; font-size: 0.75rem;">Source: NerdWallet</span>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.3rem;">
+            <span class="card-pill pill-digest">DIGEST • MONEY</span>
+            <span style="color: #8892B0; font-size: 0.78rem;">NerdWallet</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../digest/the-best-index-funds-and-how-to-start-investing/" style="color: #FFFFFF; text-decoration: none;">The Best Index Funds and How to Start Investing</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">The Best Index Funds and How to Start Investing&amp;nbsp;&amp;nbsp;NerdWallet</p>
-          <a href="../digest/the-best-index-funds-and-how-to-start-investing/" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">Read Open Intelligence Digest &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../digest/the-best-index-funds-and-how-to-start-investing/" style="color: #FFFFFF; text-decoration: none;">The Best Index Funds and How to Start Investing</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">The Best Index Funds and How to Start Investing&amp;nbsp;&amp;nbsp;NerdWallet</p>
+          <a href="../digest/the-best-index-funds-and-how-to-start-investing/" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Digest &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="how to calculate your mortgage refinance break-even point calculate your exact mortgage refinance break-even timeline by dividing total closing costs by monthly interest savings to avoid costly amortization resets. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../mortgage-refinance-break-even-guide/" style="color: #FFFFFF; text-decoration: none;">How to calculate your mortgage refinance break-even point</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Calculate your exact mortgage refinance break-even timeline by dividing total closing costs by monthly interest savings to avoid costly amortization resets.</p>
-          <a href="https://gworky.com/article/mortgage-refinance-break-even-guide" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../mortgage-refinance-break-even-guide/" style="color: #FFFFFF; text-decoration: none;">How to calculate your mortgage refinance break-even point</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Calculate your exact mortgage refinance break-even timeline by dividing total closing costs by monthly interest savings to avoid costly amortization resets.</p>
+          <a href="https://gworky.com/article/mortgage-refinance-break-even-guide" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="understanding mortgage rate fluctuations and market drivers mortgage rates fluctuate based on bond yields and global events. learn how to interpret daily rate changes and decide if you should lock your mortgage rate. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../mortgage-rate-fluctuations-and-market-drivers/" style="color: #FFFFFF; text-decoration: none;">Understanding mortgage rate fluctuations and market drivers</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Mortgage rates fluctuate based on bond yields and global events. Learn how to interpret daily rate changes and decide if you should lock your mortgage rate.</p>
-          <a href="https://gworky.com/article/mortgage-rate-fluctuations-and-market-drivers" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../mortgage-rate-fluctuations-and-market-drivers/" style="color: #FFFFFF; text-decoration: none;">Understanding mortgage rate fluctuations and market drivers</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Mortgage rates fluctuate based on bond yields and global events. Learn how to interpret daily rate changes and decide if you should lock your mortgage rate.</p>
+          <a href="https://gworky.com/article/mortgage-rate-fluctuations-and-market-drivers" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="federal reserve interest rate outlook and market impact is the fed raising rates in september? groundwork analyzes the latest economic data and institutional forecasts to explain the outlook for interest rates. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../fed-interest-rate-outlook-analysis/" style="color: #FFFFFF; text-decoration: none;">Federal Reserve interest rate outlook and market impact</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Is the Fed raising rates in September? Groundwork analyzes the latest economic data and institutional forecasts to explain the outlook for interest rates.</p>
-          <a href="https://gworky.com/article/fed-interest-rate-outlook-analysis" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../fed-interest-rate-outlook-analysis/" style="color: #FFFFFF; text-decoration: none;">Federal Reserve interest rate outlook and market impact</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Is the Fed raising rates in September? Groundwork analyzes the latest economic data and institutional forecasts to explain the outlook for interest rates.</p>
+          <a href="https://gworky.com/article/fed-interest-rate-outlook-analysis" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="how geopolitical instability and macroeconomic shifts impact bitcoin price stability bitcoin remains range-bound near $63,500 as geopolitical energy risks and a shifting dollar index create a complex macro environment for crypto investors. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../bitcoin-oil-geopolitics-market-analysis/" style="color: #FFFFFF; text-decoration: none;">How geopolitical instability and macroeconomic shifts impact bitcoin price stability</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Bitcoin remains range-bound near $63,500 as geopolitical energy risks and a shifting Dollar Index create a complex macro environment for crypto investors.</p>
-          <a href="https://gworky.com/article/bitcoin-oil-geopolitics-market-analysis" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../bitcoin-oil-geopolitics-market-analysis/" style="color: #FFFFFF; text-decoration: none;">How geopolitical instability and macroeconomic shifts impact bitcoin price stability</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Bitcoin remains range-bound near $63,500 as geopolitical energy risks and a shifting Dollar Index create a complex macro environment for crypto investors.</p>
+          <a href="https://gworky.com/article/bitcoin-oil-geopolitics-market-analysis" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="understanding the liquidity risks in bitcoin futures markets bitcoin&#39;s futures market is showing signs of a liquidity trap. learn how high open interest and low trading volume create risks for leveraged investors. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../bitcoin-futures-liquidity-risk-analysis/" style="color: #FFFFFF; text-decoration: none;">Understanding the liquidity risks in bitcoin futures markets</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Bitcoin&#39;s futures market is showing signs of a liquidity trap. Learn how high open interest and low trading volume create risks for leveraged investors.</p>
-          <a href="https://gworky.com/article/bitcoin-futures-liquidity-risk-analysis" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../bitcoin-futures-liquidity-risk-analysis/" style="color: #FFFFFF; text-decoration: none;">Understanding the liquidity risks in bitcoin futures markets</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Bitcoin&#39;s futures market is showing signs of a liquidity trap. Learn how high open interest and low trading volume create risks for leveraged investors.</p>
+          <a href="https://gworky.com/article/bitcoin-futures-liquidity-risk-analysis" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="the current state of crypto regulation and sec rulemaking the sec has indefinitely paused its crypto rulemaking process. discover why legislative uncertainty is delaying regulatory clarity and what it means for you. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../sec-crypto-rulemaking-status/" style="color: #FFFFFF; text-decoration: none;">The current state of crypto regulation and SEC rulemaking</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">The SEC has indefinitely paused its crypto rulemaking process. Discover why legislative uncertainty is delaying regulatory clarity and what it means for you.</p>
-          <a href="https://gworky.com/article/sec-crypto-rulemaking-status" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../sec-crypto-rulemaking-status/" style="color: #FFFFFF; text-decoration: none;">The current state of crypto regulation and SEC rulemaking</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">The SEC has indefinitely paused its crypto rulemaking process. Discover why legislative uncertainty is delaying regulatory clarity and what it means for you.</p>
+          <a href="https://gworky.com/article/sec-crypto-rulemaking-status" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="the conflict between stablecoin yields and traditional bank deposits stablecoin yields are challenging traditional banking models. learn why banks are fighting these products and how to evaluate the risk to your savings. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../stablecoin-yields-vs-bank-deposits/" style="color: #FFFFFF; text-decoration: none;">The conflict between stablecoin yields and traditional bank deposits</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Stablecoin yields are challenging traditional banking models. Learn why banks are fighting these products and how to evaluate the risk to your savings.</p>
-          <a href="https://gworky.com/article/stablecoin-yields-vs-bank-deposits" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../stablecoin-yields-vs-bank-deposits/" style="color: #FFFFFF; text-decoration: none;">The conflict between stablecoin yields and traditional bank deposits</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Stablecoin yields are challenging traditional banking models. Learn why banks are fighting these products and how to evaluate the risk to your savings.</p>
+          <a href="https://gworky.com/article/stablecoin-yields-vs-bank-deposits" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="understanding the fomc statement and its impact on your finances the federal reserve has held interest rates steady at 3.5%-3.75%. learn how this decision affects your mortgage, credit cards, and personal savings strategy. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../understanding-fomc-policy-decisions/" style="color: #FFFFFF; text-decoration: none;">Understanding the FOMC statement and its impact on your finances</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">The Federal Reserve has held interest rates steady at 3.5%-3.75%. Learn how this decision affects your mortgage, credit cards, and personal savings strategy.</p>
-          <a href="https://gworky.com/article/understanding-fomc-policy-decisions" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../understanding-fomc-policy-decisions/" style="color: #FFFFFF; text-decoration: none;">Understanding the FOMC statement and its impact on your finances</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">The Federal Reserve has held interest rates steady at 3.5%-3.75%. Learn how this decision affects your mortgage, credit cards, and personal savings strategy.</p>
+          <a href="https://gworky.com/article/understanding-fomc-policy-decisions" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="can deinfluencing help you spend less? deinfluencing is a movement that encourages consumers to reject unnecessary purchases. learn how to use it to curb impulse spending and improve your finances. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../can-deinfluencing-help-you-spend-less/" style="color: #FFFFFF; text-decoration: none;">Can deinfluencing help you spend less?</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Deinfluencing is a movement that encourages consumers to reject unnecessary purchases. Learn how to use it to curb impulse spending and improve your finances.</p>
-          <a href="https://gworky.com/article/can-deinfluencing-help-you-spend-less" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../can-deinfluencing-help-you-spend-less/" style="color: #FFFFFF; text-decoration: none;">Can deinfluencing help you spend less?</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Deinfluencing is a movement that encourages consumers to reject unnecessary purchases. Learn how to use it to curb impulse spending and improve your finances.</p>
+          <a href="https://gworky.com/article/can-deinfluencing-help-you-spend-less" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="what to know about pre-ipo perpetuals and the unitree robotics valuation unitree robotics is heading for an ipo, but pre-ipo perpetuals suggest a 4x valuation premium. here is how these synthetic derivatives work and the risks. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../unitree-robotics-ipo-pre-ipo-perpetuals/" style="color: #FFFFFF; text-decoration: none;">What to know about pre-IPO perpetuals and the Unitree robotics valuation</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Unitree Robotics is heading for an IPO, but pre-IPO perpetuals suggest a 4x valuation premium. Here is how these synthetic derivatives work and the risks.</p>
-          <a href="https://gworky.com/article/unitree-robotics-ipo-pre-ipo-perpetuals" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../unitree-robotics-ipo-pre-ipo-perpetuals/" style="color: #FFFFFF; text-decoration: none;">What to know about pre-IPO perpetuals and the Unitree robotics valuation</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Unitree Robotics is heading for an IPO, but pre-IPO perpetuals suggest a 4x valuation premium. Here is how these synthetic derivatives work and the risks.</p>
+          <a href="https://gworky.com/article/unitree-robotics-ipo-pre-ipo-perpetuals" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="how the strait of hormuz conflict impacts global markets conflict in the strait of hormuz threatens global oil supplies. learn how this geopolitical tension impacts your energy costs, investments, and inflation. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../strait-of-hormuz-conflict-impact/" style="color: #FFFFFF; text-decoration: none;">How the strait of hormuz conflict impacts global markets</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Conflict in the Strait of Hormuz threatens global oil supplies. Learn how this geopolitical tension impacts your energy costs, investments, and inflation.</p>
-          <a href="https://gworky.com/article/strait-of-hormuz-conflict-impact" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../strait-of-hormuz-conflict-impact/" style="color: #FFFFFF; text-decoration: none;">How the strait of hormuz conflict impacts global markets</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Conflict in the Strait of Hormuz threatens global oil supplies. Learn how this geopolitical tension impacts your energy costs, investments, and inflation.</p>
+          <a href="https://gworky.com/article/strait-of-hormuz-conflict-impact" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="how to interpret federal reserve economic projections learn how to interpret federal reserve economic projections and the fomc dot plot to make informed decisions about your debt, savings, and investments. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../understanding-fomc-economic-projections/" style="color: #FFFFFF; text-decoration: none;">How to interpret federal reserve economic projections</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Learn how to interpret Federal Reserve economic projections and the FOMC dot plot to make informed decisions about your debt, savings, and investments.</p>
-          <a href="https://gworky.com/article/understanding-fomc-economic-projections" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../understanding-fomc-economic-projections/" style="color: #FFFFFF; text-decoration: none;">How to interpret federal reserve economic projections</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Learn how to interpret Federal Reserve economic projections and the FOMC dot plot to make informed decisions about your debt, savings, and investments.</p>
+          <a href="https://gworky.com/article/understanding-fomc-economic-projections" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="understanding the federal reserve discount rate meetings learn how the federal reserve&#39;s discount rate meetings, like those held in june 2026, influence interest rates and your personal financial planning. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../understanding-fed-discount-rate-meetings/" style="color: #FFFFFF; text-decoration: none;">Understanding the federal reserve discount rate meetings</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Learn how the Federal Reserve&#39;s discount rate meetings, like those held in June 2026, influence interest rates and your personal financial planning.</p>
-          <a href="https://gworky.com/article/understanding-fed-discount-rate-meetings" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../understanding-fed-discount-rate-meetings/" style="color: #FFFFFF; text-decoration: none;">Understanding the federal reserve discount rate meetings</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Learn how the Federal Reserve&#39;s discount rate meetings, like those held in June 2026, influence interest rates and your personal financial planning.</p>
+          <a href="https://gworky.com/article/understanding-fed-discount-rate-meetings" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="how $11.2 billion in funding redefined the crypto industry new data shows $11.2 billion in 2026 funding shifted exclusively to regulated, permissioned crypto firms, signaling an end to the industry&#39;s permissionless era. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../crypto-permissionless-era-funding-analysis/" style="color: #FFFFFF; text-decoration: none;">How $11.2 billion in funding redefined the crypto industry</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">New data shows $11.2 billion in 2026 funding shifted exclusively to regulated, permissioned crypto firms, signaling an end to the industry&#39;s permissionless era.</p>
-          <a href="https://gworky.com/article/crypto-permissionless-era-funding-analysis" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../crypto-permissionless-era-funding-analysis/" style="color: #FFFFFF; text-decoration: none;">How $11.2 billion in funding redefined the crypto industry</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">New data shows $11.2 billion in 2026 funding shifted exclusively to regulated, permissioned crypto firms, signaling an end to the industry&#39;s permissionless era.</p>
+          <a href="https://gworky.com/article/crypto-permissionless-era-funding-analysis" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="why russia is banning bitcoin mining in key regions russia has banned bitcoin mining in moscow and kursk through 2032 to protect its power grid. learn how this shift affects global mining and your assets. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../russia-bitcoin-mining-ban-explained/" style="color: #FFFFFF; text-decoration: none;">Why Russia is banning Bitcoin mining in key regions</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Russia has banned Bitcoin mining in Moscow and Kursk through 2032 to protect its power grid. Learn how this shift affects global mining and your assets.</p>
-          <a href="https://gworky.com/article/russia-bitcoin-mining-ban-explained" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../russia-bitcoin-mining-ban-explained/" style="color: #FFFFFF; text-decoration: none;">Why Russia is banning Bitcoin mining in key regions</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Russia has banned Bitcoin mining in Moscow and Kursk through 2032 to protect its power grid. Learn how this shift affects global mining and your assets.</p>
+          <a href="https://gworky.com/article/russia-bitcoin-mining-ban-explained" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="what the world liberty trust company charter means for stablecoins world liberty trust co. received a preliminary conditional bank charter from the occ. learn what this means for the usd1 stablecoin and federal regulation. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../world-liberty-federal-bank-charter-explained/" style="color: #FFFFFF; text-decoration: none;">What the world liberty trust company charter means for stablecoins</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">World Liberty Trust Co. received a preliminary conditional bank charter from the OCC. Learn what this means for the USD1 stablecoin and federal regulation.</p>
-          <a href="https://gworky.com/article/world-liberty-federal-bank-charter-explained" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../world-liberty-federal-bank-charter-explained/" style="color: #FFFFFF; text-decoration: none;">What the world liberty trust company charter means for stablecoins</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">World Liberty Trust Co. received a preliminary conditional bank charter from the OCC. Learn what this means for the USD1 stablecoin and federal regulation.</p>
+          <a href="https://gworky.com/article/world-liberty-federal-bank-charter-explained" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="how sec regulatory delays affect tokenization stocks regulatory delays from the sec are creating volatility for tokenization stocks. learn why these &#39;speed bumps&#39; matter for your investment strategy. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../tokenization-stocks-sec-delay-impact/" style="color: #FFFFFF; text-decoration: none;">How SEC regulatory delays affect tokenization stocks</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Regulatory delays from the SEC are creating volatility for tokenization stocks. Learn why these &#39;speed bumps&#39; matter for your investment strategy.</p>
-          <a href="https://gworky.com/article/tokenization-stocks-sec-delay-impact" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../tokenization-stocks-sec-delay-impact/" style="color: #FFFFFF; text-decoration: none;">How SEC regulatory delays affect tokenization stocks</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Regulatory delays from the SEC are creating volatility for tokenization stocks. Learn why these &#39;speed bumps&#39; matter for your investment strategy.</p>
+          <a href="https://gworky.com/article/tokenization-stocks-sec-delay-impact" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="understanding market volatility and investor sentiment implied volatility is falling across bitcoin, stocks, and bonds. learn what this &#39;fear gauge&#39; drop means for your portfolio and how to manage risk today. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../understanding-market-volatility-and-investor-sentiment/" style="color: #FFFFFF; text-decoration: none;">Understanding market volatility and investor sentiment</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Implied volatility is falling across bitcoin, stocks, and bonds. Learn what this &#39;fear gauge&#39; drop means for your portfolio and how to manage risk today.</p>
-          <a href="https://gworky.com/article/understanding-market-volatility-and-investor-sentiment" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../understanding-market-volatility-and-investor-sentiment/" style="color: #FFFFFF; text-decoration: none;">Understanding market volatility and investor sentiment</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Implied volatility is falling across bitcoin, stocks, and bonds. Learn what this &#39;fear gauge&#39; drop means for your portfolio and how to manage risk today.</p>
+          <a href="https://gworky.com/article/understanding-market-volatility-and-investor-sentiment" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="understanding mortgage rate fluctuations and market volatility mortgage rates fluctuate daily based on global markets and economic indicators. learn how these jolts affect your home buying or refinancing strategy. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../mortgage-rate-trends-analysis/" style="color: #FFFFFF; text-decoration: none;">Understanding mortgage rate fluctuations and market volatility</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Mortgage rates fluctuate daily based on global markets and economic indicators. Learn how these jolts affect your home buying or refinancing strategy.</p>
-          <a href="https://gworky.com/article/mortgage-rate-trends-analysis" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../mortgage-rate-trends-analysis/" style="color: #FFFFFF; text-decoration: none;">Understanding mortgage rate fluctuations and market volatility</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Mortgage rates fluctuate daily based on global markets and economic indicators. Learn how these jolts affect your home buying or refinancing strategy.</p>
+          <a href="https://gworky.com/article/mortgage-rate-trends-analysis" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="crypto market outlook: macro drivers and regulatory shifts understand how fomc minutes, the coinbase-circle usdc renewal, and global regulatory shifts impact crypto markets in this week&#39;s data-driven outlook. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../crypto-market-outlook-august-macro-trends/" style="color: #FFFFFF; text-decoration: none;">Crypto market outlook: macro drivers and regulatory shifts</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Understand how FOMC minutes, the Coinbase-Circle USDC renewal, and global regulatory shifts impact crypto markets in this week&#39;s data-driven outlook.</p>
-          <a href="https://gworky.com/article/crypto-market-outlook-august-macro-trends" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../crypto-market-outlook-august-macro-trends/" style="color: #FFFFFF; text-decoration: none;">Crypto market outlook: macro drivers and regulatory shifts</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Understand how FOMC minutes, the Coinbase-Circle USDC renewal, and global regulatory shifts impact crypto markets in this week&#39;s data-driven outlook.</p>
+          <a href="https://gworky.com/article/crypto-market-outlook-august-macro-trends" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="xrp market analysis: evaluating the $1 support level and trader positioning xrp is hovering near $1 as traders pile into leveraged long positions. learn how to interpret derivatives data and market sentiment for informed decisions. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../xrp-price-analysis-market-volatility-and-trader-behavior/" style="color: #FFFFFF; text-decoration: none;">XRP market analysis: evaluating the $1 support level and trader positioning</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">XRP is hovering near $1 as traders pile into leveraged long positions. Learn how to interpret derivatives data and market sentiment for informed decisions.</p>
-          <a href="https://gworky.com/article/xrp-price-analysis-market-volatility-and-trader-behavior" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../xrp-price-analysis-market-volatility-and-trader-behavior/" style="color: #FFFFFF; text-decoration: none;">XRP market analysis: evaluating the $1 support level and trader positioning</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">XRP is hovering near $1 as traders pile into leveraged long positions. Learn how to interpret derivatives data and market sentiment for informed decisions.</p>
+          <a href="https://gworky.com/article/xrp-price-analysis-market-volatility-and-trader-behavior" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="why crypto investors are shifting from market-cap to fundamental analysis investors are moving away from market-cap rankings to evaluate crypto assets based on revenue, usage, and value capture. learn why fundamentals now matter. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../crypto-investing-fundamentals-vs-market-cap/" style="color: #FFFFFF; text-decoration: none;">Why crypto investors are shifting from market-cap to fundamental analysis</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Investors are moving away from market-cap rankings to evaluate crypto assets based on revenue, usage, and value capture. Learn why fundamentals now matter.</p>
-          <a href="https://gworky.com/article/crypto-investing-fundamentals-vs-market-cap" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../crypto-investing-fundamentals-vs-market-cap/" style="color: #FFFFFF; text-decoration: none;">Why crypto investors are shifting from market-cap to fundamental analysis</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Investors are moving away from market-cap rankings to evaluate crypto assets based on revenue, usage, and value capture. Learn why fundamentals now matter.</p>
+          <a href="https://gworky.com/article/crypto-investing-fundamentals-vs-market-cap" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="how to protect your digital assets during the eu mica transition the eu&#39;s mica regulation has triggered a wave of crypto scams. learn how to verify platforms and protect your digital assets during the migration process. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../mica-crypto-scam-risks-eu/" style="color: #FFFFFF; text-decoration: none;">How to protect your digital assets during the EU MiCA transition</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">The EU&#39;s MiCA regulation has triggered a wave of crypto scams. Learn how to verify platforms and protect your digital assets during the migration process.</p>
-          <a href="https://gworky.com/article/mica-crypto-scam-risks-eu" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../mica-crypto-scam-risks-eu/" style="color: #FFFFFF; text-decoration: none;">How to protect your digital assets during the EU MiCA transition</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">The EU&#39;s MiCA regulation has triggered a wave of crypto scams. Learn how to verify platforms and protect your digital assets during the migration process.</p>
+          <a href="https://gworky.com/article/mica-crypto-scam-risks-eu" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="what the safepal data breach means for your crypto security a data breach at safepal exposed 40,000 customers&#39; order info. learn why your crypto remains safe but why you must watch for phishing attempts. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../safepal-data-breach-security-analysis/" style="color: #FFFFFF; text-decoration: none;">What the SafePal data breach means for your crypto security</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">A data breach at SafePal exposed 40,000 customers&#39; order info. Learn why your crypto remains safe but why you must watch for phishing attempts.</p>
-          <a href="https://gworky.com/article/safepal-data-breach-security-analysis" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../safepal-data-breach-security-analysis/" style="color: #FFFFFF; text-decoration: none;">What the SafePal data breach means for your crypto security</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">A data breach at SafePal exposed 40,000 customers&#39; order info. Learn why your crypto remains safe but why you must watch for phishing attempts.</p>
+          <a href="https://gworky.com/article/safepal-data-breach-security-analysis" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="institutional crypto adoption and the end of &#39;long bitcoin, short the bankers&#39; the era of &#39;long bitcoin, short the bankers&#39; has ended as major financial institutions integrate digital assets into their core offerings. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../institutional-crypto-adoption-analysis/" style="color: #FFFFFF; text-decoration: none;">Institutional crypto adoption and the end of &#39;long bitcoin, short the bankers&#39;</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">The era of &#39;long bitcoin, short the bankers&#39; has ended as major financial institutions integrate digital assets into their core offerings.</p>
-          <a href="https://gworky.com/article/institutional-crypto-adoption-analysis" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../institutional-crypto-adoption-analysis/" style="color: #FFFFFF; text-decoration: none;">Institutional crypto adoption and the end of &#39;long bitcoin, short the bankers&#39;</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">The era of &#39;long bitcoin, short the bankers&#39; has ended as major financial institutions integrate digital assets into their core offerings.</p>
+          <a href="https://gworky.com/article/institutional-crypto-adoption-analysis" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="what the surge in ubs bitcoin etf options means for your portfolio ubs increased its bitcoin etf call options by 24-fold. learn what this institutional shift means for your portfolio and how to evaluate crypto etf risks. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../ubs-bitcoin-etf-exposure-analysis/" style="color: #FFFFFF; text-decoration: none;">What the surge in UBS bitcoin etf options means for your portfolio</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">UBS increased its bitcoin ETF call options by 24-fold. Learn what this institutional shift means for your portfolio and how to evaluate crypto ETF risks.</p>
-          <a href="https://gworky.com/article/ubs-bitcoin-etf-exposure-analysis" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../ubs-bitcoin-etf-exposure-analysis/" style="color: #FFFFFF; text-decoration: none;">What the surge in UBS bitcoin etf options means for your portfolio</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">UBS increased its bitcoin ETF call options by 24-fold. Learn what this institutional shift means for your portfolio and how to evaluate crypto ETF risks.</p>
+          <a href="https://gworky.com/article/ubs-bitcoin-etf-exposure-analysis" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="understanding the rising security costs for the supreme court learn why the supreme court is requesting a 10% budget increase for 2027 and how rising threats against federal judges are impacting judicial security costs. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../supreme-court-judicial-security-budget-analysis/" style="color: #FFFFFF; text-decoration: none;">Understanding the rising security costs for the supreme court</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Learn why the Supreme Court is requesting a 10% budget increase for 2027 and how rising threats against federal judges are impacting judicial security costs.</p>
-          <a href="https://gworky.com/article/supreme-court-judicial-security-budget-analysis" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../supreme-court-judicial-security-budget-analysis/" style="color: #FFFFFF; text-decoration: none;">Understanding the rising security costs for the supreme court</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Learn why the Supreme Court is requesting a 10% budget increase for 2027 and how rising threats against federal judges are impacting judicial security costs.</p>
+          <a href="https://gworky.com/article/supreme-court-judicial-security-budget-analysis" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="institutional reputation and the risks of professional proximity to bad actors analyzing the risks of professional proximity to bad actors through the lens of kathryn ruemmler’s testimony regarding her relationship with jeffrey epstein. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../kathryn-ruemmler-epstein-ties-oversight-analysis/" style="color: #FFFFFF; text-decoration: none;">Institutional reputation and the risks of professional proximity to bad actors</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Analyzing the risks of professional proximity to bad actors through the lens of Kathryn Ruemmler’s testimony regarding her relationship with Jeffrey Epstein.</p>
-          <a href="https://gworky.com/article/kathryn-ruemmler-epstein-ties-oversight-analysis" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../kathryn-ruemmler-epstein-ties-oversight-analysis/" style="color: #FFFFFF; text-decoration: none;">Institutional reputation and the risks of professional proximity to bad actors</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Analyzing the risks of professional proximity to bad actors through the lens of Kathryn Ruemmler’s testimony regarding her relationship with Jeffrey Epstein.</p>
+          <a href="https://gworky.com/article/kathryn-ruemmler-epstein-ties-oversight-analysis" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="understanding fomc minutes and their impact on your finances fomc minutes are the official record of federal reserve policy discussions. learn how to interpret these documents to anticipate interest rate changes. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../understanding-fomc-minutes-and-monetary-policy/" style="color: #FFFFFF; text-decoration: none;">Understanding fomc minutes and their impact on your finances</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">FOMC minutes are the official record of Federal Reserve policy discussions. Learn how to interpret these documents to anticipate interest rate changes.</p>
-          <a href="https://gworky.com/article/understanding-fomc-minutes-and-monetary-policy" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../understanding-fomc-minutes-and-monetary-policy/" style="color: #FFFFFF; text-decoration: none;">Understanding fomc minutes and their impact on your finances</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">FOMC minutes are the official record of Federal Reserve policy discussions. Learn how to interpret these documents to anticipate interest rate changes.</p>
+          <a href="https://gworky.com/article/understanding-fomc-minutes-and-monetary-policy" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="how to interpret federal reserve discount rate minutes learn how the federal reserve&#39;s discount rate meetings influence the economy and why these minutes are key indicators for financial stability and credit costs. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../understanding-federal-reserve-discount-rate-minutes/" style="color: #FFFFFF; text-decoration: none;">How to interpret federal reserve discount rate minutes</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Learn how the Federal Reserve&#39;s discount rate meetings influence the economy and why these minutes are key indicators for financial stability and credit costs.</p>
-          <a href="https://gworky.com/article/understanding-federal-reserve-discount-rate-minutes" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../understanding-federal-reserve-discount-rate-minutes/" style="color: #FFFFFF; text-decoration: none;">How to interpret federal reserve discount rate minutes</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Learn how the Federal Reserve&#39;s discount rate meetings influence the economy and why these minutes are key indicators for financial stability and credit costs.</p>
+          <a href="https://gworky.com/article/understanding-federal-reserve-discount-rate-minutes" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="what the june 2026 fomc minutes mean for your finances wondering what the june 2026 fomc minutes mean for your money? learn how fed policy impacts your interest rates, debt, and long-term investment strategy. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../understanding-fomc-minutes-june-2026/" style="color: #FFFFFF; text-decoration: none;">What the June 2026 FOMC minutes mean for your finances</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Wondering what the June 2026 FOMC minutes mean for your money? Learn how Fed policy impacts your interest rates, debt, and long-term investment strategy.</p>
-          <a href="https://gworky.com/article/understanding-fomc-minutes-june-2026" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../understanding-fomc-minutes-june-2026/" style="color: #FFFFFF; text-decoration: none;">What the June 2026 FOMC minutes mean for your finances</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Wondering what the June 2026 FOMC minutes mean for your money? Learn how Fed policy impacts your interest rates, debt, and long-term investment strategy.</p>
+          <a href="https://gworky.com/article/understanding-fomc-minutes-june-2026" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="how federal reserve task forces impact monetary policy the federal reserve has launched five task forces to modernize its monetary policy tools. learn how these changes impact interest rates and your finances. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../how-federal-reserve-task-forces-impact-monetary-policy/" style="color: #FFFFFF; text-decoration: none;">How federal reserve task forces impact monetary policy</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">The Federal Reserve has launched five task forces to modernize its monetary policy tools. Learn how these changes impact interest rates and your finances.</p>
-          <a href="https://gworky.com/article/how-federal-reserve-task-forces-impact-monetary-policy" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../how-federal-reserve-task-forces-impact-monetary-policy/" style="color: #FFFFFF; text-decoration: none;">How federal reserve task forces impact monetary policy</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">The Federal Reserve has launched five task forces to modernize its monetary policy tools. Learn how these changes impact interest rates and your finances.</p>
+          <a href="https://gworky.com/article/how-federal-reserve-task-forces-impact-monetary-policy" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="how to interpret the federal reserve&#39;s fomc interest rate decisions learn how the federal reserve&#39;s fomc interest rate decisions impact your mortgage, credit cards, and savings, and how to adjust your financial strategy. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../understanding-fomc-interest-rate-decisions/" style="color: #FFFFFF; text-decoration: none;">How to interpret the Federal Reserve&#39;s FOMC interest rate decisions</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Learn how the Federal Reserve&#39;s FOMC interest rate decisions impact your mortgage, credit cards, and savings, and how to adjust your financial strategy.</p>
-          <a href="https://gworky.com/article/understanding-fomc-interest-rate-decisions" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../understanding-fomc-interest-rate-decisions/" style="color: #FFFFFF; text-decoration: none;">How to interpret the Federal Reserve&#39;s FOMC interest rate decisions</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Learn how the Federal Reserve&#39;s FOMC interest rate decisions impact your mortgage, credit cards, and savings, and how to adjust your financial strategy.</p>
+          <a href="https://gworky.com/article/understanding-fomc-interest-rate-decisions" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="analyzing paul tudor jones&#39; shifting approach to bitcoin etfs tudor investment increased its blackrock bitcoin etf stake by 18.9%. learn what this shift means for institutional crypto strategies and your own portfolio. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../paul-tudor-jones-bitcoin-etf-strategy/" style="color: #FFFFFF; text-decoration: none;">Analyzing Paul Tudor Jones&#39; shifting approach to bitcoin etfs</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Tudor Investment increased its BlackRock bitcoin ETF stake by 18.9%. Learn what this shift means for institutional crypto strategies and your own portfolio.</p>
-          <a href="https://gworky.com/article/paul-tudor-jones-bitcoin-etf-strategy" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../paul-tudor-jones-bitcoin-etf-strategy/" style="color: #FFFFFF; text-decoration: none;">Analyzing Paul Tudor Jones&#39; shifting approach to bitcoin etfs</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Tudor Investment increased its BlackRock bitcoin ETF stake by 18.9%. Learn what this shift means for institutional crypto strategies and your own portfolio.</p>
+          <a href="https://gworky.com/article/paul-tudor-jones-bitcoin-etf-strategy" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="how crypto institutionalization impacts your investment strategy crypto is shifting from a speculative retail market to an institutional one. learn how regulatory changes and institutional adoption affect your strategy. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../how-crypto-institutionalization-impacts-investors/" style="color: #FFFFFF; text-decoration: none;">How crypto institutionalization impacts your investment strategy</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Crypto is shifting from a speculative retail market to an institutional one. Learn how regulatory changes and institutional adoption affect your strategy.</p>
-          <a href="https://gworky.com/article/how-crypto-institutionalization-impacts-investors" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../how-crypto-institutionalization-impacts-investors/" style="color: #FFFFFF; text-decoration: none;">How crypto institutionalization impacts your investment strategy</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Crypto is shifting from a speculative retail market to an institutional one. Learn how regulatory changes and institutional adoption affect your strategy.</p>
+          <a href="https://gworky.com/article/how-crypto-institutionalization-impacts-investors" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="how social learning drives union growth union growth often happens in bursts due to social learning. discover how observing local union successes influences worker support and collective action. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../how-social-learning-drives-union-growth/" style="color: #FFFFFF; text-decoration: none;">How social learning drives union growth</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Union growth often happens in bursts due to social learning. Discover how observing local union successes influences worker support and collective action.</p>
-          <a href="https://gworky.com/article/how-social-learning-drives-union-growth" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../how-social-learning-drives-union-growth/" style="color: #FFFFFF; text-decoration: none;">How social learning drives union growth</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Union growth often happens in bursts due to social learning. Discover how observing local union successes influences worker support and collective action.</p>
+          <a href="https://gworky.com/article/how-social-learning-drives-union-growth" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="understanding the currency premium puzzle and global interest rates the currency premium puzzle highlights why standard economic models fail to predict interest rate differences between global currencies. learn why this happens. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../currency-premium-puzzle-explained/" style="color: #FFFFFF; text-decoration: none;">Understanding the currency premium puzzle and global interest rates</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">The currency premium puzzle highlights why standard economic models fail to predict interest rate differences between global currencies. Learn why this happens.</p>
-          <a href="https://gworky.com/article/currency-premium-puzzle-explained" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../currency-premium-puzzle-explained/" style="color: #FFFFFF; text-decoration: none;">Understanding the currency premium puzzle and global interest rates</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">The currency premium puzzle highlights why standard economic models fail to predict interest rate differences between global currencies. Learn why this happens.</p>
+          <a href="https://gworky.com/article/currency-premium-puzzle-explained" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="how to optimize spillover experiments for better data accuracy learn how to optimize spillover experiments to increase data accuracy and sample efficiency by up to 100% using robust statistical design and iv estimators. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../optimizing-spillover-experiment-design/" style="color: #FFFFFF; text-decoration: none;">How to optimize spillover experiments for better data accuracy</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Learn how to optimize spillover experiments to increase data accuracy and sample efficiency by up to 100% using robust statistical design and IV estimators.</p>
-          <a href="https://gworky.com/article/optimizing-spillover-experiment-design" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../optimizing-spillover-experiment-design/" style="color: #FFFFFF; text-decoration: none;">How to optimize spillover experiments for better data accuracy</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Learn how to optimize spillover experiments to increase data accuracy and sample efficiency by up to 100% using robust statistical design and IV estimators.</p>
+          <a href="https://gworky.com/article/optimizing-spillover-experiment-design" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="the role of family background in american political selection research shows that members of congress are consistently drawn from elite families. learn how socioeconomic advantages have shaped american political selection. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../elite-political-selection-american-history/" style="color: #FFFFFF; text-decoration: none;">The role of family background in American political selection</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Research shows that Members of Congress are consistently drawn from elite families. Learn how socioeconomic advantages have shaped American political selection.</p>
-          <a href="https://gworky.com/article/elite-political-selection-american-history" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../elite-political-selection-american-history/" style="color: #FFFFFF; text-decoration: none;">The role of family background in American political selection</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Research shows that Members of Congress are consistently drawn from elite families. Learn how socioeconomic advantages have shaped American political selection.</p>
+          <a href="https://gworky.com/article/elite-political-selection-american-history" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="what the white house crypto innovation meeting means for investors learn how the upcoming white house innovation meeting with crypto ceos may influence future regulation and what it means for your digital asset investments. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../trump-white-house-crypto-meeting-impact/" style="color: #FFFFFF; text-decoration: none;">What the white house crypto innovation meeting means for investors</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Learn how the upcoming White House innovation meeting with crypto CEOs may influence future regulation and what it means for your digital asset investments.</p>
-          <a href="https://gworky.com/article/trump-white-house-crypto-meeting-impact" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../trump-white-house-crypto-meeting-impact/" style="color: #FFFFFF; text-decoration: none;">What the white house crypto innovation meeting means for investors</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Learn how the upcoming White House innovation meeting with crypto CEOs may influence future regulation and what it means for your digital asset investments.</p>
+          <a href="https://gworky.com/article/trump-white-house-crypto-meeting-impact" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="how to evaluate semiconductor memory stocks and etfs learn how memory stocks work, why they are cyclical, and how to use etfs to diversify your exposure to the semiconductor industry. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../investing-in-semiconductor-memory-stocks/" style="color: #FFFFFF; text-decoration: none;">How to evaluate semiconductor memory stocks and ETFs</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Learn how memory stocks work, why they are cyclical, and how to use ETFs to diversify your exposure to the semiconductor industry.</p>
-          <a href="https://gworky.com/article/investing-in-semiconductor-memory-stocks" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../investing-in-semiconductor-memory-stocks/" style="color: #FFFFFF; text-decoration: none;">How to evaluate semiconductor memory stocks and ETFs</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Learn how memory stocks work, why they are cyclical, and how to use ETFs to diversify your exposure to the semiconductor industry.</p>
+          <a href="https://gworky.com/article/investing-in-semiconductor-memory-stocks" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="how to use award travel search tools to maximize your points learn how to use award travel search tools to find the best flight and hotel redemptions, maximize your points value, and avoid common booking pitfalls. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../best-award-travel-search-tools/" style="color: #FFFFFF; text-decoration: none;">How to use award travel search tools to maximize your points</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Learn how to use award travel search tools to find the best flight and hotel redemptions, maximize your points value, and avoid common booking pitfalls.</p>
-          <a href="https://gworky.com/article/best-award-travel-search-tools" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../best-award-travel-search-tools/" style="color: #FFFFFF; text-decoration: none;">How to use award travel search tools to maximize your points</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Learn how to use award travel search tools to find the best flight and hotel redemptions, maximize your points value, and avoid common booking pitfalls.</p>
+          <a href="https://gworky.com/article/best-award-travel-search-tools" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="what the bank leumi and galaxy partnership means for crypto investors bank leumi is partnering with galaxy digital to offer crypto trading by 2027. learn how this shift affects your ability to trade digital assets via banks. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../bank-leumi-crypto-trading-galaxy-partnership/" style="color: #FFFFFF; text-decoration: none;">What the bank leumi and galaxy partnership means for crypto investors</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Bank Leumi is partnering with Galaxy Digital to offer crypto trading by 2027. Learn how this shift affects your ability to trade digital assets via banks.</p>
-          <a href="https://gworky.com/article/bank-leumi-crypto-trading-galaxy-partnership" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../bank-leumi-crypto-trading-galaxy-partnership/" style="color: #FFFFFF; text-decoration: none;">What the bank leumi and galaxy partnership means for crypto investors</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Bank Leumi is partnering with Galaxy Digital to offer crypto trading by 2027. Learn how this shift affects your ability to trade digital assets via banks.</p>
+          <a href="https://gworky.com/article/bank-leumi-crypto-trading-galaxy-partnership" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="how index providers influence corporate asset strategy index providers like msci are updating rules for &#39;non-operating companies,&#39; sparking debate over whether they should influence how firms manage their assets. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../msci-index-exclusion-rules-explained/" style="color: #FFFFFF; text-decoration: none;">How index providers influence corporate asset strategy</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Index providers like MSCI are updating rules for &#39;non-operating companies,&#39; sparking debate over whether they should influence how firms manage their assets.</p>
-          <a href="https://gworky.com/article/msci-index-exclusion-rules-explained" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../msci-index-exclusion-rules-explained/" style="color: #FFFFFF; text-decoration: none;">How index providers influence corporate asset strategy</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Index providers like MSCI are updating rules for &#39;non-operating companies,&#39; sparking debate over whether they should influence how firms manage their assets.</p>
+          <a href="https://gworky.com/article/msci-index-exclusion-rules-explained" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="how mortgage interest rates move and what they mean for your home loan mortgage rates fluctuate based on inflation and bond yields. learn how these economic factors impact your home loan and what steps to take when rates drop. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../mortgage-interest-rate-trends-explained/" style="color: #FFFFFF; text-decoration: none;">How mortgage interest rates move and what they mean for your home loan</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Mortgage rates fluctuate based on inflation and bond yields. Learn how these economic factors impact your home loan and what steps to take when rates drop.</p>
-          <a href="https://gworky.com/article/mortgage-interest-rate-trends-explained" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../mortgage-interest-rate-trends-explained/" style="color: #FFFFFF; text-decoration: none;">How mortgage interest rates move and what they mean for your home loan</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Mortgage rates fluctuate based on inflation and bond yields. Learn how these economic factors impact your home loan and what steps to take when rates drop.</p>
+          <a href="https://gworky.com/article/mortgage-interest-rate-trends-explained" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="the risks of single-asset concentration in corporate treasuries concentration risk occurs when you rely on one asset for wealth. discover why corporate bitcoin strategies highlight the dangers of abandoning diversification. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../bitcoin-concentration-risk-analysis/" style="color: #FFFFFF; text-decoration: none;">The risks of single-asset concentration in corporate treasuries</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Concentration risk occurs when you rely on one asset for wealth. Discover why corporate Bitcoin strategies highlight the dangers of abandoning diversification.</p>
-          <a href="https://gworky.com/article/bitcoin-concentration-risk-analysis" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../bitcoin-concentration-risk-analysis/" style="color: #FFFFFF; text-decoration: none;">The risks of single-asset concentration in corporate treasuries</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Concentration risk occurs when you rely on one asset for wealth. Discover why corporate Bitcoin strategies highlight the dangers of abandoning diversification.</p>
+          <a href="https://gworky.com/article/bitcoin-concentration-risk-analysis" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="kalshi valuation and the growth of regulated prediction markets kalshi is in talks to raise $750 million at a $40 billion valuation. learn what this means for the future of regulated prediction markets and your investments. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../kalshi-40-billion-valuation-funding-analysis/" style="color: #FFFFFF; text-decoration: none;">Kalshi valuation and the growth of regulated prediction markets</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Kalshi is in talks to raise $750 million at a $40 billion valuation. Learn what this means for the future of regulated prediction markets and your investments.</p>
-          <a href="https://gworky.com/article/kalshi-40-billion-valuation-funding-analysis" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../kalshi-40-billion-valuation-funding-analysis/" style="color: #FFFFFF; text-decoration: none;">Kalshi valuation and the growth of regulated prediction markets</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Kalshi is in talks to raise $750 million at a $40 billion valuation. Learn what this means for the future of regulated prediction markets and your investments.</p>
+          <a href="https://gworky.com/article/kalshi-40-billion-valuation-funding-analysis" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="why a $1 million bitcoin price may be overly optimistic a $1 million bitcoin price may be overly optimistic. discover how high u.s. treasury yields create an opportunity cost that challenges current crypto forecasts. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../bitcoin-price-forecast-analysis/" style="color: #FFFFFF; text-decoration: none;">Why a $1 million bitcoin price may be overly optimistic</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">A $1 million bitcoin price may be overly optimistic. Discover how high U.S. Treasury yields create an opportunity cost that challenges current crypto forecasts.</p>
-          <a href="https://gworky.com/article/bitcoin-price-forecast-analysis" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../bitcoin-price-forecast-analysis/" style="color: #FFFFFF; text-decoration: none;">Why a $1 million bitcoin price may be overly optimistic</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">A $1 million bitcoin price may be overly optimistic. Discover how high U.S. Treasury yields create an opportunity cost that challenges current crypto forecasts.</p>
+          <a href="https://gworky.com/article/bitcoin-price-forecast-analysis" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="how blockchain is changing government bond settlement mufg is testing real-time blockchain settlement for japanese government bonds. learn how this shift to the canton network aims to improve liquidity and speed. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../mufg-blockchain-jgb-settlement/" style="color: #FFFFFF; text-decoration: none;">How blockchain is changing government bond settlement</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">MUFG is testing real-time blockchain settlement for Japanese government bonds. Learn how this shift to the Canton network aims to improve liquidity and speed.</p>
-          <a href="https://gworky.com/article/mufg-blockchain-jgb-settlement" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../mufg-blockchain-jgb-settlement/" style="color: #FFFFFF; text-decoration: none;">How blockchain is changing government bond settlement</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">MUFG is testing real-time blockchain settlement for Japanese government bonds. Learn how this shift to the Canton network aims to improve liquidity and speed.</p>
+          <a href="https://gworky.com/article/mufg-blockchain-jgb-settlement" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="what the sec’s delay of regulation crypto means for investors the sec has delayed its &#39;regulation crypto&#39; proposal indefinitely. learn what this means for digital asset markets and how to manage your investment risks. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../sec-reg-crypto-proposal-delay-explained/" style="color: #FFFFFF; text-decoration: none;">What the SEC’s delay of Regulation Crypto means for investors</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">The SEC has delayed its &#39;Regulation Crypto&#39; proposal indefinitely. Learn what this means for digital asset markets and how to manage your investment risks.</p>
-          <a href="https://gworky.com/article/sec-reg-crypto-proposal-delay-explained" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../sec-reg-crypto-proposal-delay-explained/" style="color: #FFFFFF; text-decoration: none;">What the SEC’s delay of Regulation Crypto means for investors</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">The SEC has delayed its &#39;Regulation Crypto&#39; proposal indefinitely. Learn what this means for digital asset markets and how to manage your investment risks.</p>
+          <a href="https://gworky.com/article/sec-reg-crypto-proposal-delay-explained" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="why bitcoin and xrp prices are declining bitcoin and xrp are facing pressure from regulatory delays, institutional etf outflows, and rising treasury yields. learn why these factors impact your crypto. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../why-bitcoin-and-xrp-prices-are-declining/" style="color: #FFFFFF; text-decoration: none;">Why bitcoin and xrp prices are declining</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Bitcoin and XRP are facing pressure from regulatory delays, institutional ETF outflows, and rising treasury yields. Learn why these factors impact your crypto.</p>
-          <a href="https://gworky.com/article/why-bitcoin-and-xrp-prices-are-declining" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../why-bitcoin-and-xrp-prices-are-declining/" style="color: #FFFFFF; text-decoration: none;">Why bitcoin and xrp prices are declining</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Bitcoin and XRP are facing pressure from regulatory delays, institutional ETF outflows, and rising treasury yields. Learn why these factors impact your crypto.</p>
+          <a href="https://gworky.com/article/why-bitcoin-and-xrp-prices-are-declining" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="the economic reality for iowa farmers in the current trade climate iowa farmers face rising costs and market volatility. learn how trade policies and input costs are impacting agricultural financial stability in 2026. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../agricultural-economics-iowa-farmers-analysis/" style="color: #FFFFFF; text-decoration: none;">The economic reality for Iowa farmers in the current trade climate</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Iowa farmers face rising costs and market volatility. Learn how trade policies and input costs are impacting agricultural financial stability in 2026.</p>
-          <a href="https://gworky.com/article/agricultural-economics-iowa-farmers-analysis" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../agricultural-economics-iowa-farmers-analysis/" style="color: #FFFFFF; text-decoration: none;">The economic reality for Iowa farmers in the current trade climate</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Iowa farmers face rising costs and market volatility. Learn how trade policies and input costs are impacting agricultural financial stability in 2026.</p>
+          <a href="https://gworky.com/article/agricultural-economics-iowa-farmers-analysis" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="understanding the federal ruling on mail-in voting executive orders a federal appeals court has blocked an executive order on mail-in voting in 23 states. learn how this ruling affects your upcoming election procedures. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../federal-appeals-court-mail-in-voting-ruling/" style="color: #FFFFFF; text-decoration: none;">Understanding the federal ruling on mail-in voting executive orders</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">A federal appeals court has blocked an executive order on mail-in voting in 23 states. Learn how this ruling affects your upcoming election procedures.</p>
-          <a href="https://gworky.com/article/federal-appeals-court-mail-in-voting-ruling" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../federal-appeals-court-mail-in-voting-ruling/" style="color: #FFFFFF; text-decoration: none;">Understanding the federal ruling on mail-in voting executive orders</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">A federal appeals court has blocked an executive order on mail-in voting in 23 states. Learn how this ruling affects your upcoming election procedures.</p>
+          <a href="https://gworky.com/article/federal-appeals-court-mail-in-voting-ruling" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="the true cost of the kirkland chocolate chip return kirkland signature chocolate chips are back on shelves, but at a significantly higher price. learn how to calculate unit costs and manage your grocery budget. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../kirkland-chocolate-chips-price-analysis/" style="color: #FFFFFF; text-decoration: none;">The true cost of the kirkland chocolate chip return</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Kirkland Signature chocolate chips are back on shelves, but at a significantly higher price. Learn how to calculate unit costs and manage your grocery budget.</p>
-          <a href="https://gworky.com/article/kirkland-chocolate-chips-price-analysis" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../kirkland-chocolate-chips-price-analysis/" style="color: #FFFFFF; text-decoration: none;">The true cost of the kirkland chocolate chip return</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Kirkland Signature chocolate chips are back on shelves, but at a significantly higher price. Learn how to calculate unit costs and manage your grocery budget.</p>
+          <a href="https://gworky.com/article/kirkland-chocolate-chips-price-analysis" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="what the swissquote guidance cut means for your crypto portfolio swissquote cut its financial guidance following a 66% drop in crypto income. learn what this means for your portfolio and how to manage exchange risk. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../swissquote-crypto-revenue-decline-analysis/" style="color: #FFFFFF; text-decoration: none;">What the Swissquote guidance cut means for your crypto portfolio</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Swissquote cut its financial guidance following a 66% drop in crypto income. Learn what this means for your portfolio and how to manage exchange risk.</p>
-          <a href="https://gworky.com/article/swissquote-crypto-revenue-decline-analysis" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../swissquote-crypto-revenue-decline-analysis/" style="color: #FFFFFF; text-decoration: none;">What the Swissquote guidance cut means for your crypto portfolio</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Swissquote cut its financial guidance following a 66% drop in crypto income. Learn what this means for your portfolio and how to manage exchange risk.</p>
+          <a href="https://gworky.com/article/swissquote-crypto-revenue-decline-analysis" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="what to do if you were affected by the trezor data breach trezor confirmed a data breach at its shipping partner, shipmonk. here is what was stolen, why your crypto is safe, and how to avoid phishing scams. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../trezor-data-breach-what-to-do/" style="color: #FFFFFF; text-decoration: none;">What to do if you were affected by the Trezor data breach</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Trezor confirmed a data breach at its shipping partner, ShipMonk. Here is what was stolen, why your crypto is safe, and how to avoid phishing scams.</p>
-          <a href="https://gworky.com/article/trezor-data-breach-what-to-do" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../trezor-data-breach-what-to-do/" style="color: #FFFFFF; text-decoration: none;">What to do if you were affected by the Trezor data breach</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Trezor confirmed a data breach at its shipping partner, ShipMonk. Here is what was stolen, why your crypto is safe, and how to avoid phishing scams.</p>
+          <a href="https://gworky.com/article/trezor-data-breach-what-to-do" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="what the proposed msci index changes mean for your bitcoin-holding stocks msci is proposing to exclude &#39;non-operating&#39; companies from its indexes. learn how this impacts bitcoin-heavy firms like strategy and metaplanet. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../msci-index-exclusion-bitcoin-firms/" style="color: #FFFFFF; text-decoration: none;">What the proposed MSCI index changes mean for your bitcoin-holding stocks</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">MSCI is proposing to exclude &#39;non-operating&#39; companies from its indexes. Learn how this impacts bitcoin-heavy firms like Strategy and Metaplanet.</p>
-          <a href="https://gworky.com/article/msci-index-exclusion-bitcoin-firms" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../msci-index-exclusion-bitcoin-firms/" style="color: #FFFFFF; text-decoration: none;">What the proposed MSCI index changes mean for your bitcoin-holding stocks</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">MSCI is proposing to exclude &#39;non-operating&#39; companies from its indexes. Learn how this impacts bitcoin-heavy firms like Strategy and Metaplanet.</p>
+          <a href="https://gworky.com/article/msci-index-exclusion-bitcoin-firms" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="why jpmorgan ended its banking relationship with polymarket jpmorgan ended its banking relationship with polymarket in 2025. learn why banks de-risk crypto-adjacent businesses and how to manage your own banking risk. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../jpmorgan-polymarket-banking-relationship/" style="color: #FFFFFF; text-decoration: none;">Why JPMorgan ended its banking relationship with Polymarket</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">JPMorgan ended its banking relationship with Polymarket in 2025. Learn why banks de-risk crypto-adjacent businesses and how to manage your own banking risk.</p>
-          <a href="https://gworky.com/article/jpmorgan-polymarket-banking-relationship" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../jpmorgan-polymarket-banking-relationship/" style="color: #FFFFFF; text-decoration: none;">Why JPMorgan ended its banking relationship with Polymarket</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">JPMorgan ended its banking relationship with Polymarket in 2025. Learn why banks de-risk crypto-adjacent businesses and how to manage your own banking risk.</p>
+          <a href="https://gworky.com/article/jpmorgan-polymarket-banking-relationship" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="why the sec is delaying the innovation exemption for tokenized assets the sec has delayed its tokenization innovation exemption due to white house and wall street concerns. learn how this impacts the future of digital assets. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../sec-innovation-exemption-delay-tokenization/" style="color: #FFFFFF; text-decoration: none;">Why the SEC is delaying the innovation exemption for tokenized assets</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">The SEC has delayed its tokenization innovation exemption due to White House and Wall Street concerns. Learn how this impacts the future of digital assets.</p>
-          <a href="https://gworky.com/article/sec-innovation-exemption-delay-tokenization" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../sec-innovation-exemption-delay-tokenization/" style="color: #FFFFFF; text-decoration: none;">Why the SEC is delaying the innovation exemption for tokenized assets</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">The SEC has delayed its tokenization innovation exemption due to White House and Wall Street concerns. Learn how this impacts the future of digital assets.</p>
+          <a href="https://gworky.com/article/sec-innovation-exemption-delay-tokenization" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="closing the crypto advice gap in financial planning the crypto advice gap is the divide between clients holding digital assets and advisors who refuse to manage them. learn how to bridge this gap. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../crypto-advice-gap-financial-planning/" style="color: #FFFFFF; text-decoration: none;">Closing the crypto advice gap in financial planning</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">The crypto advice gap is the divide between clients holding digital assets and advisors who refuse to manage them. Learn how to bridge this gap.</p>
-          <a href="https://gworky.com/article/crypto-advice-gap-financial-planning" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../crypto-advice-gap-financial-planning/" style="color: #FFFFFF; text-decoration: none;">Closing the crypto advice gap in financial planning</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">The crypto advice gap is the divide between clients holding digital assets and advisors who refuse to manage them. Learn how to bridge this gap.</p>
+          <a href="https://gworky.com/article/crypto-advice-gap-financial-planning" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="what the tether full financial audit means for usdt holders tether has completed its first full financial audit by kpmg. learn what this means for usdt stability and how to evaluate the risks of holding stablecoins. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../tether-completes-first-full-audit/" style="color: #FFFFFF; text-decoration: none;">What the tether full financial audit means for usdt holders</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Tether has completed its first full financial audit by KPMG. Learn what this means for USDT stability and how to evaluate the risks of holding stablecoins.</p>
-          <a href="https://gworky.com/article/tether-completes-first-full-audit" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../tether-completes-first-full-audit/" style="color: #FFFFFF; text-decoration: none;">What the tether full financial audit means for usdt holders</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Tether has completed its first full financial audit by KPMG. Learn what this means for USDT stability and how to evaluate the risks of holding stablecoins.</p>
+          <a href="https://gworky.com/article/tether-completes-first-full-audit" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="how current inflation trends influence mortgage rates mortgage rates are seeing minor relief as inflation cools, but market uncertainty persists. learn how economic data impacts your borrowing costs. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../mortgage-rates-inflation-impact/" style="color: #FFFFFF; text-decoration: none;">How current inflation trends influence mortgage rates</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Mortgage rates are seeing minor relief as inflation cools, but market uncertainty persists. Learn how economic data impacts your borrowing costs.</p>
-          <a href="https://gworky.com/article/mortgage-rates-inflation-impact" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../mortgage-rates-inflation-impact/" style="color: #FFFFFF; text-decoration: none;">How current inflation trends influence mortgage rates</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Mortgage rates are seeing minor relief as inflation cools, but market uncertainty persists. Learn how economic data impacts your borrowing costs.</p>
+          <a href="https://gworky.com/article/mortgage-rates-inflation-impact" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="how institutional wealth managers are accessing crypto liquidity in asia institutional crypto adoption is rising as family offices use liquidity providers to access digital assets. learn how professional firms bridge this gap. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../institutional-crypto-adoption-asia-wealth-management/" style="color: #FFFFFF; text-decoration: none;">How institutional wealth managers are accessing crypto liquidity in Asia</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Institutional crypto adoption is rising as family offices use liquidity providers to access digital assets. Learn how professional firms bridge this gap.</p>
-          <a href="https://gworky.com/article/institutional-crypto-adoption-asia-wealth-management" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../institutional-crypto-adoption-asia-wealth-management/" style="color: #FFFFFF; text-decoration: none;">How institutional wealth managers are accessing crypto liquidity in Asia</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Institutional crypto adoption is rising as family offices use liquidity providers to access digital assets. Learn how professional firms bridge this gap.</p>
+          <a href="https://gworky.com/article/institutional-crypto-adoption-asia-wealth-management" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="understanding current mortgage rate fluctuations mortgage rates fluctuate based on inflation and bond market activity. learn how these changes impact your borrowing power and how to navigate rate locks. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../understanding-current-mortgage-rate-fluctuations/" style="color: #FFFFFF; text-decoration: none;">Understanding current mortgage rate fluctuations</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Mortgage rates fluctuate based on inflation and bond market activity. Learn how these changes impact your borrowing power and how to navigate rate locks.</p>
-          <a href="https://gworky.com/article/understanding-current-mortgage-rate-fluctuations" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../understanding-current-mortgage-rate-fluctuations/" style="color: #FFFFFF; text-decoration: none;">Understanding current mortgage rate fluctuations</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Mortgage rates fluctuate based on inflation and bond market activity. Learn how these changes impact your borrowing power and how to navigate rate locks.</p>
+          <a href="https://gworky.com/article/understanding-current-mortgage-rate-fluctuations" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="how mortgage rates work and why they change mortgage rates fluctuate daily based on bond market performance and inflation data. learn how these economic factors influence your home loan interest rate. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../how-mortgage-rates-are-determined/" style="color: #FFFFFF; text-decoration: none;">How mortgage rates work and why they change</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Mortgage rates fluctuate daily based on bond market performance and inflation data. Learn how these economic factors influence your home loan interest rate.</p>
-          <a href="https://gworky.com/article/how-mortgage-rates-are-determined" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../how-mortgage-rates-are-determined/" style="color: #FFFFFF; text-decoration: none;">How mortgage rates work and why they change</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Mortgage rates fluctuate daily based on bond market performance and inflation data. Learn how these economic factors influence your home loan interest rate.</p>
+          <a href="https://gworky.com/article/how-mortgage-rates-are-determined" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="understanding the digy11 bitcoin yield etf learn how the proposed digy11 etf uses preferred shares to generate yield for brazilian investors and the risks involved with this income-focused strategy. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../understanding-digy11-brazil-bitcoin-etf/" style="color: #FFFFFF; text-decoration: none;">Understanding the DIGY11 bitcoin yield ETF</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Learn how the proposed DIGY11 ETF uses preferred shares to generate yield for Brazilian investors and the risks involved with this income-focused strategy.</p>
-          <a href="https://gworky.com/article/understanding-digy11-brazil-bitcoin-etf" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../understanding-digy11-brazil-bitcoin-etf/" style="color: #FFFFFF; text-decoration: none;">Understanding the DIGY11 bitcoin yield ETF</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Learn how the proposed DIGY11 ETF uses preferred shares to generate yield for Brazilian investors and the risks involved with this income-focused strategy.</p>
+          <a href="https://gworky.com/article/understanding-digy11-brazil-bitcoin-etf" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="understanding crypto market volatility and asset performance bitcoin is holding steady near $64,000 as market volatility remains low. learn how inflation data, futures market trends, and altcoin performance impact you. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../understanding-crypto-market-volatility-and-asset-performance/" style="color: #FFFFFF; text-decoration: none;">Understanding crypto market volatility and asset performance</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Bitcoin is holding steady near $64,000 as market volatility remains low. Learn how inflation data, futures market trends, and altcoin performance impact you.</p>
-          <a href="https://gworky.com/article/understanding-crypto-market-volatility-and-asset-performance" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../understanding-crypto-market-volatility-and-asset-performance/" style="color: #FFFFFF; text-decoration: none;">Understanding crypto market volatility and asset performance</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Bitcoin is holding steady near $64,000 as market volatility remains low. Learn how inflation data, futures market trends, and altcoin performance impact you.</p>
+          <a href="https://gworky.com/article/understanding-crypto-market-volatility-and-asset-performance" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="understanding presidential financial disclosures and investment management a presidential financial disclosure provides transparency into a leader&#39;s assets. learn how these portfolios are managed and why transparency matters. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../understanding-presidential-financial-disclosures/" style="color: #FFFFFF; text-decoration: none;">Understanding presidential financial disclosures and investment management</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">A presidential financial disclosure provides transparency into a leader&#39;s assets. Learn how these portfolios are managed and why transparency matters.</p>
-          <a href="https://gworky.com/article/understanding-presidential-financial-disclosures" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../understanding-presidential-financial-disclosures/" style="color: #FFFFFF; text-decoration: none;">Understanding presidential financial disclosures and investment management</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">A presidential financial disclosure provides transparency into a leader&#39;s assets. Learn how these portfolios are managed and why transparency matters.</p>
+          <a href="https://gworky.com/article/understanding-presidential-financial-disclosures" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="understanding the state of the u.s. strategic petroleum reserve the u.s. strategic petroleum reserve has fallen to its lowest level since 1983. learn why this decline occurred and what it means for national energy security. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../us-strategic-petroleum-reserve-levels/" style="color: #FFFFFF; text-decoration: none;">Understanding the state of the U.S. strategic petroleum reserve</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">The U.S. Strategic Petroleum Reserve has fallen to its lowest level since 1983. Learn why this decline occurred and what it means for national energy security.</p>
-          <a href="https://gworky.com/article/us-strategic-petroleum-reserve-levels" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../us-strategic-petroleum-reserve-levels/" style="color: #FFFFFF; text-decoration: none;">Understanding the state of the U.S. strategic petroleum reserve</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">The U.S. Strategic Petroleum Reserve has fallen to its lowest level since 1983. Learn why this decline occurred and what it means for national energy security.</p>
+          <a href="https://gworky.com/article/us-strategic-petroleum-reserve-levels" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="how to buy land to build a house learn how to buy land for a house. understand the differences between raw and improved lots, secure the right financing, and manage site development costs. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../how-to-buy-land-to-build-a-house/" style="color: #FFFFFF; text-decoration: none;">How to buy land to build a house</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Learn how to buy land for a house. Understand the differences between raw and improved lots, secure the right financing, and manage site development costs.</p>
-          <a href="https://gworky.com/article/how-to-buy-land-to-build-a-house" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../how-to-buy-land-to-build-a-house/" style="color: #FFFFFF; text-decoration: none;">How to buy land to build a house</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Learn how to buy land for a house. Understand the differences between raw and improved lots, secure the right financing, and manage site development costs.</p>
+          <a href="https://gworky.com/article/how-to-buy-land-to-build-a-house" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="how to navigate a low-hire, low-fire labor market a low-hire, low-fire labor market makes job hunting harder due to fewer vacancies. learn how to adapt your search strategy and navigate this stagnant market. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../navigating-the-low-hire-low-fire-labor-market/" style="color: #FFFFFF; text-decoration: none;">How to navigate a low-hire, low-fire labor market</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">A low-hire, low-fire labor market makes job hunting harder due to fewer vacancies. Learn how to adapt your search strategy and navigate this stagnant market.</p>
-          <a href="https://gworky.com/article/navigating-the-low-hire-low-fire-labor-market" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../navigating-the-low-hire-low-fire-labor-market/" style="color: #FFFFFF; text-decoration: none;">How to navigate a low-hire, low-fire labor market</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">A low-hire, low-fire labor market makes job hunting harder due to fewer vacancies. Learn how to adapt your search strategy and navigate this stagnant market.</p>
+          <a href="https://gworky.com/article/navigating-the-low-hire-low-fire-labor-market" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="how to calculate your true break-even point before refinancing a mortgage refinancing at 5.5% sounds enticing, but closing costs, origination fees, and loan term resets can cost you thousands if not evaluated correctly. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../mortgage-refinance-guide-2026/" style="color: #FFFFFF; text-decoration: none;">How to calculate your true break-even point before refinancing a mortgage</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Refinancing at 5.5% sounds enticing, but closing costs, origination fees, and loan term resets can cost you thousands if not evaluated correctly.</p>
-          <a href="https://gworky.com/article/mortgage-refinance-guide-2026" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../mortgage-refinance-guide-2026/" style="color: #FFFFFF; text-decoration: none;">How to calculate your true break-even point before refinancing a mortgage</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">Refinancing at 5.5% sounds enticing, but closing costs, origination fees, and loan term resets can cost you thousands if not evaluated correctly.</p>
+          <a href="https://gworky.com/article/mortgage-refinance-guide-2026" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
         <article class="study-card" data-pillar="money" data-type="study" data-search="understanding the american express fine hotels &amp; resorts program expansion the american express fine hotels &amp; resorts program has expanded to over 1,500 properties. learn how to leverage these perks to maximize your travel value. money">
-          <div style="margin-bottom: 0.4rem;">
+          <div style="margin-bottom: 0.3rem;">
             <span class="card-pill pill-study">MONEY</span>
           </div>
-          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../american-express-fine-hotels-resorts-expansion-guide/" style="color: #FFFFFF; text-decoration: none;">Understanding the American Express Fine Hotels &amp; Resorts program expansion</a></h3>
-          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">The American Express Fine Hotels &amp; Resorts program has expanded to over 1,500 properties. Learn how to leverage these perks to maximize your travel value.</p>
-          <a href="https://gworky.com/article/american-express-fine-hotels-resorts-expansion-guide" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+          <h3 style="font-size: 1.15rem; margin: 0.2rem 0 0.4rem; line-height: 1.4; font-weight: 500;"><a href="../american-express-fine-hotels-resorts-expansion-guide/" style="color: #FFFFFF; text-decoration: none;">Understanding the American Express Fine Hotels &amp; Resorts program expansion</a></h3>
+          <p style="color: #8892B0; font-size: 0.9rem; margin-bottom: 0.5rem; line-height: 1.5;">The American Express Fine Hotels &amp; Resorts program has expanded to over 1,500 properties. Learn how to leverage these perks to maximize your travel value.</p>
+          <a href="https://gworky.com/article/american-express-fine-hotels-resorts-expansion-guide" style="color: #10B981; font-size: 0.82rem; font-weight: 500; text-decoration: none;">Read Study on Groundwork &rarr;</a>
         </article>
         
     </div>
 
     <footer>
-      <p>Groundwork Open Research Repository • Published under Creative Commons & Open Science Framework • <a href="https://gworky.com">gworky.com</a> | <a href="../sitemap.html">Complete HTML Index</a> | <a href="../llms.txt">LLM Manifest</a></p>
+      <p>Groundwork Open Research Archive • Published under Open Science standards • <a href="https://gworky.com">gworky.com</a> | <a href="../sitemap.html">Directory Index</a></p>
     </footer>
   </div>
 
   <script>
     let currentPillar = 'money';
 
-    // Keyboard shortcut for search
     document.addEventListener('keydown', (e) => {
       if (e.key === '/' && document.activeElement !== document.getElementById('search-box')) {
         e.preventDefault();
@@ -906,7 +891,6 @@
     function filterCards() {
       const query = document.getElementById('search-box').value.toLowerCase().trim();
       const cards = document.querySelectorAll('.study-card');
-      let visible = 0;
 
       cards.forEach(card => {
         const searchData = card.getAttribute('data-search') || '';
@@ -920,13 +904,10 @@
 
         if (matchesQuery && matchesPillar) {
           card.style.display = 'block';
-          visible++;
         } else {
           card.style.display = 'none';
         }
       });
-
-      document.getElementById('results-count').innerText = `Displaying ${visible} open research studies and digests`;
     }
   </script>
 </body>
