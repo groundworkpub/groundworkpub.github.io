@@ -1,7 +1,7 @@
 {
-  "version": "v1.5.0",
+  "version": "v1.6.0",
   "doi": "10.5281/zenodo.22011567",
-  "timestamp": "2026-08-21T04:32:31.416939+00:00",
+  "timestamp": "2026-08-21T04:35:56.189553+00:00",
   "pipeline": "Groundwork Autonomous Agentic Ingestion Engine",
   "stats": {
     "total_articles": 719,
