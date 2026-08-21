@@ -15,10 +15,11 @@
 - **Flagship Peer-Verified Studies:** `719`
 - **Open Intelligence Digests:** `32`
 - **Scholarly DOI:** `https://doi.org/10.5281/zenodo.22011567`
-- **Current Version:** `v1.4.0`
+- **Current Version:** `v1.5.0`
 - **Primary Platform:** [https://gworky.com](https://gworky.com)
 - **Interactive Archive:** [https://groundworkpub.github.io](https://groundworkpub.github.io)
 - **Syndication Feed:** [https://groundworkpub.github.io/feed.xml](https://groundworkpub.github.io/feed.xml)
+- **Knowledge Structure Map:** [STRUCTURE.md](STRUCTURE.md)
 
 ---
 
@@ -28,12 +29,12 @@ To cite this repository in academic papers, technical documentation, or policy r
 
 ### APA 7th Edition
 ```text
-Vance, E., & Groundwork Research Collective. (2026). Groundwork Open Research & Evidence-Based Whitepapers Archive (v1.4.0). CERN Zenodo. https://doi.org/10.5281/zenodo.22011567
+Vance, E., & Groundwork Research Collective. (2026). Groundwork Open Research & Evidence-Based Whitepapers Archive (v1.5.0). CERN Zenodo. https://doi.org/10.5281/zenodo.22011567
 ```
 
 ### BibTeX
 ```bibtex
-@misc{groundwork_archive_v1.4.0,
+@misc{groundwork_archive_v1.5.0,
   author = {Vance, Elena and Groundwork Research Collective},
   title  = {Groundwork Open Research & Evidence-Based Whitepapers Archive},
   year   = {2026},
