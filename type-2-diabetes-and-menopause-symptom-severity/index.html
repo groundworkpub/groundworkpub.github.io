@@ -37,7 +37,6 @@
         "@id": "https://gworky.com/#website",
         "url": "https://gworky.com",
         "name": "Groundwork Media",
-        "description": "Evidence-based decision guides and interactive calculators.",
         "publisher": {
           "@id": "https://gworky.com/#organization"
         }
@@ -51,6 +50,30 @@
           "@type": "ImageObject",
           "url": "https://groundworkpub.github.io/og.svg"
         }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://gworky.com/article/type-2-diabetes-and-menopause-symptom-severity#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://groundworkpub.github.io/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "BODY",
+            "item": "https://groundworkpub.github.io/body/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "How type 2 diabetes influences menopause symptom severity",
+            "item": "https://gworky.com/article/type-2-diabetes-and-menopause-symptom-severity"
+          }
+        ]
       },
       {
         "@type": "Person",
@@ -67,6 +90,7 @@
         "url": "https://gworky.com/article/type-2-diabetes-and-menopause-symptom-severity",
         "datePublished": "2026-08-21",
         "dateModified": "2026-08-21",
+        "wordCount": 826,
         "author": {
           "@id": "https://gworky.com/author/dr-sarah-jenkins#author"
         },
@@ -110,28 +134,60 @@
       --card-alt: #1E2D4A;
       --text: #CCD6F6;
       --heading: #FFFFFF;
-      --accent: #10B981;
-      --accent-glow: rgba(16, 185, 129, 0.15);
+      --accent: #3B82F6;
+      --accent-glow: rgba(59, 130, 246, 0.15);
       --muted: #8892B0;
       --border: rgba(255, 255, 255, 0.08);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif; background: var(--bg); color: var(--text); line-height: 1.75; padding: 2rem 1rem; }
-    .container { max-width: 860px; margin: 0 auto; background: var(--card); padding: 2.5rem; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
-    .header-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 10px; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif; background: var(--bg); color: var(--text); line-height: 1.75; padding-top: 70px; }
+    
+    /* Sticky Glassmorphic Header */
+    .site-header { position: fixed; top: 0; left: 0; right: 0; background: rgba(10, 25, 47, 0.88); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); z-index: 1000; }
+    .header-inner { max-width: 1080px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 1.5rem; }
+    .header-brand { display: flex; align-items: center; gap: 12px; }
+    .brand-logo { color: #FFFFFF; text-decoration: none; font-size: 1.1rem; display: flex; align-items: center; gap: 6px; }
+    .logo-dot { color: #10B981; }
+    .brand-sub { color: #8892B0; font-size: 0.78rem; font-weight: normal; margin-left: 4px; }
+    .live-status-pill { display: inline-flex; align-items: center; gap: 6px; background: rgba(16, 185, 129, 0.12); color: #10B981; font-size: 0.72rem; font-weight: bold; padding: 2px 8px; border-radius: 9999px; border: 1px solid rgba(16, 185, 129, 0.25); }
+    .pulse-dot { width: 6px; height: 6px; background: #10B981; border-radius: 50%; display: inline-block; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+    
+    .header-nav { display: flex; gap: 12px; align-items: center; }
+    .nav-link { color: var(--muted); text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 4px 8px; border-radius: 6px; transition: all 0.2s; }
+    .nav-link:hover, .nav-link.active { color: #FFFFFF; background: rgba(255, 255, 255, 0.06); }
+    .gworky-link { color: #10B981 !important; border: 1px solid rgba(16, 185, 129, 0.3); }
+    .reading-progress-bar { height: 3px; background: var(--accent); width: 0%; transition: width 0.1s ease-out; }
+    
+    /* Layout */
+    .container { max-width: 860px; margin: 2rem auto; background: var(--card); padding: 2.5rem; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+    
+    /* Breadcrumbs */
+    .breadcrumbs { font-size: 0.82rem; color: var(--muted); margin-bottom: 1.2rem; display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+    .breadcrumbs a { color: var(--muted); text-decoration: none; }
+    .breadcrumbs a:hover { color: var(--accent); }
+    
+    .header-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.2rem; flex-wrap: wrap; gap: 10px; }
     .badge { display: inline-block; background: var(--accent-glow); color: var(--accent); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.05em; padding: 0.35rem 0.85rem; border-radius: 9999px; text-transform: uppercase; }
     .doi-tag { font-size: 0.78rem; color: var(--muted); text-decoration: none; border: 1px solid var(--border); padding: 0.3rem 0.7rem; border-radius: 6px; }
     .doi-tag:hover { border-color: var(--accent); color: var(--accent); }
     
+    /* Article Meta */
+    .article-meta { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; font-size: 0.85rem; color: var(--muted); margin-bottom: 1.8rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
+    .meta-item { display: inline-flex; align-items: center; gap: 5px; }
+    
     h1 { color: var(--heading); font-size: 2.1rem; line-height: 1.3; margin-bottom: 1.2rem; font-family: Georgia, serif; }
-    h2 { color: var(--heading); font-size: 1.4rem; margin: 2rem 0 1rem; }
-    h3 { color: var(--heading); font-size: 1.15rem; margin: 1.5rem 0 0.8rem; }
+    h2 { color: var(--heading); font-size: 1.4rem; margin: 2.2rem 0 1rem; }
+    h3 { color: var(--heading); font-size: 1.15rem; margin: 1.6rem 0 0.8rem; }
     p { margin-bottom: 1.2rem; }
     ul { margin-left: 1.5rem; margin-bottom: 1.2rem; }
     li { margin-bottom: 0.5rem; }
 
+    /* Table of Contents */
+    .toc-card { background: var(--card-alt); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem 1.5rem; margin: 2rem 0; }
+
     /* AEO Quick Answer Card */
-    .quick-answer-card { background: rgba(16, 185, 129, 0.07); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem; }
+    .quick-answer-card { background: var(--accent-glow); border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem; }
     .quick-answer-card h3 { color: var(--accent); font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; margin-top: 0; }
     .quick-answer-card p { font-size: 1.05rem; color: #FFFFFF; font-weight: 500; margin-bottom: 0; line-height: 1.6; }
 
@@ -144,19 +200,71 @@
     .canonical-box { background: var(--accent-glow); border-left: 4px solid var(--accent); padding: 1.2rem; border-radius: 6px; margin: 2rem 0; font-size: 0.95rem; }
     .canonical-box a { color: var(--accent); font-weight: bold; text-decoration: underline; }
     
+    /* Study Pagination (Next/Prev) */
+    .study-pagination { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 3rem 0 1rem; }
+    .nav-card { background: var(--card-alt); border: 1px solid var(--border); padding: 1.2rem; border-radius: 8px; text-decoration: none; display: flex; flex-direction: column; gap: 4px; transition: all 0.2s; }
+    .nav-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .next-card { text-align: right; }
+    .nav-dir { font-size: 0.75rem; color: var(--accent); text-transform: uppercase; font-weight: bold; }
+    .nav-title { color: #FFFFFF; font-size: 0.9rem; font-weight: 600; line-height: 1.4; }
+    
     /* Citation Widget */
     .citation-widget { background: var(--card-alt); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; margin: 2.5rem 0; }
     .citation-widget h4 { color: var(--heading); font-size: 1rem; margin-bottom: 0.8rem; display: flex; justify-content: space-between; align-items: center; }
     .citation-box { background: #0A192F; border: 1px solid var(--border); border-radius: 6px; padding: 1rem; font-family: ui-monospace, monospace; font-size: 0.82rem; color: #CCD6F6; word-break: break-all; margin-bottom: 0.8rem; }
     .btn-copy { background: var(--accent); color: #0A192F; border: none; padding: 0.4rem 0.9rem; border-radius: 4px; font-weight: bold; font-size: 0.75rem; cursor: pointer; }
     
+    /* Back to top */
+    .back-to-top { position: fixed; bottom: 24px; right: 24px; background: rgba(17, 34, 64, 0.9); border: 1px solid var(--border); color: #FFFFFF; width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 1.2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.3); opacity: 0; pointer-events: none; transition: opacity 0.3s; z-index: 999; }
+    .back-to-top.visible { opacity: 1; pointer-events: auto; }
+    
     .footer { margin-top: 3.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border); font-size: 0.85rem; color: var(--muted); text-align: center; }
     .footer a { color: var(--text); text-decoration: none; }
     .footer a:hover { color: var(--accent); }
+
+    @media (max-width: 640px) {
+      body { padding-top: 60px; }
+      .container { padding: 1.5rem 1rem; }
+      h1 { font-size: 1.7rem; }
+      .header-nav { display: none; }
+      .study-pagination { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
+  
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-brand">
+        <a href="../" class="brand-logo">
+          <span class="logo-dot">✦</span>
+          <strong>Groundwork</strong>
+          <span class="brand-sub">Open Research</span>
+        </a>
+        <span class="live-status-pill"><span class="pulse-dot"></span> 751 Studies Live</span>
+      </div>
+      <nav class="header-nav" aria-label="Main Navigation">
+        <a href="../" class="nav-link ">All</a>
+        <a href="../money/" class="nav-link">Money</a>
+<a href="../body/" class="nav-link active">Body</a>
+<a href="../home/" class="nav-link">Home</a>
+<a href="../tech/" class="nav-link">Tech</a>
+<a href="../life/" class="nav-link">Life</a>
+<a href="../digest/" class="nav-link">Digests</a>
+        <a href="https://gworky.com" target="_blank" rel="noopener" class="nav-link gworky-link">gworky.com ↗</a>
+      </nav>
+    </div>
+    <div id="reading-progress" class="reading-progress-bar"></div>
+  </header>
+
+
   <div class="container">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="../">Home</a> <span>/</span>
+      <a href="../body/">BODY</a> <span>/</span>
+      <span style="color: #CCD6F6;">How type 2 diabetes influences meno...</span>
+    </nav>
+
     <div class="header-bar">
       <div class="badge">Groundwork Open Research • BODY</div>
       <a href="https://doi.org/10.5281/zenodo.22011567" target="_blank" rel="noopener" class="doi-tag">DOI: 10.5281/zenodo.22011567</a>
@@ -164,11 +272,29 @@
 
     <h1>How type 2 diabetes influences menopause symptom severity</h1>
 
+    <div class="article-meta">
+      <span class="meta-item">✍️ <strong>Dr. Sarah Jenkins</strong></span>
+      <span class="meta-item">⏱️ 4 min read (826 words)</span>
+      <span class="meta-item">📅 2026-08-21</span>
+      <span class="meta-item">🔬 Peer-Audited</span>
+    </div>
+
     <!-- AEO Quick Answer Box for AI Overviews & Search Snippets -->
     <div class="quick-answer-card">
       <h3>⚡ Executive Research Takeaway (AEO Direct Answer)</h3>
       <p class="executive-takeaways">Research shows women with type 2 diabetes or prediabetes experience significantly more intense physical menopause symptoms like hot flashes and joint pain.</p>
     </div>
+
+    
+        <aside class="toc-card" aria-label="Table of Contents">
+          <h4 style="color: #FFFFFF; font-size: 0.95rem; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 6px;">
+            <span style="color: #10B981;">§</span> Study Outline & Navigation
+          </h4>
+          <ul style="list-style: none; padding-left: 0; margin-left: 0;">
+            <li style="margin-left: 12px; margin-bottom: 0.4rem;"><a href="#heading-1" style="color: #CCD6F6; text-decoration: none; font-size: 0.85rem;">The research evidence</a></li><li style="margin-left: 12px; margin-bottom: 0.4rem;"><a href="#heading-2" style="color: #CCD6F6; text-decoration: none; font-size: 0.85rem;">Why blood sugar and hormones interact</a></li><li style="margin-left: 12px; margin-bottom: 0.4rem;"><a href="#heading-3" style="color: #CCD6F6; text-decoration: none; font-size: 0.85rem;">Physical symptoms and the metabolic link</a></li><li style="margin-left: 12px; margin-bottom: 0.4rem;"><a href="#heading-4" style="color: #CCD6F6; text-decoration: none; font-size: 0.85rem;">Managing your health during the transition</a></li><li style="margin-left: 12px; margin-bottom: 0.4rem;"><a href="#heading-5" style="color: #CCD6F6; text-decoration: none; font-size: 0.85rem;">Addressing the gap in care</a></li>
+          </ul>
+        </aside>
+        
 
     <!-- GEO Empirical Metrics Summary -->
     <div class="metrics-grid">
@@ -193,22 +319,22 @@
 
     <main>
       <p>If you are living with type 2 diabetes or prediabetes, you may experience more intense physical symptoms during menopause compared to women without these metabolic conditions. Recent research indicates that hormonal shifts during this life stage interact with insulin sensitivity, often compounding the physical burden of the transition.</p>
-<h3>The research evidence</h3>
+<h3 id="heading-1">The research evidence</h3>
 <p>A study published in the journal *Menopause* examined the experiences of 296 women between the ages of 45 and 64. Researchers compared two groups: 220 women with type 2 diabetes or prediabetes and 76 women without these conditions. By excluding participants who were already using hormone therapy or those who had pre-existing sleep disorders or clinical depression, the study aimed to isolate the impact of blood sugar regulation on the menopause experience.</p>
 <p>The findings were statistically significant: postmenopausal women with diabetes or prediabetes reported an average of 19 distinct symptoms, compared to 14 among those without the condition. Overall symptom severity scores were 54% higher in the group managing blood sugar issues. Specifically, physical symptoms such as hot flashes and joint pain were rated 46% more intense in the diabetes and prediabetes group. Interestingly, mood-related symptoms—such as irritability or low mood—did not show a significant difference between the groups, suggesting that the primary impact of diabetes during this time is physiological rather than psychological.</p>
-<h3>Why blood sugar and hormones interact</h3>
+<h3 id="heading-2">Why blood sugar and hormones interact</h3>
 <p>To understand why these symptoms are more severe, you must look at the intersection of estrogen and insulin. Estrogen plays a protective role in insulin sensitivity. As you enter menopause, your estrogen levels decline, which can lead to increased insulin resistance. When your body becomes less efficient at using insulin, your blood sugar levels fluctuate more unpredictably.</p>
 <p>This creates a feedback loop. High or unstable blood sugar can exacerbate existing menopause symptoms like hot flashes and fatigue. Furthermore, the metabolic changes that occur during menopause—including a decrease in lean muscle mass and an increase in abdominal fat storage—can worsen insulin resistance. This shift in body composition, driven by falling progesterone and estrogen, makes blood glucose management more complex than it was during your premenopausal years.</p>
-<h3>Physical symptoms and the metabolic link</h3>
+<h3 id="heading-3">Physical symptoms and the metabolic link</h3>
 <p>Physical manifestations of menopause, such as hot flashes, are essentially thermoregulatory issues. When your body is struggling to maintain stable blood glucose levels, your autonomic nervous system may become more reactive. This heightened reactivity can make the sensation of hot flashes more frequent and more intense.</p>
 <p>Joint pain, another symptom identified by researchers as being more severe in diabetic populations, is also linked to chronic inflammation. High blood sugar (hyperglycemia) is inherently inflammatory. When you combine the natural decline in estrogen—which provides anti-inflammatory benefits—with the inflammatory nature of insulin resistance, it is logical that joint discomfort would intensify during the menopause transition.</p>
-<h3>Managing your health during the transition</h3>
+<h3 id="heading-4">Managing your health during the transition</h3>
 <p>Managing menopause while living with type 2 diabetes requires a proactive, evidence-based approach. Because the transition changes how your body handles glucose, your current management plan may no longer be as effective as it was a few years ago.</p>
 <p>1. Review your glucose monitoring: If you notice an increase in the frequency or severity of hot flashes, track your blood sugar levels closely during these episodes. You may find a correlation between glucose spikes and symptom intensity.
 2. Prioritize muscle maintenance: Since the loss of lean muscle mass contributes to insulin resistance, resistance training is a critical intervention. Strength training helps improve glucose uptake in the muscles, which can help stabilize your blood sugar levels.
 3. Coordinate with your care team: Your endocrinologist and primary care physician should be aware of your menopause stage. They may need to adjust your medication dosages or dietary strategy to account for the hormonal shifts that influence insulin sensitivity.
 4. Focus on anti-inflammatory nutrition: Given the increased risk of joint pain and the systemic inflammation caused by diabetes, prioritize foods rich in omega-3 fatty acids, fiber, and lean protein, which help support steady blood glucose and reduce systemic inflammation.</p>
-<h3>Addressing the gap in care</h3>
+<h3 id="heading-5">Addressing the gap in care</h3>
 <p>While the study found that mood symptoms remained similar across groups, this does not mean you should ignore your mental health. The physical exhaustion caused by more severe hot flashes and joint pain can lead to secondary irritability or fatigue. It is important to distinguish between symptoms caused by metabolic factors and those caused by psychological distress. If you find your mood is severely impacted, seek professional support, as the physical burden of managing diabetes during menopause can be mentally taxing.</p>
 <p>Ultimately, while the transition through menopause is universal, your experience is highly individual. By understanding that your metabolic health and hormonal health are inextricably linked, you can take specific, actionable steps to mitigate the intensity of your symptoms. Focus on consistent blood sugar management, physical activity, and regular consultation with your medical team to ensure your treatment plan evolves alongside your body’s changing needs.</p>
 
@@ -257,6 +383,9 @@
     </div>
     
 
+    <!-- Next / Previous Study Navigation -->
+    <nav class="study-pagination" aria-label="Study pagination"><a href="../ritz-carlton-credit-card-review/" class="nav-card prev-card"><span class="nav-dir">← Previous Study</span><span class="nav-title">The ritz-carlton credit card: is it worth the effort to obtain?</span></a><a href="../gulikit-es-max-review-anti-drift-technology/" class="nav-card next-card"><span class="nav-dir">Next Study →</span><span class="nav-title">Understanding TMR thumbsticks and the GuliKit ES Max controller</span></a></nav>
+
     <!-- 1-Click Multi-Format Citation Widget -->
     <div class="citation-widget">
       <h4>
@@ -281,12 +410,32 @@
       <strong>Authoritative Reference:</strong> Published by Groundwork Media under Open Science principles. Permanent scholarly snapshot recorded at CERN Zenodo under Creative Commons. Central Portal: <a href="https://gworky.com">https://gworky.com</a>.
     </div>
 
-    <div class="footer">
-      <p><a href="https://groundworkpub.github.io">← Back to Groundwork Research Index</a> | <a href="https://gworky.com">Visit Groundwork Platform</a></p>
-    </div>
+    <footer class="footer">
+      <p><a href="../">← Back to Groundwork Research Index</a> | <a href="../body/">View All BODY Studies</a> | <a href="https://gworky.com">Visit Groundwork Platform</a></p>
+    </footer>
   </div>
 
+  <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">↑</a>
+
   <script>
+    // Reading progress bar & back to top
+    window.addEventListener('scroll', () => {
+      const winScroll = document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      const bar = document.getElementById('reading-progress');
+      if (bar) bar.style.width = scrolled + '%';
+
+      const topBtn = document.getElementById('backToTop');
+      if (topBtn) {
+        if (winScroll > 400) {
+          topBtn.classList.add('visible');
+        } else {
+          topBtn.classList.remove('visible');
+        }
+      }
+    });
+
     function copyCitation() {
       const text = document.getElementById('citation-text').innerText;
       navigator.clipboard.writeText(text).then(() => {

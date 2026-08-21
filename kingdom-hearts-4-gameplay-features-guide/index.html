@@ -37,7 +37,6 @@
         "@id": "https://gworky.com/#website",
         "url": "https://gworky.com",
         "name": "Groundwork Media",
-        "description": "Evidence-based decision guides and interactive calculators.",
         "publisher": {
           "@id": "https://gworky.com/#organization"
         }
@@ -51,6 +50,30 @@
           "@type": "ImageObject",
           "url": "https://groundworkpub.github.io/og.svg"
         }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://gworky.com/article/kingdom-hearts-4-gameplay-features-guide#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://groundworkpub.github.io/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "TECH",
+            "item": "https://groundworkpub.github.io/tech/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "What to expect from kingdom hearts 4: a player&#39;s guide",
+            "item": "https://gworky.com/article/kingdom-hearts-4-gameplay-features-guide"
+          }
+        ]
       },
       {
         "@type": "Person",
@@ -67,6 +90,7 @@
         "url": "https://gworky.com/article/kingdom-hearts-4-gameplay-features-guide",
         "datePublished": "2026-08-21",
         "dateModified": "2026-08-21",
+        "wordCount": 922,
         "author": {
           "@id": "https://gworky.com/author/alex-rivera#author"
         },
@@ -110,28 +134,60 @@
       --card-alt: #1E2D4A;
       --text: #CCD6F6;
       --heading: #FFFFFF;
-      --accent: #10B981;
-      --accent-glow: rgba(16, 185, 129, 0.15);
+      --accent: #8B5CF6;
+      --accent-glow: rgba(139, 92, 246, 0.15);
       --muted: #8892B0;
       --border: rgba(255, 255, 255, 0.08);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif; background: var(--bg); color: var(--text); line-height: 1.75; padding: 2rem 1rem; }
-    .container { max-width: 860px; margin: 0 auto; background: var(--card); padding: 2.5rem; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
-    .header-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 10px; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif; background: var(--bg); color: var(--text); line-height: 1.75; padding-top: 70px; }
+    
+    /* Sticky Glassmorphic Header */
+    .site-header { position: fixed; top: 0; left: 0; right: 0; background: rgba(10, 25, 47, 0.88); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); z-index: 1000; }
+    .header-inner { max-width: 1080px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 1.5rem; }
+    .header-brand { display: flex; align-items: center; gap: 12px; }
+    .brand-logo { color: #FFFFFF; text-decoration: none; font-size: 1.1rem; display: flex; align-items: center; gap: 6px; }
+    .logo-dot { color: #10B981; }
+    .brand-sub { color: #8892B0; font-size: 0.78rem; font-weight: normal; margin-left: 4px; }
+    .live-status-pill { display: inline-flex; align-items: center; gap: 6px; background: rgba(16, 185, 129, 0.12); color: #10B981; font-size: 0.72rem; font-weight: bold; padding: 2px 8px; border-radius: 9999px; border: 1px solid rgba(16, 185, 129, 0.25); }
+    .pulse-dot { width: 6px; height: 6px; background: #10B981; border-radius: 50%; display: inline-block; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+    
+    .header-nav { display: flex; gap: 12px; align-items: center; }
+    .nav-link { color: var(--muted); text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 4px 8px; border-radius: 6px; transition: all 0.2s; }
+    .nav-link:hover, .nav-link.active { color: #FFFFFF; background: rgba(255, 255, 255, 0.06); }
+    .gworky-link { color: #10B981 !important; border: 1px solid rgba(16, 185, 129, 0.3); }
+    .reading-progress-bar { height: 3px; background: var(--accent); width: 0%; transition: width 0.1s ease-out; }
+    
+    /* Layout */
+    .container { max-width: 860px; margin: 2rem auto; background: var(--card); padding: 2.5rem; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+    
+    /* Breadcrumbs */
+    .breadcrumbs { font-size: 0.82rem; color: var(--muted); margin-bottom: 1.2rem; display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+    .breadcrumbs a { color: var(--muted); text-decoration: none; }
+    .breadcrumbs a:hover { color: var(--accent); }
+    
+    .header-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.2rem; flex-wrap: wrap; gap: 10px; }
     .badge { display: inline-block; background: var(--accent-glow); color: var(--accent); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.05em; padding: 0.35rem 0.85rem; border-radius: 9999px; text-transform: uppercase; }
     .doi-tag { font-size: 0.78rem; color: var(--muted); text-decoration: none; border: 1px solid var(--border); padding: 0.3rem 0.7rem; border-radius: 6px; }
     .doi-tag:hover { border-color: var(--accent); color: var(--accent); }
     
+    /* Article Meta */
+    .article-meta { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; font-size: 0.85rem; color: var(--muted); margin-bottom: 1.8rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
+    .meta-item { display: inline-flex; align-items: center; gap: 5px; }
+    
     h1 { color: var(--heading); font-size: 2.1rem; line-height: 1.3; margin-bottom: 1.2rem; font-family: Georgia, serif; }
-    h2 { color: var(--heading); font-size: 1.4rem; margin: 2rem 0 1rem; }
-    h3 { color: var(--heading); font-size: 1.15rem; margin: 1.5rem 0 0.8rem; }
+    h2 { color: var(--heading); font-size: 1.4rem; margin: 2.2rem 0 1rem; }
+    h3 { color: var(--heading); font-size: 1.15rem; margin: 1.6rem 0 0.8rem; }
     p { margin-bottom: 1.2rem; }
     ul { margin-left: 1.5rem; margin-bottom: 1.2rem; }
     li { margin-bottom: 0.5rem; }
 
+    /* Table of Contents */
+    .toc-card { background: var(--card-alt); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem 1.5rem; margin: 2rem 0; }
+
     /* AEO Quick Answer Card */
-    .quick-answer-card { background: rgba(16, 185, 129, 0.07); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem; }
+    .quick-answer-card { background: var(--accent-glow); border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem; }
     .quick-answer-card h3 { color: var(--accent); font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; margin-top: 0; }
     .quick-answer-card p { font-size: 1.05rem; color: #FFFFFF; font-weight: 500; margin-bottom: 0; line-height: 1.6; }
 
@@ -144,19 +200,71 @@
     .canonical-box { background: var(--accent-glow); border-left: 4px solid var(--accent); padding: 1.2rem; border-radius: 6px; margin: 2rem 0; font-size: 0.95rem; }
     .canonical-box a { color: var(--accent); font-weight: bold; text-decoration: underline; }
     
+    /* Study Pagination (Next/Prev) */
+    .study-pagination { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 3rem 0 1rem; }
+    .nav-card { background: var(--card-alt); border: 1px solid var(--border); padding: 1.2rem; border-radius: 8px; text-decoration: none; display: flex; flex-direction: column; gap: 4px; transition: all 0.2s; }
+    .nav-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .next-card { text-align: right; }
+    .nav-dir { font-size: 0.75rem; color: var(--accent); text-transform: uppercase; font-weight: bold; }
+    .nav-title { color: #FFFFFF; font-size: 0.9rem; font-weight: 600; line-height: 1.4; }
+    
     /* Citation Widget */
     .citation-widget { background: var(--card-alt); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; margin: 2.5rem 0; }
     .citation-widget h4 { color: var(--heading); font-size: 1rem; margin-bottom: 0.8rem; display: flex; justify-content: space-between; align-items: center; }
     .citation-box { background: #0A192F; border: 1px solid var(--border); border-radius: 6px; padding: 1rem; font-family: ui-monospace, monospace; font-size: 0.82rem; color: #CCD6F6; word-break: break-all; margin-bottom: 0.8rem; }
     .btn-copy { background: var(--accent); color: #0A192F; border: none; padding: 0.4rem 0.9rem; border-radius: 4px; font-weight: bold; font-size: 0.75rem; cursor: pointer; }
     
+    /* Back to top */
+    .back-to-top { position: fixed; bottom: 24px; right: 24px; background: rgba(17, 34, 64, 0.9); border: 1px solid var(--border); color: #FFFFFF; width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 1.2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.3); opacity: 0; pointer-events: none; transition: opacity 0.3s; z-index: 999; }
+    .back-to-top.visible { opacity: 1; pointer-events: auto; }
+    
     .footer { margin-top: 3.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border); font-size: 0.85rem; color: var(--muted); text-align: center; }
     .footer a { color: var(--text); text-decoration: none; }
     .footer a:hover { color: var(--accent); }
+
+    @media (max-width: 640px) {
+      body { padding-top: 60px; }
+      .container { padding: 1.5rem 1rem; }
+      h1 { font-size: 1.7rem; }
+      .header-nav { display: none; }
+      .study-pagination { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
+  
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-brand">
+        <a href="../" class="brand-logo">
+          <span class="logo-dot">✦</span>
+          <strong>Groundwork</strong>
+          <span class="brand-sub">Open Research</span>
+        </a>
+        <span class="live-status-pill"><span class="pulse-dot"></span> 751 Studies Live</span>
+      </div>
+      <nav class="header-nav" aria-label="Main Navigation">
+        <a href="../" class="nav-link ">All</a>
+        <a href="../money/" class="nav-link">Money</a>
+<a href="../body/" class="nav-link">Body</a>
+<a href="../home/" class="nav-link">Home</a>
+<a href="../tech/" class="nav-link active">Tech</a>
+<a href="../life/" class="nav-link">Life</a>
+<a href="../digest/" class="nav-link">Digests</a>
+        <a href="https://gworky.com" target="_blank" rel="noopener" class="nav-link gworky-link">gworky.com ↗</a>
+      </nav>
+    </div>
+    <div id="reading-progress" class="reading-progress-bar"></div>
+  </header>
+
+
   <div class="container">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="../">Home</a> <span>/</span>
+      <a href="../tech/">TECH</a> <span>/</span>
+      <span style="color: #CCD6F6;">What to expect from kingdom hearts ...</span>
+    </nav>
+
     <div class="header-bar">
       <div class="badge">Groundwork Open Research • TECH</div>
       <a href="https://doi.org/10.5281/zenodo.22011567" target="_blank" rel="noopener" class="doi-tag">DOI: 10.5281/zenodo.22011567</a>
@@ -164,11 +272,29 @@
 
     <h1>What to expect from kingdom hearts 4: a player&#39;s guide</h1>
 
+    <div class="article-meta">
+      <span class="meta-item">✍️ <strong>Alex Rivera</strong></span>
+      <span class="meta-item">⏱️ 5 min read (922 words)</span>
+      <span class="meta-item">📅 2026-08-21</span>
+      <span class="meta-item">🔬 Peer-Audited</span>
+    </div>
+
     <!-- AEO Quick Answer Box for AI Overviews & Search Snippets -->
     <div class="quick-answer-card">
       <h3>⚡ Executive Research Takeaway (AEO Direct Answer)</h3>
       <p class="executive-takeaways">Kingdom Hearts 4 introduces new puzzle mechanics, a massive urban world called Quadratum, and an expanded role for classic villains. Learn what to expect.</p>
     </div>
+
+    
+        <aside class="toc-card" aria-label="Table of Contents">
+          <h4 style="color: #FFFFFF; font-size: 0.95rem; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 6px;">
+            <span style="color: #10B981;">§</span> Study Outline & Navigation
+          </h4>
+          <ul style="list-style: none; padding-left: 0; margin-left: 0;">
+            <li style="margin-left: 0px; margin-bottom: 0.4rem;"><a href="#heading-1" style="color: #CCD6F6; text-decoration: none; font-size: 0.85rem;">Is kingdom hearts 4 changing the core gameplay loop?</a></li><li style="margin-left: 0px; margin-bottom: 0.4rem;"><a href="#heading-2" style="color: #CCD6F6; text-decoration: none; font-size: 0.85rem;">How will the new world of quadratum function?</a></li><li style="margin-left: 0px; margin-bottom: 0.4rem;"><a href="#heading-3" style="color: #CCD6F6; text-decoration: none; font-size: 0.85rem;">What role will classic disney villains play?</a></li><li style="margin-left: 0px; margin-bottom: 0.4rem;"><a href="#heading-4" style="color: #CCD6F6; text-decoration: none; font-size: 0.85rem;">What can you expect from the new hub regions?</a></li><li style="margin-left: 0px; margin-bottom: 0.4rem;"><a href="#heading-5" style="color: #CCD6F6; text-decoration: none; font-size: 0.85rem;">How should you prepare for the release?</a></li>
+          </ul>
+        </aside>
+        
 
     <!-- GEO Empirical Metrics Summary -->
     <div class="metrics-grid">
@@ -194,19 +320,19 @@
     <main>
       <p>Kingdom Hearts 4 is the latest installment in the long-running action role-playing game series developed by Square Enix, serving as the beginning of the &#39;Lost Master Arc.&#39; The game follows the protagonist, Sora, as he enters the reality-bending world of Quadratum, marking a significant shift in both narrative tone and mechanical complexity compared to its predecessors.</p>
 <p>Following its announcement at the D23 Entertainment Showcase, developers confirmed that the game will feature expanded gameplay systems, including playable segments for King Mickey and an emphasis on massive, multi-tiered environments. For players tracking the series, these updates signal a move toward more diverse mechanical challenges rather than purely combat-focused progression.</p>
-<h2>Is kingdom hearts 4 changing the core gameplay loop?</h2>
+<h2 id="heading-1">Is kingdom hearts 4 changing the core gameplay loop?</h2>
 <p>Kingdom Hearts 4 is evolving its core gameplay loop by diversifying player roles and incorporating non-combat puzzle mechanics. While previous entries focused almost exclusively on Sora’s combat abilities, the upcoming title introduces segments where you play as King Mickey, shifting the focus toward environmental problem-solving and puzzle-based progression.</p>
 <p>Based on reports from the D23 25th Anniversary panel, these King Mickey sequences utilize an &#39;origami-style&#39; puzzle system. This suggests that the game will alternate between the fast-paced, action-heavy combat typical of the series and slower, cerebral segments that reward observation and logic. Developers have indicated that this variation is intended to deepen the narrative experience, allowing you to engage with the world of the magical book in ways that combat cannot facilitate. If you are a veteran player, expect a shift from the linear &#39;hack-and-slash&#39; flow to a more segmented experience that requires different skill sets depending on the character you control.</p>
-<h2>How will the new world of quadratum function?</h2>
+<h2 id="heading-2">How will the new world of quadratum function?</h2>
 <p>Quadratum is a sprawling, high-fidelity urban environment inspired by Tokyo, which serves as the primary setting for the initial phases of Kingdom Hearts 4. Unlike the smaller, enclosed worlds of previous titles, Quadratum is designed as a massive, open-concept region that necessitates advanced movement and traversal mechanics.</p>
 <p>To navigate this scale, Sora is equipped with enhanced mobility options that build upon the rail-gliding and lamp-post-launch systems seen in Kingdom Hearts 3. According to director Tetsuya Nomura, the environment&#39;s size is a direct response to the introduction of larger, more imposing Heartless enemies. These enemies are designed to scale with the environment, meaning you will need to utilize the verticality of the city to effectively engage them. The decision to make Quadratum a central hub suggests that players should prepare for a more integrated world map, where traversal is just as critical to survival as your offensive abilities.</p>
-<h2>What role will classic disney villains play?</h2>
+<h2 id="heading-3">What role will classic disney villains play?</h2>
 <p>Maleficent is confirmed to be a primary antagonist in Kingdom Hearts 4, representing a significant return to her role as a major threat to the Keyblade wielders. While Kingdom Hearts often features complex, multi-layered villain hierarchies, the developers have emphasized that Maleficent’s influence will be felt across multiple dimensions, particularly as she seeks to exploit the connection between Quadratum and the series&#39; traditional worlds.</p>
 <p>Her presence confirms that the game will maintain a bridge between the &#39;real-world&#39; aesthetic of Quadratum and the classic Disney-inspired realms. For players, this means the threat level will be dual-pronged: you must contend with the technological and realistic challenges of the new world while simultaneously defending against the established magical threats that have defined the series&#39; lore. This duality is likely to be a recurring theme, requiring you to adapt your strategy to both high-fantasy and urban-fantasy combat scenarios.</p>
-<h2>What can you expect from the new hub regions?</h2>
+<h2 id="heading-4">What can you expect from the new hub regions?</h2>
 <p>Disney Town will serve as the central hub region for Kingdom Hearts 4, drawing heavy aesthetic and structural inspiration from the Toon Town areas found in Disney theme parks. These hub regions have historically acted as safe zones for players to manage equipment, interact with NPCs, and engage in recreational minigames, and this iteration appears to be no different.</p>
 <p>This new hub is designed to be a vibrant, contrast-heavy environment that breaks up the darker, more muted tones of Quadratum. You can expect a variety of minigames, including those focused on collection and item management, such as the sweet-treat-themed activities previewed in recent media. These hubs serve a practical purpose beyond aesthetics: they provide a necessary &#39;cool-down&#39; period after the high-stress combat encounters in the larger worlds. If you are looking to optimize your character or hunt for rare items, the hub will likely be your primary base of operations throughout the campaign.</p>
-<h2>How should you prepare for the release?</h2>
+<h2 id="heading-5">How should you prepare for the release?</h2>
 <p>Because Kingdom Hearts 4 builds directly upon the narrative events of the previous titles, your preparation should focus on understanding the overarching &#39;Lost Master Arc.&#39; The game assumes a level of familiarity with the series&#39; complex timeline, particularly the events surrounding Sora’s departure to Quadratum.</p>
 <p>1. Review the conclusion of Kingdom Hearts 3 and the &#39;Re Mind&#39; DLC to understand the current state of the main characters.
 2. Familiarize yourself with the &#39;Dark Seeker Saga&#39; lore to grasp the significance of the upcoming plot threads.
@@ -258,6 +384,9 @@
     </div>
     
 
+    <!-- Next / Previous Study Navigation -->
+    <nav class="study-pagination" aria-label="Study pagination"><a href="../how-to-watch-liverpool-vs-como-live-stream/" class="nav-card prev-card"><span class="nav-dir">← Previous Study</span><span class="nav-title">How to watch Liverpool vs. Como live stream</span></a><a href="../understanding-marvel-visionquest-disney-plus-strategy/" class="nav-card next-card"><span class="nav-dir">Next Study →</span><span class="nav-title">What to expect from Marvel&#39;s VisionQuest and Disney&#39;s streaming strategy</span></a></nav>
+
     <!-- 1-Click Multi-Format Citation Widget -->
     <div class="citation-widget">
       <h4>
@@ -282,12 +411,32 @@
       <strong>Authoritative Reference:</strong> Published by Groundwork Media under Open Science principles. Permanent scholarly snapshot recorded at CERN Zenodo under Creative Commons. Central Portal: <a href="https://gworky.com">https://gworky.com</a>.
     </div>
 
-    <div class="footer">
-      <p><a href="https://groundworkpub.github.io">← Back to Groundwork Research Index</a> | <a href="https://gworky.com">Visit Groundwork Platform</a></p>
-    </div>
+    <footer class="footer">
+      <p><a href="../">← Back to Groundwork Research Index</a> | <a href="../tech/">View All TECH Studies</a> | <a href="https://gworky.com">Visit Groundwork Platform</a></p>
+    </footer>
   </div>
 
+  <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">↑</a>
+
   <script>
+    // Reading progress bar & back to top
+    window.addEventListener('scroll', () => {
+      const winScroll = document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      const bar = document.getElementById('reading-progress');
+      if (bar) bar.style.width = scrolled + '%';
+
+      const topBtn = document.getElementById('backToTop');
+      if (topBtn) {
+        if (winScroll > 400) {
+          topBtn.classList.add('visible');
+        } else {
+          topBtn.classList.remove('visible');
+        }
+      }
+    });
+
     function copyCitation() {
       const text = document.getElementById('citation-text').innerText;
       navigator.clipboard.writeText(text).then(() => {

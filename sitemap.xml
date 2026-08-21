@@ -11,10 +11,52 @@
     </image:image>
   </url>
   <url>
-    <loc>https://groundworkpub.github.io/digest/what-is-scott-bessent-doing-with-the-32tn-treasury-market-and-will-it-work/</loc>
+    <loc>https://groundworkpub.github.io/sitemap.html</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://groundworkpub.github.io/money/</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://groundworkpub.github.io/body/</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://groundworkpub.github.io/home/</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://groundworkpub.github.io/tech/</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://groundworkpub.github.io/life/</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://groundworkpub.github.io/digest/</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://groundworkpub.github.io/digest/what-is-scott-bessent-doing-with-the-32tn-treasury-market-and-will-it-work/</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
     <image:image>
       <image:loc>https://groundworkpub.github.io/digest/what-is-scott-bessent-doing-with-the-32tn-treasury-market-and-will-it-work/og.svg</image:loc>
       <image:title>What is Scott Bessent doing with the $32tn Treasury market — and will it work?</image:title>
@@ -24,7 +66,7 @@
     <loc>https://groundworkpub.github.io/digest/heres-how-americas-40-trillion-debt-can-hit-your-wallet/</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
     <image:image>
       <image:loc>https://groundworkpub.github.io/digest/heres-how-americas-40-trillion-debt-can-hit-your-wallet/og.svg</image:loc>
       <image:title>Here&#39;s how America&#39;s $40 trillion debt can hit your wallet</image:title>
@@ -34,7 +76,7 @@
     <loc>https://groundworkpub.github.io/digest/walmart-stock-drops-9-as-sales-growth-slows-customers-make-trade-offs-amid-high/</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
     <image:image>
       <image:loc>https://groundworkpub.github.io/digest/walmart-stock-drops-9-as-sales-growth-slows-customers-make-trade-offs-amid-high/og.svg</image:loc>
       <image:title>Walmart stock drops 9% as sales growth slows, customers make &#39;trade-offs&#39; amid high fuel costs</image:title>
@@ -44,7 +86,7 @@
     <loc>https://groundworkpub.github.io/digest/why-is-moderna-stock-down-today/</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
     <image:image>
       <image:loc>https://groundworkpub.github.io/digest/why-is-moderna-stock-down-today/og.svg</image:loc>
       <image:title>Why Is Moderna Stock Down Today?</image:title>
@@ -54,7 +96,7 @@
     <loc>https://groundworkpub.github.io/digest/bond-yields-are-climbing-heres-what-that-means-for-mortgages-and-other-consumer/</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
     <image:image>
       <image:loc>https://groundworkpub.github.io/digest/bond-yields-are-climbing-heres-what-that-means-for-mortgages-and-other-consumer/og.svg</image:loc>
       <image:title>Bond yields are climbing. Here’s what that means for mortgages and other consumer borrowing</image:title>
@@ -64,7 +106,7 @@
     <loc>https://groundworkpub.github.io/digest/mortgage-rates-dropped-last-week-despite-heightened-bond-market-volatility-mortg/</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
     <image:image>
       <image:loc>https://groundworkpub.github.io/digest/mortgage-rates-dropped-last-week-despite-heightened-bond-market-volatility-mortg/og.svg</image:loc>
       <image:title>Mortgage rates dropped last week despite heightened bond market volatility: Mortgage and refinance interest rates today, Thursday, August 20, 2026</image:title>
@@ -74,7 +116,7 @@
     <loc>https://groundworkpub.github.io/digest/index-funds-are-the-best-inflation-hedge-and-you-already-have-them/</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
     <image:image>
       <image:loc>https://groundworkpub.github.io/digest/index-funds-are-the-best-inflation-hedge-and-you-already-have-them/og.svg</image:loc>
       <image:title>Index Funds Are the Best Inflation Hedge, and You Already Have Them</image:title>
@@ -84,7 +126,7 @@
     <loc>https://groundworkpub.github.io/digest/the-best-index-funds-and-how-to-start-investing/</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
     <image:image>
       <image:loc>https://groundworkpub.github.io/digest/the-best-index-funds-and-how-to-start-investing/og.svg</image:loc>
       <image:title>The Best Index Funds and How to Start Investing</image:title>
@@ -94,7 +136,7 @@
     <loc>https://groundworkpub.github.io/digest/pa-measles-outbreak-has-reached-allegheny-county/</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
     <image:image>
       <image:loc>https://groundworkpub.github.io/digest/pa-measles-outbreak-has-reached-allegheny-county/og.svg</image:loc>
       <image:title>Pa. measles outbreak has reached Allegheny County</image:title>
@@ -104,7 +146,7 @@
     <loc>https://groundworkpub.github.io/digest/ebola-outbreak-out-of-control-in-democratic-republic-of-the-congo-who-says-it-is/</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
     <image:image>
       <image:loc>https://groundworkpub.github.io/digest/ebola-outbreak-out-of-control-in-democratic-republic-of-the-congo-who-says-it-is/og.svg</image:loc>
       <image:title>Ebola outbreak out of control in Democratic Republic of the Congo, WHO says: ‘It is spreading faster than our ability to contain it’</image:title>
@@ -114,7 +156,7 @@
     <loc>https://groundworkpub.github.io/digest/the-traditional-respiratory-virus-season-hasnt-started-but-covid-is-already-clim/</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
     <image:image>
       <image:loc>https://groundworkpub.github.io/digest/the-traditional-respiratory-virus-season-hasnt-started-but-covid-is-already-clim/og.svg</image:loc>
       <image:title>The traditional respiratory virus season hasn’t started, but Covid is already climbing</image:title>
@@ -124,7 +166,7 @@
     <loc>https://groundworkpub.github.io/digest/michigan-holds-line-on-vaccines-for-kids-despite-trump-executive-order/</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
     <image:image>
       <image:loc>https://groundworkpub.github.io/digest/michigan-holds-line-on-vaccines-for-kids-despite-trump-executive-order/og.svg</image:loc>
       <image:title>Michigan holds line on vaccines for kids despite Trump executive order</image:title>
@@ -134,7 +176,7 @@
     <loc>https://groundworkpub.github.io/digest/study-nearly-8-out-of-10-young-adults-have-cardiovascular-kidney-metabolic-syndr/</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
     <image:image>
       <image:loc>https://groundworkpub.github.io/digest/study-nearly-8-out-of-10-young-adults-have-cardiovascular-kidney-metabolic-syndr/og.svg</image:loc>
       <image:title>Study: Nearly 8 out of 10 young adults have cardiovascular-kidney-metabolic syndrome</image:title>
@@ -144,7 +186,7 @@
     <loc>https://groundworkpub.github.io/digest/study-found-artery-damage-in-adults-in-their-20s-highlighting-need-for-early-car/</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
     <image:image>
       <image:loc>https://groundworkpub.github.io/digest/study-found-artery-damage-in-adults-in-their-20s-highlighting-need-for-early-car/og.svg</image:loc>
       <image:title>Study found artery damage in adults in their 20s, highlighting need for early cardiovascular risk assessment</image:title>
@@ -154,7 +196,7 @@
     <loc>https://groundworkpub.github.io/digest/get-the-facts-added-sugars-nutrition/</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
     <image:image>
       <image:loc>https://groundworkpub.github.io/digest/get-the-facts-added-sugars-nutrition/og.svg</image:loc>
       <image:title>Get the Facts: Added Sugars | Nutrition</image:title>
@@ -164,7 +206,7 @@
     <loc>https://groundworkpub.github.io/digest/ohio-state-students-research-links-between-nutrition-disease-prevention/</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
     <image:image>
       <image:loc>https://groundworkpub.github.io/digest/ohio-state-students-research-links-between-nutrition-disease-prevention/og.svg</image:loc>
       <image:title>Ohio State students research links between nutrition, disease prevention</image:title>
@@ -174,7 +216,7 @@
     <loc>https://groundworkpub.github.io/digest/hacker-targets-grand-theft-auto-vi-in-apparent-leak/</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
     <image:image>
       <image:loc>https://groundworkpub.github.io/digest/hacker-targets-grand-theft-auto-vi-in-apparent-leak/og.svg</image:loc>
       <image:title>Hacker targets ‘Grand Theft Auto VI’ in apparent leak</image:title>
@@ -184,7 +226,7 @@
     <loc>https://groundworkpub.github.io/digest/google-releases-pixel-11-series-factory-images/</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
     <image:image>
       <image:loc>https://groundworkpub.github.io/digest/google-releases-pixel-11-series-factory-images/og.svg</image:loc>
       <image:title>Google releases Pixel 11 series factory images</image:title>
@@ -194,7 +236,7 @@
     <loc>https://groundworkpub.github.io/digest/chatgpt-can-now-send-texts-for-you-with-new-apple-messages-plug-in/</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
     <image:image>
       <image:loc>https://groundworkpub.github.io/digest/chatgpt-can-now-send-texts-for-you-with-new-apple-messages-plug-in/og.svg</image:loc>
       <image:title>ChatGPT can now send texts for you with new Apple Messages plug-in</image:title>
@@ -204,7 +246,7 @@
     <loc>https://groundworkpub.github.io/digest/fortnite-admin-panel-lobby-hack-codes-list/</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
     <image:image>
       <image:loc>https://groundworkpub.github.io/digest/fortnite-admin-panel-lobby-hack-codes-list/og.svg</image:loc>
       <image:title>Fortnite Admin Panel Lobby Hack Codes List</image:title>
@@ -214,7 +256,7 @@
     <loc>https://groundworkpub.github.io/digest/asu-launches-new-scholarship-pipeline-to-ai-powered-cybersecurity-careers/</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
     <image:image>
       <image:loc>https://groundworkpub.github.io/digest/asu-launches-new-scholarship-pipeline-to-ai-powered-cybersecurity-careers/og.svg</image:loc>
       <image:title>ASU launches new scholarship pipeline to AI-powered cybersecurity careers</image:title>
@@ -224,7 +266,7 @@
     <loc>https://groundworkpub.github.io/digest/todays-podcast-release-the-confidence-advantage-why-privacy-cybersecurity-and-ai/</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
     <image:image>
       <image:loc>https://groundworkpub.github.io/digest/todays-podcast-release-the-confidence-advantage-why-privacy-cybersecurity-and-ai/og.svg</image:loc>
       <image:title>Today’s Podcast Release: The “Confidence Advantage”: Why Privacy, Cybersecurity and AI Governance Are Becoming Business Imperatives</image:title>
@@ -234,7 +276,7 @@
     <loc>https://groundworkpub.github.io/digest/new-interface-simplifies-management-of-matter-powered-smart-homes/</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
     <image:image>
       <image:loc>https://groundworkpub.github.io/digest/new-interface-simplifies-management-of-matter-powered-smart-homes/og.svg</image:loc>
       <image:title>New Interface Simplifies Management of Matter-Powered Smart Homes</image:title>
@@ -244,7 +286,7 @@
     <loc>https://groundworkpub.github.io/digest/broadband-forums-matter-service-api-wants-to-simplify-your-smart-home/</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
     <image:image>
       <image:loc>https://groundworkpub.github.io/digest/broadband-forums-matter-service-api-wants-to-simplify-your-smart-home/og.svg</image:loc>
       <image:title>Broadband Forum’s Matter Service API Wants To Simplify Your Smart Home</image:title>
@@ -254,7 +296,7 @@
     <loc>https://groundworkpub.github.io/digest/earth-is-missing-a-billion-years-of-history-we-finally-know-why/</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
     <image:image>
       <image:loc>https://groundworkpub.github.io/digest/earth-is-missing-a-billion-years-of-history-we-finally-know-why/og.svg</image:loc>
       <image:title>Earth Is Missing a Billion Years of History. We Finally Know Why</image:title>
@@ -264,7 +306,7 @@
     <loc>https://groundworkpub.github.io/digest/rescue-mission-is-called-off-for-nasas-aging-swift-space-telescope/</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
     <image:image>
       <image:loc>https://groundworkpub.github.io/digest/rescue-mission-is-called-off-for-nasas-aging-swift-space-telescope/og.svg</image:loc>
       <image:title>Rescue mission is called off for NASA&#39;s aging Swift space telescope</image:title>
@@ -274,7 +316,7 @@
     <loc>https://groundworkpub.github.io/digest/nasa-reveals-before-and-after-images-of-moon-crater-left-by-spacex-rocket/</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
     <image:image>
       <image:loc>https://groundworkpub.github.io/digest/nasa-reveals-before-and-after-images-of-moon-crater-left-by-spacex-rocket/og.svg</image:loc>
       <image:title>NASA reveals before-and-after images of moon crater left by SpaceX rocket</image:title>
@@ -284,7 +326,7 @@
     <loc>https://groundworkpub.github.io/digest/san-andreas-fault-new-san-jose-state-university-research-finds-fault-is-slipping/</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
     <image:image>
       <image:loc>https://groundworkpub.github.io/digest/san-andreas-fault-new-san-jose-state-university-research-finds-fault-is-slipping/og.svg</image:loc>
       <image:title>San Andreas Fault: New San Jose State University research finds fault is slipping faster than previously thought</image:title>
@@ -294,7 +336,7 @@
     <loc>https://groundworkpub.github.io/digest/tax-credits-incentives-and-technical-assistance-for-geothermal-heat-pumps/</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
     <image:image>
       <image:loc>https://groundworkpub.github.io/digest/tax-credits-incentives-and-technical-assistance-for-geothermal-heat-pumps/og.svg</image:loc>
       <image:title>Tax Credits, Incentives, and Technical Assistance for Geothermal Heat Pumps</image:title>
@@ -304,7 +346,7 @@
     <loc>https://groundworkpub.github.io/digest/will-us-households-still-buy-heat-pumps-without-a-tax-credit/</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
     <image:image>
       <image:loc>https://groundworkpub.github.io/digest/will-us-households-still-buy-heat-pumps-without-a-tax-credit/og.svg</image:loc>
       <image:title>Will U.S. Households Still Buy Heat Pumps Without a Tax Credit?</image:title>
@@ -314,7 +356,7 @@
     <loc>https://groundworkpub.github.io/digest/2024-2025-energy-tax-credit-which-home-improvements-qualify/</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
     <image:image>
       <image:loc>https://groundworkpub.github.io/digest/2024-2025-energy-tax-credit-which-home-improvements-qualify/og.svg</image:loc>
       <image:title>2024-2025 Energy Tax Credit: Which Home Improvements Qualify?</image:title>
@@ -324,7 +366,7 @@
     <loc>https://groundworkpub.github.io/digest/building-energy-efficient-homes-across-alaska-an-investment-in-our-future/</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
     <image:image>
       <image:loc>https://groundworkpub.github.io/digest/building-energy-efficient-homes-across-alaska-an-investment-in-our-future/og.svg</image:loc>
       <image:title>Building Energy-Efficient Homes Across Alaska: An Investment in Our Future</image:title>

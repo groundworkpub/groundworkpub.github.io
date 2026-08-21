@@ -37,7 +37,6 @@
         "@id": "https://gworky.com/#website",
         "url": "https://gworky.com",
         "name": "Groundwork Media",
-        "description": "Evidence-based decision guides and interactive calculators.",
         "publisher": {
           "@id": "https://gworky.com/#organization"
         }
@@ -51,6 +50,30 @@
           "@type": "ImageObject",
           "url": "https://groundworkpub.github.io/og.svg"
         }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://gworky.com/article/pratt-schwarzenegger-pacific-palisades-listing#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://groundworkpub.github.io/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "HOME",
+            "item": "https://groundworkpub.github.io/home/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Understanding luxury real estate pricing and market adjustments",
+            "item": "https://gworky.com/article/pratt-schwarzenegger-pacific-palisades-listing"
+          }
+        ]
       },
       {
         "@type": "Person",
@@ -67,6 +90,7 @@
         "url": "https://gworky.com/article/pratt-schwarzenegger-pacific-palisades-listing",
         "datePublished": "2026-08-21",
         "dateModified": "2026-08-21",
+        "wordCount": 798,
         "author": {
           "@id": "https://gworky.com/author/david-sterling#author"
         },
@@ -110,28 +134,60 @@
       --card-alt: #1E2D4A;
       --text: #CCD6F6;
       --heading: #FFFFFF;
-      --accent: #10B981;
-      --accent-glow: rgba(16, 185, 129, 0.15);
+      --accent: #F59E0B;
+      --accent-glow: rgba(245, 158, 11, 0.15);
       --muted: #8892B0;
       --border: rgba(255, 255, 255, 0.08);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif; background: var(--bg); color: var(--text); line-height: 1.75; padding: 2rem 1rem; }
-    .container { max-width: 860px; margin: 0 auto; background: var(--card); padding: 2.5rem; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
-    .header-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 10px; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif; background: var(--bg); color: var(--text); line-height: 1.75; padding-top: 70px; }
+    
+    /* Sticky Glassmorphic Header */
+    .site-header { position: fixed; top: 0; left: 0; right: 0; background: rgba(10, 25, 47, 0.88); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); z-index: 1000; }
+    .header-inner { max-width: 1080px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 1.5rem; }
+    .header-brand { display: flex; align-items: center; gap: 12px; }
+    .brand-logo { color: #FFFFFF; text-decoration: none; font-size: 1.1rem; display: flex; align-items: center; gap: 6px; }
+    .logo-dot { color: #10B981; }
+    .brand-sub { color: #8892B0; font-size: 0.78rem; font-weight: normal; margin-left: 4px; }
+    .live-status-pill { display: inline-flex; align-items: center; gap: 6px; background: rgba(16, 185, 129, 0.12); color: #10B981; font-size: 0.72rem; font-weight: bold; padding: 2px 8px; border-radius: 9999px; border: 1px solid rgba(16, 185, 129, 0.25); }
+    .pulse-dot { width: 6px; height: 6px; background: #10B981; border-radius: 50%; display: inline-block; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+    
+    .header-nav { display: flex; gap: 12px; align-items: center; }
+    .nav-link { color: var(--muted); text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 4px 8px; border-radius: 6px; transition: all 0.2s; }
+    .nav-link:hover, .nav-link.active { color: #FFFFFF; background: rgba(255, 255, 255, 0.06); }
+    .gworky-link { color: #10B981 !important; border: 1px solid rgba(16, 185, 129, 0.3); }
+    .reading-progress-bar { height: 3px; background: var(--accent); width: 0%; transition: width 0.1s ease-out; }
+    
+    /* Layout */
+    .container { max-width: 860px; margin: 2rem auto; background: var(--card); padding: 2.5rem; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+    
+    /* Breadcrumbs */
+    .breadcrumbs { font-size: 0.82rem; color: var(--muted); margin-bottom: 1.2rem; display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+    .breadcrumbs a { color: var(--muted); text-decoration: none; }
+    .breadcrumbs a:hover { color: var(--accent); }
+    
+    .header-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.2rem; flex-wrap: wrap; gap: 10px; }
     .badge { display: inline-block; background: var(--accent-glow); color: var(--accent); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.05em; padding: 0.35rem 0.85rem; border-radius: 9999px; text-transform: uppercase; }
     .doi-tag { font-size: 0.78rem; color: var(--muted); text-decoration: none; border: 1px solid var(--border); padding: 0.3rem 0.7rem; border-radius: 6px; }
     .doi-tag:hover { border-color: var(--accent); color: var(--accent); }
     
+    /* Article Meta */
+    .article-meta { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; font-size: 0.85rem; color: var(--muted); margin-bottom: 1.8rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
+    .meta-item { display: inline-flex; align-items: center; gap: 5px; }
+    
     h1 { color: var(--heading); font-size: 2.1rem; line-height: 1.3; margin-bottom: 1.2rem; font-family: Georgia, serif; }
-    h2 { color: var(--heading); font-size: 1.4rem; margin: 2rem 0 1rem; }
-    h3 { color: var(--heading); font-size: 1.15rem; margin: 1.5rem 0 0.8rem; }
+    h2 { color: var(--heading); font-size: 1.4rem; margin: 2.2rem 0 1rem; }
+    h3 { color: var(--heading); font-size: 1.15rem; margin: 1.6rem 0 0.8rem; }
     p { margin-bottom: 1.2rem; }
     ul { margin-left: 1.5rem; margin-bottom: 1.2rem; }
     li { margin-bottom: 0.5rem; }
 
+    /* Table of Contents */
+    .toc-card { background: var(--card-alt); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem 1.5rem; margin: 2rem 0; }
+
     /* AEO Quick Answer Card */
-    .quick-answer-card { background: rgba(16, 185, 129, 0.07); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem; }
+    .quick-answer-card { background: var(--accent-glow); border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem; }
     .quick-answer-card h3 { color: var(--accent); font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; margin-top: 0; }
     .quick-answer-card p { font-size: 1.05rem; color: #FFFFFF; font-weight: 500; margin-bottom: 0; line-height: 1.6; }
 
@@ -144,19 +200,71 @@
     .canonical-box { background: var(--accent-glow); border-left: 4px solid var(--accent); padding: 1.2rem; border-radius: 6px; margin: 2rem 0; font-size: 0.95rem; }
     .canonical-box a { color: var(--accent); font-weight: bold; text-decoration: underline; }
     
+    /* Study Pagination (Next/Prev) */
+    .study-pagination { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 3rem 0 1rem; }
+    .nav-card { background: var(--card-alt); border: 1px solid var(--border); padding: 1.2rem; border-radius: 8px; text-decoration: none; display: flex; flex-direction: column; gap: 4px; transition: all 0.2s; }
+    .nav-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .next-card { text-align: right; }
+    .nav-dir { font-size: 0.75rem; color: var(--accent); text-transform: uppercase; font-weight: bold; }
+    .nav-title { color: #FFFFFF; font-size: 0.9rem; font-weight: 600; line-height: 1.4; }
+    
     /* Citation Widget */
     .citation-widget { background: var(--card-alt); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; margin: 2.5rem 0; }
     .citation-widget h4 { color: var(--heading); font-size: 1rem; margin-bottom: 0.8rem; display: flex; justify-content: space-between; align-items: center; }
     .citation-box { background: #0A192F; border: 1px solid var(--border); border-radius: 6px; padding: 1rem; font-family: ui-monospace, monospace; font-size: 0.82rem; color: #CCD6F6; word-break: break-all; margin-bottom: 0.8rem; }
     .btn-copy { background: var(--accent); color: #0A192F; border: none; padding: 0.4rem 0.9rem; border-radius: 4px; font-weight: bold; font-size: 0.75rem; cursor: pointer; }
     
+    /* Back to top */
+    .back-to-top { position: fixed; bottom: 24px; right: 24px; background: rgba(17, 34, 64, 0.9); border: 1px solid var(--border); color: #FFFFFF; width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 1.2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.3); opacity: 0; pointer-events: none; transition: opacity 0.3s; z-index: 999; }
+    .back-to-top.visible { opacity: 1; pointer-events: auto; }
+    
     .footer { margin-top: 3.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border); font-size: 0.85rem; color: var(--muted); text-align: center; }
     .footer a { color: var(--text); text-decoration: none; }
     .footer a:hover { color: var(--accent); }
+
+    @media (max-width: 640px) {
+      body { padding-top: 60px; }
+      .container { padding: 1.5rem 1rem; }
+      h1 { font-size: 1.7rem; }
+      .header-nav { display: none; }
+      .study-pagination { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
+  
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-brand">
+        <a href="../" class="brand-logo">
+          <span class="logo-dot">✦</span>
+          <strong>Groundwork</strong>
+          <span class="brand-sub">Open Research</span>
+        </a>
+        <span class="live-status-pill"><span class="pulse-dot"></span> 751 Studies Live</span>
+      </div>
+      <nav class="header-nav" aria-label="Main Navigation">
+        <a href="../" class="nav-link ">All</a>
+        <a href="../money/" class="nav-link">Money</a>
+<a href="../body/" class="nav-link">Body</a>
+<a href="../home/" class="nav-link active">Home</a>
+<a href="../tech/" class="nav-link">Tech</a>
+<a href="../life/" class="nav-link">Life</a>
+<a href="../digest/" class="nav-link">Digests</a>
+        <a href="https://gworky.com" target="_blank" rel="noopener" class="nav-link gworky-link">gworky.com ↗</a>
+      </nav>
+    </div>
+    <div id="reading-progress" class="reading-progress-bar"></div>
+  </header>
+
+
   <div class="container">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="../">Home</a> <span>/</span>
+      <a href="../home/">HOME</a> <span>/</span>
+      <span style="color: #CCD6F6;">Understanding luxury real estate pr...</span>
+    </nav>
+
     <div class="header-bar">
       <div class="badge">Groundwork Open Research • HOME</div>
       <a href="https://doi.org/10.5281/zenodo.22011567" target="_blank" rel="noopener" class="doi-tag">DOI: 10.5281/zenodo.22011567</a>
@@ -164,11 +272,29 @@
 
     <h1>Understanding luxury real estate pricing and market adjustments</h1>
 
+    <div class="article-meta">
+      <span class="meta-item">✍️ <strong>David Sterling</strong></span>
+      <span class="meta-item">⏱️ 4 min read (798 words)</span>
+      <span class="meta-item">📅 2026-08-21</span>
+      <span class="meta-item">🔬 Peer-Audited</span>
+    </div>
+
     <!-- AEO Quick Answer Box for AI Overviews & Search Snippets -->
     <div class="quick-answer-card">
       <h3>⚡ Executive Research Takeaway (AEO Direct Answer)</h3>
       <p class="executive-takeaways">Learn how luxury property price adjustments work and why high-end homes often face long market times, using the Pratt-Schwarzenegger estate as a case study.</p>
     </div>
+
+    
+        <aside class="toc-card" aria-label="Table of Contents">
+          <h4 style="color: #FFFFFF; font-size: 0.95rem; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 6px;">
+            <span style="color: #10B981;">§</span> Study Outline & Navigation
+          </h4>
+          <ul style="list-style: none; padding-left: 0; margin-left: 0;">
+            <li style="margin-left: 0px; margin-bottom: 0.4rem;"><a href="#heading-1" style="color: #CCD6F6; text-decoration: none; font-size: 0.85rem;">Why do luxury properties require price adjustments?</a></li><li style="margin-left: 0px; margin-bottom: 0.4rem;"><a href="#heading-2" style="color: #CCD6F6; text-decoration: none; font-size: 0.85rem;">How does renovation impact resale value?</a></li><li style="margin-left: 0px; margin-bottom: 0.4rem;"><a href="#heading-3" style="color: #CCD6F6; text-decoration: none; font-size: 0.85rem;">What should you consider before buying a luxury property?</a></li><li style="margin-left: 0px; margin-bottom: 0.4rem;"><a href="#heading-4" style="color: #CCD6F6; text-decoration: none; font-size: 0.85rem;">How to approach your own property sale</a></li><li style="margin-left: 0px; margin-bottom: 0.4rem;"><a href="#heading-5" style="color: #CCD6F6; text-decoration: none; font-size: 0.85rem;">Managing the risks of high-end real estate</a></li>
+          </ul>
+        </aside>
+        
 
     <!-- GEO Empirical Metrics Summary -->
     <div class="metrics-grid">
@@ -194,22 +320,22 @@
     <main>
       <p>A property listing adjustment occurs when a seller reduces the asking price of a home to better align with current market demand or to accelerate a sale. In the case of the Pacific Palisades estate owned by Chris Pratt and Katherine Schwarzenegger, a significant price reduction—from an initial $32 million to $20 million—illustrates the challenges of pricing high-end luxury assets in a fluctuating real estate market.</p>
 <p>According to Architectural Digest, the couple’s decision to lower the price marks the fifth attempt to sell the property over a three-year period. This pattern highlights a common reality in the ultra-luxury segment: even high-profile properties are subject to the same supply-and-demand pressures as standard residential homes. When a property remains on the market for an extended period, it often signals a disconnect between the seller&#39;s valuation and the market&#39;s willingness to pay.</p>
-<h2>Why do luxury properties require price adjustments?</h2>
+<h2 id="heading-1">Why do luxury properties require price adjustments?</h2>
 <p>Luxury properties require price adjustments when the initial listing price exceeds the appraised value or fails to attract qualified buyers within a reasonable timeframe. In the high-end market, properties are often unique, making them difficult to compare to recent sales. Sellers frequently start with a &#39;testing the market&#39; price, which can lead to extended days on market if buyer interest is insufficient.</p>
 <p>Data from the National Association of Realtors suggests that luxury homes often experience longer marketing windows than mid-market properties because the pool of eligible buyers is significantly smaller. When a property sits, it can develop a &#39;stale&#39; reputation, prompting sellers to adjust the price to re-engage prospective buyers. For the Pratt-Schwarzenegger estate, the $12 million reduction reflects a strategic pivot to reset buyer expectations and move the asset after years of inactivity.</p>
-<h2>How does renovation impact resale value?</h2>
+<h2 id="heading-2">How does renovation impact resale value?</h2>
 <p>Renovations impact resale value by modernizing a home’s aesthetic and functionality, though they do not always guarantee a dollar-for-dollar return on investment. Pratt and Schwarzenegger reportedly spent two years transforming the 11,000-square-foot home from its original 1995 state into a contemporary residence featuring neutral wood and stone elements. While these upgrades enhance appeal, the total cost of renovations, when added to the original $15.6 million purchase price, may exceed the current market value of $20 million.</p>
 <p>According to Remodeling Magazine’s Cost vs. Value report, high-end renovations rarely recoup 100% of their costs upon resale. Homeowners often undertake these projects for personal preference rather than investment yield. When selling, the market determines the value based on current buyer preferences, not the amount of capital previously invested in upgrades.</p>
-<h2>What should you consider before buying a luxury property?</h2>
+<h2 id="heading-3">What should you consider before buying a luxury property?</h2>
 <p>Before buying a luxury property, you must evaluate the long-term carrying costs, the potential for future development, and the historical sales trends of the specific neighborhood. Luxury estates often come with high property taxes, maintenance for extensive amenities like golf simulators or saltwater pools, and potential legal or zoning restrictions.</p>
 <p>Researching the neighborhood is critical. In the case of the couple&#39;s move to Brentwood, their purchase of a $12.5 million property and subsequent demolition of an existing structure sparked public discourse regarding historical preservation. Before committing to a high-end purchase, ensure you have a clear understanding of local zoning laws, potential neighborhood opposition to renovations, and the liquidity of the local market.</p>
-<h2>How to approach your own property sale</h2>
+<h2 id="heading-4">How to approach your own property sale</h2>
 <p>1. Analyze comparable sales: Look at homes of similar square footage and amenities that have sold in your area within the last six months.
 2. Consult local experts: Work with a real estate professional who specializes in your property tier to establish a realistic listing price.
 3. Monitor market feedback: If you receive few inquiries or showings, the market is signaling that your price is too high; be prepared to adjust within 30 to 60 days.
 4. Highlight unique value: Focus on the features that set your home apart, such as proximity to mountain views or specific high-end amenities like outdoor kitchens.
 5. Be prepared for negotiation: Understand your bottom line before listing, and ensure your financial planning accounts for carrying costs while the property remains on the market.</p>
-<h2>Managing the risks of high-end real estate</h2>
+<h2 id="heading-5">Managing the risks of high-end real estate</h2>
 <p>Luxury real estate is often characterized by lower liquidity than the broader market. Investors and homeowners should view these assets as long-term holds rather than short-term flips. Market volatility can impact buyer sentiment, and the prestige associated with a celebrity owner does not inherently command a higher price if the fundamental valuation metrics do not align with buyer expectations. As evidenced by the Pratt-Schwarzenegger listing, even the most prominent figures must eventually yield to the realities of market-driven pricing.</p>
 
     </main>
@@ -257,6 +383,9 @@
     </div>
     
 
+    <!-- Next / Previous Study Navigation -->
+    <nav class="study-pagination" aria-label="Study pagination"><a href="../xbox-elite-series-3-leak-analysis/" class="nav-card prev-card"><span class="nav-dir">← Previous Study</span><span class="nav-title">What the leaked Xbox Elite Series 3 prototype reveals about future controllers</span></a><a href="../insulating-small-attic-eaves/" class="nav-card next-card"><span class="nav-dir">Next Study →</span><span class="nav-title">How to insulate small attic spaces through eaves</span></a></nav>
+
     <!-- 1-Click Multi-Format Citation Widget -->
     <div class="citation-widget">
       <h4>
@@ -281,12 +410,32 @@
       <strong>Authoritative Reference:</strong> Published by Groundwork Media under Open Science principles. Permanent scholarly snapshot recorded at CERN Zenodo under Creative Commons. Central Portal: <a href="https://gworky.com">https://gworky.com</a>.
     </div>
 
-    <div class="footer">
-      <p><a href="https://groundworkpub.github.io">← Back to Groundwork Research Index</a> | <a href="https://gworky.com">Visit Groundwork Platform</a></p>
-    </div>
+    <footer class="footer">
+      <p><a href="../">← Back to Groundwork Research Index</a> | <a href="../home/">View All HOME Studies</a> | <a href="https://gworky.com">Visit Groundwork Platform</a></p>
+    </footer>
   </div>
 
+  <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">↑</a>
+
   <script>
+    // Reading progress bar & back to top
+    window.addEventListener('scroll', () => {
+      const winScroll = document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      const bar = document.getElementById('reading-progress');
+      if (bar) bar.style.width = scrolled + '%';
+
+      const topBtn = document.getElementById('backToTop');
+      if (topBtn) {
+        if (winScroll > 400) {
+          topBtn.classList.add('visible');
+        } else {
+          topBtn.classList.remove('visible');
+        }
+      }
+    });
+
     function copyCitation() {
       const text = document.getElementById('citation-text').innerText;
       navigator.clipboard.writeText(text).then(() => {

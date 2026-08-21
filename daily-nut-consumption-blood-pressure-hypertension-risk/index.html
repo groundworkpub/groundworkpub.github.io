@@ -37,7 +37,6 @@
         "@id": "https://gworky.com/#website",
         "url": "https://gworky.com",
         "name": "Groundwork Media",
-        "description": "Evidence-based decision guides and interactive calculators.",
         "publisher": {
           "@id": "https://gworky.com/#organization"
         }
@@ -51,6 +50,30 @@
           "@type": "ImageObject",
           "url": "https://groundworkpub.github.io/og.svg"
         }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://gworky.com/article/daily-nut-consumption-blood-pressure-hypertension-risk#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://groundworkpub.github.io/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "BODY",
+            "item": "https://groundworkpub.github.io/body/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "How eating a handful of nuts daily lowers your risk of high blood pressure",
+            "item": "https://gworky.com/article/daily-nut-consumption-blood-pressure-hypertension-risk"
+          }
+        ]
       },
       {
         "@type": "Person",
@@ -67,6 +90,7 @@
         "url": "https://gworky.com/article/daily-nut-consumption-blood-pressure-hypertension-risk",
         "datePublished": "2026-08-21",
         "dateModified": "2026-08-21",
+        "wordCount": 1387,
         "author": {
           "@id": "https://gworky.com/author/dr-sarah-jenkins#author"
         },
@@ -110,28 +134,60 @@
       --card-alt: #1E2D4A;
       --text: #CCD6F6;
       --heading: #FFFFFF;
-      --accent: #10B981;
-      --accent-glow: rgba(16, 185, 129, 0.15);
+      --accent: #3B82F6;
+      --accent-glow: rgba(59, 130, 246, 0.15);
       --muted: #8892B0;
       --border: rgba(255, 255, 255, 0.08);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif; background: var(--bg); color: var(--text); line-height: 1.75; padding: 2rem 1rem; }
-    .container { max-width: 860px; margin: 0 auto; background: var(--card); padding: 2.5rem; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
-    .header-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 10px; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif; background: var(--bg); color: var(--text); line-height: 1.75; padding-top: 70px; }
+    
+    /* Sticky Glassmorphic Header */
+    .site-header { position: fixed; top: 0; left: 0; right: 0; background: rgba(10, 25, 47, 0.88); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); z-index: 1000; }
+    .header-inner { max-width: 1080px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 1.5rem; }
+    .header-brand { display: flex; align-items: center; gap: 12px; }
+    .brand-logo { color: #FFFFFF; text-decoration: none; font-size: 1.1rem; display: flex; align-items: center; gap: 6px; }
+    .logo-dot { color: #10B981; }
+    .brand-sub { color: #8892B0; font-size: 0.78rem; font-weight: normal; margin-left: 4px; }
+    .live-status-pill { display: inline-flex; align-items: center; gap: 6px; background: rgba(16, 185, 129, 0.12); color: #10B981; font-size: 0.72rem; font-weight: bold; padding: 2px 8px; border-radius: 9999px; border: 1px solid rgba(16, 185, 129, 0.25); }
+    .pulse-dot { width: 6px; height: 6px; background: #10B981; border-radius: 50%; display: inline-block; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+    
+    .header-nav { display: flex; gap: 12px; align-items: center; }
+    .nav-link { color: var(--muted); text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 4px 8px; border-radius: 6px; transition: all 0.2s; }
+    .nav-link:hover, .nav-link.active { color: #FFFFFF; background: rgba(255, 255, 255, 0.06); }
+    .gworky-link { color: #10B981 !important; border: 1px solid rgba(16, 185, 129, 0.3); }
+    .reading-progress-bar { height: 3px; background: var(--accent); width: 0%; transition: width 0.1s ease-out; }
+    
+    /* Layout */
+    .container { max-width: 860px; margin: 2rem auto; background: var(--card); padding: 2.5rem; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+    
+    /* Breadcrumbs */
+    .breadcrumbs { font-size: 0.82rem; color: var(--muted); margin-bottom: 1.2rem; display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+    .breadcrumbs a { color: var(--muted); text-decoration: none; }
+    .breadcrumbs a:hover { color: var(--accent); }
+    
+    .header-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.2rem; flex-wrap: wrap; gap: 10px; }
     .badge { display: inline-block; background: var(--accent-glow); color: var(--accent); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.05em; padding: 0.35rem 0.85rem; border-radius: 9999px; text-transform: uppercase; }
     .doi-tag { font-size: 0.78rem; color: var(--muted); text-decoration: none; border: 1px solid var(--border); padding: 0.3rem 0.7rem; border-radius: 6px; }
     .doi-tag:hover { border-color: var(--accent); color: var(--accent); }
     
+    /* Article Meta */
+    .article-meta { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; font-size: 0.85rem; color: var(--muted); margin-bottom: 1.8rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
+    .meta-item { display: inline-flex; align-items: center; gap: 5px; }
+    
     h1 { color: var(--heading); font-size: 2.1rem; line-height: 1.3; margin-bottom: 1.2rem; font-family: Georgia, serif; }
-    h2 { color: var(--heading); font-size: 1.4rem; margin: 2rem 0 1rem; }
-    h3 { color: var(--heading); font-size: 1.15rem; margin: 1.5rem 0 0.8rem; }
+    h2 { color: var(--heading); font-size: 1.4rem; margin: 2.2rem 0 1rem; }
+    h3 { color: var(--heading); font-size: 1.15rem; margin: 1.6rem 0 0.8rem; }
     p { margin-bottom: 1.2rem; }
     ul { margin-left: 1.5rem; margin-bottom: 1.2rem; }
     li { margin-bottom: 0.5rem; }
 
+    /* Table of Contents */
+    .toc-card { background: var(--card-alt); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem 1.5rem; margin: 2rem 0; }
+
     /* AEO Quick Answer Card */
-    .quick-answer-card { background: rgba(16, 185, 129, 0.07); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem; }
+    .quick-answer-card { background: var(--accent-glow); border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem; }
     .quick-answer-card h3 { color: var(--accent); font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; margin-top: 0; }
     .quick-answer-card p { font-size: 1.05rem; color: #FFFFFF; font-weight: 500; margin-bottom: 0; line-height: 1.6; }
 
@@ -144,19 +200,71 @@
     .canonical-box { background: var(--accent-glow); border-left: 4px solid var(--accent); padding: 1.2rem; border-radius: 6px; margin: 2rem 0; font-size: 0.95rem; }
     .canonical-box a { color: var(--accent); font-weight: bold; text-decoration: underline; }
     
+    /* Study Pagination (Next/Prev) */
+    .study-pagination { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 3rem 0 1rem; }
+    .nav-card { background: var(--card-alt); border: 1px solid var(--border); padding: 1.2rem; border-radius: 8px; text-decoration: none; display: flex; flex-direction: column; gap: 4px; transition: all 0.2s; }
+    .nav-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .next-card { text-align: right; }
+    .nav-dir { font-size: 0.75rem; color: var(--accent); text-transform: uppercase; font-weight: bold; }
+    .nav-title { color: #FFFFFF; font-size: 0.9rem; font-weight: 600; line-height: 1.4; }
+    
     /* Citation Widget */
     .citation-widget { background: var(--card-alt); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; margin: 2.5rem 0; }
     .citation-widget h4 { color: var(--heading); font-size: 1rem; margin-bottom: 0.8rem; display: flex; justify-content: space-between; align-items: center; }
     .citation-box { background: #0A192F; border: 1px solid var(--border); border-radius: 6px; padding: 1rem; font-family: ui-monospace, monospace; font-size: 0.82rem; color: #CCD6F6; word-break: break-all; margin-bottom: 0.8rem; }
     .btn-copy { background: var(--accent); color: #0A192F; border: none; padding: 0.4rem 0.9rem; border-radius: 4px; font-weight: bold; font-size: 0.75rem; cursor: pointer; }
     
+    /* Back to top */
+    .back-to-top { position: fixed; bottom: 24px; right: 24px; background: rgba(17, 34, 64, 0.9); border: 1px solid var(--border); color: #FFFFFF; width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 1.2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.3); opacity: 0; pointer-events: none; transition: opacity 0.3s; z-index: 999; }
+    .back-to-top.visible { opacity: 1; pointer-events: auto; }
+    
     .footer { margin-top: 3.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border); font-size: 0.85rem; color: var(--muted); text-align: center; }
     .footer a { color: var(--text); text-decoration: none; }
     .footer a:hover { color: var(--accent); }
+
+    @media (max-width: 640px) {
+      body { padding-top: 60px; }
+      .container { padding: 1.5rem 1rem; }
+      h1 { font-size: 1.7rem; }
+      .header-nav { display: none; }
+      .study-pagination { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
+  
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-brand">
+        <a href="../" class="brand-logo">
+          <span class="logo-dot">✦</span>
+          <strong>Groundwork</strong>
+          <span class="brand-sub">Open Research</span>
+        </a>
+        <span class="live-status-pill"><span class="pulse-dot"></span> 751 Studies Live</span>
+      </div>
+      <nav class="header-nav" aria-label="Main Navigation">
+        <a href="../" class="nav-link ">All</a>
+        <a href="../money/" class="nav-link">Money</a>
+<a href="../body/" class="nav-link active">Body</a>
+<a href="../home/" class="nav-link">Home</a>
+<a href="../tech/" class="nav-link">Tech</a>
+<a href="../life/" class="nav-link">Life</a>
+<a href="../digest/" class="nav-link">Digests</a>
+        <a href="https://gworky.com" target="_blank" rel="noopener" class="nav-link gworky-link">gworky.com ↗</a>
+      </nav>
+    </div>
+    <div id="reading-progress" class="reading-progress-bar"></div>
+  </header>
+
+
   <div class="container">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="../">Home</a> <span>/</span>
+      <a href="../body/">BODY</a> <span>/</span>
+      <span style="color: #CCD6F6;">How eating a handful of nuts daily ...</span>
+    </nav>
+
     <div class="header-bar">
       <div class="badge">Groundwork Open Research • BODY</div>
       <a href="https://doi.org/10.5281/zenodo.22011567" target="_blank" rel="noopener" class="doi-tag">DOI: 10.5281/zenodo.22011567</a>
@@ -164,11 +272,33 @@
 
     <h1>How eating a handful of nuts daily lowers your risk of high blood pressure</h1>
 
+    <div class="article-meta">
+      <span class="meta-item">✍️ <strong>Dr. Sarah Jenkins</strong></span>
+      <span class="meta-item">⏱️ 7 min read (1387 words)</span>
+      <span class="meta-item">📅 2026-08-21</span>
+      <span class="meta-item">🔬 Peer-Audited</span>
+    </div>
+
     <!-- AEO Quick Answer Box for AI Overviews & Search Snippets -->
     <div class="quick-answer-card">
       <h3>⚡ Executive Research Takeaway (AEO Direct Answer)</h3>
       <p class="executive-takeaways">Eating 28 grams of nuts daily is linked to a 20% reduction in hypertension risk. Learn how magnesium, potassium, and healthy fats protect blood vessels.</p>
     </div>
+
+    
+        <aside class="toc-card" aria-label="Table of Contents">
+          <h4 style="color: #FFFFFF; font-size: 0.95rem; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 6px;">
+            <span style="color: #10B981;">§</span> Study Outline & Navigation
+          </h4>
+          <ul style="list-style: none; padding-left: 0; margin-left: 0;">
+            <li style="margin-left: 0px; margin-bottom: 0.4rem;"><a href="#heading-1" style="color: #CCD6F6; text-decoration: none; font-size: 0.85rem;">How does daily nut consumption affect your risk of hypertension?</a></li><li style="margin-left: 0px; margin-bottom: 0.4rem;"><a href="#heading-2" style="color: #CCD6F6; text-decoration: none; font-size: 0.85rem;">What biological mechanisms allow nuts to regulate blood pressure?</a></li><li style="margin-left: 12px; margin-bottom: 0.4rem;"><a href="#heading-3" style="color: #CCD6F6; text-decoration: none; font-size: 0.85rem;">1. Magnesium and natural calcium channel inhibition
+Magnesium serves as an essential cofactor in over 300 enzymatic reactions, directly regulating vascular tone. In vascular smooth muscle cells, magnesium acts as a physiological calcium channel blocker. By competing with calcium at cellular membrane binding sites, magnesium prevents intracellular calcium overload, preventing arterial constriction and promoting vasodilation (arterial widening). A 28-gram serving of almonds or cashews delivers between 15% and 20% of your daily recommended magnesium intake.</a></li><li style="margin-left: 12px; margin-bottom: 0.4rem;"><a href="#heading-4" style="color: #CCD6F6; text-decoration: none; font-size: 0.85rem;">2. Potassium and sodium homeostasis
+Potassium plays a critical physiological role in regulating systemic fluid balance and arterial tension. High potassium intake signals the kidneys to excrete excess sodium via urine while dampening the activity of the renin-angiotensin-aldosterone system (RAAS). Furthermore, potassium reduces tension in arterial walls, dampening the physical pressure exerted by blood surges during cardiac contraction.</a></li><li style="margin-left: 12px; margin-bottom: 0.4rem;"><a href="#heading-5" style="color: #CCD6F6; text-decoration: none; font-size: 0.85rem;">3. L-arginine and nitric oxide synthesis
+Nuts are a rich dietary source of L-arginine, an amino acid that acts as the direct substrate for endothelial nitric oxide synthase (eNOS). Endothelial cells utilize L-arginine to synthesize nitric oxide (NO), a powerful signaling molecule that instructs vascular smooth muscle to relax. Higher circulating levels of nitric oxide improve endothelial dysfunction, reduce vascular resistance, and maintain arterial compliance.</a></li><li style="margin-left: 12px; margin-bottom: 0.4rem;"><a href="#heading-6" style="color: #CCD6F6; text-decoration: none; font-size: 0.85rem;">4. Unsaturated fatty acids and vascular inflammation
+Nuts possess high concentrations of monounsaturated fatty acids (MUFAs) and polyunsaturated fatty acids (PUFAs), notably alpha-linolenic acid (ALA) found abundantly in walnuts. These healthy lipids replace pro-inflammatory saturated fats in the diet, lowering circulating low-density lipoprotein (LDL) particles and inhibiting nuclear factor-kappa B (NF-κB) pathways. This lipid optimization reduces vascular wall inflammation and lipid peroxidation, maintaining smooth, uncompromised arterial walls.</a></li><li style="margin-left: 0px; margin-bottom: 0.4rem;"><a href="#heading-7" style="color: #CCD6F6; text-decoration: none; font-size: 0.85rem;">How does nut preparation impact cardiovascular benefits?</a></li><li style="margin-left: 0px; margin-bottom: 0.4rem;"><a href="#heading-8" style="color: #CCD6F6; text-decoration: none; font-size: 0.85rem;">How to incorporate a daily serving of nuts into your lifestyle</a></li><li style="margin-left: 0px; margin-bottom: 0.4rem;"><a href="#heading-9" style="color: #CCD6F6; text-decoration: none; font-size: 0.85rem;">What are the limitations of observational dietary studies?</a></li>
+          </ul>
+        </aside>
+        
 
     <!-- GEO Empirical Metrics Summary -->
     <div class="metrics-grid">
@@ -194,23 +324,23 @@
     <main>
       <p>Hypertension, commonly known as high blood pressure, is a chronic cardiovascular condition where the force of blood against arterial walls remains persistently elevated above normal physiological thresholds (120/80 mmHg). Consuming approximately one ounce (28 grams) of nuts daily is associated with a 20% reduction in your risk of developing hypertension. At Groundwork, our analysis of clinical evidence indicates that incorporating raw or dry-roasted nuts into your daily regimen offers a low-cost, targeted intervention to support long-term endothelial health and blood vessel flexibility.</p>
 <p>According to global health estimates from the World Health Organization (WHO), hypertension affects more than 1.28 billion adults worldwide and remains the primary modifiable risk factor for stroke, myocardial infarction, and renal failure. While pharmacotherapy is necessary for established high blood pressure, nutritional adjustments represent an empirical frontline strategy for prevention.</p>
-<h2>How does daily nut consumption affect your risk of hypertension?</h2>
+<h2 id="heading-1">How does daily nut consumption affect your risk of hypertension?</h2>
 <p>Eating a daily 28-gram serving of nuts lowers hypertension risk by approximately 20% compared to non-consumption, according to systematic research. The preventive benefit peaks at roughly 30 grams per day, yielding up to a 26% reduced risk without significant further risk reductions observed at higher daily intake levels.</p>
 <p>A systematic review and meta-analysis published in the *British Journal of Nutrition* evaluated prospective cohort data from eight independent longitudinal studies encompassing 143,380 adult subjects across follow-up periods ranging from 4 to 30 years. During these tracking periods, clinicians documented 20,665 incident cases of hypertension.</p>
 <p>When researchers compared participants in the highest intake quantile with those consuming the lowest amount, high nut consumption correlated with a baseline 16% reduction in hypertension risk. A more granular dose-response analysis demonstrated that each additional 28-gram serving per day—roughly equivalent to a small handful of almonds, walnuts, or pistachios—delivered an incremental 20% risk reduction.</p>
 <p>Crucially, the statistical curve revealed a non-linear biological threshold. Cardiovascular protection scaled rapidly as daily intake rose from zero to 30 grams per day, achieving a 26% risk reduction. However, consuming amounts beyond 30 grams daily showed a plateau effect, yielding no additional statistically significant drop in incident hypertension. This demonstrates that continuous consistency—rather than extreme volume—is the governing factor in dietary vascular defense.</p>
-<h2>What biological mechanisms allow nuts to regulate blood pressure?</h2>
+<h2 id="heading-2">What biological mechanisms allow nuts to regulate blood pressure?</h2>
 <p>Nuts lower blood pressure by supplying micronutrients and bioactives—including magnesium, potassium, L-arginine, and unsaturated fatty acids—that relax vascular smooth muscle. These compounds promote nitric oxide production, facilitate vasodilation, counteract excess dietary sodium, and reduce overall systemic arterial stiffness.</p>
 <p>At Groundwork, our review of vascular pathophysiology highlights four primary biomechanical pathways through which the nutrient matrix of nuts acts on the circulatory system:</p>
-<h3>1. Magnesium and natural calcium channel inhibition
+<h3 id="heading-3">1. Magnesium and natural calcium channel inhibition
 Magnesium serves as an essential cofactor in over 300 enzymatic reactions, directly regulating vascular tone. In vascular smooth muscle cells, magnesium acts as a physiological calcium channel blocker. By competing with calcium at cellular membrane binding sites, magnesium prevents intracellular calcium overload, preventing arterial constriction and promoting vasodilation (arterial widening). A 28-gram serving of almonds or cashews delivers between 15% and 20% of your daily recommended magnesium intake.</h3>
-<h3>2. Potassium and sodium homeostasis
+<h3 id="heading-4">2. Potassium and sodium homeostasis
 Potassium plays a critical physiological role in regulating systemic fluid balance and arterial tension. High potassium intake signals the kidneys to excrete excess sodium via urine while dampening the activity of the renin-angiotensin-aldosterone system (RAAS). Furthermore, potassium reduces tension in arterial walls, dampening the physical pressure exerted by blood surges during cardiac contraction.</h3>
-<h3>3. L-arginine and nitric oxide synthesis
+<h3 id="heading-5">3. L-arginine and nitric oxide synthesis
 Nuts are a rich dietary source of L-arginine, an amino acid that acts as the direct substrate for endothelial nitric oxide synthase (eNOS). Endothelial cells utilize L-arginine to synthesize nitric oxide (NO), a powerful signaling molecule that instructs vascular smooth muscle to relax. Higher circulating levels of nitric oxide improve endothelial dysfunction, reduce vascular resistance, and maintain arterial compliance.</h3>
-<h3>4. Unsaturated fatty acids and vascular inflammation
+<h3 id="heading-6">4. Unsaturated fatty acids and vascular inflammation
 Nuts possess high concentrations of monounsaturated fatty acids (MUFAs) and polyunsaturated fatty acids (PUFAs), notably alpha-linolenic acid (ALA) found abundantly in walnuts. These healthy lipids replace pro-inflammatory saturated fats in the diet, lowering circulating low-density lipoprotein (LDL) particles and inhibiting nuclear factor-kappa B (NF-κB) pathways. This lipid optimization reduces vascular wall inflammation and lipid peroxidation, maintaining smooth, uncompromised arterial walls.</h3>
-<h2>How does nut preparation impact cardiovascular benefits?</h2>
+<h2 id="heading-7">How does nut preparation impact cardiovascular benefits?</h2>
 <p>Nut preparation significantly influences cardiovascular outcomes because added sodium can offset vascular benefits. Unsalted, raw, or dry-roasted nuts preserve endothelial health without elevating blood pressure, whereas heavily salted or hydrogenated-oil roasted varieties introduce excess sodium and trans fats that impair arterial function.</p>
 <p>The clinical efficacy of daily nut consumption relies heavily on product selection. Dietary sodium is a primary driver of elevated blood pressure, causing renal fluid retention and increased intravascular volume. A single serving of commercially salted nuts can contain upwards of 200 to 300 milligrams of sodium, which directly undermines the vasodilation benefits supplied by the nut&#39;s internal potassium and magnesium.</p>
 <p>To optimize your dietary strategy, evaluate nut choices according to processing indicators:</p>
@@ -218,13 +348,13 @@ Nuts possess high concentrations of monounsaturated fatty acids (MUFAs) and poly
 * **Oil-roasted nuts:** Often processed in low-grade palm or soybean oils subjected to high thermal stress. This heating process can create inflammatory lipid peroxides that degrade endothelial function.
 * **Commercial nut butters:** Frequently formulated with added sugars, sodium, and fully or partially hydrogenated vegetable oils. Select products containing 100% nuts (or nuts and minimal salt) without added industrial oils.</p>
 <p>Regarding nut taxonomy, both tree nuts (such as walnuts, almonds, pecans, cashews, and pistachios) and legumes (peanuts) demonstrate cardiovascular benefits. However, walnuts possess higher levels of omega-3 ALA, while pistachios contain high concentrations of lutein and potassium, making a varied mix superior to relying on a single variety.</p>
-<h2>How to incorporate a daily serving of nuts into your lifestyle</h2>
+<h2 id="heading-8">How to incorporate a daily serving of nuts into your lifestyle</h2>
 <p>Transitioning to a daily nut regimen requires structured portion monitoring to balance high nutrient density with caloric intake. Follow this step-by-step framework to maximize cardiovascular protection:</p>
 <p>1. **Measure exact daily portions:** Establish a standard dose of 28 grams (1 ounce) per day. This equates to roughly 24 almonds, 14 walnut halves, 49 pistachios, or 18 cashews. Use a digital kitchen scale initially to visually calibrate your daily serving.
 2. **Replace refined snacks:** Swap processed, high-sodium, or high-glycemic snacks (such as chips, crackers, or pretzels) with your measured daily serving of unsalted nuts. This substitution simultaneously reduces dietary sodium and eliminates blood sugar spikes that trigger vascular inflammation.
 3. **Integrate nuts into nutrient-dense meals:** Combine your nut intake with vegetables and whole grains. Sprinkle chopped walnuts or almonds over leafy green salads, oatmeal, or plain Greek yogurt to improve micronutrient absorption through healthy fat pairing.
 4. **Rotate nut varieties weekly:** Alternate between walnuts, almonds, pistachios, and Brazil nuts to secure a broad spectrum of micronutrients, including omega-3 fatty acids, vitamin E, and selenium.</p>
-<h2>What are the limitations of observational dietary studies?</h2>
+<h2 id="heading-9">What are the limitations of observational dietary studies?</h2>
 <p>Observational studies on nut consumption demonstrate correlation rather than direct causation due to prospective study designs. Confounding variables, such as healthy worker bias, higher overall diet quality, and active lifestyle habits among high-nut consumers, make it difficult to isolate nuts as the sole therapeutic factor.</p>
 <p>While the meta-analysis published in the *British Journal of Nutrition* analyzed over 143,000 subjects, all eight underlying studies relied on prospective observational methodologies. In observational research, participants self-report dietary habits via food frequency questionnaires (FFQs), which introduces potential recall bias and misclassification.</p>
 <p>Furthermore, high nut consumption frequently co-occurs with healthier overall lifestyle behaviors—a phenomenon known as residual confounding. Individuals who consume a handful of nuts daily are statistically more likely to engage in regular physical exercise, consume higher total quantities of fiber and whole foods, smoke less, and maintain a lower body mass index (BMI).</p>
@@ -275,6 +405,9 @@ Nuts possess high concentrations of monounsaturated fatty acids (MUFAs) and poly
     </div>
     
 
+    <!-- Next / Previous Study Navigation -->
+    <nav class="study-pagination" aria-label="Study pagination"><a href="../american-airlines-seatback-screens-first-class-expansion/" class="nav-card prev-card"><span class="nav-dir">← Previous Study</span><span class="nav-title">Why American Airlines is bringing back seatback screens and expanding first class</span></a><a href="../whirlpool-heat-pump-dryer-maintenance-guide/" class="nav-card next-card"><span class="nav-dir">Next Study →</span><span class="nav-title">Maintaining your heat pump dryer: addressing lint buildup and filter performance</span></a></nav>
+
     <!-- 1-Click Multi-Format Citation Widget -->
     <div class="citation-widget">
       <h4>
@@ -299,12 +432,32 @@ Nuts possess high concentrations of monounsaturated fatty acids (MUFAs) and poly
       <strong>Authoritative Reference:</strong> Published by Groundwork Media under Open Science principles. Permanent scholarly snapshot recorded at CERN Zenodo under Creative Commons. Central Portal: <a href="https://gworky.com">https://gworky.com</a>.
     </div>
 
-    <div class="footer">
-      <p><a href="https://groundworkpub.github.io">← Back to Groundwork Research Index</a> | <a href="https://gworky.com">Visit Groundwork Platform</a></p>
-    </div>
+    <footer class="footer">
+      <p><a href="../">← Back to Groundwork Research Index</a> | <a href="../body/">View All BODY Studies</a> | <a href="https://gworky.com">Visit Groundwork Platform</a></p>
+    </footer>
   </div>
 
+  <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">↑</a>
+
   <script>
+    // Reading progress bar & back to top
+    window.addEventListener('scroll', () => {
+      const winScroll = document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      const bar = document.getElementById('reading-progress');
+      if (bar) bar.style.width = scrolled + '%';
+
+      const topBtn = document.getElementById('backToTop');
+      if (topBtn) {
+        if (winScroll > 400) {
+          topBtn.classList.add('visible');
+        } else {
+          topBtn.classList.remove('visible');
+        }
+      }
+    });
+
     function copyCitation() {
       const text = document.getElementById('citation-text').innerText;
       navigator.clipboard.writeText(text).then(() => {

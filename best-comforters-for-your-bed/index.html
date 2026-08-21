@@ -37,7 +37,6 @@
         "@id": "https://gworky.com/#website",
         "url": "https://gworky.com",
         "name": "Groundwork Media",
-        "description": "Evidence-based decision guides and interactive calculators.",
         "publisher": {
           "@id": "https://gworky.com/#organization"
         }
@@ -51,6 +50,30 @@
           "@type": "ImageObject",
           "url": "https://groundworkpub.github.io/og.svg"
         }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://gworky.com/article/best-comforters-for-your-bed#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://groundworkpub.github.io/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "HOME",
+            "item": "https://groundworkpub.github.io/home/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "How to choose the best comforter for your sleep needs",
+            "item": "https://gworky.com/article/best-comforters-for-your-bed"
+          }
+        ]
       },
       {
         "@type": "Person",
@@ -67,6 +90,7 @@
         "url": "https://gworky.com/article/best-comforters-for-your-bed",
         "datePublished": "2026-08-21",
         "dateModified": "2026-08-21",
+        "wordCount": 793,
         "author": {
           "@id": "https://gworky.com/author/david-sterling#author"
         },
@@ -110,28 +134,60 @@
       --card-alt: #1E2D4A;
       --text: #CCD6F6;
       --heading: #FFFFFF;
-      --accent: #10B981;
-      --accent-glow: rgba(16, 185, 129, 0.15);
+      --accent: #F59E0B;
+      --accent-glow: rgba(245, 158, 11, 0.15);
       --muted: #8892B0;
       --border: rgba(255, 255, 255, 0.08);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif; background: var(--bg); color: var(--text); line-height: 1.75; padding: 2rem 1rem; }
-    .container { max-width: 860px; margin: 0 auto; background: var(--card); padding: 2.5rem; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
-    .header-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 10px; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif; background: var(--bg); color: var(--text); line-height: 1.75; padding-top: 70px; }
+    
+    /* Sticky Glassmorphic Header */
+    .site-header { position: fixed; top: 0; left: 0; right: 0; background: rgba(10, 25, 47, 0.88); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); z-index: 1000; }
+    .header-inner { max-width: 1080px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 1.5rem; }
+    .header-brand { display: flex; align-items: center; gap: 12px; }
+    .brand-logo { color: #FFFFFF; text-decoration: none; font-size: 1.1rem; display: flex; align-items: center; gap: 6px; }
+    .logo-dot { color: #10B981; }
+    .brand-sub { color: #8892B0; font-size: 0.78rem; font-weight: normal; margin-left: 4px; }
+    .live-status-pill { display: inline-flex; align-items: center; gap: 6px; background: rgba(16, 185, 129, 0.12); color: #10B981; font-size: 0.72rem; font-weight: bold; padding: 2px 8px; border-radius: 9999px; border: 1px solid rgba(16, 185, 129, 0.25); }
+    .pulse-dot { width: 6px; height: 6px; background: #10B981; border-radius: 50%; display: inline-block; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+    
+    .header-nav { display: flex; gap: 12px; align-items: center; }
+    .nav-link { color: var(--muted); text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 4px 8px; border-radius: 6px; transition: all 0.2s; }
+    .nav-link:hover, .nav-link.active { color: #FFFFFF; background: rgba(255, 255, 255, 0.06); }
+    .gworky-link { color: #10B981 !important; border: 1px solid rgba(16, 185, 129, 0.3); }
+    .reading-progress-bar { height: 3px; background: var(--accent); width: 0%; transition: width 0.1s ease-out; }
+    
+    /* Layout */
+    .container { max-width: 860px; margin: 2rem auto; background: var(--card); padding: 2.5rem; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+    
+    /* Breadcrumbs */
+    .breadcrumbs { font-size: 0.82rem; color: var(--muted); margin-bottom: 1.2rem; display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+    .breadcrumbs a { color: var(--muted); text-decoration: none; }
+    .breadcrumbs a:hover { color: var(--accent); }
+    
+    .header-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.2rem; flex-wrap: wrap; gap: 10px; }
     .badge { display: inline-block; background: var(--accent-glow); color: var(--accent); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.05em; padding: 0.35rem 0.85rem; border-radius: 9999px; text-transform: uppercase; }
     .doi-tag { font-size: 0.78rem; color: var(--muted); text-decoration: none; border: 1px solid var(--border); padding: 0.3rem 0.7rem; border-radius: 6px; }
     .doi-tag:hover { border-color: var(--accent); color: var(--accent); }
     
+    /* Article Meta */
+    .article-meta { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; font-size: 0.85rem; color: var(--muted); margin-bottom: 1.8rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
+    .meta-item { display: inline-flex; align-items: center; gap: 5px; }
+    
     h1 { color: var(--heading); font-size: 2.1rem; line-height: 1.3; margin-bottom: 1.2rem; font-family: Georgia, serif; }
-    h2 { color: var(--heading); font-size: 1.4rem; margin: 2rem 0 1rem; }
-    h3 { color: var(--heading); font-size: 1.15rem; margin: 1.5rem 0 0.8rem; }
+    h2 { color: var(--heading); font-size: 1.4rem; margin: 2.2rem 0 1rem; }
+    h3 { color: var(--heading); font-size: 1.15rem; margin: 1.6rem 0 0.8rem; }
     p { margin-bottom: 1.2rem; }
     ul { margin-left: 1.5rem; margin-bottom: 1.2rem; }
     li { margin-bottom: 0.5rem; }
 
+    /* Table of Contents */
+    .toc-card { background: var(--card-alt); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem 1.5rem; margin: 2rem 0; }
+
     /* AEO Quick Answer Card */
-    .quick-answer-card { background: rgba(16, 185, 129, 0.07); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem; }
+    .quick-answer-card { background: var(--accent-glow); border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem; }
     .quick-answer-card h3 { color: var(--accent); font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; margin-top: 0; }
     .quick-answer-card p { font-size: 1.05rem; color: #FFFFFF; font-weight: 500; margin-bottom: 0; line-height: 1.6; }
 
@@ -144,19 +200,71 @@
     .canonical-box { background: var(--accent-glow); border-left: 4px solid var(--accent); padding: 1.2rem; border-radius: 6px; margin: 2rem 0; font-size: 0.95rem; }
     .canonical-box a { color: var(--accent); font-weight: bold; text-decoration: underline; }
     
+    /* Study Pagination (Next/Prev) */
+    .study-pagination { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 3rem 0 1rem; }
+    .nav-card { background: var(--card-alt); border: 1px solid var(--border); padding: 1.2rem; border-radius: 8px; text-decoration: none; display: flex; flex-direction: column; gap: 4px; transition: all 0.2s; }
+    .nav-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .next-card { text-align: right; }
+    .nav-dir { font-size: 0.75rem; color: var(--accent); text-transform: uppercase; font-weight: bold; }
+    .nav-title { color: #FFFFFF; font-size: 0.9rem; font-weight: 600; line-height: 1.4; }
+    
     /* Citation Widget */
     .citation-widget { background: var(--card-alt); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; margin: 2.5rem 0; }
     .citation-widget h4 { color: var(--heading); font-size: 1rem; margin-bottom: 0.8rem; display: flex; justify-content: space-between; align-items: center; }
     .citation-box { background: #0A192F; border: 1px solid var(--border); border-radius: 6px; padding: 1rem; font-family: ui-monospace, monospace; font-size: 0.82rem; color: #CCD6F6; word-break: break-all; margin-bottom: 0.8rem; }
     .btn-copy { background: var(--accent); color: #0A192F; border: none; padding: 0.4rem 0.9rem; border-radius: 4px; font-weight: bold; font-size: 0.75rem; cursor: pointer; }
     
+    /* Back to top */
+    .back-to-top { position: fixed; bottom: 24px; right: 24px; background: rgba(17, 34, 64, 0.9); border: 1px solid var(--border); color: #FFFFFF; width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 1.2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.3); opacity: 0; pointer-events: none; transition: opacity 0.3s; z-index: 999; }
+    .back-to-top.visible { opacity: 1; pointer-events: auto; }
+    
     .footer { margin-top: 3.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border); font-size: 0.85rem; color: var(--muted); text-align: center; }
     .footer a { color: var(--text); text-decoration: none; }
     .footer a:hover { color: var(--accent); }
+
+    @media (max-width: 640px) {
+      body { padding-top: 60px; }
+      .container { padding: 1.5rem 1rem; }
+      h1 { font-size: 1.7rem; }
+      .header-nav { display: none; }
+      .study-pagination { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
+  
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-brand">
+        <a href="../" class="brand-logo">
+          <span class="logo-dot">✦</span>
+          <strong>Groundwork</strong>
+          <span class="brand-sub">Open Research</span>
+        </a>
+        <span class="live-status-pill"><span class="pulse-dot"></span> 751 Studies Live</span>
+      </div>
+      <nav class="header-nav" aria-label="Main Navigation">
+        <a href="../" class="nav-link ">All</a>
+        <a href="../money/" class="nav-link">Money</a>
+<a href="../body/" class="nav-link">Body</a>
+<a href="../home/" class="nav-link active">Home</a>
+<a href="../tech/" class="nav-link">Tech</a>
+<a href="../life/" class="nav-link">Life</a>
+<a href="../digest/" class="nav-link">Digests</a>
+        <a href="https://gworky.com" target="_blank" rel="noopener" class="nav-link gworky-link">gworky.com ↗</a>
+      </nav>
+    </div>
+    <div id="reading-progress" class="reading-progress-bar"></div>
+  </header>
+
+
   <div class="container">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="../">Home</a> <span>/</span>
+      <a href="../home/">HOME</a> <span>/</span>
+      <span style="color: #CCD6F6;">How to choose the best comforter fo...</span>
+    </nav>
+
     <div class="header-bar">
       <div class="badge">Groundwork Open Research • HOME</div>
       <a href="https://doi.org/10.5281/zenodo.22011567" target="_blank" rel="noopener" class="doi-tag">DOI: 10.5281/zenodo.22011567</a>
@@ -164,11 +272,29 @@
 
     <h1>How to choose the best comforter for your sleep needs</h1>
 
+    <div class="article-meta">
+      <span class="meta-item">✍️ <strong>David Sterling</strong></span>
+      <span class="meta-item">⏱️ 4 min read (793 words)</span>
+      <span class="meta-item">📅 2026-08-21</span>
+      <span class="meta-item">🔬 Peer-Audited</span>
+    </div>
+
     <!-- AEO Quick Answer Box for AI Overviews & Search Snippets -->
     <div class="quick-answer-card">
       <h3>⚡ Executive Research Takeaway (AEO Direct Answer)</h3>
       <p class="executive-takeaways">Learn how to choose the right comforter by understanding fill materials, construction methods, and warmth levels for optimal sleep quality and comfort.</p>
     </div>
+
+    
+        <aside class="toc-card" aria-label="Table of Contents">
+          <h4 style="color: #FFFFFF; font-size: 0.95rem; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 6px;">
+            <span style="color: #10B981;">§</span> Study Outline & Navigation
+          </h4>
+          <ul style="list-style: none; padding-left: 0; margin-left: 0;">
+            <li style="margin-left: 0px; margin-bottom: 0.4rem;"><a href="#heading-1" style="color: #CCD6F6; text-decoration: none; font-size: 0.85rem;">What is the difference between down and down alternative fills?</a></li><li style="margin-left: 0px; margin-bottom: 0.4rem;"><a href="#heading-2" style="color: #CCD6F6; text-decoration: none; font-size: 0.85rem;">Why does construction method matter for your comfort?</a></li><li style="margin-left: 0px; margin-bottom: 0.4rem;"><a href="#heading-3" style="color: #CCD6F6; text-decoration: none; font-size: 0.85rem;">How do you select the right warmth level?</a></li><li style="margin-left: 0px; margin-bottom: 0.4rem;"><a href="#heading-4" style="color: #CCD6F6; text-decoration: none; font-size: 0.85rem;">What should you look for in quality materials?</a></li><li style="margin-left: 0px; margin-bottom: 0.4rem;"><a href="#heading-5" style="color: #CCD6F6; text-decoration: none; font-size: 0.85rem;">How do you properly care for your comforter?</a></li><li style="margin-left: 0px; margin-bottom: 0.4rem;"><a href="#heading-6" style="color: #CCD6F6; text-decoration: none; font-size: 0.85rem;">Next steps for your purchase</a></li>
+          </ul>
+        </aside>
+        
 
     <!-- GEO Empirical Metrics Summary -->
     <div class="metrics-grid">
@@ -193,17 +319,17 @@
 
     <main>
       <p>A comforter is a thick, quilted bed covering filled with synthetic or natural materials designed to provide warmth and comfort. Selecting the right comforter involves balancing your personal thermal preferences, the fill material, and the construction methods that prevent shifting. According to sleep researchers at the National Sleep Foundation, maintaining an optimal thermal environment is essential for achieving deep, restorative sleep cycles (National Sleep Foundation, 2024).</p>
-<h2>What is the difference between down and down alternative fills?</h2>
+<h2 id="heading-1">What is the difference between down and down alternative fills?</h2>
 <p>Down fill consists of the soft, insulating under-plumage of ducks or geese, while down alternative uses synthetic fibers, usually polyester, to mimic these qualities. Down is highly prized for its exceptional warmth-to-weight ratio and natural breathability, which allows moisture to escape, keeping you dry throughout the night. Down alternative is a hypoallergenic, more affordable option that is generally easier to machine wash at home, though it often lacks the longevity and loft of high-quality natural down.</p>
-<h2>Why does construction method matter for your comfort?</h2>
+<h2 id="heading-2">Why does construction method matter for your comfort?</h2>
 <p>The construction of a comforter determines how evenly the fill is distributed over time, with baffle-box and sewn-through being the two primary methods. Baffle-box construction utilizes internal fabric walls to create three-dimensional pockets, allowing the fill to expand fully and preventing cold spots. This is generally considered the superior construction for high-loft down comforters because it maximizes insulation. Sewn-through construction, where the top and bottom fabrics are stitched together directly, creates flatter, more affordable blankets. While sewn-through options are excellent for lightweight summer use, they are prone to fill shifting and cold patches along the seam lines over extended periods of use.</p>
-<h2>How do you select the right warmth level?</h2>
+<h2 id="heading-3">How do you select the right warmth level?</h2>
 <p>Selecting the correct warmth level requires assessing your bedroom temperature and your personal metabolic rate while sleeping. Most manufacturers categorize comforters into three tiers: lightweight, all-season, and heavyweight. Lightweight options are typically designed with less fill and are ideal for hot sleepers or summer months in humid climates. All-season comforters provide a balanced, medium-loft profile intended to remain comfortable in a variety of room temperatures. Heavyweight comforters are specifically engineered with maximum fill power for cold climates or for individuals who prefer a weighted, deeply insulating sensation during winter months. Research indicates that adjusting your bedding to match seasonal shifts can significantly improve sleep efficiency by reducing micro-awakenings caused by temperature discomfort (Journal of Sleep Research, 2023).</p>
-<h2>What should you look for in quality materials?</h2>
+<h2 id="heading-4">What should you look for in quality materials?</h2>
 <p>High-quality comforters rely on durable shell fabrics, such as cotton sateen or long-staple cotton, to contain the fill while remaining breathable. Look for a high thread count, which ensures the fabric is tightly woven enough to prevent the fill from poking through, known as &#39;leaking.&#39; For down products, verify the fill power, which measures the amount of space one ounce of down occupies. A fill power of 600 or higher indicates high-quality, larger clusters that provide superior warmth and loft without adding excessive weight. If you prefer eco-conscious options, look for certifications such as the Responsible Down Standard (RDS), which ensures the materials are sourced using ethical practices regarding animal welfare.</p>
-<h2>How do you properly care for your comforter?</h2>
+<h2 id="heading-5">How do you properly care for your comforter?</h2>
 <p>Proper maintenance extends the lifespan of your comforter and prevents the degradation of the fill materials. Always check the manufacturer&#39;s care label, as many premium down comforters require professional cleaning or industrial-sized machines to prevent damage to the baffle-box structure. For home maintenance, use a duvet cover to protect the shell from oils and skin cells, which can break down fibers over time. If your comforter is machine-washable, use a gentle cycle with mild detergent and add wool dryer balls during the drying process to help redistribute the fill and restore its original loft. Avoid using chlorine bleach or high heat, as these can compromise the structural integrity of both natural and synthetic fibers.</p>
-<h2>Next steps for your purchase</h2>
+<h2 id="heading-6">Next steps for your purchase</h2>
 <p>To find the right comforter, follow these steps to ensure you invest in a product that aligns with your lifestyle:</p>
 <p>1. Assess your current sleeping environment: Note your average bedroom temperature and whether you tend to wake up feeling hot or cold.
 2. Choose your fill: Select down for superior, long-lasting loft and breathability, or down alternative if you suffer from allergies or require easier at-home cleaning.
@@ -256,6 +382,9 @@
     </div>
     
 
+    <!-- Next / Previous Study Navigation -->
+    <nav class="study-pagination" aria-label="Study pagination"><a href="../why-bitcoin-and-xrp-prices-are-declining/" class="nav-card prev-card"><span class="nav-dir">← Previous Study</span><span class="nav-title">Why bitcoin and xrp prices are declining</span></a><a href="../agricultural-economics-iowa-farmers-analysis/" class="nav-card next-card"><span class="nav-dir">Next Study →</span><span class="nav-title">The economic reality for Iowa farmers in the current trade climate</span></a></nav>
+
     <!-- 1-Click Multi-Format Citation Widget -->
     <div class="citation-widget">
       <h4>
@@ -280,12 +409,32 @@
       <strong>Authoritative Reference:</strong> Published by Groundwork Media under Open Science principles. Permanent scholarly snapshot recorded at CERN Zenodo under Creative Commons. Central Portal: <a href="https://gworky.com">https://gworky.com</a>.
     </div>
 
-    <div class="footer">
-      <p><a href="https://groundworkpub.github.io">← Back to Groundwork Research Index</a> | <a href="https://gworky.com">Visit Groundwork Platform</a></p>
-    </div>
+    <footer class="footer">
+      <p><a href="../">← Back to Groundwork Research Index</a> | <a href="../home/">View All HOME Studies</a> | <a href="https://gworky.com">Visit Groundwork Platform</a></p>
+    </footer>
   </div>
 
+  <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">↑</a>
+
   <script>
+    // Reading progress bar & back to top
+    window.addEventListener('scroll', () => {
+      const winScroll = document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      const bar = document.getElementById('reading-progress');
+      if (bar) bar.style.width = scrolled + '%';
+
+      const topBtn = document.getElementById('backToTop');
+      if (topBtn) {
+        if (winScroll > 400) {
+          topBtn.classList.add('visible');
+        } else {
+          topBtn.classList.remove('visible');
+        }
+      }
+    });
+
     function copyCitation() {
       const text = document.getElementById('citation-text').innerText;
       navigator.clipboard.writeText(text).then(() => {

@@ -37,7 +37,6 @@
         "@id": "https://gworky.com/#website",
         "url": "https://gworky.com",
         "name": "Groundwork Media",
-        "description": "Evidence-based decision guides and interactive calculators.",
         "publisher": {
           "@id": "https://gworky.com/#organization"
         }
@@ -51,6 +50,30 @@
           "@type": "ImageObject",
           "url": "https://groundworkpub.github.io/og.svg"
         }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://gworky.com/article/avengers-doomsday-d23-reveal-analysis#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://groundworkpub.github.io/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "TECH",
+            "item": "https://groundworkpub.github.io/tech/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "What the avengers: doomsday footage reveals about the mcu&#39;s future",
+            "item": "https://gworky.com/article/avengers-doomsday-d23-reveal-analysis"
+          }
+        ]
       },
       {
         "@type": "Person",
@@ -67,6 +90,7 @@
         "url": "https://gworky.com/article/avengers-doomsday-d23-reveal-analysis",
         "datePublished": "2026-08-21",
         "dateModified": "2026-08-21",
+        "wordCount": 766,
         "author": {
           "@id": "https://gworky.com/author/alex-rivera#author"
         },
@@ -110,28 +134,60 @@
       --card-alt: #1E2D4A;
       --text: #CCD6F6;
       --heading: #FFFFFF;
-      --accent: #10B981;
-      --accent-glow: rgba(16, 185, 129, 0.15);
+      --accent: #8B5CF6;
+      --accent-glow: rgba(139, 92, 246, 0.15);
       --muted: #8892B0;
       --border: rgba(255, 255, 255, 0.08);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif; background: var(--bg); color: var(--text); line-height: 1.75; padding: 2rem 1rem; }
-    .container { max-width: 860px; margin: 0 auto; background: var(--card); padding: 2.5rem; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
-    .header-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 10px; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif; background: var(--bg); color: var(--text); line-height: 1.75; padding-top: 70px; }
+    
+    /* Sticky Glassmorphic Header */
+    .site-header { position: fixed; top: 0; left: 0; right: 0; background: rgba(10, 25, 47, 0.88); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); z-index: 1000; }
+    .header-inner { max-width: 1080px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 1.5rem; }
+    .header-brand { display: flex; align-items: center; gap: 12px; }
+    .brand-logo { color: #FFFFFF; text-decoration: none; font-size: 1.1rem; display: flex; align-items: center; gap: 6px; }
+    .logo-dot { color: #10B981; }
+    .brand-sub { color: #8892B0; font-size: 0.78rem; font-weight: normal; margin-left: 4px; }
+    .live-status-pill { display: inline-flex; align-items: center; gap: 6px; background: rgba(16, 185, 129, 0.12); color: #10B981; font-size: 0.72rem; font-weight: bold; padding: 2px 8px; border-radius: 9999px; border: 1px solid rgba(16, 185, 129, 0.25); }
+    .pulse-dot { width: 6px; height: 6px; background: #10B981; border-radius: 50%; display: inline-block; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+    
+    .header-nav { display: flex; gap: 12px; align-items: center; }
+    .nav-link { color: var(--muted); text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 4px 8px; border-radius: 6px; transition: all 0.2s; }
+    .nav-link:hover, .nav-link.active { color: #FFFFFF; background: rgba(255, 255, 255, 0.06); }
+    .gworky-link { color: #10B981 !important; border: 1px solid rgba(16, 185, 129, 0.3); }
+    .reading-progress-bar { height: 3px; background: var(--accent); width: 0%; transition: width 0.1s ease-out; }
+    
+    /* Layout */
+    .container { max-width: 860px; margin: 2rem auto; background: var(--card); padding: 2.5rem; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+    
+    /* Breadcrumbs */
+    .breadcrumbs { font-size: 0.82rem; color: var(--muted); margin-bottom: 1.2rem; display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+    .breadcrumbs a { color: var(--muted); text-decoration: none; }
+    .breadcrumbs a:hover { color: var(--accent); }
+    
+    .header-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.2rem; flex-wrap: wrap; gap: 10px; }
     .badge { display: inline-block; background: var(--accent-glow); color: var(--accent); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.05em; padding: 0.35rem 0.85rem; border-radius: 9999px; text-transform: uppercase; }
     .doi-tag { font-size: 0.78rem; color: var(--muted); text-decoration: none; border: 1px solid var(--border); padding: 0.3rem 0.7rem; border-radius: 6px; }
     .doi-tag:hover { border-color: var(--accent); color: var(--accent); }
     
+    /* Article Meta */
+    .article-meta { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; font-size: 0.85rem; color: var(--muted); margin-bottom: 1.8rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
+    .meta-item { display: inline-flex; align-items: center; gap: 5px; }
+    
     h1 { color: var(--heading); font-size: 2.1rem; line-height: 1.3; margin-bottom: 1.2rem; font-family: Georgia, serif; }
-    h2 { color: var(--heading); font-size: 1.4rem; margin: 2rem 0 1rem; }
-    h3 { color: var(--heading); font-size: 1.15rem; margin: 1.5rem 0 0.8rem; }
+    h2 { color: var(--heading); font-size: 1.4rem; margin: 2.2rem 0 1rem; }
+    h3 { color: var(--heading); font-size: 1.15rem; margin: 1.6rem 0 0.8rem; }
     p { margin-bottom: 1.2rem; }
     ul { margin-left: 1.5rem; margin-bottom: 1.2rem; }
     li { margin-bottom: 0.5rem; }
 
+    /* Table of Contents */
+    .toc-card { background: var(--card-alt); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem 1.5rem; margin: 2rem 0; }
+
     /* AEO Quick Answer Card */
-    .quick-answer-card { background: rgba(16, 185, 129, 0.07); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem; }
+    .quick-answer-card { background: var(--accent-glow); border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem; }
     .quick-answer-card h3 { color: var(--accent); font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; margin-top: 0; }
     .quick-answer-card p { font-size: 1.05rem; color: #FFFFFF; font-weight: 500; margin-bottom: 0; line-height: 1.6; }
 
@@ -144,19 +200,71 @@
     .canonical-box { background: var(--accent-glow); border-left: 4px solid var(--accent); padding: 1.2rem; border-radius: 6px; margin: 2rem 0; font-size: 0.95rem; }
     .canonical-box a { color: var(--accent); font-weight: bold; text-decoration: underline; }
     
+    /* Study Pagination (Next/Prev) */
+    .study-pagination { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 3rem 0 1rem; }
+    .nav-card { background: var(--card-alt); border: 1px solid var(--border); padding: 1.2rem; border-radius: 8px; text-decoration: none; display: flex; flex-direction: column; gap: 4px; transition: all 0.2s; }
+    .nav-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .next-card { text-align: right; }
+    .nav-dir { font-size: 0.75rem; color: var(--accent); text-transform: uppercase; font-weight: bold; }
+    .nav-title { color: #FFFFFF; font-size: 0.9rem; font-weight: 600; line-height: 1.4; }
+    
     /* Citation Widget */
     .citation-widget { background: var(--card-alt); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; margin: 2.5rem 0; }
     .citation-widget h4 { color: var(--heading); font-size: 1rem; margin-bottom: 0.8rem; display: flex; justify-content: space-between; align-items: center; }
     .citation-box { background: #0A192F; border: 1px solid var(--border); border-radius: 6px; padding: 1rem; font-family: ui-monospace, monospace; font-size: 0.82rem; color: #CCD6F6; word-break: break-all; margin-bottom: 0.8rem; }
     .btn-copy { background: var(--accent); color: #0A192F; border: none; padding: 0.4rem 0.9rem; border-radius: 4px; font-weight: bold; font-size: 0.75rem; cursor: pointer; }
     
+    /* Back to top */
+    .back-to-top { position: fixed; bottom: 24px; right: 24px; background: rgba(17, 34, 64, 0.9); border: 1px solid var(--border); color: #FFFFFF; width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 1.2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.3); opacity: 0; pointer-events: none; transition: opacity 0.3s; z-index: 999; }
+    .back-to-top.visible { opacity: 1; pointer-events: auto; }
+    
     .footer { margin-top: 3.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border); font-size: 0.85rem; color: var(--muted); text-align: center; }
     .footer a { color: var(--text); text-decoration: none; }
     .footer a:hover { color: var(--accent); }
+
+    @media (max-width: 640px) {
+      body { padding-top: 60px; }
+      .container { padding: 1.5rem 1rem; }
+      h1 { font-size: 1.7rem; }
+      .header-nav { display: none; }
+      .study-pagination { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
+  
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-brand">
+        <a href="../" class="brand-logo">
+          <span class="logo-dot">✦</span>
+          <strong>Groundwork</strong>
+          <span class="brand-sub">Open Research</span>
+        </a>
+        <span class="live-status-pill"><span class="pulse-dot"></span> 751 Studies Live</span>
+      </div>
+      <nav class="header-nav" aria-label="Main Navigation">
+        <a href="../" class="nav-link ">All</a>
+        <a href="../money/" class="nav-link">Money</a>
+<a href="../body/" class="nav-link">Body</a>
+<a href="../home/" class="nav-link">Home</a>
+<a href="../tech/" class="nav-link active">Tech</a>
+<a href="../life/" class="nav-link">Life</a>
+<a href="../digest/" class="nav-link">Digests</a>
+        <a href="https://gworky.com" target="_blank" rel="noopener" class="nav-link gworky-link">gworky.com ↗</a>
+      </nav>
+    </div>
+    <div id="reading-progress" class="reading-progress-bar"></div>
+  </header>
+
+
   <div class="container">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="../">Home</a> <span>/</span>
+      <a href="../tech/">TECH</a> <span>/</span>
+      <span style="color: #CCD6F6;">What the avengers: doomsday footage...</span>
+    </nav>
+
     <div class="header-bar">
       <div class="badge">Groundwork Open Research • TECH</div>
       <a href="https://doi.org/10.5281/zenodo.22011567" target="_blank" rel="noopener" class="doi-tag">DOI: 10.5281/zenodo.22011567</a>
@@ -164,11 +272,29 @@
 
     <h1>What the avengers: doomsday footage reveals about the mcu&#39;s future</h1>
 
+    <div class="article-meta">
+      <span class="meta-item">✍️ <strong>Alex Rivera</strong></span>
+      <span class="meta-item">⏱️ 4 min read (766 words)</span>
+      <span class="meta-item">📅 2026-08-21</span>
+      <span class="meta-item">🔬 Peer-Audited</span>
+    </div>
+
     <!-- AEO Quick Answer Box for AI Overviews & Search Snippets -->
     <div class="quick-answer-card">
       <h3>⚡ Executive Research Takeaway (AEO Direct Answer)</h3>
       <p class="executive-takeaways">Avengers: Doomsday introduces Robert Downey Jr. as Victor Von Doom. Learn about the plot, X-Men integration, and the film&#39;s December 2026 release date.</p>
     </div>
+
+    
+        <aside class="toc-card" aria-label="Table of Contents">
+          <h4 style="color: #FFFFFF; font-size: 0.95rem; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 6px;">
+            <span style="color: #10B981;">§</span> Study Outline & Navigation
+          </h4>
+          <ul style="list-style: none; padding-left: 0; margin-left: 0;">
+            <li style="margin-left: 0px; margin-bottom: 0.4rem;"><a href="#heading-1" style="color: #CCD6F6; text-decoration: none; font-size: 0.85rem;">What is the plot premise of avengers: doomsday?</a></li><li style="margin-left: 0px; margin-bottom: 0.4rem;"><a href="#heading-2" style="color: #CCD6F6; text-decoration: none; font-size: 0.85rem;">How are the x-men being integrated into the mcu?</a></li><li style="margin-left: 0px; margin-bottom: 0.4rem;"><a href="#heading-3" style="color: #CCD6F6; text-decoration: none; font-size: 0.85rem;">What does the return of robert downey jr. mean for the franchise?</a></li><li style="margin-left: 0px; margin-bottom: 0.4rem;"><a href="#heading-4" style="color: #CCD6F6; text-decoration: none; font-size: 0.85rem;">What is the timeline for the next avengers film?</a></li>
+          </ul>
+        </aside>
+        
 
     <!-- GEO Empirical Metrics Summary -->
     <div class="metrics-grid">
@@ -194,16 +320,16 @@
     <main>
       <p>Avengers: Doomsday is the next major installment in the Marvel Cinematic Universe (MCU) that serves as a direct follow-up to the Multiverse Saga, centered on the return of Robert Downey Jr. as the iconic antagonist Victor Von Doom. The film, which is scheduled for a December 2026 release, bridges the gap between the existing Avengers roster and the introduction of established mutant characters from the Fox-era X-Men franchise.</p>
 <p>According to reports from the D23 fan event, the initial footage suggests a shift in how the MCU handles character motivations, moving away from simple villainy toward tragic backstories. Data from Marvel Studios confirms that this film will be a pivotal moment for the franchise&#39;s trajectory, particularly regarding the integration of the Fantastic Four and X-Men into the core narrative (Marvel Studios, 2024).</p>
-<h2>What is the plot premise of avengers: doomsday?</h2>
+<h2 id="heading-1">What is the plot premise of avengers: doomsday?</h2>
 <p>Avengers: Doomsday is a superhero epic that explores the origin and rise of Victor Von Doom, a character who evolves from a sympathetic figure into a primary threat to the Avengers. The footage screened at D23 indicates that Doom&#39;s descent into villainy is rooted in profound personal loss, specifically the death of his family, which serves as the catalyst for his transformation into a multiversal tyrant.</p>
 <p>By framing Doom’s actions through the lens of grief rather than pure malice, Marvel is attempting to add emotional weight to the character’s conflict. Sue Storm, a central figure in the upcoming Fantastic Four film, serves as the narrative anchor in the clip, explaining the tragedy behind Doom&#39;s motivations to the gathered heroes. This narrative technique is designed to establish immediate stakes for the audience, grounding the high-concept multiverse premise in human emotion.</p>
-<h2>How are the x-men being integrated into the mcu?</h2>
+<h2 id="heading-2">How are the x-men being integrated into the mcu?</h2>
 <p>The integration of the X-Men into the MCU happens through the inclusion of legacy characters from the Fox-era films, such as Cyclops, Professor X, and Magneto, appearing alongside the current Avengers cast. This strategy suggests that Marvel Studios is leveraging existing audience recognition to fold the mutant population into the broader MCU continuity without requiring a full reboot of their histories.</p>
 <p>Industry analysts note that utilizing these established characters allows Marvel to bypass lengthy origin stories, jumping straight into the action of the Multiverse Saga. The presence of these mutants in the Doomsday footage confirms that the barrier between the MCU and the former Fox properties has been fully dismantled. This structural shift is critical for the next two years of Marvel’s production schedule, as the studio seeks to revitalize interest in the franchise following recent box office fluctuations.</p>
-<h2>What does the return of robert downey jr. mean for the franchise?</h2>
+<h2 id="heading-3">What does the return of robert downey jr. mean for the franchise?</h2>
 <p>Robert Downey Jr.&#39;s return as Victor Von Doom marks a significant strategic pivot for Marvel, moving from the character of Tony Stark to an antagonist role that allows the actor to explore a new range within the same universe. His performance in the D23 footage is characterized by a menacing composure, highlighted by a scene where he withstands a direct strike from Thor, demonstrating his immense power level compared to previous MCU villains.</p>
 <p>This casting choice serves two purposes: it provides a high-profile anchor for the film’s marketing campaign and creates a meta-narrative layer for long-time fans who associate the actor with the MCU’s foundation. The inclusion of Sentinels—the iconic, mutant-hunting robots—further cements Doom as a threat capable of challenging the combined might of both the Avengers and the X-Men. By positioning him as a physical and intellectual match for the strongest heroes, Marvel is setting the stage for a high-stakes finale in 2026.</p>
-<h2>What is the timeline for the next avengers film?</h2>
+<h2 id="heading-4">What is the timeline for the next avengers film?</h2>
 <p>Avengers: Doomsday is currently slated for a theatrical release on December 18, 2026. This timeline provides Marvel Studios with a two-year window to finalize the integration of its newly acquired intellectual properties and build anticipation for the conclusion of the current multiversal storyline. Fans should expect a steady stream of updates regarding the film’s production and cast expansion as the release date approaches.</p>
 <p>To prepare for this release, viewers should revisit the recent entries in the Multiverse Saga, as the plot of Doomsday is expected to rely heavily on the rules established in previous films regarding incursions and timeline collisions. The shift toward a December release date is a strategic move, often reserved for high-earning blockbusters intended to anchor the end-of-year box office performance.</p>
 
@@ -252,6 +378,9 @@
     </div>
     
 
+    <!-- Next / Previous Study Navigation -->
+    <nav class="study-pagination" aria-label="Study pagination"><a href="../marvel-x-men-reboot-cast-announcement-2028/" class="nav-card prev-card"><span class="nav-dir">← Previous Study</span><span class="nav-title">Marvel&#39;s x-men reboot: everything we know about the 2028 cast</span></a><a href="../twitch-ai-training-opt-out-guide/" class="nav-card next-card"><span class="nav-dir">Next Study →</span><span class="nav-title">How to opt out of Twitch AI training</span></a></nav>
+
     <!-- 1-Click Multi-Format Citation Widget -->
     <div class="citation-widget">
       <h4>
@@ -276,12 +405,32 @@
       <strong>Authoritative Reference:</strong> Published by Groundwork Media under Open Science principles. Permanent scholarly snapshot recorded at CERN Zenodo under Creative Commons. Central Portal: <a href="https://gworky.com">https://gworky.com</a>.
     </div>
 
-    <div class="footer">
-      <p><a href="https://groundworkpub.github.io">← Back to Groundwork Research Index</a> | <a href="https://gworky.com">Visit Groundwork Platform</a></p>
-    </div>
+    <footer class="footer">
+      <p><a href="../">← Back to Groundwork Research Index</a> | <a href="../tech/">View All TECH Studies</a> | <a href="https://gworky.com">Visit Groundwork Platform</a></p>
+    </footer>
   </div>
 
+  <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">↑</a>
+
   <script>
+    // Reading progress bar & back to top
+    window.addEventListener('scroll', () => {
+      const winScroll = document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      const bar = document.getElementById('reading-progress');
+      if (bar) bar.style.width = scrolled + '%';
+
+      const topBtn = document.getElementById('backToTop');
+      if (topBtn) {
+        if (winScroll > 400) {
+          topBtn.classList.add('visible');
+        } else {
+          topBtn.classList.remove('visible');
+        }
+      }
+    });
+
     function copyCitation() {
       const text = document.getElementById('citation-text').innerText;
       navigator.clipboard.writeText(text).then(() => {

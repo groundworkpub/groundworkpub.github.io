@@ -37,7 +37,6 @@
         "@id": "https://gworky.com/#website",
         "url": "https://gworky.com",
         "name": "Groundwork Media",
-        "description": "Evidence-based decision guides and interactive calculators.",
         "publisher": {
           "@id": "https://gworky.com/#organization"
         }
@@ -51,6 +50,30 @@
           "@type": "ImageObject",
           "url": "https://groundworkpub.github.io/og.svg"
         }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://gworky.com/article/blood-thinners-and-alzheimers-cognitive-decline#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://groundworkpub.github.io/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "BODY",
+            "item": "https://groundworkpub.github.io/body/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Can blood thinners slow cognitive decline in Alzheimer’s patients with AFib?",
+            "item": "https://gworky.com/article/blood-thinners-and-alzheimers-cognitive-decline"
+          }
+        ]
       },
       {
         "@type": "Person",
@@ -67,6 +90,7 @@
         "url": "https://gworky.com/article/blood-thinners-and-alzheimers-cognitive-decline",
         "datePublished": "2026-08-21",
         "dateModified": "2026-08-21",
+        "wordCount": 890,
         "author": {
           "@id": "https://gworky.com/author/dr-sarah-jenkins#author"
         },
@@ -110,28 +134,60 @@
       --card-alt: #1E2D4A;
       --text: #CCD6F6;
       --heading: #FFFFFF;
-      --accent: #10B981;
-      --accent-glow: rgba(16, 185, 129, 0.15);
+      --accent: #3B82F6;
+      --accent-glow: rgba(59, 130, 246, 0.15);
       --muted: #8892B0;
       --border: rgba(255, 255, 255, 0.08);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif; background: var(--bg); color: var(--text); line-height: 1.75; padding: 2rem 1rem; }
-    .container { max-width: 860px; margin: 0 auto; background: var(--card); padding: 2.5rem; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
-    .header-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 10px; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif; background: var(--bg); color: var(--text); line-height: 1.75; padding-top: 70px; }
+    
+    /* Sticky Glassmorphic Header */
+    .site-header { position: fixed; top: 0; left: 0; right: 0; background: rgba(10, 25, 47, 0.88); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); z-index: 1000; }
+    .header-inner { max-width: 1080px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 1.5rem; }
+    .header-brand { display: flex; align-items: center; gap: 12px; }
+    .brand-logo { color: #FFFFFF; text-decoration: none; font-size: 1.1rem; display: flex; align-items: center; gap: 6px; }
+    .logo-dot { color: #10B981; }
+    .brand-sub { color: #8892B0; font-size: 0.78rem; font-weight: normal; margin-left: 4px; }
+    .live-status-pill { display: inline-flex; align-items: center; gap: 6px; background: rgba(16, 185, 129, 0.12); color: #10B981; font-size: 0.72rem; font-weight: bold; padding: 2px 8px; border-radius: 9999px; border: 1px solid rgba(16, 185, 129, 0.25); }
+    .pulse-dot { width: 6px; height: 6px; background: #10B981; border-radius: 50%; display: inline-block; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+    
+    .header-nav { display: flex; gap: 12px; align-items: center; }
+    .nav-link { color: var(--muted); text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 4px 8px; border-radius: 6px; transition: all 0.2s; }
+    .nav-link:hover, .nav-link.active { color: #FFFFFF; background: rgba(255, 255, 255, 0.06); }
+    .gworky-link { color: #10B981 !important; border: 1px solid rgba(16, 185, 129, 0.3); }
+    .reading-progress-bar { height: 3px; background: var(--accent); width: 0%; transition: width 0.1s ease-out; }
+    
+    /* Layout */
+    .container { max-width: 860px; margin: 2rem auto; background: var(--card); padding: 2.5rem; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+    
+    /* Breadcrumbs */
+    .breadcrumbs { font-size: 0.82rem; color: var(--muted); margin-bottom: 1.2rem; display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+    .breadcrumbs a { color: var(--muted); text-decoration: none; }
+    .breadcrumbs a:hover { color: var(--accent); }
+    
+    .header-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.2rem; flex-wrap: wrap; gap: 10px; }
     .badge { display: inline-block; background: var(--accent-glow); color: var(--accent); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.05em; padding: 0.35rem 0.85rem; border-radius: 9999px; text-transform: uppercase; }
     .doi-tag { font-size: 0.78rem; color: var(--muted); text-decoration: none; border: 1px solid var(--border); padding: 0.3rem 0.7rem; border-radius: 6px; }
     .doi-tag:hover { border-color: var(--accent); color: var(--accent); }
     
+    /* Article Meta */
+    .article-meta { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; font-size: 0.85rem; color: var(--muted); margin-bottom: 1.8rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
+    .meta-item { display: inline-flex; align-items: center; gap: 5px; }
+    
     h1 { color: var(--heading); font-size: 2.1rem; line-height: 1.3; margin-bottom: 1.2rem; font-family: Georgia, serif; }
-    h2 { color: var(--heading); font-size: 1.4rem; margin: 2rem 0 1rem; }
-    h3 { color: var(--heading); font-size: 1.15rem; margin: 1.5rem 0 0.8rem; }
+    h2 { color: var(--heading); font-size: 1.4rem; margin: 2.2rem 0 1rem; }
+    h3 { color: var(--heading); font-size: 1.15rem; margin: 1.6rem 0 0.8rem; }
     p { margin-bottom: 1.2rem; }
     ul { margin-left: 1.5rem; margin-bottom: 1.2rem; }
     li { margin-bottom: 0.5rem; }
 
+    /* Table of Contents */
+    .toc-card { background: var(--card-alt); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem 1.5rem; margin: 2rem 0; }
+
     /* AEO Quick Answer Card */
-    .quick-answer-card { background: rgba(16, 185, 129, 0.07); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem; }
+    .quick-answer-card { background: var(--accent-glow); border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem; }
     .quick-answer-card h3 { color: var(--accent); font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; margin-top: 0; }
     .quick-answer-card p { font-size: 1.05rem; color: #FFFFFF; font-weight: 500; margin-bottom: 0; line-height: 1.6; }
 
@@ -144,19 +200,71 @@
     .canonical-box { background: var(--accent-glow); border-left: 4px solid var(--accent); padding: 1.2rem; border-radius: 6px; margin: 2rem 0; font-size: 0.95rem; }
     .canonical-box a { color: var(--accent); font-weight: bold; text-decoration: underline; }
     
+    /* Study Pagination (Next/Prev) */
+    .study-pagination { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 3rem 0 1rem; }
+    .nav-card { background: var(--card-alt); border: 1px solid var(--border); padding: 1.2rem; border-radius: 8px; text-decoration: none; display: flex; flex-direction: column; gap: 4px; transition: all 0.2s; }
+    .nav-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .next-card { text-align: right; }
+    .nav-dir { font-size: 0.75rem; color: var(--accent); text-transform: uppercase; font-weight: bold; }
+    .nav-title { color: #FFFFFF; font-size: 0.9rem; font-weight: 600; line-height: 1.4; }
+    
     /* Citation Widget */
     .citation-widget { background: var(--card-alt); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; margin: 2.5rem 0; }
     .citation-widget h4 { color: var(--heading); font-size: 1rem; margin-bottom: 0.8rem; display: flex; justify-content: space-between; align-items: center; }
     .citation-box { background: #0A192F; border: 1px solid var(--border); border-radius: 6px; padding: 1rem; font-family: ui-monospace, monospace; font-size: 0.82rem; color: #CCD6F6; word-break: break-all; margin-bottom: 0.8rem; }
     .btn-copy { background: var(--accent); color: #0A192F; border: none; padding: 0.4rem 0.9rem; border-radius: 4px; font-weight: bold; font-size: 0.75rem; cursor: pointer; }
     
+    /* Back to top */
+    .back-to-top { position: fixed; bottom: 24px; right: 24px; background: rgba(17, 34, 64, 0.9); border: 1px solid var(--border); color: #FFFFFF; width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 1.2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.3); opacity: 0; pointer-events: none; transition: opacity 0.3s; z-index: 999; }
+    .back-to-top.visible { opacity: 1; pointer-events: auto; }
+    
     .footer { margin-top: 3.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border); font-size: 0.85rem; color: var(--muted); text-align: center; }
     .footer a { color: var(--text); text-decoration: none; }
     .footer a:hover { color: var(--accent); }
+
+    @media (max-width: 640px) {
+      body { padding-top: 60px; }
+      .container { padding: 1.5rem 1rem; }
+      h1 { font-size: 1.7rem; }
+      .header-nav { display: none; }
+      .study-pagination { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
+  
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-brand">
+        <a href="../" class="brand-logo">
+          <span class="logo-dot">✦</span>
+          <strong>Groundwork</strong>
+          <span class="brand-sub">Open Research</span>
+        </a>
+        <span class="live-status-pill"><span class="pulse-dot"></span> 751 Studies Live</span>
+      </div>
+      <nav class="header-nav" aria-label="Main Navigation">
+        <a href="../" class="nav-link ">All</a>
+        <a href="../money/" class="nav-link">Money</a>
+<a href="../body/" class="nav-link active">Body</a>
+<a href="../home/" class="nav-link">Home</a>
+<a href="../tech/" class="nav-link">Tech</a>
+<a href="../life/" class="nav-link">Life</a>
+<a href="../digest/" class="nav-link">Digests</a>
+        <a href="https://gworky.com" target="_blank" rel="noopener" class="nav-link gworky-link">gworky.com ↗</a>
+      </nav>
+    </div>
+    <div id="reading-progress" class="reading-progress-bar"></div>
+  </header>
+
+
   <div class="container">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="../">Home</a> <span>/</span>
+      <a href="../body/">BODY</a> <span>/</span>
+      <span style="color: #CCD6F6;">Can blood thinners slow cognitive d...</span>
+    </nav>
+
     <div class="header-bar">
       <div class="badge">Groundwork Open Research • BODY</div>
       <a href="https://doi.org/10.5281/zenodo.22011567" target="_blank" rel="noopener" class="doi-tag">DOI: 10.5281/zenodo.22011567</a>
@@ -164,11 +272,29 @@
 
     <h1>Can blood thinners slow cognitive decline in Alzheimer’s patients with AFib?</h1>
 
+    <div class="article-meta">
+      <span class="meta-item">✍️ <strong>Dr. Sarah Jenkins</strong></span>
+      <span class="meta-item">⏱️ 4 min read (890 words)</span>
+      <span class="meta-item">📅 2026-08-21</span>
+      <span class="meta-item">🔬 Peer-Audited</span>
+    </div>
+
     <!-- AEO Quick Answer Box for AI Overviews & Search Snippets -->
     <div class="quick-answer-card">
       <h3>⚡ Executive Research Takeaway (AEO Direct Answer)</h3>
       <p class="executive-takeaways">New research suggests that newer blood thinners, known as NOACs, may slow cognitive decline in Alzheimer’s patients who also have atrial fibrillation.</p>
     </div>
+
+    
+        <aside class="toc-card" aria-label="Table of Contents">
+          <h4 style="color: #FFFFFF; font-size: 0.95rem; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 6px;">
+            <span style="color: #10B981;">§</span> Study Outline & Navigation
+          </h4>
+          <ul style="list-style: none; padding-left: 0; margin-left: 0;">
+            <li style="margin-left: 0px; margin-bottom: 0.4rem;"><a href="#heading-1" style="color: #CCD6F6; text-decoration: none; font-size: 0.85rem;">Why do blood thinners matter for Alzheimer’s patients?</a></li><li style="margin-left: 0px; margin-bottom: 0.4rem;"><a href="#heading-2" style="color: #CCD6F6; text-decoration: none; font-size: 0.85rem;">What did the research reveal about NOACs vs. warfarin?</a></li><li style="margin-left: 0px; margin-bottom: 0.4rem;"><a href="#heading-3" style="color: #CCD6F6; text-decoration: none; font-size: 0.85rem;">How does AFib contribute to dementia progression?</a></li><li style="margin-left: 0px; margin-bottom: 0.4rem;"><a href="#heading-4" style="color: #CCD6F6; text-decoration: none; font-size: 0.85rem;">What are the practical steps for patients and caregivers?</a></li><li style="margin-left: 0px; margin-bottom: 0.4rem;"><a href="#heading-5" style="color: #CCD6F6; text-decoration: none; font-size: 0.85rem;">Are there risks associated with long-term blood thinner use?</a></li>
+          </ul>
+        </aside>
+        
 
     <!-- GEO Empirical Metrics Summary -->
     <div class="metrics-grid">
@@ -194,16 +320,16 @@
     <main>
       <p>A non-vitamin K antagonist oral anticoagulant (NOAC) is a class of blood-thinning medication designed to prevent blood clots. Recent research indicates that for patients diagnosed with both Alzheimer’s disease and atrial fibrillation (AFib), the use of NOACs may be associated with a slower rate of cognitive decline compared to older treatments or no anticoagulation therapy.</p>
 <p>According to a study published in the *European Heart Journal*, patients using NOACs demonstrated more stable cognitive test scores over a five-year period than those treated with warfarin or no blood thinners (Eriksdotter et al., 2024). This finding is significant because AFib is a common heart rhythm disorder that increases the risk of stroke, which can exacerbate brain damage and accelerate memory loss in those already living with dementia.</p>
-<h2>Why do blood thinners matter for Alzheimer’s patients?</h2>
+<h2 id="heading-1">Why do blood thinners matter for Alzheimer’s patients?</h2>
 <p>Blood thinners are essential for patients with atrial fibrillation because they prevent the formation of clots that can travel to the brain and cause strokes. In the context of Alzheimer’s disease, even minor, &quot;silent&quot; strokes—which may not cause immediate paralysis or speech loss—can contribute to cumulative brain injury, leading to a more rapid decline in cognitive function.</p>
 <p>By preventing these microscopic clots, anticoagulants help maintain consistent blood flow to the brain, potentially preserving neural health. While traditional blood thinners like warfarin have been the standard of care for decades, they require frequent blood monitoring and dietary restrictions. NOACs, conversely, offer a more predictable pharmacological profile, which researchers believe makes them a superior candidate for managing vascular health in aging populations (Karolinska Institutet, 2024).</p>
-<h2>What did the research reveal about NOACs vs. warfarin?</h2>
+<h2 id="heading-2">What did the research reveal about NOACs vs. warfarin?</h2>
 <p>The study analyzed data from over 7,300 individuals in Sweden who were diagnosed with both Alzheimer’s disease and AFib. Researchers categorized participants into three groups: those not taking anticoagulants, those taking warfarin, and those taking NOACs. By tracking Mini-Mental State Examination (MMSE) scores—a standard tool for measuring cognitive impairment—over five years, the study identified a clear disparity in outcomes.</p>
 <p>Patients treated with NOACs showed a statistically significant slower decline in their MMSE scores compared to the other two groups. While warfarin is effective at preventing major strokes, it is often associated with a higher risk of bleeding complications and variability in effectiveness. The researchers concluded that the protective benefits of NOACs on cognitive health likely stem from their ability to reduce small-scale vascular damage that would otherwise compound the neurodegenerative effects of Alzheimer’s.</p>
-<h2>How does AFib contribute to dementia progression?</h2>
+<h2 id="heading-3">How does AFib contribute to dementia progression?</h2>
 <p>Atrial fibrillation is a major risk factor for vascular dementia, but its impact on Alzheimer’s disease is equally profound. When the heart beats irregularly, blood can pool in the atria, creating a high risk for clot formation. If a clot breaks off and enters the bloodstream, it can block small vessels in the brain.</p>
 <p>In a brain already struggling with the amyloid plaques and tau tangles characteristic of Alzheimer’s, these vascular insults are particularly damaging. Each &quot;silent&quot; stroke leads to a loss of brain tissue, reducing the cognitive reserve a patient has left. By managing AFib effectively with modern anticoagulants, clinicians may be able to protect the remaining healthy tissue, thereby slowing the progression of cognitive symptoms.</p>
-<h2>What are the practical steps for patients and caregivers?</h2>
+<h2 id="heading-4">What are the practical steps for patients and caregivers?</h2>
 <p>If you or a loved one has been diagnosed with both Alzheimer’s disease and atrial fibrillation, it is important to have a proactive conversation with a neurologist and a cardiologist. You should not start, stop, or change blood-thinning medication without direct medical supervision, as these drugs carry risks, including internal bleeding.</p>
 <p>To manage this condition effectively, follow these steps:</p>
 <p>1. **Review your current medication list:** Ask your primary care provider if your current anticoagulant is a NOAC or an older therapy like warfarin.
@@ -211,7 +337,7 @@
 3. **Assess bleeding risks:** Work with your doctor to evaluate your individual risk for bleeding, as this is the primary trade-off when using any anticoagulant.
 4. **Monitor heart health:** Continue regular ECGs or wearable heart rate monitoring to ensure your AFib is well-managed, as stable rhythm control is just as vital as clot prevention.
 5. **Coordinate care:** Ensure that your cardiologist and neurologist are communicating. Because dementia management is complex, the choice of medication must account for both heart health and neurological stability.</p>
-<h2>Are there risks associated with long-term blood thinner use?</h2>
+<h2 id="heading-5">Are there risks associated with long-term blood thinner use?</h2>
 <p>While the findings regarding cognitive preservation are promising, anticoagulants are not without risks. The primary concern with any blood thinner is the increased risk of major bleeding, including gastrointestinal or intracranial hemorrhage. This risk must be carefully balanced against the benefit of preventing stroke-related cognitive decline.</p>
 <p>In the Swedish study, researchers used statistical adjustments to account for age and other comorbidities, ensuring that the results were not skewed by these factors. However, clinical decisions must always be personalized. A patient with a high risk of falls, for example, may have a different risk-benefit profile than a patient who is physically active and stable. Always consult with your healthcare team to weigh the potential for cognitive protection against the specific risks posed by your unique medical history.</p>
 
@@ -260,6 +386,9 @@
     </div>
     
 
+    <!-- Next / Previous Study Navigation -->
+    <nav class="study-pagination" aria-label="Study pagination"><a href="../gas-pump-handle-colors-meaning/" class="nav-card prev-card"><span class="nav-dir">← Previous Study</span><span class="nav-title">Why gas station pump handles have different colors</span></a><a href="../best-award-travel-search-tools/" class="nav-card next-card"><span class="nav-dir">Next Study →</span><span class="nav-title">How to use award travel search tools to maximize your points</span></a></nav>
+
     <!-- 1-Click Multi-Format Citation Widget -->
     <div class="citation-widget">
       <h4>
@@ -284,12 +413,32 @@
       <strong>Authoritative Reference:</strong> Published by Groundwork Media under Open Science principles. Permanent scholarly snapshot recorded at CERN Zenodo under Creative Commons. Central Portal: <a href="https://gworky.com">https://gworky.com</a>.
     </div>
 
-    <div class="footer">
-      <p><a href="https://groundworkpub.github.io">← Back to Groundwork Research Index</a> | <a href="https://gworky.com">Visit Groundwork Platform</a></p>
-    </div>
+    <footer class="footer">
+      <p><a href="../">← Back to Groundwork Research Index</a> | <a href="../body/">View All BODY Studies</a> | <a href="https://gworky.com">Visit Groundwork Platform</a></p>
+    </footer>
   </div>
 
+  <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">↑</a>
+
   <script>
+    // Reading progress bar & back to top
+    window.addEventListener('scroll', () => {
+      const winScroll = document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      const bar = document.getElementById('reading-progress');
+      if (bar) bar.style.width = scrolled + '%';
+
+      const topBtn = document.getElementById('backToTop');
+      if (topBtn) {
+        if (winScroll > 400) {
+          topBtn.classList.add('visible');
+        } else {
+          topBtn.classList.remove('visible');
+        }
+      }
+    });
+
     function copyCitation() {
       const text = document.getElementById('citation-text').innerText;
       navigator.clipboard.writeText(text).then(() => {

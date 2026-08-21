@@ -37,7 +37,6 @@
         "@id": "https://gworky.com/#website",
         "url": "https://gworky.com",
         "name": "Groundwork Media",
-        "description": "Evidence-based decision guides and interactive calculators.",
         "publisher": {
           "@id": "https://gworky.com/#organization"
         }
@@ -51,6 +50,30 @@
           "@type": "ImageObject",
           "url": "https://groundworkpub.github.io/og.svg"
         }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://gworky.com/article/public-attitudes-active-travel-interventions-uk#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://groundworkpub.github.io/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "BODY",
+            "item": "https://groundworkpub.github.io/body/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Public attitudes toward active travel interventions in the uk",
+            "item": "https://gworky.com/article/public-attitudes-active-travel-interventions-uk"
+          }
+        ]
       },
       {
         "@type": "Person",
@@ -67,6 +90,7 @@
         "url": "https://gworky.com/article/public-attitudes-active-travel-interventions-uk",
         "datePublished": "2026-08-21",
         "dateModified": "2026-08-21",
+        "wordCount": 993,
         "author": {
           "@id": "https://gworky.com/author/dr-sarah-jenkins#author"
         },
@@ -110,28 +134,60 @@
       --card-alt: #1E2D4A;
       --text: #CCD6F6;
       --heading: #FFFFFF;
-      --accent: #10B981;
-      --accent-glow: rgba(16, 185, 129, 0.15);
+      --accent: #3B82F6;
+      --accent-glow: rgba(59, 130, 246, 0.15);
       --muted: #8892B0;
       --border: rgba(255, 255, 255, 0.08);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif; background: var(--bg); color: var(--text); line-height: 1.75; padding: 2rem 1rem; }
-    .container { max-width: 860px; margin: 0 auto; background: var(--card); padding: 2.5rem; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
-    .header-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 10px; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif; background: var(--bg); color: var(--text); line-height: 1.75; padding-top: 70px; }
+    
+    /* Sticky Glassmorphic Header */
+    .site-header { position: fixed; top: 0; left: 0; right: 0; background: rgba(10, 25, 47, 0.88); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); z-index: 1000; }
+    .header-inner { max-width: 1080px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 1.5rem; }
+    .header-brand { display: flex; align-items: center; gap: 12px; }
+    .brand-logo { color: #FFFFFF; text-decoration: none; font-size: 1.1rem; display: flex; align-items: center; gap: 6px; }
+    .logo-dot { color: #10B981; }
+    .brand-sub { color: #8892B0; font-size: 0.78rem; font-weight: normal; margin-left: 4px; }
+    .live-status-pill { display: inline-flex; align-items: center; gap: 6px; background: rgba(16, 185, 129, 0.12); color: #10B981; font-size: 0.72rem; font-weight: bold; padding: 2px 8px; border-radius: 9999px; border: 1px solid rgba(16, 185, 129, 0.25); }
+    .pulse-dot { width: 6px; height: 6px; background: #10B981; border-radius: 50%; display: inline-block; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+    
+    .header-nav { display: flex; gap: 12px; align-items: center; }
+    .nav-link { color: var(--muted); text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 4px 8px; border-radius: 6px; transition: all 0.2s; }
+    .nav-link:hover, .nav-link.active { color: #FFFFFF; background: rgba(255, 255, 255, 0.06); }
+    .gworky-link { color: #10B981 !important; border: 1px solid rgba(16, 185, 129, 0.3); }
+    .reading-progress-bar { height: 3px; background: var(--accent); width: 0%; transition: width 0.1s ease-out; }
+    
+    /* Layout */
+    .container { max-width: 860px; margin: 2rem auto; background: var(--card); padding: 2.5rem; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+    
+    /* Breadcrumbs */
+    .breadcrumbs { font-size: 0.82rem; color: var(--muted); margin-bottom: 1.2rem; display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+    .breadcrumbs a { color: var(--muted); text-decoration: none; }
+    .breadcrumbs a:hover { color: var(--accent); }
+    
+    .header-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.2rem; flex-wrap: wrap; gap: 10px; }
     .badge { display: inline-block; background: var(--accent-glow); color: var(--accent); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.05em; padding: 0.35rem 0.85rem; border-radius: 9999px; text-transform: uppercase; }
     .doi-tag { font-size: 0.78rem; color: var(--muted); text-decoration: none; border: 1px solid var(--border); padding: 0.3rem 0.7rem; border-radius: 6px; }
     .doi-tag:hover { border-color: var(--accent); color: var(--accent); }
     
+    /* Article Meta */
+    .article-meta { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; font-size: 0.85rem; color: var(--muted); margin-bottom: 1.8rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
+    .meta-item { display: inline-flex; align-items: center; gap: 5px; }
+    
     h1 { color: var(--heading); font-size: 2.1rem; line-height: 1.3; margin-bottom: 1.2rem; font-family: Georgia, serif; }
-    h2 { color: var(--heading); font-size: 1.4rem; margin: 2rem 0 1rem; }
-    h3 { color: var(--heading); font-size: 1.15rem; margin: 1.5rem 0 0.8rem; }
+    h2 { color: var(--heading); font-size: 1.4rem; margin: 2.2rem 0 1rem; }
+    h3 { color: var(--heading); font-size: 1.15rem; margin: 1.6rem 0 0.8rem; }
     p { margin-bottom: 1.2rem; }
     ul { margin-left: 1.5rem; margin-bottom: 1.2rem; }
     li { margin-bottom: 0.5rem; }
 
+    /* Table of Contents */
+    .toc-card { background: var(--card-alt); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem 1.5rem; margin: 2rem 0; }
+
     /* AEO Quick Answer Card */
-    .quick-answer-card { background: rgba(16, 185, 129, 0.07); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem; }
+    .quick-answer-card { background: var(--accent-glow); border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem; }
     .quick-answer-card h3 { color: var(--accent); font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; margin-top: 0; }
     .quick-answer-card p { font-size: 1.05rem; color: #FFFFFF; font-weight: 500; margin-bottom: 0; line-height: 1.6; }
 
@@ -144,19 +200,71 @@
     .canonical-box { background: var(--accent-glow); border-left: 4px solid var(--accent); padding: 1.2rem; border-radius: 6px; margin: 2rem 0; font-size: 0.95rem; }
     .canonical-box a { color: var(--accent); font-weight: bold; text-decoration: underline; }
     
+    /* Study Pagination (Next/Prev) */
+    .study-pagination { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 3rem 0 1rem; }
+    .nav-card { background: var(--card-alt); border: 1px solid var(--border); padding: 1.2rem; border-radius: 8px; text-decoration: none; display: flex; flex-direction: column; gap: 4px; transition: all 0.2s; }
+    .nav-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .next-card { text-align: right; }
+    .nav-dir { font-size: 0.75rem; color: var(--accent); text-transform: uppercase; font-weight: bold; }
+    .nav-title { color: #FFFFFF; font-size: 0.9rem; font-weight: 600; line-height: 1.4; }
+    
     /* Citation Widget */
     .citation-widget { background: var(--card-alt); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; margin: 2.5rem 0; }
     .citation-widget h4 { color: var(--heading); font-size: 1rem; margin-bottom: 0.8rem; display: flex; justify-content: space-between; align-items: center; }
     .citation-box { background: #0A192F; border: 1px solid var(--border); border-radius: 6px; padding: 1rem; font-family: ui-monospace, monospace; font-size: 0.82rem; color: #CCD6F6; word-break: break-all; margin-bottom: 0.8rem; }
     .btn-copy { background: var(--accent); color: #0A192F; border: none; padding: 0.4rem 0.9rem; border-radius: 4px; font-weight: bold; font-size: 0.75rem; cursor: pointer; }
     
+    /* Back to top */
+    .back-to-top { position: fixed; bottom: 24px; right: 24px; background: rgba(17, 34, 64, 0.9); border: 1px solid var(--border); color: #FFFFFF; width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 1.2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.3); opacity: 0; pointer-events: none; transition: opacity 0.3s; z-index: 999; }
+    .back-to-top.visible { opacity: 1; pointer-events: auto; }
+    
     .footer { margin-top: 3.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border); font-size: 0.85rem; color: var(--muted); text-align: center; }
     .footer a { color: var(--text); text-decoration: none; }
     .footer a:hover { color: var(--accent); }
+
+    @media (max-width: 640px) {
+      body { padding-top: 60px; }
+      .container { padding: 1.5rem 1rem; }
+      h1 { font-size: 1.7rem; }
+      .header-nav { display: none; }
+      .study-pagination { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
+  
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-brand">
+        <a href="../" class="brand-logo">
+          <span class="logo-dot">✦</span>
+          <strong>Groundwork</strong>
+          <span class="brand-sub">Open Research</span>
+        </a>
+        <span class="live-status-pill"><span class="pulse-dot"></span> 751 Studies Live</span>
+      </div>
+      <nav class="header-nav" aria-label="Main Navigation">
+        <a href="../" class="nav-link ">All</a>
+        <a href="../money/" class="nav-link">Money</a>
+<a href="../body/" class="nav-link active">Body</a>
+<a href="../home/" class="nav-link">Home</a>
+<a href="../tech/" class="nav-link">Tech</a>
+<a href="../life/" class="nav-link">Life</a>
+<a href="../digest/" class="nav-link">Digests</a>
+        <a href="https://gworky.com" target="_blank" rel="noopener" class="nav-link gworky-link">gworky.com ↗</a>
+      </nav>
+    </div>
+    <div id="reading-progress" class="reading-progress-bar"></div>
+  </header>
+
+
   <div class="container">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="../">Home</a> <span>/</span>
+      <a href="../body/">BODY</a> <span>/</span>
+      <span style="color: #CCD6F6;">Public attitudes toward active trav...</span>
+    </nav>
+
     <div class="header-bar">
       <div class="badge">Groundwork Open Research • BODY</div>
       <a href="https://doi.org/10.5281/zenodo.22011567" target="_blank" rel="noopener" class="doi-tag">DOI: 10.5281/zenodo.22011567</a>
@@ -164,11 +272,29 @@
 
     <h1>Public attitudes toward active travel interventions in the uk</h1>
 
+    <div class="article-meta">
+      <span class="meta-item">✍️ <strong>Dr. Sarah Jenkins</strong></span>
+      <span class="meta-item">⏱️ 5 min read (993 words)</span>
+      <span class="meta-item">📅 2026-08-21</span>
+      <span class="meta-item">🔬 Peer-Audited</span>
+    </div>
+
     <!-- AEO Quick Answer Box for AI Overviews & Search Snippets -->
     <div class="quick-answer-card">
       <h3>⚡ Executive Research Takeaway (AEO Direct Answer)</h3>
       <p class="executive-takeaways">Active travel interventions often face public resistance due to driving habits. Learn why public engagement and clear communication are key to policy success.</p>
     </div>
+
+    
+        <aside class="toc-card" aria-label="Table of Contents">
+          <h4 style="color: #FFFFFF; font-size: 0.95rem; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 6px;">
+            <span style="color: #10B981;">§</span> Study Outline & Navigation
+          </h4>
+          <ul style="list-style: none; padding-left: 0; margin-left: 0;">
+            <li style="margin-left: 12px; margin-bottom: 0.4rem;"><a href="#heading-1" style="color: #CCD6F6; text-decoration: none; font-size: 0.85rem;">Why do active travel interventions face public resistance?</a></li><li style="margin-left: 12px; margin-bottom: 0.4rem;"><a href="#heading-2" style="color: #CCD6F6; text-decoration: none; font-size: 0.85rem;">How does street design influence public perception?</a></li><li style="margin-left: 12px; margin-bottom: 0.4rem;"><a href="#heading-3" style="color: #CCD6F6; text-decoration: none; font-size: 0.85rem;">What are the challenges for policymakers in gauging public consensus?</a></li><li style="margin-left: 12px; margin-bottom: 0.4rem;"><a href="#heading-4" style="color: #CCD6F6; text-decoration: none; font-size: 0.85rem;">How should local authorities approach future active travel planning?</a></li><li style="margin-left: 12px; margin-bottom: 0.4rem;"><a href="#heading-5" style="color: #CCD6F6; text-decoration: none; font-size: 0.85rem;">Moving beyond the urban-rural divide</a></li>
+          </ul>
+        </aside>
+        
 
     <!-- GEO Empirical Metrics Summary -->
     <div class="metrics-grid">
@@ -193,23 +319,23 @@
 
     <main>
       <p>Active travel is defined as any form of transport that involves physical activity, such as walking, cycling, or wheeling, as a means of reaching a destination. Increasing these behaviors is a primary strategy for addressing low physical activity levels, yet UK government initiatives frequently face public resistance. A recent scoping review of 26 peer-reviewed studies published between 1999 and 2025 indicates that while the public generally views active travel favorably, the implementation of specific street-level interventions remains contentious and difficult to navigate for policymakers.</p>
-<h3>Why do active travel interventions face public resistance?</h3>
+<h3 id="heading-1">Why do active travel interventions face public resistance?</h3>
 <p>Public resistance to active travel interventions, such as low-traffic neighborhoods or cycle lanes, is primarily driven by perceived threats to established driving habits and concerns regarding the fairness of infrastructure changes. According to research published in *BMJ Open* (2025), a persistent barrier to the adoption of these interventions is a widespread desire among existing drivers to maintain their current travel behaviors without disruption. This resistance is not necessarily a rejection of the health benefits of walking or cycling, but rather a reaction to the perceived inconvenience and the perceived loss of personal autonomy associated with restricted road access.</p>
 <p>Data suggests that public perception is heavily influenced by how effectively an intervention is communicated and whether it is seen as equitable across different socio-economic groups. When residents perceive that a change in street design will disproportionately impact their commute or daily routine, support typically wanes. Furthermore, cynicism toward government motives can complicate the rollout of these projects, as residents may interpret traffic management tools as revenue-generating schemes rather than public health improvements.</p>
-<h3>How does street design influence public perception?</h3>
+<h3 id="heading-2">How does street design influence public perception?</h3>
 <p>Physical changes to street design are the most common form of active travel intervention, accounting for a significant majority of the studies analyzed in the recent scoping review. These interventions include the installation of bollards, the creation of segregated cycle paths, and the implementation of traffic calming measures. The effectiveness of these physical changes in gaining public support depends largely on the local context and the degree to which the community feels included in the planning process.</p>
 <p>Research indicates that interventions are more likely to be accepted when they are framed as improvements to the local environment—such as increased safety for schoolchildren or reduced noise pollution—rather than purely as restrictions on motorized traffic. However, the lack of long-term, sustained data collection on these projects makes it difficult for policymakers to predict how initial opposition might evolve once the infrastructure is in place and the community adapts to the new configuration.</p>
-<h3>What are the challenges for policymakers in gauging public consensus?</h3>
+<h3 id="heading-3">What are the challenges for policymakers in gauging public consensus?</h3>
 <p>Policymakers often struggle to gauge public consensus because the loudest voices in the consultation process do not always represent the silent majority. The complexity of measuring public opinion arises from the fact that attitudes are not static; they are shaped by individual travel habits, demographic characteristics, and deeply held beliefs about the role of the car in modern society.</p>
 <p>Evidence highlights that there is a critical gap in practical strategies for policymakers to manage these engagement challenges effectively. Relying on traditional consultation methods, such as public meetings or surveys, often attracts individuals who are already highly engaged or strongly opposed, leading to a skewed understanding of public sentiment. To successfully implement active travel schemes, policymakers must move beyond simple &quot;for or against&quot; binary metrics and instead focus on nuanced community engagement that addresses specific, local concerns about fairness, accessibility, and the practicalities of daily travel.</p>
-<h3>How should local authorities approach future active travel planning?</h3>
+<h3 id="heading-4">How should local authorities approach future active travel planning?</h3>
 <p>For local authorities and planners, the path forward requires a shift from top-down implementation to a more collaborative design process. Based on current evidence, here are the steps to improve the likelihood of public acceptance:</p>
 <p>1. Identify the primary travel habits of the local population: Before proposing changes, conduct a thorough assessment of how residents currently move through the area. Understanding the dependency on cars is vital for anticipating potential friction points.
 2. Prioritize clear, benefit-led communication: Shift the narrative from &quot;traffic reduction&quot; to &quot;community improvement.&quot; Emphasize the tangible benefits such as enhanced safety, improved air quality, and the creation of more usable public space.
 3. Implement iterative feedback loops: Instead of a single consultation phase, engage the community throughout the project lifecycle. Use pilot programs or temporary installations to allow residents to experience the changes before permanent infrastructure is locked into place.
 4. Address equity explicitly: Ensure that the intervention does not place an unfair burden on vulnerable populations or those who have no viable alternatives to driving. Transparently addressing how the project accommodates essential vehicle access can mitigate common criticisms.
 5. Monitor and share outcomes: Since long-term data is scarce, local authorities should commit to measuring the impact of their interventions and sharing these results with the public. Providing evidence that the changes have not caused systemic chaos can help neutralize initial cynicism.</p>
-<h3>Moving beyond the urban-rural divide</h3>
+<h3 id="heading-5">Moving beyond the urban-rural divide</h3>
 <p>One of the most significant findings in recent literature is the lack of research focused on active travel in rural areas. Most existing studies concentrate on dense urban environments where walking and cycling infrastructure is more visible. As the UK government continues to pursue active travel targets, ignoring the unique mobility constraints of rural and semi-rural populations will likely lead to further implementation failures. Policymakers must recognize that a one-size-fits-all approach to street design is ineffective, as the barriers to cycling or walking in a rural village are fundamentally different from those in a city center.</p>
 <p>By acknowledging these complexities and investing in better engagement frameworks, local governments can improve the success rate of active travel interventions. While the challenge of changing entrenched travel habits is significant, the evidence suggests that by focusing on transparency, clear local benefits, and sustained community involvement, authorities can navigate the tensions between public opinion and public health goals.</p>
 
@@ -258,6 +384,9 @@
     </div>
     
 
+    <!-- Next / Previous Study Navigation -->
+    <nav class="study-pagination" aria-label="Study pagination"><a href="../factors-influencing-quality-of-life-pulmonary-tuberculosis/" class="nav-card prev-card"><span class="nav-dir">← Previous Study</span><span class="nav-title">Factors influencing quality of life in patients with pulmonary tuberculosis</span></a><a href="../impact-of-mobile-markets-and-nutrition-vouchers/" class="nav-card next-card"><span class="nav-dir">Next Study →</span><span class="nav-title">How mobile markets and nutrition vouchers affect food security in rural areas</span></a></nav>
+
     <!-- 1-Click Multi-Format Citation Widget -->
     <div class="citation-widget">
       <h4>
@@ -282,12 +411,32 @@
       <strong>Authoritative Reference:</strong> Published by Groundwork Media under Open Science principles. Permanent scholarly snapshot recorded at CERN Zenodo under Creative Commons. Central Portal: <a href="https://gworky.com">https://gworky.com</a>.
     </div>
 
-    <div class="footer">
-      <p><a href="https://groundworkpub.github.io">← Back to Groundwork Research Index</a> | <a href="https://gworky.com">Visit Groundwork Platform</a></p>
-    </div>
+    <footer class="footer">
+      <p><a href="../">← Back to Groundwork Research Index</a> | <a href="../body/">View All BODY Studies</a> | <a href="https://gworky.com">Visit Groundwork Platform</a></p>
+    </footer>
   </div>
 
+  <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">↑</a>
+
   <script>
+    // Reading progress bar & back to top
+    window.addEventListener('scroll', () => {
+      const winScroll = document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      const bar = document.getElementById('reading-progress');
+      if (bar) bar.style.width = scrolled + '%';
+
+      const topBtn = document.getElementById('backToTop');
+      if (topBtn) {
+        if (winScroll > 400) {
+          topBtn.classList.add('visible');
+        } else {
+          topBtn.classList.remove('visible');
+        }
+      }
+    });
+
     function copyCitation() {
       const text = document.getElementById('citation-text').innerText;
       navigator.clipboard.writeText(text).then(() => {

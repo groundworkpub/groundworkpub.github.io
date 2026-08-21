@@ -1,9 +1,9 @@
 # Groundwork Knowledge Base Architecture & Semantic Map (STRUCTURE.md)
 
 **Repository:** `groundworkpub/groundworkpub.github.io`  
-**Version:** `v1.6.0`  
+**Version:** `v1.7.0`  
 **DOI:** `https://doi.org/10.5281/zenodo.22011567`  
-**Generated:** `2026-08-21T04:35:56.189081+00:00`
+**Generated:** `2026-08-21T04:38:27.504842+00:00`
 
 ---
 

@@ -37,7 +37,6 @@
         "@id": "https://gworky.com/#website",
         "url": "https://gworky.com",
         "name": "Groundwork Media",
-        "description": "Evidence-based decision guides and interactive calculators.",
         "publisher": {
           "@id": "https://gworky.com/#organization"
         }
@@ -51,6 +50,30 @@
           "@type": "ImageObject",
           "url": "https://groundworkpub.github.io/og.svg"
         }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://gworky.com/article/renewaire-aeri-mt-review#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://groundworkpub.github.io/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "HOME",
+            "item": "https://groundworkpub.github.io/home/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Understanding the Renewaire Aeri MT energy recovery ventilator",
+            "item": "https://gworky.com/article/renewaire-aeri-mt-review"
+          }
+        ]
       },
       {
         "@type": "Person",
@@ -67,6 +90,7 @@
         "url": "https://gworky.com/article/renewaire-aeri-mt-review",
         "datePublished": "2026-08-21",
         "dateModified": "2026-08-21",
+        "wordCount": 947,
         "author": {
           "@id": "https://gworky.com/author/david-sterling#author"
         },
@@ -110,28 +134,60 @@
       --card-alt: #1E2D4A;
       --text: #CCD6F6;
       --heading: #FFFFFF;
-      --accent: #10B981;
-      --accent-glow: rgba(16, 185, 129, 0.15);
+      --accent: #F59E0B;
+      --accent-glow: rgba(245, 158, 11, 0.15);
       --muted: #8892B0;
       --border: rgba(255, 255, 255, 0.08);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif; background: var(--bg); color: var(--text); line-height: 1.75; padding: 2rem 1rem; }
-    .container { max-width: 860px; margin: 0 auto; background: var(--card); padding: 2.5rem; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
-    .header-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 10px; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif; background: var(--bg); color: var(--text); line-height: 1.75; padding-top: 70px; }
+    
+    /* Sticky Glassmorphic Header */
+    .site-header { position: fixed; top: 0; left: 0; right: 0; background: rgba(10, 25, 47, 0.88); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); z-index: 1000; }
+    .header-inner { max-width: 1080px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 1.5rem; }
+    .header-brand { display: flex; align-items: center; gap: 12px; }
+    .brand-logo { color: #FFFFFF; text-decoration: none; font-size: 1.1rem; display: flex; align-items: center; gap: 6px; }
+    .logo-dot { color: #10B981; }
+    .brand-sub { color: #8892B0; font-size: 0.78rem; font-weight: normal; margin-left: 4px; }
+    .live-status-pill { display: inline-flex; align-items: center; gap: 6px; background: rgba(16, 185, 129, 0.12); color: #10B981; font-size: 0.72rem; font-weight: bold; padding: 2px 8px; border-radius: 9999px; border: 1px solid rgba(16, 185, 129, 0.25); }
+    .pulse-dot { width: 6px; height: 6px; background: #10B981; border-radius: 50%; display: inline-block; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+    
+    .header-nav { display: flex; gap: 12px; align-items: center; }
+    .nav-link { color: var(--muted); text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 4px 8px; border-radius: 6px; transition: all 0.2s; }
+    .nav-link:hover, .nav-link.active { color: #FFFFFF; background: rgba(255, 255, 255, 0.06); }
+    .gworky-link { color: #10B981 !important; border: 1px solid rgba(16, 185, 129, 0.3); }
+    .reading-progress-bar { height: 3px; background: var(--accent); width: 0%; transition: width 0.1s ease-out; }
+    
+    /* Layout */
+    .container { max-width: 860px; margin: 2rem auto; background: var(--card); padding: 2.5rem; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+    
+    /* Breadcrumbs */
+    .breadcrumbs { font-size: 0.82rem; color: var(--muted); margin-bottom: 1.2rem; display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+    .breadcrumbs a { color: var(--muted); text-decoration: none; }
+    .breadcrumbs a:hover { color: var(--accent); }
+    
+    .header-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.2rem; flex-wrap: wrap; gap: 10px; }
     .badge { display: inline-block; background: var(--accent-glow); color: var(--accent); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.05em; padding: 0.35rem 0.85rem; border-radius: 9999px; text-transform: uppercase; }
     .doi-tag { font-size: 0.78rem; color: var(--muted); text-decoration: none; border: 1px solid var(--border); padding: 0.3rem 0.7rem; border-radius: 6px; }
     .doi-tag:hover { border-color: var(--accent); color: var(--accent); }
     
+    /* Article Meta */
+    .article-meta { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; font-size: 0.85rem; color: var(--muted); margin-bottom: 1.8rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
+    .meta-item { display: inline-flex; align-items: center; gap: 5px; }
+    
     h1 { color: var(--heading); font-size: 2.1rem; line-height: 1.3; margin-bottom: 1.2rem; font-family: Georgia, serif; }
-    h2 { color: var(--heading); font-size: 1.4rem; margin: 2rem 0 1rem; }
-    h3 { color: var(--heading); font-size: 1.15rem; margin: 1.5rem 0 0.8rem; }
+    h2 { color: var(--heading); font-size: 1.4rem; margin: 2.2rem 0 1rem; }
+    h3 { color: var(--heading); font-size: 1.15rem; margin: 1.6rem 0 0.8rem; }
     p { margin-bottom: 1.2rem; }
     ul { margin-left: 1.5rem; margin-bottom: 1.2rem; }
     li { margin-bottom: 0.5rem; }
 
+    /* Table of Contents */
+    .toc-card { background: var(--card-alt); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem 1.5rem; margin: 2rem 0; }
+
     /* AEO Quick Answer Card */
-    .quick-answer-card { background: rgba(16, 185, 129, 0.07); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem; }
+    .quick-answer-card { background: var(--accent-glow); border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem; }
     .quick-answer-card h3 { color: var(--accent); font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; margin-top: 0; }
     .quick-answer-card p { font-size: 1.05rem; color: #FFFFFF; font-weight: 500; margin-bottom: 0; line-height: 1.6; }
 
@@ -144,19 +200,71 @@
     .canonical-box { background: var(--accent-glow); border-left: 4px solid var(--accent); padding: 1.2rem; border-radius: 6px; margin: 2rem 0; font-size: 0.95rem; }
     .canonical-box a { color: var(--accent); font-weight: bold; text-decoration: underline; }
     
+    /* Study Pagination (Next/Prev) */
+    .study-pagination { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 3rem 0 1rem; }
+    .nav-card { background: var(--card-alt); border: 1px solid var(--border); padding: 1.2rem; border-radius: 8px; text-decoration: none; display: flex; flex-direction: column; gap: 4px; transition: all 0.2s; }
+    .nav-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .next-card { text-align: right; }
+    .nav-dir { font-size: 0.75rem; color: var(--accent); text-transform: uppercase; font-weight: bold; }
+    .nav-title { color: #FFFFFF; font-size: 0.9rem; font-weight: 600; line-height: 1.4; }
+    
     /* Citation Widget */
     .citation-widget { background: var(--card-alt); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; margin: 2.5rem 0; }
     .citation-widget h4 { color: var(--heading); font-size: 1rem; margin-bottom: 0.8rem; display: flex; justify-content: space-between; align-items: center; }
     .citation-box { background: #0A192F; border: 1px solid var(--border); border-radius: 6px; padding: 1rem; font-family: ui-monospace, monospace; font-size: 0.82rem; color: #CCD6F6; word-break: break-all; margin-bottom: 0.8rem; }
     .btn-copy { background: var(--accent); color: #0A192F; border: none; padding: 0.4rem 0.9rem; border-radius: 4px; font-weight: bold; font-size: 0.75rem; cursor: pointer; }
     
+    /* Back to top */
+    .back-to-top { position: fixed; bottom: 24px; right: 24px; background: rgba(17, 34, 64, 0.9); border: 1px solid var(--border); color: #FFFFFF; width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 1.2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.3); opacity: 0; pointer-events: none; transition: opacity 0.3s; z-index: 999; }
+    .back-to-top.visible { opacity: 1; pointer-events: auto; }
+    
     .footer { margin-top: 3.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border); font-size: 0.85rem; color: var(--muted); text-align: center; }
     .footer a { color: var(--text); text-decoration: none; }
     .footer a:hover { color: var(--accent); }
+
+    @media (max-width: 640px) {
+      body { padding-top: 60px; }
+      .container { padding: 1.5rem 1rem; }
+      h1 { font-size: 1.7rem; }
+      .header-nav { display: none; }
+      .study-pagination { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
+  
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-brand">
+        <a href="../" class="brand-logo">
+          <span class="logo-dot">✦</span>
+          <strong>Groundwork</strong>
+          <span class="brand-sub">Open Research</span>
+        </a>
+        <span class="live-status-pill"><span class="pulse-dot"></span> 751 Studies Live</span>
+      </div>
+      <nav class="header-nav" aria-label="Main Navigation">
+        <a href="../" class="nav-link ">All</a>
+        <a href="../money/" class="nav-link">Money</a>
+<a href="../body/" class="nav-link">Body</a>
+<a href="../home/" class="nav-link active">Home</a>
+<a href="../tech/" class="nav-link">Tech</a>
+<a href="../life/" class="nav-link">Life</a>
+<a href="../digest/" class="nav-link">Digests</a>
+        <a href="https://gworky.com" target="_blank" rel="noopener" class="nav-link gworky-link">gworky.com ↗</a>
+      </nav>
+    </div>
+    <div id="reading-progress" class="reading-progress-bar"></div>
+  </header>
+
+
   <div class="container">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="../">Home</a> <span>/</span>
+      <a href="../home/">HOME</a> <span>/</span>
+      <span style="color: #CCD6F6;">Understanding the Renewaire Aeri MT...</span>
+    </nav>
+
     <div class="header-bar">
       <div class="badge">Groundwork Open Research • HOME</div>
       <a href="https://doi.org/10.5281/zenodo.22011567" target="_blank" rel="noopener" class="doi-tag">DOI: 10.5281/zenodo.22011567</a>
@@ -164,11 +272,29 @@
 
     <h1>Understanding the Renewaire Aeri MT energy recovery ventilator</h1>
 
+    <div class="article-meta">
+      <span class="meta-item">✍️ <strong>David Sterling</strong></span>
+      <span class="meta-item">⏱️ 5 min read (947 words)</span>
+      <span class="meta-item">📅 2026-08-21</span>
+      <span class="meta-item">🔬 Peer-Audited</span>
+    </div>
+
     <!-- AEO Quick Answer Box for AI Overviews & Search Snippets -->
     <div class="quick-answer-card">
       <h3>⚡ Executive Research Takeaway (AEO Direct Answer)</h3>
       <p class="executive-takeaways">The Renewaire Aeri MT is a balanced energy recovery ventilator (ERV) designed for airtight homes. Learn how it manages moisture, improves IAQ, and works.</p>
     </div>
+
+    
+        <aside class="toc-card" aria-label="Table of Contents">
+          <h4 style="color: #FFFFFF; font-size: 0.95rem; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 6px;">
+            <span style="color: #10B981;">§</span> Study Outline & Navigation
+          </h4>
+          <ul style="list-style: none; padding-left: 0; margin-left: 0;">
+            <li style="margin-left: 0px; margin-bottom: 0.4rem;"><a href="#heading-1" style="color: #CCD6F6; text-decoration: none; font-size: 0.85rem;">What is the Renewaire Aeri MT and how does it function?</a></li><li style="margin-left: 0px; margin-bottom: 0.4rem;"><a href="#heading-2" style="color: #CCD6F6; text-decoration: none; font-size: 0.85rem;">Why choose an ERV for your home?</a></li><li style="margin-left: 0px; margin-bottom: 0.4rem;"><a href="#heading-3" style="color: #CCD6F6; text-decoration: none; font-size: 0.85rem;">How should you install the Aeri MT for peak performance?</a></li><li style="margin-left: 0px; margin-bottom: 0.4rem;"><a href="#heading-4" style="color: #CCD6F6; text-decoration: none; font-size: 0.85rem;">How do you maintain the Aeri MT to ensure longevity?</a></li><li style="margin-left: 0px; margin-bottom: 0.4rem;"><a href="#heading-5" style="color: #CCD6F6; text-decoration: none; font-size: 0.85rem;">Is the Renewaire Aeri MT right for your climate?</a></li>
+          </ul>
+        </aside>
+        
 
     <!-- GEO Empirical Metrics Summary -->
     <div class="metrics-grid">
@@ -194,23 +320,23 @@
     <main>
       <p>An energy recovery ventilator (ERV) is a mechanical ventilation system that exchanges stale indoor air with fresh outdoor air while transferring both heat and moisture between the two airstreams. The Renewaire Aeri MT is a specific model within the manufacturer&#39;s lineup designed to provide balanced ventilation for residential applications. Proper ventilation is essential in modern, airtight homes to maintain indoor air quality (IAQ) and prevent the buildup of pollutants, moisture, and carbon dioxide.</p>
 <p>According to data from the Department of Energy, mechanical ventilation is a requirement in homes built to modern energy codes to ensure occupant health and building durability (DOE, 2023). Because the Aeri MT utilizes enthalpy core technology, it is particularly effective at tempering incoming air, which reduces the heating or cooling load on your primary HVAC system.</p>
-<h2>What is the Renewaire Aeri MT and how does it function?</h2>
+<h2 id="heading-1">What is the Renewaire Aeri MT and how does it function?</h2>
 <p>The Renewaire Aeri MT is a residential ERV that uses a static, plate-style enthalpy core to exchange energy between exhaust and intake air. Unlike heat recovery ventilators (HRVs) that only exchange sensible heat, the Aeri MT transfers both sensible heat and latent moisture. This dual-action capability helps manage indoor humidity levels, which is critical in climates with significant seasonal humidity swings, such as the Northeast or the humid South.</p>
 <p>The core of the unit is constructed from a polymer membrane that allows water vapor to pass through while keeping the two airstreams completely separated. This prevents the cross-contamination of odors, pollutants, and bacteria. By pre-conditioning the incoming fresh air, the system minimizes the energy penalty typically associated with bringing outdoor air into a conditioned space. Research from the Building America program indicates that high-efficiency ERVs can recover 60% to 80% of the energy from the air they exhaust, significantly lowering the cost of mechanical ventilation (Building America, 2022).</p>
-<h2>Why choose an ERV for your home?</h2>
+<h2 id="heading-2">Why choose an ERV for your home?</h2>
 <p>Choosing an ERV over a standard bathroom fan or simple exhaust-only ventilation is a strategic decision for airtight homes. Exhaust-only systems create negative pressure, which can pull unconditioned air and pollutants from crawlspaces, wall cavities, or attics into your living environment. A balanced ERV system, like the Aeri MT, ensures that the volume of air being brought in is equal to the volume being exhausted.</p>
 <p>This balanced approach protects the building envelope from moisture damage while ensuring that every room receives a consistent supply of fresh air. Furthermore, because the unit filters the incoming air, it provides a layer of protection against particulate matter like pollen and dust. According to the Environmental Protection Agency (EPA), indoor air is often two to five times more polluted than outdoor air, making consistent, filtered mechanical ventilation a key component of a healthy home strategy (EPA, 2023).</p>
-<h2>How should you install the Aeri MT for peak performance?</h2>
+<h2 id="heading-3">How should you install the Aeri MT for peak performance?</h2>
 <p>To get the most out of your Renewaire Aeri MT, you must follow a professional-grade installation process. Proper duct design is the most frequent point of failure in residential ventilation systems. Follow these steps to ensure your system operates at its rated capacity:</p>
 <p>1. Locate the unit in a conditioned or semi-conditioned space, such as a mechanical room or basement, to minimize heat loss through the unit casing.
 2. Design the ductwork to pull air from &quot;dirty&quot; zones like kitchens, bathrooms, and laundry rooms, while supplying fresh air to &quot;clean&quot; zones like bedrooms and living areas.
 3. Install the intake and exhaust hoods on the exterior of the house with at least 6 to 10 feet of separation to prevent the re-entrainment of exhausted air.
 4. Balance the airflow using a manometer or flow hood once the installation is complete. This ensures the system is not pushing more air into the house than it is pulling out, which is necessary to maintain neutral pressure.
 5. Ensure the condensate drain is properly trapped and sloped, as the unit will generate water during the cooling season when it is dehumidifying incoming air.</p>
-<h2>How do you maintain the Aeri MT to ensure longevity?</h2>
+<h2 id="heading-4">How do you maintain the Aeri MT to ensure longevity?</h2>
 <p>Routine maintenance is the primary factor that determines the lifespan of an ERV. Because the Aeri MT uses high-quality components, it is designed for a service life of 15 to 20 years, provided the filters and core are cleaned regularly. Neglecting maintenance will lead to increased fan motor strain and decreased airflow, which defeats the purpose of the system.</p>
 <p>Every three to six months, you should inspect the air filters. In dusty environments or areas with high pollen counts, you may need to replace them more frequently. Once a year, you should perform a deep clean of the enthalpy core by vacuuming it gently or washing it with a mild detergent according to the manufacturer’s instructions. Additionally, check the condensate pan for debris that might block drainage, and inspect the intake/exhaust hoods for bird nests or insect screens that have become clogged.</p>
-<h2>Is the Renewaire Aeri MT right for your climate?</h2>
+<h2 id="heading-5">Is the Renewaire Aeri MT right for your climate?</h2>
 <p>For residents in climates like Maine or other northern regions, the Aeri MT is highly effective during the heating season because it retains moisture inside the home, preventing the air from becoming excessively dry. In the summer, it helps keep humidity levels in check by transferring moisture from the hot, humid outdoor air to the cooler, drier exhaust air. Before purchasing, verify that the unit’s airflow capacity (measured in cubic feet per minute or CFM) matches the square footage and occupancy load of your home as determined by ASHRAE 62.2 standards. By aligning the unit&#39;s capacity with your home&#39;s specific requirements, you ensure both comfort and energy efficiency throughout the year.</p>
 
     </main>
@@ -258,6 +384,9 @@
     </div>
     
 
+    <!-- Next / Previous Study Navigation -->
+    <nav class="study-pagination" aria-label="Study pagination"><a href="../best-travel-credit-cards-2026/" class="nav-card prev-card"><span class="nav-dir">← Previous Study</span><span class="nav-title">How to choose the best travel credit card for 2026</span></a><a href="../designing-a-secondhand-nursery/" class="nav-card next-card"><span class="nav-dir">Next Study →</span><span class="nav-title">How to design a nursery with secondhand furniture</span></a></nav>
+
     <!-- 1-Click Multi-Format Citation Widget -->
     <div class="citation-widget">
       <h4>
@@ -282,12 +411,32 @@
       <strong>Authoritative Reference:</strong> Published by Groundwork Media under Open Science principles. Permanent scholarly snapshot recorded at CERN Zenodo under Creative Commons. Central Portal: <a href="https://gworky.com">https://gworky.com</a>.
     </div>
 
-    <div class="footer">
-      <p><a href="https://groundworkpub.github.io">← Back to Groundwork Research Index</a> | <a href="https://gworky.com">Visit Groundwork Platform</a></p>
-    </div>
+    <footer class="footer">
+      <p><a href="../">← Back to Groundwork Research Index</a> | <a href="../home/">View All HOME Studies</a> | <a href="https://gworky.com">Visit Groundwork Platform</a></p>
+    </footer>
   </div>
 
+  <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">↑</a>
+
   <script>
+    // Reading progress bar & back to top
+    window.addEventListener('scroll', () => {
+      const winScroll = document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      const bar = document.getElementById('reading-progress');
+      if (bar) bar.style.width = scrolled + '%';
+
+      const topBtn = document.getElementById('backToTop');
+      if (topBtn) {
+        if (winScroll > 400) {
+          topBtn.classList.add('visible');
+        } else {
+          topBtn.classList.remove('visible');
+        }
+      }
+    });
+
     function copyCitation() {
       const text = document.getElementById('citation-text').innerText;
       navigator.clipboard.writeText(text).then(() => {

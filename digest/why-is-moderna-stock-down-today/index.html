@@ -35,6 +35,30 @@
         "name": "Groundwork Media"
       },
       {
+        "@type": "BreadcrumbList",
+        "@id": "https://groundworkpub.github.io/digest/why-is-moderna-stock-down-today/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://groundworkpub.github.io/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Digests",
+            "item": "https://groundworkpub.github.io/digest/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Why Is Moderna Stock Down Today?",
+            "item": "https://groundworkpub.github.io/digest/why-is-moderna-stock-down-today/"
+          }
+        ]
+      },
+      {
         "@type": "NewsArticle",
         "@id": "https://groundworkpub.github.io/digest/why-is-moderna-stock-down-today/#article",
         "headline": "Why Is Moderna Stock Down Today?",
@@ -63,19 +87,79 @@
       --border: rgba(255, 255, 255, 0.08);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif; background: var(--bg); color: var(--text); line-height: 1.75; padding: 2rem 1rem; }
-    .container { max-width: 860px; margin: 0 auto; background: var(--card); padding: 2.5rem; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif; background: var(--bg); color: var(--text); line-height: 1.75; padding-top: 70px; }
+    
+    .site-header { position: fixed; top: 0; left: 0; right: 0; background: rgba(10, 25, 47, 0.88); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); z-index: 1000; }
+    .header-inner { max-width: 1080px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 1.5rem; }
+    .header-brand { display: flex; align-items: center; gap: 12px; }
+    .brand-logo { color: #FFFFFF; text-decoration: none; font-size: 1.1rem; display: flex; align-items: center; gap: 6px; }
+    .logo-dot { color: #10B981; }
+    .brand-sub { color: #8892B0; font-size: 0.78rem; font-weight: normal; margin-left: 4px; }
+    .live-status-pill { display: inline-flex; align-items: center; gap: 6px; background: rgba(16, 185, 129, 0.12); color: #10B981; font-size: 0.72rem; font-weight: bold; padding: 2px 8px; border-radius: 9999px; border: 1px solid rgba(16, 185, 129, 0.25); }
+    .pulse-dot { width: 6px; height: 6px; background: #10B981; border-radius: 50%; display: inline-block; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+    
+    .header-nav { display: flex; gap: 12px; align-items: center; }
+    .nav-link { color: var(--muted); text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 4px 8px; border-radius: 6px; transition: all 0.2s; }
+    .nav-link:hover, .nav-link.active { color: #FFFFFF; background: rgba(255, 255, 255, 0.06); }
+    .gworky-link { color: #10B981 !important; border: 1px solid rgba(16, 185, 129, 0.3); }
+    
+    .container { max-width: 860px; margin: 2rem auto; background: var(--card); padding: 2.5rem; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+    .breadcrumbs { font-size: 0.82rem; color: var(--muted); margin-bottom: 1.2rem; display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+    .breadcrumbs a { color: var(--muted); text-decoration: none; }
+    .breadcrumbs a:hover { color: var(--accent); }
+    
     .badge { display: inline-block; background: var(--accent-glow); color: var(--accent); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.05em; padding: 0.35rem 0.85rem; border-radius: 9999px; text-transform: uppercase; margin-bottom: 1.2rem; }
     h1 { color: var(--heading); font-size: 1.95rem; line-height: 1.35; margin-bottom: 1rem; font-family: Georgia, serif; }
     .source-meta { color: var(--muted); font-size: 0.85rem; margin-bottom: 1.5rem; }
     .synthesis-card { background: var(--card-alt); border: 1px solid var(--border); padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem; }
+    
+    .study-pagination { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 3rem 0 1rem; }
+    .nav-card { background: var(--card-alt); border: 1px solid var(--border); padding: 1.2rem; border-radius: 8px; text-decoration: none; display: flex; flex-direction: column; gap: 4px; transition: all 0.2s; }
+    .nav-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .next-card { text-align: right; }
+    .nav-dir { font-size: 0.75rem; color: var(--accent); text-transform: uppercase; font-weight: bold; }
+    .nav-title { color: #FFFFFF; font-size: 0.9rem; font-weight: 600; line-height: 1.4; }
+    
     .footer { margin-top: 3.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border); font-size: 0.85rem; color: var(--muted); text-align: center; }
     .footer a { color: var(--text); text-decoration: none; }
     .footer a:hover { color: var(--accent); }
   </style>
 </head>
 <body>
+  
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-brand">
+        <a href="../../" class="brand-logo">
+          <span class="logo-dot">✦</span>
+          <strong>Groundwork</strong>
+          <span class="brand-sub">Open Research</span>
+        </a>
+        <span class="live-status-pill"><span class="pulse-dot"></span> 751 Studies Live</span>
+      </div>
+      <nav class="header-nav" aria-label="Main Navigation">
+        <a href="../../" class="nav-link ">All</a>
+        <a href="../../money/" class="nav-link">Money</a>
+<a href="../../body/" class="nav-link">Body</a>
+<a href="../../home/" class="nav-link">Home</a>
+<a href="../../tech/" class="nav-link">Tech</a>
+<a href="../../life/" class="nav-link">Life</a>
+<a href="../../digest/" class="nav-link active">Digests</a>
+        <a href="https://gworky.com" target="_blank" rel="noopener" class="nav-link gworky-link">gworky.com ↗</a>
+      </nav>
+    </div>
+    <div id="reading-progress" class="reading-progress-bar"></div>
+  </header>
+
+
   <div class="container">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="../../">Home</a> <span>/</span>
+      <a href="../">Digests</a> <span>/</span>
+      <span style="color: #CCD6F6;">Why Is Moderna Stock Down Today?...</span>
+    </nav>
+
     <div class="badge">Open Research Digest • MONEY</div>
     <h1>Why Is Moderna Stock Down Today?</h1>
     <div class="source-meta">Open Intelligence Feed • Origin: <strong>Forbes</strong> • Verified by Groundwork Research</div>
@@ -129,14 +213,16 @@
     </div>
     
 
+    <nav class="study-pagination" aria-label="Digest pagination"><a href="../walmart-stock-drops-9-as-sales-growth-slows-customers-make-trade-offs-amid-high/" class="nav-card prev-card"><span class="nav-dir">← Previous Digest</span><span class="nav-title">Walmart stock drops 9% as sales growth slows, customers make &#39;trade-offs&#39; amid high fuel costs</span></a><a href="../bond-yields-are-climbing-heres-what-that-means-for-mortgages-and-other-consumer/" class="nav-card next-card"><span class="nav-dir">Next Digest →</span><span class="nav-title">Bond yields are climbing. Here’s what that means for mortgages and other consumer borrowing</span></a></nav>
+
     <div style="background: var(--accent-glow); border: 1px solid rgba(16, 185, 129, 0.2); padding: 1.2rem; border-radius: 6px; margin-top: 2rem; font-size: 0.9rem;">
       <strong>Scholarly Citation & Hub:</strong> Groundwork Media publishes empirical decision models across personal finance, preventive medicine, home infrastructure, and consumer technology. <br>
       Explore the central portal: <a href="https://gworky.com" style="color: var(--accent); font-weight: bold;">https://gworky.com</a>
     </div>
 
-    <div class="footer">
-      <p><a href="https://groundworkpub.github.io">← Back to Research Archive</a> | <a href="https://gworky.com">Visit Groundwork Platform</a></p>
-    </div>
+    <footer class="footer">
+      <p><a href="../../">← Back to Research Archive</a> | <a href="../">View All Digests</a> | <a href="https://gworky.com">Visit Groundwork Platform</a></p>
+    </footer>
   </div>
 </body>
 </html>

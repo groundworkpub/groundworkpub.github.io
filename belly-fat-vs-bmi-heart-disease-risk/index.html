@@ -37,7 +37,6 @@
         "@id": "https://gworky.com/#website",
         "url": "https://gworky.com",
         "name": "Groundwork Media",
-        "description": "Evidence-based decision guides and interactive calculators.",
         "publisher": {
           "@id": "https://gworky.com/#organization"
         }
@@ -51,6 +50,30 @@
           "@type": "ImageObject",
           "url": "https://groundworkpub.github.io/og.svg"
         }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://gworky.com/article/belly-fat-vs-bmi-heart-disease-risk#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://groundworkpub.github.io/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "BODY",
+            "item": "https://groundworkpub.github.io/body/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Belly fat vs. bmi: which better predicts your heart disease risk?",
+            "item": "https://gworky.com/article/belly-fat-vs-bmi-heart-disease-risk"
+          }
+        ]
       },
       {
         "@type": "Person",
@@ -67,6 +90,7 @@
         "url": "https://gworky.com/article/belly-fat-vs-bmi-heart-disease-risk",
         "datePublished": "2026-08-21",
         "dateModified": "2026-08-21",
+        "wordCount": 896,
         "author": {
           "@id": "https://gworky.com/author/dr-sarah-jenkins#author"
         },
@@ -110,28 +134,60 @@
       --card-alt: #1E2D4A;
       --text: #CCD6F6;
       --heading: #FFFFFF;
-      --accent: #10B981;
-      --accent-glow: rgba(16, 185, 129, 0.15);
+      --accent: #3B82F6;
+      --accent-glow: rgba(59, 130, 246, 0.15);
       --muted: #8892B0;
       --border: rgba(255, 255, 255, 0.08);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif; background: var(--bg); color: var(--text); line-height: 1.75; padding: 2rem 1rem; }
-    .container { max-width: 860px; margin: 0 auto; background: var(--card); padding: 2.5rem; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
-    .header-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 10px; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif; background: var(--bg); color: var(--text); line-height: 1.75; padding-top: 70px; }
+    
+    /* Sticky Glassmorphic Header */
+    .site-header { position: fixed; top: 0; left: 0; right: 0; background: rgba(10, 25, 47, 0.88); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); z-index: 1000; }
+    .header-inner { max-width: 1080px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 1.5rem; }
+    .header-brand { display: flex; align-items: center; gap: 12px; }
+    .brand-logo { color: #FFFFFF; text-decoration: none; font-size: 1.1rem; display: flex; align-items: center; gap: 6px; }
+    .logo-dot { color: #10B981; }
+    .brand-sub { color: #8892B0; font-size: 0.78rem; font-weight: normal; margin-left: 4px; }
+    .live-status-pill { display: inline-flex; align-items: center; gap: 6px; background: rgba(16, 185, 129, 0.12); color: #10B981; font-size: 0.72rem; font-weight: bold; padding: 2px 8px; border-radius: 9999px; border: 1px solid rgba(16, 185, 129, 0.25); }
+    .pulse-dot { width: 6px; height: 6px; background: #10B981; border-radius: 50%; display: inline-block; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+    
+    .header-nav { display: flex; gap: 12px; align-items: center; }
+    .nav-link { color: var(--muted); text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 4px 8px; border-radius: 6px; transition: all 0.2s; }
+    .nav-link:hover, .nav-link.active { color: #FFFFFF; background: rgba(255, 255, 255, 0.06); }
+    .gworky-link { color: #10B981 !important; border: 1px solid rgba(16, 185, 129, 0.3); }
+    .reading-progress-bar { height: 3px; background: var(--accent); width: 0%; transition: width 0.1s ease-out; }
+    
+    /* Layout */
+    .container { max-width: 860px; margin: 2rem auto; background: var(--card); padding: 2.5rem; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+    
+    /* Breadcrumbs */
+    .breadcrumbs { font-size: 0.82rem; color: var(--muted); margin-bottom: 1.2rem; display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+    .breadcrumbs a { color: var(--muted); text-decoration: none; }
+    .breadcrumbs a:hover { color: var(--accent); }
+    
+    .header-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.2rem; flex-wrap: wrap; gap: 10px; }
     .badge { display: inline-block; background: var(--accent-glow); color: var(--accent); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.05em; padding: 0.35rem 0.85rem; border-radius: 9999px; text-transform: uppercase; }
     .doi-tag { font-size: 0.78rem; color: var(--muted); text-decoration: none; border: 1px solid var(--border); padding: 0.3rem 0.7rem; border-radius: 6px; }
     .doi-tag:hover { border-color: var(--accent); color: var(--accent); }
     
+    /* Article Meta */
+    .article-meta { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; font-size: 0.85rem; color: var(--muted); margin-bottom: 1.8rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
+    .meta-item { display: inline-flex; align-items: center; gap: 5px; }
+    
     h1 { color: var(--heading); font-size: 2.1rem; line-height: 1.3; margin-bottom: 1.2rem; font-family: Georgia, serif; }
-    h2 { color: var(--heading); font-size: 1.4rem; margin: 2rem 0 1rem; }
-    h3 { color: var(--heading); font-size: 1.15rem; margin: 1.5rem 0 0.8rem; }
+    h2 { color: var(--heading); font-size: 1.4rem; margin: 2.2rem 0 1rem; }
+    h3 { color: var(--heading); font-size: 1.15rem; margin: 1.6rem 0 0.8rem; }
     p { margin-bottom: 1.2rem; }
     ul { margin-left: 1.5rem; margin-bottom: 1.2rem; }
     li { margin-bottom: 0.5rem; }
 
+    /* Table of Contents */
+    .toc-card { background: var(--card-alt); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem 1.5rem; margin: 2rem 0; }
+
     /* AEO Quick Answer Card */
-    .quick-answer-card { background: rgba(16, 185, 129, 0.07); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem; }
+    .quick-answer-card { background: var(--accent-glow); border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem; }
     .quick-answer-card h3 { color: var(--accent); font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; margin-top: 0; }
     .quick-answer-card p { font-size: 1.05rem; color: #FFFFFF; font-weight: 500; margin-bottom: 0; line-height: 1.6; }
 
@@ -144,19 +200,71 @@
     .canonical-box { background: var(--accent-glow); border-left: 4px solid var(--accent); padding: 1.2rem; border-radius: 6px; margin: 2rem 0; font-size: 0.95rem; }
     .canonical-box a { color: var(--accent); font-weight: bold; text-decoration: underline; }
     
+    /* Study Pagination (Next/Prev) */
+    .study-pagination { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 3rem 0 1rem; }
+    .nav-card { background: var(--card-alt); border: 1px solid var(--border); padding: 1.2rem; border-radius: 8px; text-decoration: none; display: flex; flex-direction: column; gap: 4px; transition: all 0.2s; }
+    .nav-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .next-card { text-align: right; }
+    .nav-dir { font-size: 0.75rem; color: var(--accent); text-transform: uppercase; font-weight: bold; }
+    .nav-title { color: #FFFFFF; font-size: 0.9rem; font-weight: 600; line-height: 1.4; }
+    
     /* Citation Widget */
     .citation-widget { background: var(--card-alt); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; margin: 2.5rem 0; }
     .citation-widget h4 { color: var(--heading); font-size: 1rem; margin-bottom: 0.8rem; display: flex; justify-content: space-between; align-items: center; }
     .citation-box { background: #0A192F; border: 1px solid var(--border); border-radius: 6px; padding: 1rem; font-family: ui-monospace, monospace; font-size: 0.82rem; color: #CCD6F6; word-break: break-all; margin-bottom: 0.8rem; }
     .btn-copy { background: var(--accent); color: #0A192F; border: none; padding: 0.4rem 0.9rem; border-radius: 4px; font-weight: bold; font-size: 0.75rem; cursor: pointer; }
     
+    /* Back to top */
+    .back-to-top { position: fixed; bottom: 24px; right: 24px; background: rgba(17, 34, 64, 0.9); border: 1px solid var(--border); color: #FFFFFF; width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 1.2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.3); opacity: 0; pointer-events: none; transition: opacity 0.3s; z-index: 999; }
+    .back-to-top.visible { opacity: 1; pointer-events: auto; }
+    
     .footer { margin-top: 3.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border); font-size: 0.85rem; color: var(--muted); text-align: center; }
     .footer a { color: var(--text); text-decoration: none; }
     .footer a:hover { color: var(--accent); }
+
+    @media (max-width: 640px) {
+      body { padding-top: 60px; }
+      .container { padding: 1.5rem 1rem; }
+      h1 { font-size: 1.7rem; }
+      .header-nav { display: none; }
+      .study-pagination { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
+  
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-brand">
+        <a href="../" class="brand-logo">
+          <span class="logo-dot">✦</span>
+          <strong>Groundwork</strong>
+          <span class="brand-sub">Open Research</span>
+        </a>
+        <span class="live-status-pill"><span class="pulse-dot"></span> 751 Studies Live</span>
+      </div>
+      <nav class="header-nav" aria-label="Main Navigation">
+        <a href="../" class="nav-link ">All</a>
+        <a href="../money/" class="nav-link">Money</a>
+<a href="../body/" class="nav-link active">Body</a>
+<a href="../home/" class="nav-link">Home</a>
+<a href="../tech/" class="nav-link">Tech</a>
+<a href="../life/" class="nav-link">Life</a>
+<a href="../digest/" class="nav-link">Digests</a>
+        <a href="https://gworky.com" target="_blank" rel="noopener" class="nav-link gworky-link">gworky.com ↗</a>
+      </nav>
+    </div>
+    <div id="reading-progress" class="reading-progress-bar"></div>
+  </header>
+
+
   <div class="container">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="../">Home</a> <span>/</span>
+      <a href="../body/">BODY</a> <span>/</span>
+      <span style="color: #CCD6F6;">Belly fat vs. bmi: which better pre...</span>
+    </nav>
+
     <div class="header-bar">
       <div class="badge">Groundwork Open Research • BODY</div>
       <a href="https://doi.org/10.5281/zenodo.22011567" target="_blank" rel="noopener" class="doi-tag">DOI: 10.5281/zenodo.22011567</a>
@@ -164,11 +272,32 @@
 
     <h1>Belly fat vs. bmi: which better predicts your heart disease risk?</h1>
 
+    <div class="article-meta">
+      <span class="meta-item">✍️ <strong>Dr. Sarah Jenkins</strong></span>
+      <span class="meta-item">⏱️ 4 min read (896 words)</span>
+      <span class="meta-item">📅 2026-08-21</span>
+      <span class="meta-item">🔬 Peer-Audited</span>
+    </div>
+
     <!-- AEO Quick Answer Box for AI Overviews & Search Snippets -->
     <div class="quick-answer-card">
       <h3>⚡ Executive Research Takeaway (AEO Direct Answer)</h3>
       <p class="executive-takeaways">Is BMI enough to assess heart disease risk? Research shows belly fat is a better predictor. Learn why waist-to-hip ratios provide a clearer health picture.</p>
     </div>
+
+    
+        <aside class="toc-card" aria-label="Table of Contents">
+          <h4 style="color: #FFFFFF; font-size: 0.95rem; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 6px;">
+            <span style="color: #10B981;">§</span> Study Outline & Navigation
+          </h4>
+          <ul style="list-style: none; padding-left: 0; margin-left: 0;">
+            <li style="margin-left: 0px; margin-bottom: 0.4rem;"><a href="#heading-1" style="color: #CCD6F6; text-decoration: none; font-size: 0.85rem;">Why BMI is an incomplete metric</a></li><li style="margin-left: 0px; margin-bottom: 0.4rem;"><a href="#heading-2" style="color: #CCD6F6; text-decoration: none; font-size: 0.85rem;">The role of visceral fat in heart health</a></li><li style="margin-left: 0px; margin-bottom: 0.4rem;"><a href="#heading-3" style="color: #CCD6F6; text-decoration: none; font-size: 0.85rem;">How to measure your risk accurately</a></li><li style="margin-left: 0px; margin-bottom: 0.4rem;"><a href="#heading-4" style="color: #CCD6F6; text-decoration: none; font-size: 0.85rem;">Moving from weight loss to body composition</a></li><li style="margin-left: 12px; margin-bottom: 0.4rem;"><a href="#heading-5" style="color: #CCD6F6; text-decoration: none; font-size: 0.85rem;">Prioritize strength training
+Building lean muscle mass can improve your metabolic rate, which helps your body burn fat more efficiently. Resistance training is particularly effective at shifting your body composition toward a healthier profile.</a></li><li style="margin-left: 12px; margin-bottom: 0.4rem;"><a href="#heading-6" style="color: #CCD6F6; text-decoration: none; font-size: 0.85rem;">Focus on dietary quality
+High intake of processed sugars and refined carbohydrates is linked to increased visceral fat storage. Prioritizing whole foods, high-fiber vegetables, and lean proteins can help regulate insulin levels and reduce fat accumulation around the midsection.</a></li><li style="margin-left: 12px; margin-bottom: 0.4rem;"><a href="#heading-7" style="color: #CCD6F6; text-decoration: none; font-size: 0.85rem;">Engage in consistent aerobic activity
+Moderate-intensity cardiovascular exercise, such as brisk walking, swimming, or cycling, has been shown to be effective at reducing visceral fat. Aim for at least 150 minutes of moderate activity per week, as recommended by major health organizations.</a></li><li style="margin-left: 0px; margin-bottom: 0.4rem;"><a href="#heading-8" style="color: #CCD6F6; text-decoration: none; font-size: 0.85rem;">Next steps for your health</a></li>
+          </ul>
+        </aside>
+        
 
     <!-- GEO Empirical Metrics Summary -->
     <div class="metrics-grid">
@@ -194,13 +323,13 @@
     <main>
       <p>A body mass index (BMI) is a numerical value derived from your height and weight, while belly fat—specifically visceral fat—refers to the adipose tissue stored deep within the abdominal cavity around your internal organs. Recent evidence indicates that measuring belly fat is a more accurate predictor of future heart disease risk than relying on BMI alone. While BMI offers a broad overview of weight status, it fails to account for where your body stores fat, which is a critical factor in metabolic and cardiovascular health (JACC, 2023).</p>
 <p>According to research published in the Journal of the American College of Cardiology (JACC), individuals with a high waist circumference or waist-to-hip ratio face a 15% to 50% higher risk of cardiovascular events, even if their BMI falls within the &#39;normal&#39; or &#39;overweight&#39; ranges. This suggests that the location of your fat is just as important as the total amount.</p>
-<h2>Why BMI is an incomplete metric</h2>
+<h2 id="heading-1">Why BMI is an incomplete metric</h2>
 <p>BMI is a simple calculation—weight in kilograms divided by the square of your height in meters—that has long served as a standard clinical tool for assessing weight categories. However, BMI is a screening tool, not a diagnostic one. It does not distinguish between muscle mass, bone density, and body fat. A person with high muscle mass may have a &#39;high&#39; BMI, while a person with low muscle mass and high visceral fat may have a &#39;normal&#39; BMI but significantly higher health risks.</p>
 <p>Because BMI cannot detect the distribution of body fat, it often misses the presence of visceral fat. Visceral fat is biologically active, meaning it releases inflammatory substances and hormones that can damage blood vessels and alter how your body processes fats and sugars. Relying solely on BMI can provide a false sense of security for individuals who appear to be at a healthy weight but carry excess fat around their midsection.</p>
-<h2>The role of visceral fat in heart health</h2>
+<h2 id="heading-2">The role of visceral fat in heart health</h2>
 <p>Visceral fat is the fat distributed within the belly, surrounding organs such as the liver, pancreas, and intestines. Unlike subcutaneous fat, which sits just under the skin, visceral fat is metabolically active and deep-seated. Dr. Michael J. Blaha, director of the Cardiometabolic Clinic at the Johns Hopkins Ciccarone Center, notes that this fat depot is particularly dangerous because of its proximity to vital organs and its influence on systemic metabolic function.</p>
 <p>When you carry excess visceral fat, your body is more prone to insulin resistance, chronic low-grade inflammation, and elevated blood pressure. These factors act as precursors to coronary heart disease, heart failure, and atrial fibrillation. The metabolic stress caused by visceral fat can lead to the buildup of plaque in your arteries, significantly increasing the likelihood of a heart attack or stroke.</p>
-<h2>How to measure your risk accurately</h2>
+<h2 id="heading-3">How to measure your risk accurately</h2>
 <p>To get a more precise picture of your cardiovascular risk, clinicians recommend moving beyond the scale and using measurements that account for fat distribution. Two primary methods are widely used:</p>
 <p>1. Waist circumference: This measures the distance around your abdomen at the natural waistline, usually just above the belly button. A larger waist circumference is a direct proxy for higher levels of visceral fat.
 2. Waist-to-hip ratio: This is calculated by dividing your waist measurement by your hip measurement. This ratio is often considered more sensitive than waist circumference alone because it adjusts for your body frame size.</p>
@@ -209,15 +338,15 @@
 2. Place a measuring tape around your midsection, aligning it with the top of your hip bone and the bottom of your ribs.
 3. Ensure the tape is snug but not compressing the skin.
 4. Take the measurement at the end of a normal exhale.</p>
-<h2>Moving from weight loss to body composition</h2>
+<h2 id="heading-4">Moving from weight loss to body composition</h2>
 <p>If you find that your waist measurement falls outside of the recommended healthy range, the goal should be to optimize your body composition rather than simply focusing on the number on a scale. Reducing visceral fat requires a combination of dietary changes, physical activity, and lifestyle adjustments.</p>
-<h3>Prioritize strength training
+<h3 id="heading-5">Prioritize strength training
 Building lean muscle mass can improve your metabolic rate, which helps your body burn fat more efficiently. Resistance training is particularly effective at shifting your body composition toward a healthier profile.</h3>
-<h3>Focus on dietary quality
+<h3 id="heading-6">Focus on dietary quality
 High intake of processed sugars and refined carbohydrates is linked to increased visceral fat storage. Prioritizing whole foods, high-fiber vegetables, and lean proteins can help regulate insulin levels and reduce fat accumulation around the midsection.</h3>
-<h3>Engage in consistent aerobic activity
+<h3 id="heading-7">Engage in consistent aerobic activity
 Moderate-intensity cardiovascular exercise, such as brisk walking, swimming, or cycling, has been shown to be effective at reducing visceral fat. Aim for at least 150 minutes of moderate activity per week, as recommended by major health organizations.</h3>
-<h2>Next steps for your health</h2>
+<h2 id="heading-8">Next steps for your health</h2>
 <p>Your weight or BMI is not the complete story of your health. If you are concerned about your cardiovascular risk, schedule an appointment with your healthcare provider to discuss your body composition. Ask them to help you measure your waist circumference and interpret the results in the context of your overall medical history, including blood pressure, cholesterol levels, and family history. By focusing on reducing visceral fat rather than just chasing a lower weight on the scale, you can take a more evidence-based approach to protecting your heart health.</p>
 
     </main>
@@ -265,6 +394,9 @@ Moderate-intensity cardiovascular exercise, such as brisk walking, swimming, or 
     </div>
     
 
+    <!-- Next / Previous Study Navigation -->
+    <nav class="study-pagination" aria-label="Study pagination"><a href="../mrna-flu-vaccine-older-adults-guide/" class="nav-card prev-card"><span class="nav-dir">← Previous Study</span><span class="nav-title">What to know about the first mRNA flu vaccine for older adults</span></a><a href="../black-hole-star-discovery-early-universe/" class="nav-card next-card"><span class="nav-dir">Next Study →</span><span class="nav-title">Understanding the &#39;black hole star&#39; discovery in the early universe</span></a></nav>
+
     <!-- 1-Click Multi-Format Citation Widget -->
     <div class="citation-widget">
       <h4>
@@ -289,12 +421,32 @@ Moderate-intensity cardiovascular exercise, such as brisk walking, swimming, or 
       <strong>Authoritative Reference:</strong> Published by Groundwork Media under Open Science principles. Permanent scholarly snapshot recorded at CERN Zenodo under Creative Commons. Central Portal: <a href="https://gworky.com">https://gworky.com</a>.
     </div>
 
-    <div class="footer">
-      <p><a href="https://groundworkpub.github.io">← Back to Groundwork Research Index</a> | <a href="https://gworky.com">Visit Groundwork Platform</a></p>
-    </div>
+    <footer class="footer">
+      <p><a href="../">← Back to Groundwork Research Index</a> | <a href="../body/">View All BODY Studies</a> | <a href="https://gworky.com">Visit Groundwork Platform</a></p>
+    </footer>
   </div>
 
+  <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">↑</a>
+
   <script>
+    // Reading progress bar & back to top
+    window.addEventListener('scroll', () => {
+      const winScroll = document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      const bar = document.getElementById('reading-progress');
+      if (bar) bar.style.width = scrolled + '%';
+
+      const topBtn = document.getElementById('backToTop');
+      if (topBtn) {
+        if (winScroll > 400) {
+          topBtn.classList.add('visible');
+        } else {
+          topBtn.classList.remove('visible');
+        }
+      }
+    });
+
     function copyCitation() {
       const text = document.getElementById('citation-text').innerText;
       navigator.clipboard.writeText(text).then(() => {

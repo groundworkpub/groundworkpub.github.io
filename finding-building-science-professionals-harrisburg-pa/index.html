@@ -37,7 +37,6 @@
         "@id": "https://gworky.com/#website",
         "url": "https://gworky.com",
         "name": "Groundwork Media",
-        "description": "Evidence-based decision guides and interactive calculators.",
         "publisher": {
           "@id": "https://gworky.com/#organization"
         }
@@ -51,6 +50,30 @@
           "@type": "ImageObject",
           "url": "https://groundworkpub.github.io/og.svg"
         }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://gworky.com/article/finding-building-science-professionals-harrisburg-pa#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://groundworkpub.github.io/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "HOME",
+            "item": "https://groundworkpub.github.io/home/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Finding a building science professional in Harrisburg, PA",
+            "item": "https://gworky.com/article/finding-building-science-professionals-harrisburg-pa"
+          }
+        ]
       },
       {
         "@type": "Person",
@@ -67,6 +90,7 @@
         "url": "https://gworky.com/article/finding-building-science-professionals-harrisburg-pa",
         "datePublished": "2026-08-21",
         "dateModified": "2026-08-21",
+        "wordCount": 979,
         "author": {
           "@id": "https://gworky.com/author/david-sterling#author"
         },
@@ -110,28 +134,60 @@
       --card-alt: #1E2D4A;
       --text: #CCD6F6;
       --heading: #FFFFFF;
-      --accent: #10B981;
-      --accent-glow: rgba(16, 185, 129, 0.15);
+      --accent: #F59E0B;
+      --accent-glow: rgba(245, 158, 11, 0.15);
       --muted: #8892B0;
       --border: rgba(255, 255, 255, 0.08);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif; background: var(--bg); color: var(--text); line-height: 1.75; padding: 2rem 1rem; }
-    .container { max-width: 860px; margin: 0 auto; background: var(--card); padding: 2.5rem; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
-    .header-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 10px; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif; background: var(--bg); color: var(--text); line-height: 1.75; padding-top: 70px; }
+    
+    /* Sticky Glassmorphic Header */
+    .site-header { position: fixed; top: 0; left: 0; right: 0; background: rgba(10, 25, 47, 0.88); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); z-index: 1000; }
+    .header-inner { max-width: 1080px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 1.5rem; }
+    .header-brand { display: flex; align-items: center; gap: 12px; }
+    .brand-logo { color: #FFFFFF; text-decoration: none; font-size: 1.1rem; display: flex; align-items: center; gap: 6px; }
+    .logo-dot { color: #10B981; }
+    .brand-sub { color: #8892B0; font-size: 0.78rem; font-weight: normal; margin-left: 4px; }
+    .live-status-pill { display: inline-flex; align-items: center; gap: 6px; background: rgba(16, 185, 129, 0.12); color: #10B981; font-size: 0.72rem; font-weight: bold; padding: 2px 8px; border-radius: 9999px; border: 1px solid rgba(16, 185, 129, 0.25); }
+    .pulse-dot { width: 6px; height: 6px; background: #10B981; border-radius: 50%; display: inline-block; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+    
+    .header-nav { display: flex; gap: 12px; align-items: center; }
+    .nav-link { color: var(--muted); text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 4px 8px; border-radius: 6px; transition: all 0.2s; }
+    .nav-link:hover, .nav-link.active { color: #FFFFFF; background: rgba(255, 255, 255, 0.06); }
+    .gworky-link { color: #10B981 !important; border: 1px solid rgba(16, 185, 129, 0.3); }
+    .reading-progress-bar { height: 3px; background: var(--accent); width: 0%; transition: width 0.1s ease-out; }
+    
+    /* Layout */
+    .container { max-width: 860px; margin: 2rem auto; background: var(--card); padding: 2.5rem; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+    
+    /* Breadcrumbs */
+    .breadcrumbs { font-size: 0.82rem; color: var(--muted); margin-bottom: 1.2rem; display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+    .breadcrumbs a { color: var(--muted); text-decoration: none; }
+    .breadcrumbs a:hover { color: var(--accent); }
+    
+    .header-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.2rem; flex-wrap: wrap; gap: 10px; }
     .badge { display: inline-block; background: var(--accent-glow); color: var(--accent); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.05em; padding: 0.35rem 0.85rem; border-radius: 9999px; text-transform: uppercase; }
     .doi-tag { font-size: 0.78rem; color: var(--muted); text-decoration: none; border: 1px solid var(--border); padding: 0.3rem 0.7rem; border-radius: 6px; }
     .doi-tag:hover { border-color: var(--accent); color: var(--accent); }
     
+    /* Article Meta */
+    .article-meta { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; font-size: 0.85rem; color: var(--muted); margin-bottom: 1.8rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
+    .meta-item { display: inline-flex; align-items: center; gap: 5px; }
+    
     h1 { color: var(--heading); font-size: 2.1rem; line-height: 1.3; margin-bottom: 1.2rem; font-family: Georgia, serif; }
-    h2 { color: var(--heading); font-size: 1.4rem; margin: 2rem 0 1rem; }
-    h3 { color: var(--heading); font-size: 1.15rem; margin: 1.5rem 0 0.8rem; }
+    h2 { color: var(--heading); font-size: 1.4rem; margin: 2.2rem 0 1rem; }
+    h3 { color: var(--heading); font-size: 1.15rem; margin: 1.6rem 0 0.8rem; }
     p { margin-bottom: 1.2rem; }
     ul { margin-left: 1.5rem; margin-bottom: 1.2rem; }
     li { margin-bottom: 0.5rem; }
 
+    /* Table of Contents */
+    .toc-card { background: var(--card-alt); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem 1.5rem; margin: 2rem 0; }
+
     /* AEO Quick Answer Card */
-    .quick-answer-card { background: rgba(16, 185, 129, 0.07); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem; }
+    .quick-answer-card { background: var(--accent-glow); border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem; }
     .quick-answer-card h3 { color: var(--accent); font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; margin-top: 0; }
     .quick-answer-card p { font-size: 1.05rem; color: #FFFFFF; font-weight: 500; margin-bottom: 0; line-height: 1.6; }
 
@@ -144,19 +200,71 @@
     .canonical-box { background: var(--accent-glow); border-left: 4px solid var(--accent); padding: 1.2rem; border-radius: 6px; margin: 2rem 0; font-size: 0.95rem; }
     .canonical-box a { color: var(--accent); font-weight: bold; text-decoration: underline; }
     
+    /* Study Pagination (Next/Prev) */
+    .study-pagination { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 3rem 0 1rem; }
+    .nav-card { background: var(--card-alt); border: 1px solid var(--border); padding: 1.2rem; border-radius: 8px; text-decoration: none; display: flex; flex-direction: column; gap: 4px; transition: all 0.2s; }
+    .nav-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .next-card { text-align: right; }
+    .nav-dir { font-size: 0.75rem; color: var(--accent); text-transform: uppercase; font-weight: bold; }
+    .nav-title { color: #FFFFFF; font-size: 0.9rem; font-weight: 600; line-height: 1.4; }
+    
     /* Citation Widget */
     .citation-widget { background: var(--card-alt); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; margin: 2.5rem 0; }
     .citation-widget h4 { color: var(--heading); font-size: 1rem; margin-bottom: 0.8rem; display: flex; justify-content: space-between; align-items: center; }
     .citation-box { background: #0A192F; border: 1px solid var(--border); border-radius: 6px; padding: 1rem; font-family: ui-monospace, monospace; font-size: 0.82rem; color: #CCD6F6; word-break: break-all; margin-bottom: 0.8rem; }
     .btn-copy { background: var(--accent); color: #0A192F; border: none; padding: 0.4rem 0.9rem; border-radius: 4px; font-weight: bold; font-size: 0.75rem; cursor: pointer; }
     
+    /* Back to top */
+    .back-to-top { position: fixed; bottom: 24px; right: 24px; background: rgba(17, 34, 64, 0.9); border: 1px solid var(--border); color: #FFFFFF; width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 1.2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.3); opacity: 0; pointer-events: none; transition: opacity 0.3s; z-index: 999; }
+    .back-to-top.visible { opacity: 1; pointer-events: auto; }
+    
     .footer { margin-top: 3.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border); font-size: 0.85rem; color: var(--muted); text-align: center; }
     .footer a { color: var(--text); text-decoration: none; }
     .footer a:hover { color: var(--accent); }
+
+    @media (max-width: 640px) {
+      body { padding-top: 60px; }
+      .container { padding: 1.5rem 1rem; }
+      h1 { font-size: 1.7rem; }
+      .header-nav { display: none; }
+      .study-pagination { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
+  
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-brand">
+        <a href="../" class="brand-logo">
+          <span class="logo-dot">✦</span>
+          <strong>Groundwork</strong>
+          <span class="brand-sub">Open Research</span>
+        </a>
+        <span class="live-status-pill"><span class="pulse-dot"></span> 751 Studies Live</span>
+      </div>
+      <nav class="header-nav" aria-label="Main Navigation">
+        <a href="../" class="nav-link ">All</a>
+        <a href="../money/" class="nav-link">Money</a>
+<a href="../body/" class="nav-link">Body</a>
+<a href="../home/" class="nav-link active">Home</a>
+<a href="../tech/" class="nav-link">Tech</a>
+<a href="../life/" class="nav-link">Life</a>
+<a href="../digest/" class="nav-link">Digests</a>
+        <a href="https://gworky.com" target="_blank" rel="noopener" class="nav-link gworky-link">gworky.com ↗</a>
+      </nav>
+    </div>
+    <div id="reading-progress" class="reading-progress-bar"></div>
+  </header>
+
+
   <div class="container">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="../">Home</a> <span>/</span>
+      <a href="../home/">HOME</a> <span>/</span>
+      <span style="color: #CCD6F6;">Finding a building science professi...</span>
+    </nav>
+
     <div class="header-bar">
       <div class="badge">Groundwork Open Research • HOME</div>
       <a href="https://doi.org/10.5281/zenodo.22011567" target="_blank" rel="noopener" class="doi-tag">DOI: 10.5281/zenodo.22011567</a>
@@ -164,11 +272,29 @@
 
     <h1>Finding a building science professional in Harrisburg, PA</h1>
 
+    <div class="article-meta">
+      <span class="meta-item">✍️ <strong>David Sterling</strong></span>
+      <span class="meta-item">⏱️ 5 min read (979 words)</span>
+      <span class="meta-item">📅 2026-08-21</span>
+      <span class="meta-item">🔬 Peer-Audited</span>
+    </div>
+
     <!-- AEO Quick Answer Box for AI Overviews & Search Snippets -->
     <div class="quick-answer-card">
       <h3>⚡ Executive Research Takeaway (AEO Direct Answer)</h3>
       <p class="executive-takeaways">Finding a building science professional in Harrisburg requires vetting for specific certifications like CPHC or BPI and prioritizing data-driven design.</p>
     </div>
+
+    
+        <aside class="toc-card" aria-label="Table of Contents">
+          <h4 style="color: #FFFFFF; font-size: 0.95rem; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 6px;">
+            <span style="color: #10B981;">§</span> Study Outline & Navigation
+          </h4>
+          <ul style="list-style: none; padding-left: 0; margin-left: 0;">
+            <li style="margin-left: 0px; margin-bottom: 0.4rem;"><a href="#heading-1" style="color: #CCD6F6; text-decoration: none; font-size: 0.85rem;">Why standard construction methods often fail</a></li><li style="margin-left: 0px; margin-bottom: 0.4rem;"><a href="#heading-2" style="color: #CCD6F6; text-decoration: none; font-size: 0.85rem;">How to identify a qualified building science expert</a></li><li style="margin-left: 0px; margin-bottom: 0.4rem;"><a href="#heading-3" style="color: #CCD6F6; text-decoration: none; font-size: 0.85rem;">Where to find reputable professional networks</a></li><li style="margin-left: 0px; margin-bottom: 0.4rem;"><a href="#heading-4" style="color: #CCD6F6; text-decoration: none; font-size: 0.85rem;">Evaluating potential partners during the interview</a></li><li style="margin-left: 0px; margin-bottom: 0.4rem;"><a href="#heading-5" style="color: #CCD6F6; text-decoration: none; font-size: 0.85rem;">The role of the homeowner in the process</a></li>
+          </ul>
+        </aside>
+        
 
     <!-- GEO Empirical Metrics Summary -->
     <div class="metrics-grid">
@@ -194,26 +320,26 @@
     <main>
       <p>Building science is the study of how physical laws—such as heat flow, moisture movement, and air infiltration—affect the performance and durability of a home. When you seek a building science professional, you are looking for an architect or engineer who prioritizes energy efficiency, indoor air quality, and structural longevity over conventional, outdated construction practices. In the Harrisburg, Pennsylvania area, finding these experts requires moving beyond standard contractor directories and focusing on specific technical certifications and industry networks.</p>
 <p>Building science professionals apply empirical data to residential design, ensuring that components like continuous exterior insulation, airtight envelopes, and properly managed moisture barriers function as a cohesive system rather than isolated parts. According to the Department of Energy, homes built with advanced building science principles can reduce energy consumption by 20% to 50% compared to typical code-built homes (Department of Energy, 2023).</p>
-<h2>Why standard construction methods often fail</h2>
+<h2 id="heading-1">Why standard construction methods often fail</h2>
 <p>Standard construction methods often fail because they rely on historical precedent rather than modern thermodynamic data. Many local contractors argue that houses need to &quot;breathe&quot; through uncontrolled air leaks, or that placing ductwork in unconditioned attics is acceptable. However, building science proves that air leakage is an inefficient and unreliable way to provide ventilation. Effective systems require a tight building envelope paired with mechanical ventilation, such as an Energy Recovery Ventilator (ERV), to ensure controlled, filtered air exchange (Building Science Corporation, 2022).</p>
 <p>When professionals suggest that sub-slab insulation is unnecessary or that continuous exterior insulation is a waste of money, they are typically ignoring the impact of thermal bridging. Thermal bridging occurs when conductive materials, such as wood studs or concrete foundations, bypass your insulation layer, significantly reducing the effective R-value of your walls and floors. Addressing these gaps is critical in Pennsylvania’s Climate Zone 5, where temperature swings necessitate high-performance thermal barriers to prevent condensation and energy loss.</p>
-<h2>How to identify a qualified building science expert</h2>
+<h2 id="heading-2">How to identify a qualified building science expert</h2>
 <p>To identify a professional who understands building science, you must look for specific credentials and evidence of their technical training. The most reliable indicator is a certification from the Passive House Institute US (PHIUS) or the Passive House Institute (PHI). These organizations require rigorous training in building physics and energy modeling. A Certified Passive House Consultant (CPHC) is trained to calculate heat loss and moisture risk before a single shovel hits the ground.</p>
 <p>Another indicator is a professional’s affiliation with the Building Performance Institute (BPI). While BPI certifications are often associated with home performance contractors and energy auditors, architects who hold these credentials demonstrate a commitment to measuring the house as a system. When interviewing candidates, ask the following questions:
 1. Can you describe how you manage moisture in a wall assembly with exterior insulation?
 2. What is your approach to calculating the thermal bridge effects of the foundation?
 3. How do you integrate mechanical ventilation with the building’s air-sealing strategy?
 4. Can you provide examples of projects where you used blower door testing to verify performance?</p>
-<h2>Where to find reputable professional networks</h2>
+<h2 id="heading-3">Where to find reputable professional networks</h2>
 <p>If you cannot find a local directory, you should utilize national networks that aggregate high-performance builders and architects. The Green Building Advisor (GBA) community is a primary resource for finding professionals who engage with building science literature. By searching their &quot;Expert Exchange&quot; or reviewing contributors in your region, you can often find architects who specialize in high-performance design.</p>
 <p>Additionally, the American Institute of Architects (AIA) has a Committee on the Environment (COTE). Searching the AIA directory for architects in the Harrisburg area who list &quot;sustainability&quot; or &quot;high-performance design&quot; as a specialization can yield results. Be prepared to verify their portfolio; look for homes that feature continuous insulation, triple-pane windows, and high-performance HVAC systems like ground-source or air-source heat pumps.</p>
-<h2>Evaluating potential partners during the interview</h2>
+<h2 id="heading-4">Evaluating potential partners during the interview</h2>
 <p>Evaluating a professional involves gauging their willingness to use data-driven decision-making. Avoid professionals who dismiss your concerns with phrases like &quot;we have always done it that way&quot; or &quot;that is just how it is done here.&quot; A true building science expert will be able to explain the &quot;why&quot; behind their recommendations using physics principles.</p>
 <p>1. Request a sample energy model: A qualified professional should be able to show you a simple energy simulation or heat-load calculation for a previous project.
 2. Review their moisture management plan: Ask how they handle the interface between different materials to prevent interstitial condensation.
 3. Discuss sub-contractors: High-performance design is only as good as its execution. Ask if the architect has a preferred list of builders who are experienced in air-sealing and detailing.
 4. Check for membership in local energy-efficiency groups: Organizations like the Pennsylvania Energy Efficiency Alliance (PEEA) can be great starting points for networking with contractors who prioritize performance.</p>
-<h2>The role of the homeowner in the process</h2>
+<h2 id="heading-5">The role of the homeowner in the process</h2>
 <p>As a homeowner, your role is to act as the &quot;quality control&quot; agent. Even when working with a qualified professional, you must ensure the design intent is carried through to the construction phase. This involves requiring commissioning or third-party testing, such as a blower door test to measure air leakage rates and a duct blaster test to ensure the HVAC system is sealed properly.</p>
 <p>According to the National Institute of Building Sciences, commissioning a residential project—or at least having a rigorous third-party inspection process—can reduce long-term maintenance costs by 15% (NIBS, 2021). Do not be afraid to request that these tests be written into your contract with the builder. If a professional refuses to agree to performance-based testing, it is a clear sign that they are not confident in their ability to meet high-performance standards. By setting these expectations early, you filter out contractors who are not prepared to meet the demands of modern building science.</p>
 
@@ -262,6 +388,9 @@
     </div>
     
 
+    <!-- Next / Previous Study Navigation -->
+    <nav class="study-pagination" aria-label="Study pagination"><a href="../how-to-apply-chase-business-credit-card/" class="nav-card prev-card"><span class="nav-dir">← Previous Study</span><span class="nav-title">How to complete a Chase business credit card application</span></a><a href="../crypto-investing-fundamentals-vs-market-cap/" class="nav-card next-card"><span class="nav-dir">Next Study →</span><span class="nav-title">Why crypto investors are shifting from market-cap to fundamental analysis</span></a></nav>
+
     <!-- 1-Click Multi-Format Citation Widget -->
     <div class="citation-widget">
       <h4>
@@ -286,12 +415,32 @@
       <strong>Authoritative Reference:</strong> Published by Groundwork Media under Open Science principles. Permanent scholarly snapshot recorded at CERN Zenodo under Creative Commons. Central Portal: <a href="https://gworky.com">https://gworky.com</a>.
     </div>
 
-    <div class="footer">
-      <p><a href="https://groundworkpub.github.io">← Back to Groundwork Research Index</a> | <a href="https://gworky.com">Visit Groundwork Platform</a></p>
-    </div>
+    <footer class="footer">
+      <p><a href="../">← Back to Groundwork Research Index</a> | <a href="../home/">View All HOME Studies</a> | <a href="https://gworky.com">Visit Groundwork Platform</a></p>
+    </footer>
   </div>
 
+  <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">↑</a>
+
   <script>
+    // Reading progress bar & back to top
+    window.addEventListener('scroll', () => {
+      const winScroll = document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      const bar = document.getElementById('reading-progress');
+      if (bar) bar.style.width = scrolled + '%';
+
+      const topBtn = document.getElementById('backToTop');
+      if (topBtn) {
+        if (winScroll > 400) {
+          topBtn.classList.add('visible');
+        } else {
+          topBtn.classList.remove('visible');
+        }
+      }
+    });
+
     function copyCitation() {
       const text = document.getElementById('citation-text').innerText;
       navigator.clipboard.writeText(text).then(() => {

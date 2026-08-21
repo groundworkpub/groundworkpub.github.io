@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Groundwork Home Research Studies & Models</title>
+  <meta name="description" content="Open scientific and evidentiary research repository, real-time research digests, and interactive decision models for money, health, home, and modern tech.">
+  <link rel="canonical" href="https://gworky.com/home">
+  <link rel="alternate" type="application/rss+xml" title="Groundwork RSS Feed" href="https://groundworkpub.github.io/feed.xml" />
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  
+  <meta property="og:title" content="Groundwork Home Research Studies & Models">
+  <meta property="og:description" content="Open scientific repository and real-time decision intelligence archives.">
+  <meta property="og:image" content="https://groundworkpub.github.io/og.svg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  
+  <style>
+    :root {
+      --bg: #0A192F;
+      --card: #112240;
+      --card-alt: #1E2D4A;
+      --text: #CCD6F6;
+      --heading: #FFFFFF;
+      --accent: #10B981;
+      --accent-glow: rgba(16, 185, 129, 0.15);
+      --muted: #8892B0;
+      --border: rgba(255, 255, 255, 0.08);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif; background: var(--bg); color: var(--text); line-height: 1.6; padding-top: 70px; }
+    
+    .site-header { position: fixed; top: 0; left: 0; right: 0; background: rgba(10, 25, 47, 0.88); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); z-index: 1000; }
+    .header-inner { max-width: 1080px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 1.5rem; }
+    .header-brand { display: flex; align-items: center; gap: 12px; }
+    .brand-logo { color: #FFFFFF; text-decoration: none; font-size: 1.1rem; display: flex; align-items: center; gap: 6px; }
+    .logo-dot { color: #10B981; }
+    .brand-sub { color: #8892B0; font-size: 0.78rem; font-weight: normal; margin-left: 4px; }
+    .live-status-pill { display: inline-flex; align-items: center; gap: 6px; background: rgba(16, 185, 129, 0.12); color: #10B981; font-size: 0.72rem; font-weight: bold; padding: 2px 8px; border-radius: 9999px; border: 1px solid rgba(16, 185, 129, 0.25); }
+    .pulse-dot { width: 6px; height: 6px; background: #10B981; border-radius: 50%; display: inline-block; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+    
+    .header-nav { display: flex; gap: 12px; align-items: center; }
+    .nav-link { color: var(--muted); text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 4px 8px; border-radius: 6px; transition: all 0.2s; }
+    .nav-link:hover, .nav-link.active { color: #FFFFFF; background: rgba(255, 255, 255, 0.06); }
+    .gworky-link { color: #10B981 !important; border: 1px solid rgba(16, 185, 129, 0.3); }
+    
+    .container { max-width: 980px; margin: 2rem auto; padding: 0 1rem; }
+    .top-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 2rem; }
+    h1 { color: var(--heading); font-size: 2.3rem; margin-bottom: 0.4rem; font-family: Georgia, serif; }
+    .lead { color: var(--muted); font-size: 1.05rem; max-width: 650px; }
+    .badges-row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+    .doi-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--accent-glow); color: var(--accent); padding: 5px 14px; border-radius: 9999px; font-size: 0.82rem; font-weight: bold; text-decoration: none; border: 1px solid rgba(16,185,129,0.3); }
+    .oc-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(59, 130, 246, 0.15); color: #60A5FA; padding: 5px 14px; border-radius: 9999px; font-size: 0.82rem; font-weight: bold; text-decoration: none; border: 1px solid rgba(59, 130, 246, 0.3); }
+    .rss-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(245, 158, 11, 0.15); color: #FBBF24; padding: 5px 14px; border-radius: 9999px; font-size: 0.82rem; font-weight: bold; text-decoration: none; border: 1px solid rgba(245, 158, 11, 0.3); }
+    
+    /* Control Toolbar */
+    .toolbar { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; margin-bottom: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+    .search-input { width: 100%; background: #0A192F; border: 1px solid var(--border); border-radius: 8px; padding: 0.75rem 1rem; color: #FFFFFF; font-size: 0.95rem; outline: none; margin-bottom: 1rem; transition: border-color 0.2s; }
+    .search-input:focus { border-color: var(--accent); }
+    .filter-pills { display: flex; gap: 8px; flex-wrap: wrap; }
+    .filter-pill { background: #0A192F; color: var(--muted); border: 1px solid var(--border); border-radius: 6px; padding: 0.4rem 0.9rem; font-size: 0.82rem; font-weight: bold; cursor: pointer; transition: all 0.2s; text-decoration: none; display: inline-block; }
+    .filter-pill:hover { color: var(--heading); border-color: var(--accent); }
+    .filter-pill.active { background: var(--accent); color: #0A192F; border-color: var(--accent); }
+    
+    /* Cards Grid */
+    .study-card { background: var(--card); padding: 1.25rem 1.5rem; border-radius: 10px; margin-bottom: 1rem; border: 1px solid var(--border); transition: transform 0.15s, border-color 0.15s; }
+    .study-card:hover { border-color: rgba(16, 185, 129, 0.4); transform: translateY(-2px); }
+    .card-pill { font-size: 0.72rem; font-weight: bold; letter-spacing: 0.05em; padding: 2px 8px; border-radius: 4px; display: inline-block; }
+    .pill-study { background: rgba(255, 255, 255, 0.08); color: var(--accent); }
+    .pill-digest { background: var(--accent-glow); color: var(--accent); border: 1px solid rgba(16, 185, 129, 0.3); }
+    
+    .stats-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; font-size: 0.85rem; color: var(--muted); }
+    footer { margin-top: 4rem; padding: 2rem 0; border-top: 1px solid var(--border); text-align: center; color: var(--muted); font-size: 0.85rem; }
+    footer a { color: var(--accent); text-decoration: none; }
+
+    @media (max-width: 640px) {
+      body { padding-top: 60px; }
+      .header-nav { display: none; }
+    }
+  </style>
+</head>
+<body>
+  
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-brand">
+        <a href="../" class="brand-logo">
+          <span class="logo-dot">✦</span>
+          <strong>Groundwork</strong>
+          <span class="brand-sub">Open Research</span>
+        </a>
+        <span class="live-status-pill"><span class="pulse-dot"></span> 751 Studies Live</span>
+      </div>
+      <nav class="header-nav" aria-label="Main Navigation">
+        <a href="../" class="nav-link ">All</a>
+        <a href="../money/" class="nav-link">Money</a>
+<a href="../body/" class="nav-link">Body</a>
+<a href="../home/" class="nav-link active">Home</a>
+<a href="../tech/" class="nav-link">Tech</a>
+<a href="../life/" class="nav-link">Life</a>
+<a href="../digest/" class="nav-link">Digests</a>
+        <a href="https://gworky.com" target="_blank" rel="noopener" class="nav-link gworky-link">gworky.com ↗</a>
+      </nav>
+    </div>
+    <div id="reading-progress" class="reading-progress-bar"></div>
+  </header>
+
+
+  <div class="container">
+    <header class="top-header">
+      <div>
+        <h1>Groundwork Home Research Studies & Models</h1>
+        <p class="lead">Peer-verified decision whitepapers and real-time open intelligence digests. Connected to <a href="https://gworky.com" style="color: var(--accent); font-weight: bold;">Groundwork Media</a>.</p>
+      </div>
+      <div class="badges-row">
+        <a href="https://doi.org/10.5281/zenodo.22011567" target="_blank" rel="noopener" class="doi-badge">DOI: 10.5281/zenodo.22011567</a>
+        <a href="https://opencollective.com/gworkycom" target="_blank" rel="noopener" class="oc-badge">Open Collective</a>
+        <a href="https://groundworkpub.github.io/feed.xml" target="_blank" class="rss-badge">RSS Feed</a>
+      </div>
+    </header>
+
+    
+
+    <div class="toolbar">
+      <input type="text" id="search-box" class="search-input" placeholder="Search 94 whitepapers, decision models, or intelligence digests... (Press '/' to focus)" oninput="filterCards()">
+      <div class="filter-pills">
+        <button class="filter-pill " onclick="setFilter('all', this)">All (751)</button>
+        <button class="filter-pill " onclick="setFilter('money', this)">Money</button>
+        <button class="filter-pill " onclick="setFilter('body', this)">Body</button>
+        <button class="filter-pill active" onclick="setFilter('home', this)">Home</button>
+        <button class="filter-pill " onclick="setFilter('tech', this)">Tech</button>
+        <button class="filter-pill " onclick="setFilter('digest', this)">News Digests (32)</button>
+      </div>
+    </div>
+
+    <div class="stats-bar">
+      <span id="results-count">Displaying 94 open research studies and digests</span>
+      <span>CERN Zenodo Verified • <a href="../sitemap.html" style="color: #8892B0; text-decoration: underline;">HTML Sitemap</a></span>
+    </div>
+
+    <div id="cards-container">
+      
+        <article class="study-card" data-pillar="home" data-type="digest" data-search="earth is missing a billion years of history. we finally know why earth is missing a billion years of history. we finally know why&amp;nbsp;&amp;nbsp;zme sciencelost &#39;mega-escarpment&#39; across ancient usa may explain grand canyon&#39;s missing billion years&amp;nbsp;&amp;nbsp;phys.orggrand canyon timeline rewritten by uranium dating&amp;nbsp;&amp;nbsp;earth.comscientists may have found the missing piece behind the grand canyon&#39;s billion year gap&amp;nbsp;&amp;nbsp;studyfindsnorth america had a continent-spanning “mega-escarpment” a kilometer high and it might explain the grand canyon’s great mystery&amp;nbsp;&amp;nbsp;iflscience home">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+            <span class="card-pill pill-digest">HOME DIGEST</span>
+            <span style="color: #8892B0; font-size: 0.75rem;">Source: ZME Science</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../digest/earth-is-missing-a-billion-years-of-history-we-finally-know-why/" style="color: #FFFFFF; text-decoration: none;">Earth Is Missing a Billion Years of History. We Finally Know Why</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Earth Is Missing a Billion Years of History. We Finally Know Why&amp;nbsp;&amp;nbsp;ZME ScienceLost &#39;mega-escarpment&#39; across ancient USA may explain Grand Canyon&#39;s missing billion years&amp;nbsp;&amp;nbsp;Phys.orgGrand Canyon timeline rewritten by uranium dating&amp;nbsp;&amp;nbsp;Earth.comScientists May Have Found The Missing Piece Behind The Grand Canyon&#39;s Billion Year Gap&amp;nbsp;&amp;nbsp;StudyFindsNorth America Had A Continent-Spanning “Mega-Escarpment” A Kilometer High And It Might Explain The Grand Canyon’s Great Mystery&amp;nbsp;&amp;nbsp;IFLScience</p>
+          <a href="../digest/earth-is-missing-a-billion-years-of-history-we-finally-know-why/" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">Read Open Intelligence Digest &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="digest" data-search="rescue mission is called off for nasa&#39;s aging swift space telescope rescue mission is called off for nasa&#39;s aging swift space telescope&amp;nbsp;&amp;nbsp;phys.orgrescue mission can’t prevent nasa observatory from falling to earth&amp;nbsp;&amp;nbsp;cnnnasa’s attempt to save its falling telescope has failed&amp;nbsp;&amp;nbsp;the new york timesnasa mission to save its sinking space telescope fails&amp;nbsp;&amp;nbsp;nbc newsnasa&#39;s swift telescope will plunge toward earth after rescue mission called off&amp;nbsp;&amp;nbsp;cbs news home">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+            <span class="card-pill pill-digest">HOME DIGEST</span>
+            <span style="color: #8892B0; font-size: 0.75rem;">Source: Phys.org</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../digest/rescue-mission-is-called-off-for-nasas-aging-swift-space-telescope/" style="color: #FFFFFF; text-decoration: none;">Rescue mission is called off for NASA&#39;s aging Swift space telescope</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Rescue mission is called off for NASA&#39;s aging Swift space telescope&amp;nbsp;&amp;nbsp;Phys.orgRescue mission can’t prevent NASA observatory from falling to Earth&amp;nbsp;&amp;nbsp;CNNNASA’s Attempt to Save Its Falling Telescope Has Failed&amp;nbsp;&amp;nbsp;The New York TimesNASA mission to save its sinking space telescope fails&amp;nbsp;&amp;nbsp;NBC NewsNASA&#39;s Swift telescope will plunge toward Earth after rescue mission called off&amp;nbsp;&amp;nbsp;CBS News</p>
+          <a href="../digest/rescue-mission-is-called-off-for-nasas-aging-swift-space-telescope/" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">Read Open Intelligence Digest &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="digest" data-search="nasa reveals before-and-after images of moon crater left by spacex rocket nasa reveals before-and-after images of moon crater left by spacex rocket&amp;nbsp;&amp;nbsp;al.comnasa’s lro images falcon 9 crater on moon, learns new details&amp;nbsp;&amp;nbsp;nasa science (.gov)new images reveal what happened when a spacex rocket slammed into the moon&amp;nbsp;&amp;nbsp;cnnbefore-and-after images show where spacex rocket crashed into the moon&amp;nbsp;&amp;nbsp;the washington postthey&#39;ve done it. nasa&#39;s lunar probe has photographed the crater caused by a spacex rocket smashing into the moon&amp;nbsp;&amp;nbsp;bbc sky at night magazine home">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+            <span class="card-pill pill-digest">HOME DIGEST</span>
+            <span style="color: #8892B0; font-size: 0.75rem;">Source: AL.com</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../digest/nasa-reveals-before-and-after-images-of-moon-crater-left-by-spacex-rocket/" style="color: #FFFFFF; text-decoration: none;">NASA reveals before-and-after images of moon crater left by SpaceX rocket</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">NASA reveals before-and-after images of moon crater left by SpaceX rocket&amp;nbsp;&amp;nbsp;AL.comNASA’s LRO Images Falcon 9 Crater on Moon, Learns New Details&amp;nbsp;&amp;nbsp;NASA Science (.gov)New images reveal what happened when a SpaceX rocket slammed into the moon&amp;nbsp;&amp;nbsp;CNNBefore-and-after images show where SpaceX rocket crashed into the moon&amp;nbsp;&amp;nbsp;The Washington PostThey&#39;ve done it. NASA&#39;s lunar probe has photographed the crater caused by a SpaceX rocket smashing into the Moon&amp;nbsp;&amp;nbsp;BBC Sky at Night Magazine</p>
+          <a href="../digest/nasa-reveals-before-and-after-images-of-moon-crater-left-by-spacex-rocket/" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">Read Open Intelligence Digest &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="digest" data-search="san andreas fault: new san jose state university research finds fault is slipping faster than previously thought san andreas fault: new san jose state university research finds fault is slipping faster than previously thought&amp;nbsp;&amp;nbsp;abc7 los angelessan andreas fault just south of bay area is slipping faster than previously thought, geologist says&amp;nbsp;&amp;nbsp;san francisco chroniclesan andreas fault could shake northern california sooner than scientists thought&amp;nbsp;&amp;nbsp;the inertiathe ‘big one’ is coming: is california ready for the next major earthquake?&amp;nbsp;&amp;nbsp;daily signaldynamic activation: how seismic waves can trigger movements in the san andreas fault from afar&amp;nbsp;&amp;nbsp;noticias ambientales home">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+            <span class="card-pill pill-digest">HOME DIGEST</span>
+            <span style="color: #8892B0; font-size: 0.75rem;">Source: ABC7 Los Angeles</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../digest/san-andreas-fault-new-san-jose-state-university-research-finds-fault-is-slipping/" style="color: #FFFFFF; text-decoration: none;">San Andreas Fault: New San Jose State University research finds fault is slipping faster than previously thought</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">San Andreas Fault: New San Jose State University research finds fault is slipping faster than previously thought&amp;nbsp;&amp;nbsp;ABC7 Los AngelesSan Andreas Fault just south of Bay Area is slipping faster than previously thought, geologist says&amp;nbsp;&amp;nbsp;San Francisco ChronicleSan Andreas Fault Could Shake Northern California Sooner Than Scientists Thought&amp;nbsp;&amp;nbsp;The InertiaThe ‘Big One’ Is Coming: Is California Ready for the Next Major Earthquake?&amp;nbsp;&amp;nbsp;Daily SignalDynamic activation: how seismic waves can trigger movements in the San Andreas Fault from afar&amp;nbsp;&amp;nbsp;Noticias Ambientales</p>
+          <a href="../digest/san-andreas-fault-new-san-jose-state-university-research-finds-fault-is-slipping/" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">Read Open Intelligence Digest &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="digest" data-search="tax credits, incentives, and technical assistance for geothermal heat pumps tax credits, incentives, and technical assistance for geothermal heat pumps&amp;nbsp;&amp;nbsp;department of energy (.gov) home">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+            <span class="card-pill pill-digest">HOME DIGEST</span>
+            <span style="color: #8892B0; font-size: 0.75rem;">Source: Department of Energy (.gov)</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../digest/tax-credits-incentives-and-technical-assistance-for-geothermal-heat-pumps/" style="color: #FFFFFF; text-decoration: none;">Tax Credits, Incentives, and Technical Assistance for Geothermal Heat Pumps</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Tax Credits, Incentives, and Technical Assistance for Geothermal Heat Pumps&amp;nbsp;&amp;nbsp;Department of Energy (.gov)</p>
+          <a href="../digest/tax-credits-incentives-and-technical-assistance-for-geothermal-heat-pumps/" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">Read Open Intelligence Digest &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="digest" data-search="will u.s. households still buy heat pumps without a tax credit? will u.s. households still buy heat pumps without a tax credit?&amp;nbsp;&amp;nbsp;energy institute blog home">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+            <span class="card-pill pill-digest">HOME DIGEST</span>
+            <span style="color: #8892B0; font-size: 0.75rem;">Source: Energy Institute Blog</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../digest/will-us-households-still-buy-heat-pumps-without-a-tax-credit/" style="color: #FFFFFF; text-decoration: none;">Will U.S. Households Still Buy Heat Pumps Without a Tax Credit?</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Will U.S. Households Still Buy Heat Pumps Without a Tax Credit?&amp;nbsp;&amp;nbsp;Energy Institute Blog</p>
+          <a href="../digest/will-us-households-still-buy-heat-pumps-without-a-tax-credit/" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">Read Open Intelligence Digest &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="digest" data-search="2024-2025 energy tax credit: which home improvements qualify? 2024-2025 energy tax credit: which home improvements qualify?&amp;nbsp;&amp;nbsp;turbotax home">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+            <span class="card-pill pill-digest">HOME DIGEST</span>
+            <span style="color: #8892B0; font-size: 0.75rem;">Source: TurboTax</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../digest/2024-2025-energy-tax-credit-which-home-improvements-qualify/" style="color: #FFFFFF; text-decoration: none;">2024-2025 Energy Tax Credit: Which Home Improvements Qualify?</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">2024-2025 Energy Tax Credit: Which Home Improvements Qualify?&amp;nbsp;&amp;nbsp;TurboTax</p>
+          <a href="../digest/2024-2025-energy-tax-credit-which-home-improvements-qualify/" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">Read Open Intelligence Digest &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="digest" data-search="building energy-efficient homes across alaska: an investment in our future building energy-efficient homes across alaska: an investment in our future&amp;nbsp;&amp;nbsp;alaska housing finance corporation home">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+            <span class="card-pill pill-digest">HOME DIGEST</span>
+            <span style="color: #8892B0; font-size: 0.75rem;">Source: Alaska Housing Finance Corporation</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../digest/building-energy-efficient-homes-across-alaska-an-investment-in-our-future/" style="color: #FFFFFF; text-decoration: none;">Building Energy-Efficient Homes Across Alaska: An Investment in Our Future</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Building Energy-Efficient Homes Across Alaska: An Investment in Our Future&amp;nbsp;&amp;nbsp;Alaska Housing Finance Corporation</p>
+          <a href="../digest/building-energy-efficient-homes-across-alaska-an-investment-in-our-future/" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">Read Open Intelligence Digest &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="how to diagnose and repair structural insulated panel roof failures learn how to diagnose and repair sip roof moisture issues. discover why air-sealing and vapor management are critical to preventing structural rot in sips. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../structural-insulated-panel-sip-repair-guide/" style="color: #FFFFFF; text-decoration: none;">How to diagnose and repair structural insulated panel roof failures</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Learn how to diagnose and repair SIP roof moisture issues. Discover why air-sealing and vapor management are critical to preventing structural rot in SIPs.</p>
+          <a href="https://gworky.com/article/structural-insulated-panel-sip-repair-guide" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="how to select and apply asphalt driveway crack fillers learn how to select and apply the right asphalt driveway crack filler to prevent water damage and extend your pavement&#39;s life with this evidence-based guide. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../best-asphalt-driveway-crack-fillers-guide/" style="color: #FFFFFF; text-decoration: none;">How to select and apply asphalt driveway crack fillers</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Learn how to select and apply the right asphalt driveway crack filler to prevent water damage and extend your pavement&#39;s life with this evidence-based guide.</p>
+          <a href="https://gworky.com/article/best-asphalt-driveway-crack-fillers-guide" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="the colorado river crisis and the future of hydropower lake powell and lake mead are at historic lows, threatening hydropower generation. learn how this energy crisis impacts regional grids and utility costs. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../colorado-river-hydropower-crisis/" style="color: #FFFFFF; text-decoration: none;">The Colorado River crisis and the future of hydropower</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Lake Powell and Lake Mead are at historic lows, threatening hydropower generation. Learn how this energy crisis impacts regional grids and utility costs.</p>
+          <a href="https://gworky.com/article/colorado-river-hydropower-crisis" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="an analysis of current us energy production and the permian basin u.s. oil and natural gas production is at record highs. understand how permian basin growth and lng export policies impact domestic energy markets and prices. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../us-energy-production-analysis-midland-texas/" style="color: #FFFFFF; text-decoration: none;">An analysis of current US energy production and the Permian Basin</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">U.S. oil and natural gas production is at record highs. Understand how Permian Basin growth and LNG export policies impact domestic energy markets and prices.</p>
+          <a href="https://gworky.com/article/us-energy-production-analysis-midland-texas" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="how utilities can integrate continuous improvement into wildfire mitigation learn how utilities can transition to a centralized, data-driven wildfire mitigation model to improve grid resiliency and manage compounding climate risks. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../utility-wildfire-mitigation-continuous-improvement/" style="color: #FFFFFF; text-decoration: none;">How utilities can integrate continuous improvement into wildfire mitigation</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Learn how utilities can transition to a centralized, data-driven wildfire mitigation model to improve grid resiliency and manage compounding climate risks.</p>
+          <a href="https://gworky.com/article/utility-wildfire-mitigation-continuous-improvement" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="evaluating greenworks battery-powered outdoor tools for your landscape learn how to choose the right voltage for your outdoor tools. groundwork explains the differences between 24v, 40v, and 80v battery systems for lawn care. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../evaluating-greenworks-battery-powered-outdoor-tools/" style="color: #FFFFFF; text-decoration: none;">Evaluating greenworks battery-powered outdoor tools for your landscape</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Learn how to choose the right voltage for your outdoor tools. Groundwork explains the differences between 24V, 40V, and 80V battery systems for lawn care.</p>
+          <a href="https://gworky.com/article/evaluating-greenworks-battery-powered-outdoor-tools" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="the best downspout extensions for foundation protection protect your home&#39;s foundation by choosing the right downspout extension. learn how to select, install, and maintain the best drainage solutions. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../best-downspout-extensions-foundation-protection/" style="color: #FFFFFF; text-decoration: none;">The best downspout extensions for foundation protection</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Protect your home&#39;s foundation by choosing the right downspout extension. Learn how to select, install, and maintain the best drainage solutions.</p>
+          <a href="https://gworky.com/article/best-downspout-extensions-foundation-protection" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="the best kitchen cleaners for grease, grime, and food messes find the best kitchen cleaners for grease, grime, and food messes. learn how to choose the right ph for your surfaces and keep your kitchen sanitary. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../best-kitchen-cleaners-for-grease-and-grime/" style="color: #FFFFFF; text-decoration: none;">The best kitchen cleaners for grease, grime, and food messes</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Find the best kitchen cleaners for grease, grime, and food messes. Learn how to choose the right pH for your surfaces and keep your kitchen sanitary.</p>
+          <a href="https://gworky.com/article/best-kitchen-cleaners-for-grease-and-grime" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="how to evaluate portable power station deals for emergency home backup evaluate portable power station capacity, battery chemistry, and per-watt-hour pricing to choose the right emergency backup generator for your home. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../portable-power-station-buying-guide-deals/" style="color: #FFFFFF; text-decoration: none;">How to evaluate portable power station deals for emergency home backup</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Evaluate portable power station capacity, battery chemistry, and per-watt-hour pricing to choose the right emergency backup generator for your home.</p>
+          <a href="https://gworky.com/article/portable-power-station-buying-guide-deals" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="maintaining your heat pump dryer: addressing lint buildup and filter performance learn how to diagnose and manage lint buildup in heat pump dryers. discover why coil maintenance is critical and when to consider a newer, more efficient model. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../whirlpool-heat-pump-dryer-maintenance-guide/" style="color: #FFFFFF; text-decoration: none;">Maintaining your heat pump dryer: addressing lint buildup and filter performance</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Learn how to diagnose and manage lint buildup in heat pump dryers. Discover why coil maintenance is critical and when to consider a newer, more efficient model.</p>
+          <a href="https://gworky.com/article/whirlpool-heat-pump-dryer-maintenance-guide" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="basement insulation strategy: a building science guide learn the most effective basement insulation strategy using continuous rigid foam to prevent moisture, stop inward vapor drive, and improve energy efficiency. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../basement-insulation-strategy-guide/" style="color: #FFFFFF; text-decoration: none;">Basement insulation strategy: a building science guide</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Learn the most effective basement insulation strategy using continuous rigid foam to prevent moisture, stop inward vapor drive, and improve energy efficiency.</p>
+          <a href="https://gworky.com/article/basement-insulation-strategy-guide" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="how to design a house shaped by climate passive design uses local geography and thermal mass to regulate home comfort without mechanical hvac. learn how to optimize your build for energy efficiency. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../passive-design-principles-for-climate-responsive-homes/" style="color: #FFFFFF; text-decoration: none;">How to design a house shaped by climate</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Passive design uses local geography and thermal mass to regulate home comfort without mechanical HVAC. Learn how to optimize your build for energy efficiency.</p>
+          <a href="https://gworky.com/article/passive-design-principles-for-climate-responsive-homes" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="do you need a vapor retarder in your wall assembly? do you need a vapor retarder? learn why modern building science often suggests avoiding them, especially when you have continuous exterior insulation. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../do-you-need-a-vapor-retarder-in-your-wall-assembly/" style="color: #FFFFFF; text-decoration: none;">Do you need a vapor retarder in your wall assembly?</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Do you need a vapor retarder? Learn why modern building science often suggests avoiding them, especially when you have continuous exterior insulation.</p>
+          <a href="https://gworky.com/article/do-you-need-a-vapor-retarder-in-your-wall-assembly" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="the science and selection of the best mulching lawn mowers mulching mowers return nutrients to your soil and save time on disposal. learn how to choose the best model based on deck design, blade tech, and power. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../best-mulching-lawn-mowers-guide/" style="color: #FFFFFF; text-decoration: none;">The science and selection of the best mulching lawn mowers</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Mulching mowers return nutrients to your soil and save time on disposal. Learn how to choose the best model based on deck design, blade tech, and power.</p>
+          <a href="https://gworky.com/article/best-mulching-lawn-mowers-guide" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="wave energy project resilience and the reality of coastal infrastructure wave energy projects face unique risks from coastal infrastructure damage. learn how developers manage storm-related delays and infrastructure dependencies. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../wave-energy-infrastructure-resilience-lessons/" style="color: #FFFFFF; text-decoration: none;">Wave energy project resilience and the reality of coastal infrastructure</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Wave energy projects face unique risks from coastal infrastructure damage. Learn how developers manage storm-related delays and infrastructure dependencies.</p>
+          <a href="https://gworky.com/article/wave-energy-infrastructure-resilience-lessons" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="where to buy affordable art online: a guide to sourcing quality pieces learn where to buy affordable, high-quality art online. we break down the best marketplaces, how to verify print quality, and how to manage framing costs. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../where-to-buy-affordable-art-online/" style="color: #FFFFFF; text-decoration: none;">Where to buy affordable art online: a guide to sourcing quality pieces</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Learn where to buy affordable, high-quality art online. We break down the best marketplaces, how to verify print quality, and how to manage framing costs.</p>
+          <a href="https://gworky.com/article/where-to-buy-affordable-art-online" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="principles of sukiya-style home design and garden integration learn how the sukiya-style architectural philosophy balances indoor living with garden harmony, focusing on natural materials and long-term preservation. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../principles-of-sukiya-style-home-design/" style="color: #FFFFFF; text-decoration: none;">Principles of sukiya-style home design and garden integration</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Learn how the sukiya-style architectural philosophy balances indoor living with garden harmony, focusing on natural materials and long-term preservation.</p>
+          <a href="https://gworky.com/article/principles-of-sukiya-style-home-design" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="how to evaluate and buy discounted professional power tools learn how to evaluate professional tool deals and identify genuine value when brands like bosch offer deep discounts on drills, saws, and impact drivers. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../bosch-tool-deals-guide/" style="color: #FFFFFF; text-decoration: none;">How to evaluate and buy discounted professional power tools</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Learn how to evaluate professional tool deals and identify genuine value when brands like Bosch offer deep discounts on drills, saws, and impact drivers.</p>
+          <a href="https://gworky.com/article/bosch-tool-deals-guide" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="how to achieve custom color caulking for home exterior finishes learn how to achieve a perfect color match for your exterior caulk using professional tinting systems, paintable sealants, and proper application techniques. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../custom-color-caulking-solutions/" style="color: #FFFFFF; text-decoration: none;">How to achieve custom color caulking for home exterior finishes</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Learn how to achieve a perfect color match for your exterior caulk using professional tinting systems, paintable sealants, and proper application techniques.</p>
+          <a href="https://gworky.com/article/custom-color-caulking-solutions" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="future-proof home upgrades that provide lasting value future-proof your home by focusing on structural integrity, electrical capacity, and water management. avoid trends; invest in long-term functional value. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../future-proof-home-upgrades-guide/" style="color: #FFFFFF; text-decoration: none;">Future-proof home upgrades that provide lasting value</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Future-proof your home by focusing on structural integrity, electrical capacity, and water management. Avoid trends; invest in long-term functional value.</p>
+          <a href="https://gworky.com/article/future-proof-home-upgrades-guide" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="why improving your home’s weather resilience starts with the roof a roof is your home’s primary shield against water damage. learn how to identify early signs of roof failure and select weather-resilient materials. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../home-weather-resilience-roof-maintenance/" style="color: #FFFFFF; text-decoration: none;">Why improving your home’s weather resilience starts with the roof</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">A roof is your home’s primary shield against water damage. Learn how to identify early signs of roof failure and select weather-resilient materials.</p>
+          <a href="https://gworky.com/article/home-weather-resilience-roof-maintenance" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="portacool apex 500: an evidence-based review of performance and efficiency the portacool apex 500 is a premium evaporative cooler offering high-velocity airflow and smart controls. learn if it&#39;s the right choice for your climate. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../portacool-apex-500-evaporative-cooler-review/" style="color: #FFFFFF; text-decoration: none;">Portacool apex 500: an evidence-based review of performance and efficiency</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">The Portacool Apex 500 is a premium evaporative cooler offering high-velocity airflow and smart controls. Learn if it&#39;s the right choice for your climate.</p>
+          <a href="https://gworky.com/article/portacool-apex-500-evaporative-cooler-review" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="what those lines on traffic lights really mean and why they matter dallas display traffic lights use physical louvers to restrict visibility to specific lanes. learn why these lines exist and how they impact your driving. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../what-are-dallas-display-traffic-lights/" style="color: #FFFFFF; text-decoration: none;">What those lines on traffic lights really mean and why they matter</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Dallas Display traffic lights use physical louvers to restrict visibility to specific lanes. Learn why these lines exist and how they impact your driving.</p>
+          <a href="https://gworky.com/article/what-are-dallas-display-traffic-lights" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="how to use a ruler correctly: understanding the zero mark learn why many rulers have a gap before the zero mark and how to measure accurately. stop using the ruler edge and start using the zero line for precision. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../how-to-use-a-ruler-correctly/" style="color: #FFFFFF; text-decoration: none;">How to use a ruler correctly: understanding the zero mark</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Learn why many rulers have a gap before the zero mark and how to measure accurately. Stop using the ruler edge and start using the zero line for precision.</p>
+          <a href="https://gworky.com/article/how-to-use-a-ruler-correctly" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="how utility-scale solar and battery storage projects are developed utility-scale solar and storage projects are complex infrastructure assets. learn the development lifecycle, financial risks, and grid integration requirements. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../utility-scale-solar-storage-development/" style="color: #FFFFFF; text-decoration: none;">How utility-scale solar and battery storage projects are developed</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Utility-scale solar and storage projects are complex infrastructure assets. Learn the development lifecycle, financial risks, and grid integration requirements.</p>
+          <a href="https://gworky.com/article/utility-scale-solar-storage-development" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="how to diagnose and repair heat pump failures a heat pump failure is often a symptom, not a cause. learn how to diagnose high-pressure switch issues and decide when to repair or replace your hvac unit. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../hvac-repair-heat-pump-diagnostic-guide/" style="color: #FFFFFF; text-decoration: none;">How to diagnose and repair heat pump failures</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">A heat pump failure is often a symptom, not a cause. Learn how to diagnose high-pressure switch issues and decide when to repair or replace your HVAC unit.</p>
+          <a href="https://gworky.com/article/hvac-repair-heat-pump-diagnostic-guide" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="installing plumbing in exterior basement walls installing plumbing in exterior basement walls is high-risk in cold climates. learn how to manage thermal boundaries, air sealing, and pipe placement safely. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../piping-in-exterior-basement-walls/" style="color: #FFFFFF; text-decoration: none;">Installing plumbing in exterior basement walls</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Installing plumbing in exterior basement walls is high-risk in cold climates. Learn how to manage thermal boundaries, air sealing, and pipe placement safely.</p>
+          <a href="https://gworky.com/article/piping-in-exterior-basement-walls" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="whole-house dehumidifier selection guide learn how to select the right whole-house dehumidifier based on square footage, energy efficiency, and hvac integration to maintain optimal indoor humidity. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../best-whole-house-dehumidifiers/" style="color: #FFFFFF; text-decoration: none;">Whole-house dehumidifier selection guide</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Learn how to select the right whole-house dehumidifier based on square footage, energy efficiency, and HVAC integration to maintain optimal indoor humidity.</p>
+          <a href="https://gworky.com/article/best-whole-house-dehumidifiers" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="how to select the right wood stain for your project selecting the best wood stain requires matching the chemical formula to your wood type. learn how to choose between water-based, oil, and gel stains. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../best-wood-stains-selection-guide/" style="color: #FFFFFF; text-decoration: none;">How to select the right wood stain for your project</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Selecting the best wood stain requires matching the chemical formula to your wood type. Learn how to choose between water-based, oil, and gel stains.</p>
+          <a href="https://gworky.com/article/best-wood-stains-selection-guide" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="finding a building science professional in harrisburg, pa finding a building science professional in harrisburg requires vetting for specific certifications like cphc or bpi and prioritizing data-driven design. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../finding-building-science-professionals-harrisburg-pa/" style="color: #FFFFFF; text-decoration: none;">Finding a building science professional in Harrisburg, PA</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Finding a building science professional in Harrisburg requires vetting for specific certifications like CPHC or BPI and prioritizing data-driven design.</p>
+          <a href="https://gworky.com/article/finding-building-science-professionals-harrisburg-pa" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="how to maximize savings during end-of-season patio sales learn why late summer is the best time to buy patio furniture and how to identify high-quality deals during end-of-season sales at major retailers. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../lowes-end-of-season-patio-sale-guide/" style="color: #FFFFFF; text-decoration: none;">How to maximize savings during end-of-season patio sales</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Learn why late summer is the best time to buy patio furniture and how to identify high-quality deals during end-of-season sales at major retailers.</p>
+          <a href="https://gworky.com/article/lowes-end-of-season-patio-sale-guide" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="how to insulate basement walls showing efflorescence applying spray foam over basement walls with efflorescence can trap moisture and cause rot. learn why exterior insulation is the safer, more effective choice. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../insulating-basement-walls-with-efflorescence/" style="color: #FFFFFF; text-decoration: none;">How to insulate basement walls showing efflorescence</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Applying spray foam over basement walls with efflorescence can trap moisture and cause rot. Learn why exterior insulation is the safer, more effective choice.</p>
+          <a href="https://gworky.com/article/insulating-basement-walls-with-efflorescence" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="how to restore a midcentury modern home with historical integrity learn how to restore a midcentury modern home by preserving historic materials like terrazzo and marble while updating the space for modern living. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../restoring-midcentury-modern-homes/" style="color: #FFFFFF; text-decoration: none;">How to restore a midcentury modern home with historical integrity</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Learn how to restore a midcentury modern home by preserving historic materials like terrazzo and marble while updating the space for modern living.</p>
+          <a href="https://gworky.com/article/restoring-midcentury-modern-homes" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="how to evaluate current ryobi power tool deals learn how to evaluate current ryobi tool deals at the home depot. we break down the value of 18v one+ kits, brushless hp performance, and battery maintenance. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../home-depot-ryobi-tool-deals-guide/" style="color: #FFFFFF; text-decoration: none;">How to evaluate current Ryobi power tool deals</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Learn how to evaluate current Ryobi tool deals at The Home Depot. We break down the value of 18V ONE+ kits, brushless HP performance, and battery maintenance.</p>
+          <a href="https://gworky.com/article/home-depot-ryobi-tool-deals-guide" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="a guide to the greenworks powerall 24v tool system the greenworks powerall 24v system offers a high-performance, unified battery platform for over 200 tools. learn why its brushless motors and 24v cells matter. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../greenworks-powerall-24v-review/" style="color: #FFFFFF; text-decoration: none;">A guide to the Greenworks PowerAll 24V tool system</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">The Greenworks PowerAll 24V system offers a high-performance, unified battery platform for over 200 tools. Learn why its brushless motors and 24V cells matter.</p>
+          <a href="https://gworky.com/article/greenworks-powerall-24v-review" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="why the j.h. campbell power plant remains operational learn why the u.s. government is mandating the continued operation of the j.h. campbell coal plant to prevent grid instability and potential power blackouts. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../midwest-grid-reliability-coal-plant-emergency-orders/" style="color: #FFFFFF; text-decoration: none;">Why the J.H. Campbell power plant remains operational</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Learn why the U.S. government is mandating the continued operation of the J.H. Campbell coal plant to prevent grid instability and potential power blackouts.</p>
+          <a href="https://gworky.com/article/midwest-grid-reliability-coal-plant-emergency-orders" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="does roof-mounted intake ventilation work in cold climates? roof-mounted intake vents frequently fail in cold climates when buried by snow. learn why this happens and how to manage attic ventilation effectively. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../roof-intake-ventilation-snow-performance/" style="color: #FFFFFF; text-decoration: none;">Does roof-mounted intake ventilation work in cold climates?</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Roof-mounted intake vents frequently fail in cold climates when buried by snow. Learn why this happens and how to manage attic ventilation effectively.</p>
+          <a href="https://gworky.com/article/roof-intake-ventilation-snow-performance" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="what to do if a tree falls on your house a tree falling on your house is a structural emergency. follow this guide to secure your family, mitigate further damage, and navigate your insurance claim. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../what-to-do-if-a-tree-falls-on-your-house/" style="color: #FFFFFF; text-decoration: none;">What to do if a tree falls on your house</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">A tree falling on your house is a structural emergency. Follow this guide to secure your family, mitigate further damage, and navigate your insurance claim.</p>
+          <a href="https://gworky.com/article/what-to-do-if-a-tree-falls-on-your-house" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="how long do fire extinguishers last? most fire extinguishers last 5 to 15 years. learn how to check your unit&#39;s pressure, identify expiration signs, and know when it&#39;s time to replace it. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../how-long-do-fire-extinguishers-last/" style="color: #FFFFFF; text-decoration: none;">How long do fire extinguishers last?</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Most fire extinguishers last 5 to 15 years. Learn how to check your unit&#39;s pressure, identify expiration signs, and know when it&#39;s time to replace it.</p>
+          <a href="https://gworky.com/article/how-long-do-fire-extinguishers-last" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="understanding the renewaire aeri mt energy recovery ventilator the renewaire aeri mt is a balanced energy recovery ventilator (erv) designed for airtight homes. learn how it manages moisture, improves iaq, and works. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../renewaire-aeri-mt-review/" style="color: #FFFFFF; text-decoration: none;">Understanding the Renewaire Aeri MT energy recovery ventilator</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">The Renewaire Aeri MT is a balanced energy recovery ventilator (ERV) designed for airtight homes. Learn how it manages moisture, improves IAQ, and works.</p>
+          <a href="https://gworky.com/article/renewaire-aeri-mt-review" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="how to design a nursery with secondhand furniture designing a nursery with secondhand furniture creates a durable, unique space. learn which vintage pieces are safe to repurpose and how to source them. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../designing-a-secondhand-nursery/" style="color: #FFFFFF; text-decoration: none;">How to design a nursery with secondhand furniture</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Designing a nursery with secondhand furniture creates a durable, unique space. Learn which vintage pieces are safe to repurpose and how to source them.</p>
+          <a href="https://gworky.com/article/designing-a-secondhand-nursery" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="how to choose an accent chair for your home learn how to select the perfect accent chair by balancing sculptural design with ergonomic support, material durability, and strategic room placement. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../how-to-choose-accent-chairs/" style="color: #FFFFFF; text-decoration: none;">How to choose an accent chair for your home</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Learn how to select the perfect accent chair by balancing sculptural design with ergonomic support, material durability, and strategic room placement.</p>
+          <a href="https://gworky.com/article/how-to-choose-accent-chairs" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="how to choose the right linen curtains for your home learn how to choose the right linen curtains for your home. we cover light filtration, hanging styles, and maintenance tips for a timeless, elegant look. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../how-to-choose-linen-curtains/" style="color: #FFFFFF; text-decoration: none;">How to choose the right linen curtains for your home</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Learn how to choose the right linen curtains for your home. We cover light filtration, hanging styles, and maintenance tips for a timeless, elegant look.</p>
+          <a href="https://gworky.com/article/how-to-choose-linen-curtains" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="what you need to know before buying a car out of state buying a car out of state requires careful planning. learn how to navigate sales tax, registration, and emissions requirements to avoid costly mistakes. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../buying-car-out-of-state-guide/" style="color: #FFFFFF; text-decoration: none;">What you need to know before buying a car out of state</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Buying a car out of state requires careful planning. Learn how to navigate sales tax, registration, and emissions requirements to avoid costly mistakes.</p>
+          <a href="https://gworky.com/article/buying-car-out-of-state-guide" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="why gas station pump handles have different colors gas pump handle colors are not standardized in the u.s. learn why you should ignore the handle color and how to correctly identify your fuel type. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../gas-pump-handle-colors-meaning/" style="color: #FFFFFF; text-decoration: none;">Why gas station pump handles have different colors</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Gas pump handle colors are not standardized in the U.S. Learn why you should ignore the handle color and how to correctly identify your fuel type.</p>
+          <a href="https://gworky.com/article/gas-pump-handle-colors-meaning" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="how to choose the right cocktail glassware for your home bar learn how to choose the right cocktail glassware based on drink style, temperature, and aroma. master your home bar with these essential, evidence-based tips. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../best-cocktail-glassware-guide/" style="color: #FFFFFF; text-decoration: none;">How to choose the right cocktail glassware for your home bar</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Learn how to choose the right cocktail glassware based on drink style, temperature, and aroma. Master your home bar with these essential, evidence-based tips.</p>
+          <a href="https://gworky.com/article/best-cocktail-glassware-guide" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="how to choose the best pitchfork for gardening and yard work learn how to choose the right pitchfork for your garden. we break down the differences between digging and manure forks, durability markers, and maintenance. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../how-to-choose-best-pitchfork-gardening/" style="color: #FFFFFF; text-decoration: none;">How to choose the best pitchfork for gardening and yard work</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Learn how to choose the right pitchfork for your garden. We break down the differences between digging and manure forks, durability markers, and maintenance.</p>
+          <a href="https://gworky.com/article/how-to-choose-best-pitchfork-gardening" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="how to choose and use the best vole repellents learn how to choose and apply the best vole repellents to protect your yard. discover expert-backed methods for safe, effective rodent control. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../best-vole-repellents/" style="color: #FFFFFF; text-decoration: none;">How to choose and use the best vole repellents</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Learn how to choose and apply the best vole repellents to protect your yard. Discover expert-backed methods for safe, effective rodent control.</p>
+          <a href="https://gworky.com/article/best-vole-repellents" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="how to choose the best small bathroom vanity for your space learn how to choose the right small bathroom vanity by measuring your space, selecting durable materials, and optimizing storage for a functional powder room. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../best-small-bathroom-vanities-for-tight-spaces/" style="color: #FFFFFF; text-decoration: none;">How to choose the best small bathroom vanity for your space</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Learn how to choose the right small bathroom vanity by measuring your space, selecting durable materials, and optimizing storage for a functional powder room.</p>
+          <a href="https://gworky.com/article/best-small-bathroom-vanities-for-tight-spaces" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="how to choose the best comforter for your sleep needs learn how to choose the right comforter by understanding fill materials, construction methods, and warmth levels for optimal sleep quality and comfort. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../best-comforters-for-your-bed/" style="color: #FFFFFF; text-decoration: none;">How to choose the best comforter for your sleep needs</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Learn how to choose the right comforter by understanding fill materials, construction methods, and warmth levels for optimal sleep quality and comfort.</p>
+          <a href="https://gworky.com/article/best-comforters-for-your-bed" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="understanding luxury real estate pricing and market adjustments learn how luxury property price adjustments work and why high-end homes often face long market times, using the pratt-schwarzenegger estate as a case study. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../pratt-schwarzenegger-pacific-palisades-listing/" style="color: #FFFFFF; text-decoration: none;">Understanding luxury real estate pricing and market adjustments</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Learn how luxury property price adjustments work and why high-end homes often face long market times, using the Pratt-Schwarzenegger estate as a case study.</p>
+          <a href="https://gworky.com/article/pratt-schwarzenegger-pacific-palisades-listing" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="how to insulate small attic spaces through eaves learn how to insulate small, hard-to-reach attic eaves by air sealing top plates, installing ventilation baffles, and choosing the right insulation material. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../insulating-small-attic-eaves/" style="color: #FFFFFF; text-decoration: none;">How to insulate small attic spaces through eaves</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Learn how to insulate small, hard-to-reach attic eaves by air sealing top plates, installing ventilation baffles, and choosing the right insulation material.</p>
+          <a href="https://gworky.com/article/insulating-small-attic-eaves" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="the best folding chairs for small-space entertaining discover how to choose the best folding chairs for small-space entertaining. we explain how to evaluate materials, storage, and safety for the best results. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../best-folding-chairs-for-small-spaces/" style="color: #FFFFFF; text-decoration: none;">The best folding chairs for small-space entertaining</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Discover how to choose the best folding chairs for small-space entertaining. We explain how to evaluate materials, storage, and safety for the best results.</p>
+          <a href="https://gworky.com/article/best-folding-chairs-for-small-spaces" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="the best spider killers and repellents for your home learn how to choose the best spider killers and repellents. we cover natural, chemical, and preventative methods to keep your home pest-free safely. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../best-spider-killers-and-repellents/" style="color: #FFFFFF; text-decoration: none;">The best spider killers and repellents for your home</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Learn how to choose the best spider killers and repellents. We cover natural, chemical, and preventative methods to keep your home pest-free safely.</p>
+          <a href="https://gworky.com/article/best-spider-killers-and-repellents" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="why clean energy project cancellations are stalling job growth clean energy project cancellations are stalling job growth and economic output. learn why projects are failing and how this impacts the green energy sector. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../clean-energy-project-cancellations-economic-impact/" style="color: #FFFFFF; text-decoration: none;">Why clean energy project cancellations are stalling job growth</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Clean energy project cancellations are stalling job growth and economic output. Learn why projects are failing and how this impacts the green energy sector.</p>
+          <a href="https://gworky.com/article/clean-energy-project-cancellations-economic-impact" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="how to fix high humidity in airtight homes airtight homes trap moisture, leading to high humidity. learn why your mini-splits aren&#39;t enough and how to use ventilation or dehumidifiers to fix it. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../fixing-high-humidity-in-airtight-homes/" style="color: #FFFFFF; text-decoration: none;">How to fix high humidity in airtight homes</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Airtight homes trap moisture, leading to high humidity. Learn why your mini-splits aren&#39;t enough and how to use ventilation or dehumidifiers to fix it.</p>
+          <a href="https://gworky.com/article/fixing-high-humidity-in-airtight-homes" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="how to identify and prevent cast iron pipe collapse cast iron pipes installed before the mid-1970s are prone to structural collapse. learn how to identify warning signs and when to replace your sewer lines. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../cast-iron-pipe-failure/" style="color: #FFFFFF; text-decoration: none;">How to identify and prevent cast iron pipe collapse</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Cast iron pipes installed before the mid-1970s are prone to structural collapse. Learn how to identify warning signs and when to replace your sewer lines.</p>
+          <a href="https://gworky.com/article/cast-iron-pipe-failure" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="the best boneless couches: what we learned from testing 4 budget options a boneless couch is a frameless, foam-based seating solution. we tested four budget models to see if they offer enough support for daily living. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../best-boneless-couches-tested/" style="color: #FFFFFF; text-decoration: none;">The best boneless couches: what we learned from testing 4 budget options</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">A boneless couch is a frameless, foam-based seating solution. We tested four budget models to see if they offer enough support for daily living.</p>
+          <a href="https://gworky.com/article/best-boneless-couches-tested" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="how to use google verbatim for exact search results google verbatim is a setting that forces google to show results for your exact words. learn how to activate it and filter out irrelevant search results. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../how-to-use-google-verbatim-for-exact-search-results/" style="color: #FFFFFF; text-decoration: none;">How to use Google verbatim for exact search results</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Google Verbatim is a setting that forces Google to show results for your exact words. Learn how to activate it and filter out irrelevant search results.</p>
+          <a href="https://gworky.com/article/how-to-use-google-verbatim-for-exact-search-results" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="cellulose insulation: a guide for modern home builds cellulose insulation offers high-density thermal performance and moisture regulation. learn how to choose between standard and clean fiber for your home. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../cellulose-insulation-guide/" style="color: #FFFFFF; text-decoration: none;">Cellulose insulation: a guide for modern home builds</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Cellulose insulation offers high-density thermal performance and moisture regulation. Learn how to choose between standard and clean fiber for your home.</p>
+          <a href="https://gworky.com/article/cellulose-insulation-guide" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="how to choose the best pillow for your sleeping position learn how to choose the right pillow based on your sleeping position, thermal needs, and material preferences to ensure proper spinal alignment and support. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../how-to-choose-the-best-pillow-for-your-sleeping-position/" style="color: #FFFFFF; text-decoration: none;">How to choose the best pillow for your sleeping position</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Learn how to choose the right pillow based on your sleeping position, thermal needs, and material preferences to ensure proper spinal alignment and support.</p>
+          <a href="https://gworky.com/article/how-to-choose-the-best-pillow-for-your-sleeping-position" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="why school buses have black stripes on their sides those black stripes on the side of school buses are called rub rails. they are structural steel reinforcements designed to protect the bus body from impact. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../why-school-buses-have-black-stripes/" style="color: #FFFFFF; text-decoration: none;">Why school buses have black stripes on their sides</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Those black stripes on the side of school buses are called rub rails. They are structural steel reinforcements designed to protect the bus body from impact.</p>
+          <a href="https://gworky.com/article/why-school-buses-have-black-stripes" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="how to manage intake roof venting in cold climates installing intake vents in cold climates requires careful planning. learn why edge vents may fail in snow and how to effectively prevent ice dams. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../how-to-manage-intake-roof-venting-in-cold-climates/" style="color: #FFFFFF; text-decoration: none;">How to manage intake roof venting in cold climates</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Installing intake vents in cold climates requires careful planning. Learn why edge vents may fail in snow and how to effectively prevent ice dams.</p>
+          <a href="https://gworky.com/article/how-to-manage-intake-roof-venting-in-cold-climates" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="how to manage the transition between basement waterproofing and above-grade stucco learn how to manage the transition between basement waterproofing and above-grade stucco to prevent moisture infiltration and ensure a durable wall assembly. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../waterproofing-icf-walls-transition/" style="color: #FFFFFF; text-decoration: none;">How to manage the transition between basement waterproofing and above-grade stucco</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Learn how to manage the transition between basement waterproofing and above-grade stucco to prevent moisture infiltration and ensure a durable wall assembly.</p>
+          <a href="https://gworky.com/article/waterproofing-icf-walls-transition" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="how utility-grade ai and automation are building a resilient power grid grid resiliency now relies on edge automation and utility-grade ai. learn how modern distribution systems manage complexity and improve recovery from outages. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../utility-grade-ai-and-grid-resilience/" style="color: #FFFFFF; text-decoration: none;">How utility-grade AI and automation are building a resilient power grid</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Grid resiliency now relies on edge automation and utility-grade AI. Learn how modern distribution systems manage complexity and improve recovery from outages.</p>
+          <a href="https://gworky.com/article/utility-grade-ai-and-grid-resilience" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="maximizing electric vehicle incentives: a state-by-state guide federal ev credits have sunset. learn how to secure funding for electric vehicle and charging infrastructure through utility-led programs and state grants. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../maximizing-electric-vehicle-incentives-state-utility-guide/" style="color: #FFFFFF; text-decoration: none;">Maximizing electric vehicle incentives: A state-by-state guide</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Federal EV credits have sunset. Learn how to secure funding for electric vehicle and charging infrastructure through utility-led programs and state grants.</p>
+          <a href="https://gworky.com/article/maximizing-electric-vehicle-incentives-state-utility-guide" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="how to choose a fire pit during seasonal clearance sales learn how to save up to 68% on fire pits during seasonal sales and how to choose the right fuel type, safety features, and size for your outdoor space. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../wayfair-fire-pit-sale-guide/" style="color: #FFFFFF; text-decoration: none;">How to choose a fire pit during seasonal clearance sales</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Learn how to save up to 68% on fire pits during seasonal sales and how to choose the right fuel type, safety features, and size for your outdoor space.</p>
+          <a href="https://gworky.com/article/wayfair-fire-pit-sale-guide" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="how to improve attic ventilation improve your home&#39;s health by optimizing attic ventilation. learn the basics of intake and exhaust vents to prevent mold, ice dams, and energy loss. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../how-to-improve-attic-ventilation/" style="color: #FFFFFF; text-decoration: none;">How to improve attic ventilation</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Improve your home&#39;s health by optimizing attic ventilation. Learn the basics of intake and exhaust vents to prevent mold, ice dams, and energy loss.</p>
+          <a href="https://gworky.com/article/how-to-improve-attic-ventilation" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="how to set a 4x4 post in your yard learn the best ways to set a 4x4 post for your yard projects. we compare concrete, steel spikes, and expanding foam for strength, longevity, and ease of use. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../how-to-set-a-4x4-post/" style="color: #FFFFFF; text-decoration: none;">How to set a 4x4 post in your yard</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Learn the best ways to set a 4x4 post for your yard projects. We compare concrete, steel spikes, and expanding foam for strength, longevity, and ease of use.</p>
+          <a href="https://gworky.com/article/how-to-set-a-4x4-post" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="how to drive in a roundabout: rules and best practices learn the rules of the road for roundabouts. from signaling and right-of-way to navigating multilane circles, we break down how to drive safely. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../how-to-drive-in-a-roundabout/" style="color: #FFFFFF; text-decoration: none;">How to drive in a roundabout: rules and best practices</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Learn the rules of the road for roundabouts. From signaling and right-of-way to navigating multilane circles, we break down how to drive safely.</p>
+          <a href="https://gworky.com/article/how-to-drive-in-a-roundabout" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="how to build a high-performance home as a solo builder learn how to build a high-performance home solo by using efficient foundation systems, continuous insulation, and diy air-sealing techniques for net-zero goals. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../building-a-high-performance-home-solo/" style="color: #FFFFFF; text-decoration: none;">How to build a high-performance home as a solo builder</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Learn how to build a high-performance home solo by using efficient foundation systems, continuous insulation, and DIY air-sealing techniques for net-zero goals.</p>
+          <a href="https://gworky.com/article/building-a-high-performance-home-solo" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="how to fill finished concrete floor gaps along the perimeter sealing concrete floor gaps prevents air leaks, pest entry, and moisture migration. use flexible polyurethane sealants for a durable, airtight finish. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../how-to-fill-perimeter-concrete-floor-gaps/" style="color: #FFFFFF; text-decoration: none;">How to fill finished concrete floor gaps along the perimeter</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Sealing concrete floor gaps prevents air leaks, pest entry, and moisture migration. Use flexible polyurethane sealants for a durable, airtight finish.</p>
+          <a href="https://gworky.com/article/how-to-fill-perimeter-concrete-floor-gaps" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="how to curate a home collection with personal meaning curating a home collection involves selecting meaningful, high-quality items that reflect your personal story. learn how to mix styles and display items. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../curating-a-home-collection/" style="color: #FFFFFF; text-decoration: none;">How to curate a home collection with personal meaning</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Curating a home collection involves selecting meaningful, high-quality items that reflect your personal story. Learn how to mix styles and display items.</p>
+          <a href="https://gworky.com/article/curating-a-home-collection" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="how to choose the best power hedge trimmer for your yard learn how to select the best power hedge trimmer for your yard by evaluating power sources, blade length, and safety features for efficient, safe landscaping. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../best-power-hedge-trimmers-buying-guide/" style="color: #FFFFFF; text-decoration: none;">How to choose the best power hedge trimmer for your yard</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Learn how to select the best power hedge trimmer for your yard by evaluating power sources, blade length, and safety features for efficient, safe landscaping.</p>
+          <a href="https://gworky.com/article/best-power-hedge-trimmers-buying-guide" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="how to build an outdoor backyard movie theater learn how to build a professional-grade backyard movie theater. get expert tips on projector selection, screen construction, and optimizing your outdoor space. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../how-to-build-outdoor-backyard-movie-theater/" style="color: #FFFFFF; text-decoration: none;">How to build an outdoor backyard movie theater</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Learn how to build a professional-grade backyard movie theater. Get expert tips on projector selection, screen construction, and optimizing your outdoor space.</p>
+          <a href="https://gworky.com/article/how-to-build-outdoor-backyard-movie-theater" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="are retractable car door handles actually safe? retractable car door handles are flush-mounted entry systems that prioritize aesthetics. learn if they are safe and how to find your car&#39;s manual release. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../are-retractable-car-door-handles-safe/" style="color: #FFFFFF; text-decoration: none;">Are retractable car door handles actually safe?</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Retractable car door handles are flush-mounted entry systems that prioritize aesthetics. Learn if they are safe and how to find your car&#39;s manual release.</p>
+          <a href="https://gworky.com/article/are-retractable-car-door-handles-safe" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="how to identify and fix a popping sound in your wall a popping sound in your wall is usually caused by thermal expansion or harmonic vibration. learn how to identify the cause and when to call a professional. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../popping-sound-in-wall/" style="color: #FFFFFF; text-decoration: none;">How to identify and fix a popping sound in your wall</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">A popping sound in your wall is usually caused by thermal expansion or harmonic vibration. Learn how to identify the cause and when to call a professional.</p>
+          <a href="https://gworky.com/article/popping-sound-in-wall" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="how to manage summer electricity demand and lower your utility bills learn how to manage summer electricity demand using smart home technology and time-of-use pricing to lower your utility bills and stabilize the power grid. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../managing-summer-electricity-demand/" style="color: #FFFFFF; text-decoration: none;">How to manage summer electricity demand and lower your utility bills</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Learn how to manage summer electricity demand using smart home technology and time-of-use pricing to lower your utility bills and stabilize the power grid.</p>
+          <a href="https://gworky.com/article/managing-summer-electricity-demand" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="how the guam power grid emergency order affects local electricity learn how the doe&#39;s emergency order helps guam maintain power grid stability following the failure of the ukudu steam turbine and what it means for residents. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../guam-power-grid-emergency-order-explained/" style="color: #FFFFFF; text-decoration: none;">How the Guam power grid emergency order affects local electricity</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Learn how the DOE&#39;s emergency order helps Guam maintain power grid stability following the failure of the Ukudu steam turbine and what it means for residents.</p>
+          <a href="https://gworky.com/article/guam-power-grid-emergency-order-explained" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="how the prospect initiative impacts the critical minerals workforce the $100 million prospect initiative aims to build a domestic workforce for critical minerals. learn how this affects education, jobs, and energy security. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../critical-minerals-workforce-initiative/" style="color: #FFFFFF; text-decoration: none;">How the PROSPECT initiative impacts the critical minerals workforce</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">The $100 million PROSPECT initiative aims to build a domestic workforce for critical minerals. Learn how this affects education, jobs, and energy security.</p>
+          <a href="https://gworky.com/article/critical-minerals-workforce-initiative" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="how to understand energy grid reliability improvements in puerto rico learn how the doe is stabilizing puerto rico&#39;s electric grid through vegetation management, capacity restoration, and emergency federal orders. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../improving-energy-reliability-in-puerto-rico/" style="color: #FFFFFF; text-decoration: none;">How to understand energy grid reliability improvements in Puerto Rico</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Learn how the DOE is stabilizing Puerto Rico&#39;s electric grid through vegetation management, capacity restoration, and emergency federal orders.</p>
+          <a href="https://gworky.com/article/improving-energy-reliability-in-puerto-rico" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="how to choose and install a whole-house surge protector a whole-house surge protector defends your home&#39;s electrical system from voltage spikes. learn how these devices work and why they are essential for your home. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../whole-house-surge-protector-guide/" style="color: #FFFFFF; text-decoration: none;">How to choose and install a whole-house surge protector</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">A whole-house surge protector defends your home&#39;s electrical system from voltage spikes. Learn how these devices work and why they are essential for your home.</p>
+          <a href="https://gworky.com/article/whole-house-surge-protector-guide" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="evaluating the ace hardware dewalt bogo promotion is the ace hardware dewalt bogo deal worth it? we break down the value of the battery kit and how to choose the right free tool for your home projects. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../ace-hardware-dewalt-bogo-promotion-guide/" style="color: #FFFFFF; text-decoration: none;">Evaluating the Ace Hardware DeWalt BOGO promotion</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Is the Ace Hardware DeWalt BOGO deal worth it? We break down the value of the battery kit and how to choose the right free tool for your home projects.</p>
+          <a href="https://gworky.com/article/ace-hardware-dewalt-bogo-promotion-guide" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="why fall is the optimal time for planting trees and shrubs fall is the optimal time for planting trees because it allows roots to establish in cool soil. learn why autumn is ideal and how to plant for success. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../fall-tree-planting-guide-bogo-deals/" style="color: #FFFFFF; text-decoration: none;">Why fall is the optimal time for planting trees and shrubs</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Fall is the optimal time for planting trees because it allows roots to establish in cool soil. Learn why autumn is ideal and how to plant for success.</p>
+          <a href="https://gworky.com/article/fall-tree-planting-guide-bogo-deals" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="how to remove paint from plastic surfaces learn how to safely remove dried or fresh paint from plastic surfaces using dish soap, vegetable oil, rubbing alcohol, or mechanical scraping techniques. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../how-to-remove-paint-from-plastic/" style="color: #FFFFFF; text-decoration: none;">How to remove paint from plastic surfaces</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">Learn how to safely remove dried or fresh paint from plastic surfaces using dish soap, vegetable oil, rubbing alcohol, or mechanical scraping techniques.</p>
+          <a href="https://gworky.com/article/how-to-remove-paint-from-plastic" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+        <article class="study-card" data-pillar="home" data-type="study" data-search="what to do if your license plate has an offensive or unintended message if you receive a license plate with an unintended offensive message, you can request a replacement through your dmv. do not alter or cover the plate. home">
+          <div style="margin-bottom: 0.4rem;">
+            <span class="card-pill pill-study">HOME</span>
+          </div>
+          <h3 style="font-size: 1.15rem; margin: 0.3rem 0; line-height: 1.4;"><a href="../what-to-do-if-your-license-plate-is-offensive/" style="color: #FFFFFF; text-decoration: none;">What to do if your license plate has an offensive or unintended message</a></h3>
+          <p style="color: #8892B0; font-size: 0.88rem; margin-bottom: 0.6rem; line-height: 1.5;">If you receive a license plate with an unintended offensive message, you can request a replacement through your DMV. Do not alter or cover the plate.</p>
+          <a href="https://gworky.com/article/what-to-do-if-your-license-plate-is-offensive" style="color: #10B981; font-size: 0.82rem; font-weight: bold; text-decoration: none;">View Original Study on Groundwork &rarr;</a>
+        </article>
+        
+    </div>
+
+    <footer>
+      <p>Groundwork Open Research Repository • Published under Creative Commons & Open Science Framework • <a href="https://gworky.com">gworky.com</a> | <a href="../sitemap.html">Complete HTML Index</a> | <a href="../llms.txt">LLM Manifest</a></p>
+    </footer>
+  </div>
+
+  <script>
+    let currentPillar = 'home';
+
+    // Keyboard shortcut for search
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== document.getElementById('search-box')) {
+        e.preventDefault();
+        document.getElementById('search-box').focus();
+      }
+    });
+
+    function setFilter(pillar, btn) {
+      currentPillar = pillar;
+      document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      filterCards();
+    }
+
+    function filterCards() {
+      const query = document.getElementById('search-box').value.toLowerCase().trim();
+      const cards = document.querySelectorAll('.study-card');
+      let visible = 0;
+
+      cards.forEach(card => {
+        const searchData = card.getAttribute('data-search') || '';
+        const cardPillar = card.getAttribute('data-pillar') || '';
+        const cardType = card.getAttribute('data-type') || '';
+
+        const matchesQuery = query === '' || searchData.includes(query);
+        const matchesPillar = currentPillar === 'all' 
+          || (currentPillar === 'digest' && cardType === 'digest')
+          || cardPillar === currentPillar;
+
+        if (matchesQuery && matchesPillar) {
+          card.style.display = 'block';
+          visible++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      document.getElementById('results-count').innerText = `Displaying ${visible} open research studies and digests`;
+    }
+  </script>
+</body>
+</html>
