@@ -1,22 +1,20 @@
-# Groundwork Open Research Repository
+# Groundwork Knowledge Base
 
-> Open evidentiary research whitepapers, econometric models, and decision intelligence published by Groundwork Media (https://gworky.com).
+> Evidence-based guides, decision calculators, and comparisons published by Groundwork (https://gworky.com).
 
-## Documentation & Knowledge Base
+## Documentation & Links
 - Main Platform: https://gworky.com
-- Open Research Archive: https://groundworkpub.github.io
-- RSS Syndication Feed: https://groundworkpub.github.io/feed.xml
-- Knowledge Topology Architecture: https://groundworkpub.github.io/STRUCTURE.md
-- DataCite Permanent DOI: https://doi.org/10.5281/zenodo.22011567
+- Knowledge Directory: https://groundworkpub.github.io
+- RSS Feed: https://groundworkpub.github.io/feed.xml
 
-## Pillars & Domains
+## Pillars
 - Money: https://gworky.com/money
 - Health: https://gworky.com/body
 - Home: https://gworky.com/home
 - Tech: https://gworky.com/tech
 - Life: https://gworky.com/life
 
-## Featured Research Studies (719 Total)
+## Featured Guides (719 Total)
 - [How to calculate your mortgage refinance break-even point](https://groundworkpub.github.io/mortgage-refinance-break-even-guide/): Calculate your exact mortgage refinance break-even timeline by dividing total closing costs by monthly interest savings ...
 - [The economics of AI user acquisition: lessons from the Perplexity-Airtel partnership](https://groundworkpub.github.io/perplexity-ai-growth-strategy-india-analysis/): Perplexity's partnership with Airtel provides a case study on AI growth experiments. We analyze the effectiveness of sub...
 - [American Airlines seatback screen rollout: what you need to know](https://groundworkpub.github.io/american-airlines-seatback-screens-analysis/): American Airlines will add seatback screens to its narrowbody fleet starting in 2028. Learn what this means for your tra...
